@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://easyearn1.shop/admin/notification/sms/setting -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Earn - SMS Notification Settings</title>
+
+    <link rel="shortcut icon" type="image/png" href="https://easyearn1.shop/assets/images/logoIcon/favicon.png">
+    <link href="./Easy Earn - SMS Notification Settings_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./Easy Earn - SMS Notification Settings_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Easy Earn - SMS Notification Settings_files/bootstrap-toggle.min.css">
+    <link rel="stylesheet" href="./Easy Earn - SMS Notification Settings_files/all.min.css">
+    <link rel="stylesheet" href="./Easy Earn - SMS Notification Settings_files/line-awesome.min.css">
+
+    
+    <link rel="stylesheet" href="./Easy Earn - SMS Notification Settings_files/select2.min.css">
+    <link rel="stylesheet" href="./Easy Earn - SMS Notification Settings_files/app.css">
+    <link rel="stylesheet" href="./Easy Earn - SMS Notification Settings_files/custom.css">
+
+
+        <style>
+        .method-select {
+            padding: 2px 7px;
+        }
+    </style>
+</head>
+<body>
+    <!-- page-wrapper start -->
+    <div class="page-wrapper default-version">
+        <div class="sidebar bg--dark">
+            <button class="res-sidebar-close-btn"><i class="las la-times"></i></button>
+            <div class="sidebar__inner">
+                <div class="sidebar__logo">
+                    <a href="./dashboard.html" class="sidebar__main-logo"><img
+                            src="./Easy Earn - Dashboard_files/logo.png" alt="image"></a>
+                </div>
+        
+                <div class="sidebar__menu-wrapper" id="sidebar__menuWrapper">
+                    <ul class="sidebar__menu">
+                        <li class="sidebar-menu-item active">
+                            <a href="./dashboard.html" class="nav-link ">
+                                <i class="menu-icon las la-home"></i>
+                                <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li>
+        
+                        <li class="sidebar-menu-item sidebar-dropdown">
+                            <a href="javascript:void(0)" class="">
+                                <i class="menu-icon las la-clipboard-check"></i>
+                                <span class="menu-title">Plan Manage</span>
+                            </a>
+                            <div class="sidebar-submenu  ">
+                                <ul>
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./time_manage.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Time Manage</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item ">
+                                        <a href="./plan_manage.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Plan Manage</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+        
+                        <li class="sidebar-menu-item ">
+                            <a href="./manage_referral.html" class="nav-link ">
+                                <i class="menu-icon las la-tree"></i>
+                                <span class="menu-title">Manage Referral</span>
+                            </a>
+                        </li>
+        
+                        <li class="sidebar-menu-item ">
+                            <a href="./investment_stats.html" class="nav-link ">
+                                <i class="menu-icon las la-signal"></i>
+                                <span class="menu-title">Investment Report</span>
+                            </a>
+                        </li>
+        
+                        <li class="sidebar-menu-item sidebar-dropdown">
+                            <a href="javascript:void(0)" class="">
+                                <i class="menu-icon las la-users"></i>
+                                <span class="menu-title">Manage Users</span>
+        
+                            </a>
+                            <div class="sidebar-submenu  ">
+                                <ul>
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./active_users.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Active Users</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Banned Users</span>
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./users_unverified_email.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Email Unverified</span>
+        
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item ">
+                                        <a href="./mobile_unverified.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Mobile Unverified</span>
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item ">
+                                        <a href="./kyc_unverified.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">KYC Unverified</span>
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item ">
+                                        <a href="./kyc_pending.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">KYC Pending</span>
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item ">
+                                        <a href="./with_balance.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">With Balance</span>
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./all_users.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">All Users</span>
+                                        </a>
+                                    </li>
+        
+        
+                                    <li class="sidebar-menu-item ">
+                                        <a href="./notification_sending.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Notification to All</span>
+                                        </a>
+                                    </li>
+        
+                                </ul>
+                            </div>
+                        </li>
+        
+        
+                        <li class="sidebar-menu-item ">
+                            <a href="./promotional_tools.html" class="nav-link ">
+                                <i class="menu-icon las la-ad"></i>
+                                <span class="menu-title">Promotional Tool</span>
+                            </a>
+                        </li>
+        
+                        <li class="sidebar-menu-item sidebar-dropdown">
+                            <a href="javascript:void(0)" class="">
+                                <i class="menu-icon las la-credit-card"></i>
+                                <span class="menu-title">Payment Gateways</span>
+                            </a>
+                            <div class="sidebar-submenu  ">
+                                <ul>
+        
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./automatic_gateways.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Automatic Gateways</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./manual_gateways.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Manual Gateways</span>
+                                        </a>
+                                    </li>
+        
+                                </ul>
+                            </div>
+                        </li>
+        
+                        <li class="sidebar-menu-item sidebar-dropdown">
+                            <a href="javascript:void(0)" class="">
+                                <i class="menu-icon las la-file-invoice-dollar"></i>
+                                <span class="menu-title">Deposits</span>
+                            </a>
+                            <div class="sidebar-submenu  ">
+                                <ul>
+        
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./pending_deposits.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Pending Deposits</span>
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./approved_deposits.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Approved Deposits</span>
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./successful_deposits.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Successful Deposits</span>
+                                        </a>
+                                    </li>
+        
+        
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./rejected_deposits.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Rejected Deposits</span>
+                                        </a>
+                                    </li>
+        
+        
+                                    <li class="sidebar-menu-item  ">
+        
+                                        <a href="./initiated_deposits.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Initiated Deposits</span>
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./deposits_all.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">All Deposits</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+        
+                        <li class="sidebar-menu-item sidebar-dropdown">
+                            <a href="javascript:void(0)" class="">
+                                <i class="menu-icon la la-bank"></i>
+                                <span class="menu-title">Withdrawals </span>
+                            </a>
+                            <div class="sidebar-submenu  ">
+                                <ul>
+        
+                                    <li class="sidebar-menu-item ">
+                                        <a href="./withdrawal_methods.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Withdrawal Methods</span>
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./pending_withdrawals.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Pending Withdrawals</span>
+        
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./approved_withdrawals.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Approved Withdrawals</span>
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./rejected_withdrawals.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Rejected Withdrawals</span>
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./withdrawals_all.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">All Withdrawals</span>
+                                        </a>
+                                    </li>
+        
+        
+                                </ul>
+                            </div>
+                        </li>
+        
+                        <li class="sidebar-menu-item sidebar-dropdown">
+                            <a href="javascript:void(0)" class="">
+                                <i class="menu-icon la la-ticket"></i>
+                                <span class="menu-title">Support Ticket </span>
+                            </a>
+                            <div class="sidebar-submenu  ">
+                                <ul>
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./pending_tickets.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Pending Ticket</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./closed_tickets.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Closed Ticket</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./answered_tickets.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Answered Ticket</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./support_tickets.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">All Ticket</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+        
+        
+                        <li class="sidebar-menu-item sidebar-dropdown">
+                            <a href="javascript:void(0)" class="">
+                                <i class="menu-icon la la-list"></i>
+                                <span class="menu-title">Report </span>
+                            </a>
+                            <div class="sidebar-submenu  ">
+                                <ul>
+                                    <li class="sidebar-menu-item ">
+                                        <a href="./transaction_logs.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Transaction Log</span>
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item ">
+                                        <a href="./login_history.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Login History</span>
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item ">
+                                        <a href="./notification_history.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Notification History</span>
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item ">
+                                        <a href="./invest_history.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Invest History</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+        
+        
+                        <li class="sidebar-menu-item  ">
+                            <a href="./subscribers.html" class="nav-link" data-default-url="https://easyearn1.shop/admin/subscriber">
+                                <i class="menu-icon las la-thumbs-up"></i>
+                                <span class="menu-title">Subscribers </span>
+                            </a>
+                        </li>
+        
+        
+                        <li class="sidebar__menu-header">Settings</li>
+        
+                        <li class="sidebar-menu-item ">
+                            <a href="./general_settings.html" class="nav-link">
+                                <i class="menu-icon las la-life-ring"></i>
+                                <span class="menu-title">General Setting</span>
+                            </a>
+                        </li>
+        
+                        <li class="sidebar-menu-item ">
+                            <a href="./system_configuration.html" class="nav-link">
+                                <i class="menu-icon las la-cog"></i>
+                                <span class="menu-title">System Configuration</span>
+                            </a>
+                        </li>
+        
+                        <li class="sidebar-menu-item ">
+                            <a href="./set_logo_favicon.html" class="nav-link">
+                                <i class="menu-icon las la-images"></i>
+                                <span class="menu-title">Logo &amp; Favicon</span>
+                            </a>
+                        </li>
+        
+                        <li class="sidebar-menu-item ">
+                            <a href="./extensions.html" class="nav-link">
+                                <i class="menu-icon las la-cogs"></i>
+                                <span class="menu-title">Extensions</span>
+                            </a>
+                        </li>
+        
+                        <li class="sidebar-menu-item  ">
+                            <a href="./language.html" class="nav-link">
+                                <i class="menu-icon las la-language"></i>
+                                <span class="menu-title">Language </span>
+                            </a>
+                        </li>
+        
+                        <li class="sidebar-menu-item ">
+                            <a href="./seo.html" class="nav-link">
+                                <i class="menu-icon las la-globe"></i>
+                                <span class="menu-title">SEO Manager</span>
+                            </a>
+                        </li>
+        
+                        <li class="sidebar-menu-item ">
+                            <a href="" class="nav-link">
+                                <i class="menu-icon las la-user-check"></i>
+                                <span class="menu-title">KYC Setting</span>
+                            </a>
+                        </li>
+        
+        
+                        <li class="sidebar-menu-item sidebar-dropdown">
+                            <a href="javascript:void(0)" class="">
+                                <i class="menu-icon las la-bell"></i>
+                                <span class="menu-title">Notification Setting</span>
+                            </a>
+                            <div class="sidebar-submenu  ">
+                                <ul>
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./global_template.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Global Template</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./email_notification.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Email Setting</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./sms_settings.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">SMS Setting</span>
+                                        </a>
+                                    </li>
+        
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./push_notification.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Push Notification Setting</span>
+                                        </a>
+                                    </li>
+        
+        
+                                    <li class="sidebar-menu-item  ">
+                                        <a href="./notification_templates.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Notification Templates</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+        
+                        <li class="sidebar-menu-item ">
+                            <a href="./holiday_settings.html" class="nav-link">
+                                <i class="menu-icon la la-toggle-off"></i>
+                                <span class="menu-title">Holiday Setting</span>
+                            </a>
+                        </li>
+        
+                        <li class="sidebar__menu-header">Frontend Manager</li>
+        
+                        <li class="sidebar-menu-item ">
+                            <a href="./templates.html" class="nav-link ">
+                                <i class="menu-icon la la-puzzle-piece"></i>
+                                <span class="menu-title">Manage Templates</span>
+                            </a>
+                        </li>
+        
+                        <li class="sidebar-menu-item ">
+                            <a href="./manage_pages.html" class="nav-link ">
+                                <i class="menu-icon la la-list"></i>
+                                <span class="menu-title">Manage Pages</span>
+                            </a>
+                        </li>
+        
+                        <li class="sidebar-menu-item sidebar-dropdown">
+                            <a href="javascript:void(0)" class="">
+                                <i class="menu-icon la la-html5"></i>
+                                <span class="menu-title">Manage Section</span>
+                            </a>
+                            <div class="sidebar-submenu  ">
+                                <ul>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./about_us.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">About Us</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./banner_content.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Banner Content</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./blog_section.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Blog Section</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./calculation_Section.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Calculation Section</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./contact_us.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Contact Us</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./counter_section.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Counter Section</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./faq_section.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">FAQ Section</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./footer.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Footer</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./how_we_work.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">How Work</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./profile.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Login Page</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./plan_section.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Plan Section</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./policy_pages.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Policy Pages</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./preloader_section.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Preloader Section</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./register_page.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Register Page</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./subscribe_section.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Subscribe Section</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./team_section.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Team Section</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./testimonial_section.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Testimonial Section</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./top_investor_section.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Top Investor Section</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./transaction_section.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Transaction Section</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./we_accept.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">We Accept Section</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item   ">
+                                        <a href="./why_choose_us.html" class="nav-link">
+                                            <i class="menu-icon las la-dot-circle"></i>
+                                            <span class="menu-title">Why Choose Us</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+        
+                        <li class="sidebar__menu-header">Extra</li>
+        
+        
+                        <li class="sidebar-menu-item ">
+                            <a href="./maintenance_mode.html" class="nav-link">
+                                <i class="menu-icon las la-robot"></i>
+                                <span class="menu-title">Maintenance Mode</span>
+                            </a>
+                        </li>
+        
+                        <li class="sidebar-menu-item ">
+                            <a href="./cookies_gdpr.html" class="nav-link">
+                                <i class="menu-icon las la-cookie-bite"></i>
+                                <span class="menu-title">GDPR Cookie</span>
+                            </a>
+                        </li>
+        
+        
+        
+                    </ul>
+                </div>
+            </div>
+            <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 168.172px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: block; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+        </div>
+        <!-- sidebar end -->
+
+        <!-- navbar-wrapper start -->
+        <nav class="navbar-wrapper bg--dark">
+            <div class="navbar__left">
+                <button type="button" class="res-sidebar-open-btn me-3"><i class="las la-bars"></i></button>
+                <form class="navbar-search">
+                    <input type="search" name="#0" class="navbar-search-field" id="searchInput" autocomplete="off"
+                        placeholder="Search here...">
+                    <i class="las la-search"></i>
+                    <ul class="search-list"></ul>
+                </form>
+            </div>
+            <div class="navbar__right">
+                <ul class="navbar__action-list">
+
+                    <li class="dropdown">
+                        <button type="button" class="primary--layer" data-bs-toggle="dropdown" data-display="static"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="las la-bell text--primary  icon-left-right "></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu--md p-0 border-0 box--shadow1 dropdown-menu-right">
+                            <div class="dropdown-menu__header">
+                                <span class="caption">Notification</span>
+                                <p>You have 27 unread notification</p>
+                            </div>
+                            <div class="dropdown-menu__body">
+                                <a href="https://easyearn1.shop/admin/notification/read/27" class="dropdown-menu__item">
+                                    <div class="navbar-notifi">
+                                        <div class="navbar-notifi__left bg--green b-radius--rounded"><img
+                                                src="./Easy Earn - Dashboard_files/350x300" alt="Profile Image"></div>
+                                        <div class="navbar-notifi__right">
+                                            <h6 class="notifi__title">New member registered</h6>
+                                            <span class="time"><i class="far fa-clock"></i>
+                                                6 hours ago</span>
+                                        </div>
+                                    </div><!-- navbar-notifi end -->
+                                </a>
+                                <a href="https://easyearn1.shop/admin/notification/read/26" class="dropdown-menu__item">
+                                    <div class="navbar-notifi">
+                                        <div class="navbar-notifi__left bg--green b-radius--rounded"><img
+                                                src="./Easy Earn - Dashboard_files/350x300" alt="Profile Image"></div>
+                                        <div class="navbar-notifi__right">
+                                            <h6 class="notifi__title">New member registered</h6>
+                                            <span class="time"><i class="far fa-clock"></i>
+                                                1 day ago</span>
+                                        </div>
+                                    </div><!-- navbar-notifi end -->
+                                </a>
+                                <a href="https://easyearn1.shop/admin/notification/read/25" class="dropdown-menu__item">
+                                    <div class="navbar-notifi">
+                                        <div class="navbar-notifi__left bg--green b-radius--rounded"><img
+                                                src="./Easy Earn - Dashboard_files/350x300" alt="Profile Image"></div>
+                                        <div class="navbar-notifi__right">
+                                            <h6 class="notifi__title">New member registered</h6>
+                                            <span class="time"><i class="far fa-clock"></i>
+                                                1 day ago</span>
+                                        </div>
+                                    </div><!-- navbar-notifi end -->
+                                </a>
+                                <a href="https://easyearn1.shop/admin/notification/read/24" class="dropdown-menu__item">
+                                    <div class="navbar-notifi">
+                                        <div class="navbar-notifi__left bg--green b-radius--rounded"><img
+                                                src="./Easy Earn - Dashboard_files/350x300" alt="Profile Image"></div>
+                                        <div class="navbar-notifi__right">
+                                            <h6 class="notifi__title">New member registered</h6>
+                                            <span class="time"><i class="far fa-clock"></i>
+                                                2 days ago</span>
+                                        </div>
+                                    </div><!-- navbar-notifi end -->
+                                </a>
+                                <a href="https://easyearn1.shop/admin/notification/read/23" class="dropdown-menu__item">
+                                    <div class="navbar-notifi">
+                                        <div class="navbar-notifi__left bg--green b-radius--rounded"><img
+                                                src="./Easy Earn - Dashboard_files/350x300" alt="Profile Image"></div>
+                                        <div class="navbar-notifi__right">
+                                            <h6 class="notifi__title">A new support ticket has opened </h6>
+                                            <span class="time"><i class="far fa-clock"></i>
+                                                3 days ago</span>
+                                        </div>
+                                    </div><!-- navbar-notifi end -->
+                                </a>
+                                <a href="https://easyearn1.shop/admin/notification/read/22" class="dropdown-menu__item">
+                                    <div class="navbar-notifi">
+                                        <div class="navbar-notifi__left bg--green b-radius--rounded"><img
+                                                src="./Easy Earn - Dashboard_files/350x300" alt="Profile Image"></div>
+                                        <div class="navbar-notifi__right">
+                                            <h6 class="notifi__title">New member registered</h6>
+                                            <span class="time"><i class="far fa-clock"></i>
+                                                3 days ago</span>
+                                        </div>
+                                    </div><!-- navbar-notifi end -->
+                                </a>
+                                <a href="https://easyearn1.shop/admin/notification/read/21" class="dropdown-menu__item">
+                                    <div class="navbar-notifi">
+                                        <div class="navbar-notifi__left bg--green b-radius--rounded"><img
+                                                src="./Easy Earn - Dashboard_files/350x300" alt="Profile Image"></div>
+                                        <div class="navbar-notifi__right">
+                                            <h6 class="notifi__title">A new support ticket has opened </h6>
+                                            <span class="time"><i class="far fa-clock"></i>
+                                                5 days ago</span>
+                                        </div>
+                                    </div><!-- navbar-notifi end -->
+                                </a>
+                                <a href="https://easyearn1.shop/admin/notification/read/20" class="dropdown-menu__item">
+                                    <div class="navbar-notifi">
+                                        <div class="navbar-notifi__left bg--green b-radius--rounded"><img
+                                                src="./Easy Earn - Dashboard_files/350x300" alt="Profile Image"></div>
+                                        <div class="navbar-notifi__right">
+                                            <h6 class="notifi__title">Deposit request from 3228969350</h6>
+                                            <span class="time"><i class="far fa-clock"></i>
+                                                5 days ago</span>
+                                        </div>
+                                    </div><!-- navbar-notifi end -->
+                                </a>
+                                <a href="https://easyearn1.shop/admin/notification/read/19" class="dropdown-menu__item">
+                                    <div class="navbar-notifi">
+                                        <div class="navbar-notifi__left bg--green b-radius--rounded"><img
+                                                src="./Easy Earn - Dashboard_files/350x300" alt="Profile Image"></div>
+                                        <div class="navbar-notifi__right">
+                                            <h6 class="notifi__title">New support ticket has opened</h6>
+                                            <span class="time"><i class="far fa-clock"></i>
+                                                1 week ago</span>
+                                        </div>
+                                    </div><!-- navbar-notifi end -->
+                                </a>
+                                <a href="https://easyearn1.shop/admin/notification/read/18" class="dropdown-menu__item">
+                                    <div class="navbar-notifi">
+                                        <div class="navbar-notifi__left bg--green b-radius--rounded"><img
+                                                src="./Easy Earn - Dashboard_files/350x300" alt="Profile Image"></div>
+                                        <div class="navbar-notifi__right">
+                                            <h6 class="notifi__title">New member registered</h6>
+                                            <span class="time"><i class="far fa-clock"></i>
+                                                1 week ago</span>
+                                        </div>
+                                    </div><!-- navbar-notifi end -->
+                                </a>
+                            </div>
+                            <div class="dropdown-menu__footer">
+                                <a href="https://easyearn1.shop/admin/notifications" class="view-all-message">View all
+                                    notification</a>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <button type="button" class="" data-bs-toggle="dropdown" data-display="static"
+                            aria-haspopup="true" aria-expanded="false">
+                            <span class="navbar-user">
+                                <span class="navbar-user__thumb"><img src="./Easy Earn - Dashboard_files/default.png"
+                                        alt="image"></span>
+                                <span class="navbar-user__info">
+                                    <span class="navbar-user__name">Admin</span>
+                                </span>
+                                <span class="icon"><i class="las la-chevron-circle-down"></i></span>
+                            </span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu--sm p-0 border-0 box--shadow1 dropdown-menu-right">
+                            <a href="./page_on_login.html"
+                                class="dropdown-menu__item d-flex align-items-center px-3 py-2">
+                                <i class="dropdown-menu__icon las la-user-circle"></i>
+                                <span class="dropdown-menu__caption">Profile</span>
+                            </a>
+
+                            <a href="./set_password.html"
+                                class="dropdown-menu__item d-flex align-items-center px-3 py-2">
+                                <i class="dropdown-menu__icon las la-key"></i>
+                                <span class="dropdown-menu__caption">Password</span>
+                            </a>
+
+                            <a href="./login.html"
+                                class="dropdown-menu__item d-flex align-items-center px-3 py-2">
+                                <i class="dropdown-menu__icon las la-sign-out-alt"></i>
+                                <span class="dropdown-menu__caption">Logout</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- navbar-wrapper end -->
+
+        <div class="body-wrapper">
+            <div class="bodywrapper__inner">
+
+                <div class="d-flex mb-30 flex-wrap gap-3 justify-content-between align-items-center">
+    <h6 class="page-title">SMS Notification Settings</h6>
+    <div class="d-flex flex-wrap justify-content-end gap-2 align-items-center breadcrumb-plugins">
+            <button type="button" data-bs-target="#testSMSModal" data-bs-toggle="modal" class="btn btn-outline--primary btn-sm"> <i class="las la-paper-plane"></i> Send Test SMS</button>
+    </div>
+</div>
+
+                    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <form action="https://easyearn1.shop/admin/notification/sms/setting" method="POST">
+                    <input type="hidden" name="_token" value="PXTvi1dpH9g6zDkM2htoOnYRy8SdiTvICNIQXdt3">                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="sms_method">Sms Send Method</label>
+                            <select name="sms_method" class="form-control" id="sms_method">
+                                <option value="clickatell">Clickatell</option>
+                                <option value="infobip">Infobip</option>
+                                <option value="messageBird">Message Bird</option>
+                                <option value="nexmo" selected="">Nexmo</option>
+                                <option value="smsBroadcast">Sms Broadcast</option>
+                                <option value="twilio">Twilio</option>
+                                <option value="textMagic">Text Magic</option>
+                                <option value="custom">Custom API</option>
+                            </select>
+                        </div>
+                        <div class="row mt-4 d-none configForm" id="clickatell">
+                            <div class="col-md-12">
+                                <h6 class="mb-2">Clickatell Configuration</h6>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="clickatell_api_key">API Key </label>
+                                    <input type="text" class="form-control" placeholder="API Key" name="clickatell_api_key" value="----------------" id="clickatell_api_key">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4 d-none configForm" id="infobip">
+                            <div class="col-md-12">
+                                <h6 class="mb-2">Infobip Configuration</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="infobip_username">Username </label>
+                                    <input type="text" class="form-control" placeholder="Username" name="infobip_username" value="------------8888888" id="infobip_username">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="infobip_password">Password </label>
+                                    <input type="text" class="form-control" placeholder="Password" name="infobip_password" value="-----------------" id="infobip_password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4 d-none configForm" id="messageBird">
+                            <div class="col-md-12">
+                                <h6 class="mb-2">Message Bird Configuration</h6>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="message_bird_api_key">API Key </label>
+                                    <input type="text" class="form-control" placeholder="API Key" name="message_bird_api_key" value="-------------------" id="message_bird_api_key">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4 configForm" id="nexmo">
+                            <div class="col-md-12">
+                                <h6 class="mb-2">Nexmo Configuration</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="nexmo_api_key">API Key </label>
+                                    <input type="text" class="form-control" placeholder="API Key" name="nexmo_api_key" value="----------------------" id="nexmo_api_key">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="nexmo_api_secret">API Secret </label>
+                                    <input type="text" class="form-control" placeholder="API Secret" name="nexmo_api_secret" value="----------------------" id="nexmo_api_secret">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4 d-none configForm" id="smsBroadcast">
+                            <div class="col-md-12">
+                                <h6 class="mb-2">Sms Broadcast Configuration</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sms_broadcast_username">Username </label>
+                                    <input type="text" class="form-control" placeholder="Username" name="sms_broadcast_username" value="----------------------" id="sms_broadcast_username">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sms_broadcast_password">Password </label>
+                                    <input type="text" class="form-control" placeholder="Password" name="sms_broadcast_password" value="-----------------------------" id="sms_broadcast_password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4 d-none configForm" id="twilio">
+                            <div class="col-md-12">
+                                <h6 class="mb-2">Twilio Configuration</h6>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="account_sid">Account SID </label>
+                                    <input type="text" class="form-control" placeholder="Account SID" name="account_sid" value="-----------------------" id="account_sid">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="auth_token">Auth Token </label>
+                                    <input type="text" class="form-control" placeholder="Auth Token" name="auth_token" value="---------------------------" id="auth_token">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="from">From Number </label>
+                                    <input type="text" class="form-control" placeholder="From Number" name="from" value="----------------------" id="from">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4 d-none configForm" id="textMagic">
+                            <div class="col-md-12">
+                                <h6 class="mb-2">Text Magic Configuration</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="text_magic_username">Username </label>
+                                    <input type="text" class="form-control" placeholder="Username" name="text_magic_username" value="-----------------------" id="text_magic_username">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="apiv2_key">Apiv2 Key </label>
+                                    <input type="text" class="form-control" placeholder="Apiv2 Key" name="apiv2_key" value="-------------------------------" id="apiv2_key">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4 d-none configForm" id="custom">
+                            <div class="col-md-12">
+                                <h6 class="mb-2">Custom API</h6>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="custom_api_url">API URL </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <select name="custom_api_method" class="method-select" id="custom_api_method">
+                                                <option value="get">GET</option>
+                                                <option value="post">POST</option>
+                                            </select>
+                                        </span>
+                                        <input type="text" class="form-control" name="custom_api_url" value="https://hostname/demo-api-v1" placeholder="API URL" id="custom_api_url">
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive table-responsive--sm mb-3">
+                                        <table class=" table align-items-center table--light">
+                                            <thead>
+                                                <tr>
+                                                    <th>Short Code </th>
+                                                    <th>Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="list">
+                                                <tr>
+                                                    <td data-label="Short Code ">{{ message }}</td>
+                                                    <td data-label="Description">Message</td>
+                                                </tr>
+                                                <tr>
+                                                    <td data-label="Short Code ">{{ number }}</td>
+                                                    <td data-label="Description">Number</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card border--dark mb-3">
+                                        <div class="card-header bg--dark d-flex justify-content-between">
+                                            <h5 class="text-white">Headers</h5>
+                                            <button type="button" class="btn btn-sm btn-outline-light float-right addHeader"><i class="la la-fw la-plus"></i>Add </button>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="headerFields">
+                                                                                                    <div class="row mt-3">
+                                                        <div class="col-md-5">
+                                                            <input type="text" name="custom_header_name[]" class="form-control" value="api_key" placeholder="Headers Name" id="custom_header_name[]">
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <input type="text" name="custom_header_value[]" class="form-control" value="test_api 555" placeholder="Headers Value" id="custom_header_value[]">
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <button type="button" class="btn btn--danger btn-block removeHeader h-100"><i class="las la-times"></i></button>
+                                                        </div>
+                                                    </div>
+                                                                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card border--dark mb-3">
+                                        <div class="card-header bg--dark d-flex justify-content-between">
+                                            <h5 class="text-white">Body</h5>
+                                            <button type="button" class="btn btn-sm btn-outline-light float-right addBody"><i class="la la-fw la-plus"></i>Add </button>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="bodyFields">
+                                                                                                    <div class="row mt-3">
+                                                        <div class="col-md-5">
+                                                            <input type="text" name="custom_body_name[]" class="form-control" value="from_number" placeholder="Body Name" id="custom_body_name[]">
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <input type="text" name="custom_body_value[]" value="5657545757" class="form-control" placeholder="Body Value" id="custom_body_value[]">
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <button type="button" class="btn btn--danger btn-block removeBody h-100"><i class="las la-times"></i></button>
+                                                        </div>
+                                                    </div>
+                                                                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn w-100 h-45 btn--primary">Submit</button>
+                    </div>
+                </form>
+            </div><!-- card end -->
+        </div>
+
+
+    </div>
+
+
+    
+    <div id="testSMSModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Test SMS Setup</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="las la-times"></i>
+                    </button>
+                </div>
+                <form action="https://easyearn1.shop/admin/notification/sms/test" method="POST">
+                    <input type="hidden" name="_token" value="PXTvi1dpH9g6zDkM2htoOnYRy8SdiTvICNIQXdt3">                    <input type="hidden" name="id">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="mobile">Sent to </label>
+                                    <input type="text" name="mobile" class="form-control" placeholder="Mobile" id="mobile">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn--primary w-100 h-45">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+            </div><!-- bodywrapper__inner end -->
+        </div><!-- body-wrapper end -->
+    </div>
+
+
+
+
+
+
+
+<script src="./Easy Earn - SMS Notification Settings_files/jquery-3.6.0.min.js.download"></script>
+<script src="./Easy Earn - SMS Notification Settings_files/bootstrap.bundle.min.js.download"></script>
+<script src="./Easy Earn - SMS Notification Settings_files/bootstrap-toggle.min.js.download"></script>
+<script src="./Easy Earn - SMS Notification Settings_files/jquery.slimscroll.min.js.download"></script>
+
+
+<link rel="stylesheet" href="./Easy Earn - SMS Notification Settings_files/iziToast.min.css">
+<script src="./Easy Earn - SMS Notification Settings_files/iziToast.min.js.download"></script>
+
+<script>
+    "use strict";
+    function notify(status,message) {
+        iziToast[status]({
+            message: message,
+            position: "topRight"
+        });
+    }
+</script>
+
+<script src="./Easy Earn - SMS Notification Settings_files/nicEdit.js.download"></script>
+
+<script src="./Easy Earn - SMS Notification Settings_files/select2.min.js.download"></script>
+<script src="./Easy Earn - SMS Notification Settings_files/app.js.download"></script>
+
+
+<script>
+    "use strict";
+    bkLib.onDomLoaded(function() {
+        $( ".nicEdit" ).each(function( index ) {
+            $(this).attr("id","nicEditor"+index);
+            new nicEditor({fullPanel : true}).panelInstance('nicEditor'+index,{hasPanel : true});
+        });
+    });
+    (function($){
+        $( document ).on('mouseover ', '.nicEdit-main,.nicEdit-panelContain',function(){
+            $('.nicEdit-main').focus();
+        });
+    })(jQuery);
+</script>
+
+    <script>
+        (function($) {
+            "use strict";
+
+            var method = 'nexmo';
+
+            if (!method) {
+                method = 'clickatell';
+            }
+
+            smsMethod(method);
+            $('select[name=sms_method]').on('change', function() {
+                var method = $(this).val();
+                smsMethod(method);
+            });
+
+            function smsMethod(method) {
+                $('.configForm').addClass('d-none');
+                if (method != 'php') {
+                    $(`#${method}`).removeClass('d-none');
+                }
+            }
+
+            $('.addHeader').click(function() {
+                var html = `
+                    <div class="row mt-3">
+                        <div class="col-md-5">
+                            <input type="text" name="custom_header_name[]" class="form-control" placeholder="Headers Name">
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" name="custom_header_value[]" class="form-control" placeholder="Headers Value">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn--danger btn-block removeHeader h-100"><i class="las la-times"></i></button>
+                        </div>
+                    </div>
+                `;
+                $('.headerFields').append(html);
+
+            })
+            $(document).on('click', '.removeHeader', function() {
+                $(this).closest('.row').remove();
+            })
+
+            $('.addBody').click(function() {
+                var html = `
+                    <div class="row mt-3">
+                        <div class="col-md-5">
+                            <input type="text" name="custom_body_name[]" class="form-control" placeholder="Body Name">
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" name="custom_body_value[]" class="form-control" placeholder="Body Value">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn--danger btn-block removeBody h-100"><i class="las la-times"></i></button>
+                        </div>
+                    </div>
+                `;
+                $('.bodyFields').append(html);
+
+            })
+            $(document).on('click', '.removeBody', function() {
+                $(this).closest('.row').remove();
+            })
+
+            $('select[name=custom_api_method]').val('get');
+
+        })(jQuery);
+    </script>
+    <script>
+        if($('li').hasClass('active')){
+            $('#sidebar__menuWrapper').animate({
+                scrollTop: eval($(".active").offset().top - 320)
+            },500);
+        }
+    </script>
+
+
+
+
+</body></html>

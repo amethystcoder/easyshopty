@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://www.easyshopmid12.xyz/index/user/register -->
+<html lang="en" class="deeppurple-theme">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <title>registered account</title>
+    <meta property="og:site_name" content="Easy shoppping">
+    <meta property="og:type" content="website">
+    <meta name="title" content="Easy shoppping">
+    <meta property="og:title" content="Easy shoppping">
+    <meta name="twitter:title" content="Easy shoppping">
+    <meta name="description" content="Easy shoppping">
+    <meta property="og:description" content="Easy shoppping">
+    <meta name="twitter:description" content="Easy shoppping">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.easyshopmid12.xyz/index/user/register.html">
+    <!-- Material design icons CSS -->
+    <link href="./registered account_files/icon" rel="stylesheet"><!-- Roboto fonts CSS -->
+    <link href="./registered account_files/css" rel="stylesheet"><!-- Bootstrap core CSS -->
+    <link href="./registered account_files/bootstrap.min.css" rel="stylesheet"><!-- Swiper CSS -->
+    <link href="./registered account_files/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="./registered account_files/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./registered account_files/public.css">
+</head>
+
+<body class="">
+    <div class="wrapper passport"><!-- header -->
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-2"></div>
+                <div class="col-8 text-center"><span class="btn small" style="width: 100%;display: none">registered
+                        account</span></div>
+                <div class="col-2 text-right"><a href="https://www.easyshopmid12.xyz/index/user/lang"
+                        class="btn btn-link text-dark"><i class="material-icons"
+                            style="display: inline-block">language</i></a></div>
+            </div>
+        </div><!-- header ends -->
+        <div class="container">
+            <div class="bg-default">
+                <div class="row no-gutters login-row">
+                    <div class="col align-self-center px-3 text-center mt-3"><img
+                            src="./registered account_files/logo.png"
+                            style="width:100px;height:100px;border-radius: 10px">
+                        <p class="mt-2"><b>Easy Shop</b></p>
+                        <p class="mt-1 small"><i>Help to increase our sales and get your Commission daily!!!</i></p>
+                        <form class="form-signin ">
+                            <div class="form-group"><input type="text" name="user_name"
+                                    class="form-control form-control-lg text-center"
+                                    placeholder="Please enter a user name" value="" required="" autofocus=""></div><!--<div class="form-group"><input type="text" class="form-control form-control-lg text-center" name="tel" value=""
+                                   placeholder="your mobile phone number" class="form-control"></div>-->
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend"><button class="clsbtn btn dropdown-toggle address"
+                                        type="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">+968</button>
+                                    <div class="dropdown-menu">
+                                        <a class="n1 dropdown-item">+968</a>
+                                        <a class="n2 dropdown-item">+965</a>
+                                        </div>
+                                        <input type="hidden" name="pre" value="968" class="pree">
+                                        <input type="hidden" name="invite" class="inv">
+                                </div><input type="text" name="tel" placeholder="your mobile phone number"
+                                    class="form-control"
+                                    aria-label="Recipient&#39;s username"><!--<div class="input-group-append"><button class="btn btn-link get-code" type="button">Send</button></div>-->
+                            </div>
+                            <!--<div class="form-group"><input type="password" name="verify" class="form-control form-control-lg text-center"
+                                   placeholder="Please enter the verification code" value="" required="" autofocus=""></div>-->
+                            <div class="form-group"><input type="password" name="pwd"
+                                    class="form-control form-control-lg text-center" placeholder="your password"
+                                    value="" required="" autofocus=""></div>
+                            <div class="form-group"><input type="password" name="deposit_pwd"
+                                    class="form-control form-control-lg text-center"
+                                    placeholder="Please confirm the password" value="" required="" autofocus=""></div>
+                            <!-- <input type="text" name="invite_code" class="form-control form-control-lg text-center"
+                                placeholder="Please enter the invitation code" value="" required=""
+                                autofocus=""><input
+                                type="hidden" name="_csrf_" value="csrf65de3d4abfd79"> -->
+                        </form>
+                    </div>
+                </div><!-- login buttons -->
+                <div class="row mx-0 mt-4">
+                    <div class="col"><a
+                            class="btn btn-default btn-lg btn-rounded shadow btn-block form-buttom">registered
+                            account</a></div>
+                </div><!-- login buttons -->
+                <div class="row mx-0 text-center justify-content-center"><a
+                        href="./login.html" class="mt-4 d-block">login</a></div>
+            </div>
+        </div>
+    </div><!-- jquery, popper and bootstrap js -->
+    <script src="./registered account_files/jquery-3.3.1.min.js.download"></script>
+    <script src="./registered account_files/popper.min.js.download"></script>
+    <script src="./registered account_files/bootstrap.min.js.download"></script><!-- swiper js -->
+    <script src="./registered account_files/swiper-bundle.min.js.download"></script><!-- cookie js -->
+    <script src="./registered account_files/jquery.cookie.js.download"></script>
+    <script charset="utf-8" src="./registered account_files/dialog.min.js.download"></script>
+    <script charset="utf-8" src="./registered account_files/common.js.download"></script>
+    <script type="application/javascript">
+        // function isMobile (mobile) {  
+        //   return /^1\d+$/.test(mobile)
+        // }
+        $(function () {
+            var countdown = 180;
+            var flag = true;
+            var loading = null;
+
+            let inv = window.location.href.split("=")[1]
+            $("input[name=invite]").val(inv)
+
+            /*检查表单*/
+            function check() {
+
+
+                if (!check_phone()) return false;
+                /*if($("input[name=verify]").val()==''){
+                    $(document).toast( $.i18n.prop('string_register_verify')});
+                    return false;
+                }*/
+                $(".n1").on("click",()=>{
+                    $(".clsbtn").html("+968")
+                    $("input[name=pre]").val("+968")
+                })
+                $(".n2").on("click",()=>{
+                    $(".clsbtn").html("+965")
+                    $("input[name=pre]").val("+965")
+                })
+
+                if ($("input[name=pwd]").val() == '') {
+                    $(document).dialog({
+                        infoText: 'your password'
+                    });
+                    return false;
+                }
+                if ($("input[name=deposit_pwd]").val() == '' || $("input[name=deposit_pwd_re]").val() == '') {
+                    $(document).dialog({
+                        infoText: 'Please confirm the password'
+                    });
+                    return false;
+                }
+
+
+                if ($("input[name=deposit_pwd]").val() !== $("input[name=pwd]").val()) {
+                    $(document).dialog({
+                        infoText: 'two passwords are inconsistent'
+                    });
+                    return false;
+                }
+                return true;
+            }
+
+            /*Verifikasi nomor ponsel*/
+            function check_phone() {
+                if ($("input[name=user_name]").val() == '') {
+                    $(document).dialog({
+                        infoText: 'Please enter a user name'
+                    });
+                    return false;
+                }
+                //长度
+                if ($("input[name=tel]").val().length < 8) {
+                    $(document).dialog({
+                        infoText: 'Please enter the correct phone number'
+                    });
+                    return false;
+                }
+
+                var myreg = /^\d+$/;
+                //是否为整数
+                if (!myreg.test($("input[name=tel]").val())) {
+                    $(document).dialog({
+                        infoText: 'Please enter the correct phone number'
+                    });
+                    return false;
+                }
+
+                if ($("input[name=tel]").val() == '') {
+                    $(document).dialog({
+                        infoText: 'your mobile phone number'
+                    });
+                    return false;
+                }
+
+                return true;
+            }
+
+            /*验证码倒计时*/
+            function time_down(obj) {
+                if (countdown == 0) {
+                    flag = true;
+                    obj.text("Enviar");
+                    countdown = 180;
+                    return;
+                } else {
+                    flag = false;
+                    obj.text(countdown + "s");
+                    countdown--;
+                }
+                setTimeout(function () {
+                    time_down(obj)
+                }, 1000);
+            }
+
+            /*获取验证码*/
+            $(".get-code").on('click', function () {
+                if ($("input[name=tel]").val() == '') {
+                    $(document).dialog({
+                        infoText: 'your mobile phone number'
+                    });
+                    return false;
+                }
+                if ($("input[name=user_name]").val() == '') {
+                    $(document).dialog({
+                        infoText: 'Please enter a user name'
+                    });
+                    return false;
+                }
+            });
+
+
+            /*提交*/
+            $(".form-buttom").on('click', function () {
+                var ret = check();
+                console.log(ret);
+                if (ret) {
+                    $.ajax({
+                        url: "../serve/register.php",
+                        data: $(".form-signin").serialize(),
+                        type: 'POST',
+                        beforeSend: function () {
+                            loading = $(document).dialog({
+                                type: 'notice',
+                                infoIcon: '/static_new/img/loading.gif',
+                                infoText: 'loading...',
+                                autoClose: 0
+                            });
+                        },
+                        success: function (data) {
+                            data = JSON.parse(data)
+                            loading.close();
+                            if (data.code == 0) {
+                                $(document).dialog({ infoText: 'registered successfully' });
+                                setTimeout(function () {
+                                    //location.href = "./homepage.html"
+                                    location.replace("./homepage.html")
+                                }, 1500);
+                            } else {
+                                $(document).dialog({ infoText: data.info });
+                            }
+                        }
+                    });
+                }
+                return false;
+            });
+
+
+        })
+    </script>
+</body>
+
+</html>

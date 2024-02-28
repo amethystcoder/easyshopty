@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://www.easyshopmid12.xyz/index/order/index.html -->
+<html lang="en" class="deeppurple-theme" style="cursor: url(&quot;img/touch.png&quot;), move;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <title>order record</title><!-- Material design icons CSS -->
+    <link href="./order record_files/icon" rel="stylesheet"><!-- Roboto fonts CSS -->
+    <link href="./order record_files/css" rel="stylesheet"><!-- Bootstrap core CSS -->
+    <link href="./order record_files/bootstrap.min.css" rel="stylesheet"><!-- Swiper CSS -->
+    <link href="./order record_files/swiper-bundle.min.css" rel="stylesheet"><!-- Custom styles for this template -->
+    <link href="./order record_files/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./order record_files/public.css">
+    <link href="./order record_files/layer.css" type="text/css" rel="styleSheet" id="layermcss">
+    <style>
+        .van-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        .grabSuccess {
+            border-radius: .32rem;
+            margin: 1.373333rem auto 0;
+            position: relative
+        }
+
+        .grabSuccess .title {
+            height: 2.586667rem;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -ms-flex-align: center;
+            align-items: center;
+            position: relative
+        }
+
+        .grabSuccess .title:after,
+        .grabSuccess .title:before {
+            content: "";
+            width: .893333rem;
+            height: .386667rem;
+            background-size: 100%;
+            position: absolute;
+            top: 1.093333rem
+        }
+
+        .grabSuccess .records_tabs_box .records_tabs_box_top {
+            font-size: .32rem;
+            color: #9e9e9e;
+            font-weight: 400;
+            text-align: left;
+            font-family: PingFangSC-Regular, PingFang SC
+        }
+
+        .grabSuccess .records_tabs_box .records_tabs_box_img {
+            width: 1.733333rem;
+            height: auto;
+            position: absolute;
+            top: .266667rem;
+            right: .133333rem
+        }
+
+        .grabSuccess .records_tabs_box .records_tabs_box_des {
+            background: #f2f2f2;
+            border-radius: .133333rem;
+            margin: .266667rem 0;
+            display: -ms-flexbox;
+            display: flex;
+            overflow: hidden
+        }
+
+        .grabSuccess .records_tabs_box .records_tabs_box_des .tabs_box_des_img {
+            width: 4.8rem;
+            height: 2.4rem
+        }
+
+        .grabSuccess .records_tabs_box .records_tabs_box_des .tabs_box_des_img>img {
+            width: 4.8rem;
+            height: 2.4rem;
+            -o-object-fit: cover;
+            object-fit: cover
+        }
+
+        .grabSuccess .records_tabs_box .records_tabs_box_des .tabs_box_des_r {
+            text-align: left;
+            padding: .266667rem;
+            font-size: .266667rem
+        }
+
+        .grabSuccess .records_tabs_box .records_tabs_box_des .tabs_box_des_r .tabs_box_des_r_tit {
+            overflow: hidden;
+            font-size: .373333rem;
+            color: #424242;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            font-family: PingFangSC-Regular, PingFang SC
+        }
+
+        .grabSuccess .records_tabs_box .tabs_box_des_r_pic {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            margin-top: .4rem;
+            font-size: .373333rem;
+            color: #424242
+        }
+
+        .grabSuccess .records_tabs_box .gray {
+            color: #969696;
+            font-size: .373333rem
+        }
+
+        .grabSuccess .records_tabs_box .txt1 {
+            color: #ff9a2c;
+            font-size: .64rem !important
+        }
+
+        .grabSuccess .tabs_btn {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-pack: center;
+            justify-content: center
+        }
+
+        .payment-all {
+            position: fixed;
+            justify-content: space-between;
+            z-index: 20;
+            display: flex;
+            bottom: 100px;
+            width: 100%;
+            height: 60px;
+            left: 0;
+            transition: all ease 0.5s;
+            -webkit-transition: all ease 0.5s;
+            -moz-transition: all ease 0.5s;
+            -ms-transition: all ease 0.5s;
+            background: rgba(255, 255, 255, 0.80);
+            box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+            -ms-box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+            -webkit-backdrop-filter: saturate(125%) blur(10px);
+            -moz-backdrop-filter: saturate(125%) blur(10px);
+            -ms-backdrop-filter: saturate(125%) blur(10px);
+            backdrop-filter: saturate(125%) blur(10px);
+            line-height: 60px;
+        }
+
+
+        .payment-all>div {
+            padding: 0 20px;
+            display: table;
+        }
+
+        .payment-all>div>button {
+            vertical-align: middle;
+            display: table-cell;
+        }
+
+        .payment-time {
+            position: fixed;
+            justify-content: space-between;
+            z-index: 19;
+            display: flex;
+            bottom: 60px;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            left: 0;
+            transition: all ease 0.5s;
+            -webkit-transition: all ease 0.5s;
+            -moz-transition: all ease 0.5s;
+            -ms-transition: all ease 0.5s;
+            background: rgba(255, 255, 255, 0.80);
+            box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+            -ms-box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+            -webkit-backdrop-filter: saturate(125%) blur(10px);
+            -moz-backdrop-filter: saturate(125%) blur(10px);
+            -ms-backdrop-filter: saturate(125%) blur(10px);
+            backdrop-filter: saturate(125%) blur(10px);
+        }
+
+        .payment-time>div {
+            padding: 0 20px;
+            display: table;
+        }
+    </style>
+    <link href="./order record_files/layer.css" type="text/css" rel="styleSheet" id="layermcss">
+</head>
+
+<body>
+    <div class="wrapper homepage" style="padding-bottom: 130px;"><!-- header -->
+        <div class="header active" style="backdrop-filter:none">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <!--<button class="btn  btn-link text-dark"><i class="material-icons">menu</i><span class="new-notification"></span></button>-->
+                </div>
+                <div class="col text-center"><!--<img src="/red/logo-header.png" alt="" class="header-logo">--></div>
+                <div class="col-auto"><a href="https://www.easyshopmid12.xyz/index/my/msg"
+                        class="btn  btn-link text-dark position-relative"><i
+                            class="material-icons">notifications_none</i></a></div>
+            </div>
+        </div><!-- header ends -->
+        <div class="container mb-3"><!-- Swiper -->
+            <div class="swiper-container icon-slide swiper-container-horizontal swiper-container-ios swiper-container-initialized swiper-container-pointer-events"
+                style="height: auto">
+                <div class="swiper-wrapper" id="swiper-wrapper-2f725113e1192c48" aria-live="polite">
+                    <div class="swiper-slide swiper-slide-active" style="padding: 0" role="group" aria-label="1 / 4"><a
+                            class="btn btn-sm  btn-outline-default btn-rounded"
+                            href="https://www.easyshopmid12.xyz/index/order/index.html">all</a></div>
+                    <div class="swiper-slide swiper-slide-next" style="padding: 0" role="group" aria-label="2 / 4"><a
+                            class="btn btn-sm  btn-rounded ml-1"
+                            href="https://www.easyshopmid12.xyz/index/order/index.html?status=-1">pending</a></div>
+                    <div class="swiper-slide" style="padding: 0" role="group" aria-label="3 / 4"><a
+                            class="btn btn-sm  btn-rounded ml-1"
+                            href="https://www.easyshopmid12.xyz/index/order/index.html?status=1">completed</a></div>
+                    <div class="swiper-slide" style="padding: 0" role="group" aria-label="4 / 4"><a
+                            class="btn btn-sm  btn-rounded ml-1"
+                            href="https://www.easyshopmid12.xyz/index/order/index.html?status=5">freezing</a></div>
+                </div><!-- Add Pagination -->
+                <div class="swiper-pagination white-pagination text-left mb-3"></div><span class="swiper-notification"
+                    aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification"
+                    aria-live="assertive" aria-atomic="true"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-02-24 00:42:11</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">pending</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/d247258c5ca765707724ba4d52881afd" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">10pcs Soccer Disc Bucket Marker Fitness Training Flat
+                                Cone Dribbling Training Cone 19cm x 4.5cm x 0.5mm Triangle Cone</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX82.00</p>
+                            <p class="text-right text-mute">TRX0.10</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style=";"><button onclick="tijiao(&#39;UB2402240042114184&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:41:18</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/82762b669c3b224e049a81935c4fcad8" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">Frisolac AR 0-12 months(with extra thick column
+                                packaging)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX1008.00</p>
+                            <p class="text-right text-mute">TRX1.21</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131541187461&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:41:02</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/9742ef07d163193b6cdae24f45ec85d2" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">Kreati Blue Gel Pen 4 IN 1 0.7MM - 0518</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX1567.00</p>
+                            <p class="text-right text-mute">TRX1.88</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131541026437&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:40:43</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/4e0a11d8c4d7389b66e54bbb9d3d99ba" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">NGK SPARK PLUG MYVI KENARI KELISA KANCIL 850 VIVA
+                                850/1.0 BKR5E-11(3pcs)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX2187.00</p>
+                            <p class="text-right text-mute">TRX2.62</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131540435209&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:40:28</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/b07b4f3be4dcd31c7be6c0167fc11ae5" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">1 Meter FAJAR Cable 14/0.26mm 18 Awg AUTO CABLES KERETA
+                                MOTOR LORRY AUTOMOTIVE WIRE 100% COPPER</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX1064.00</p>
+                            <p class="text-right text-mute">TRX1.28</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131540283392&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:40:01</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/01ab798f3e507dba8d72f4fbac181e3d" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">CRM2008 5bar High pressure steam 0.24L Household mini
+                                coffee machine milk foaming portable coffee machine kitchen</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX1650.00</p>
+                            <p class="text-right text-mute">TRX1.98</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131540016321&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:39:43</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/0f5aa52b78183a8d87651ec663257973" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">Big Size mousepad (60/70/80/90cm*30cm*0.2cm) Gaming
+                                World Map Mouse Pad Locking Edge Mousepad For Game Laptop PC</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX2306.00</p>
+                            <p class="text-right text-mute">TRX2.77</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131539431932&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:39:28</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/8c9f47fa99513eb93e07fae1373e0143" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">Spring New Cartoon Baby Toddler Socks Non-slip Leather
+                                Bottom Baby Socks Cartoon Children Floor Socks 0-1-3 Years Old</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX973.00</p>
+                            <p class="text-right text-mute">TRX1.17</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131539285358&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:38:58</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/e64f4e9c138eb9cf777be2e2c40c5d1c" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">Kain Cotton comb 100% cotton twill (setengah meter,
+                                0.5m per unit) bidang 92" 235cm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX2132.00</p>
+                            <p class="text-right text-mute">TRX2.56</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131538587123&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:38:38</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/82762b669c3b224e049a81935c4fcad8" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">Frisolac AR 0-12 months(with extra thick column
+                                packaging)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX1223.00</p>
+                            <p class="text-right text-mute">TRX1.47</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131538389419&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:38:02</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/fba1abc527e05dde44a6f118b207cdc3" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">0-3 MONTHS NEWBORN HIPPIE BABY WEAR 100% COTTON</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX1124.00</p>
+                            <p class="text-right text-mute">TRX1.35</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131538022004&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:37:41</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/a88d2428bf2b78499fc1360d5c1d7b40" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">HDMI 90 Degree Male to HDMI Female Extension Extender
+                                Cable 15CM 0.15M</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX2146.00</p>
+                            <p class="text-right text-mute">TRX2.58</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131537412440&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:37:25</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/0dbb613e4797f65996877c3bd019df6b" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">Pilot Wingel Gel Pen Refill 0.38/0.5/0.7mm G1 - (1'pc)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX1941.00</p>
+                            <p class="text-right text-mute">TRX2.33</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131537254270&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:37:05</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/19914a342d3e2b745e55a161d65cf035" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">Deli Retractable Ball Point Pen Dry Fast 0.7mm [Per
+                                Pen] 6546</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX814.00</p>
+                            <p class="text-right text-mute">TRX0.98</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131537052897&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:36:50</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/045777e5d32bc05f773c3c4651f9f3c4" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">Shell Advance W 2T 0.5L Wangi 100% ORIGINAL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX1063.00</p>
+                            <p class="text-right text-mute">TRX1.28</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131536501499&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:36:31</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/def0ff49127b0c5d66e38b98dc477427" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">4K HDMI To USB3.0 Video Capture Card 1080p/60Hz 60fps
+                                Game Live Capture Card Recording Box with Microphone Record Live</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX1525.00</p>
+                            <p class="text-right text-mute">TRX1.83</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131536319764&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:36:17</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/ca39a750e91bc77bfbf29e870e95ea20" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">Clarinet Reed (Vandoren) Per piece, 2.0/2.5/3.0/3.5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX1716.00</p>
+                            <p class="text-right text-mute">TRX2.06</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131536171565&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:36:02</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/45cce07e69003b7237f3e01c8e71a3d7" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">0.5mm Magic Pen Erasable Pen office supplies Student
+                                Ball Pen school use Gel Pen</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX2202.00</p>
+                            <p class="text-right text-mute">TRX2.64</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131536024445&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:35:46</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/91abf6b877ef2a845b463b2fa7106f04" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">BARBIE MAX BLACK 16MM POWER 0-700 NATURAL BLACK KOREA
+                                CONTACT LENSES</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX1202.00</p>
+                            <p class="text-right text-mute">TRX1.44</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131535468059&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header bg-none">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small">2024-01-13 11:35:24</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="badge badge-warning">completed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body position-relative">
+                    <div class="media">
+                        <div class="icon icon-60 mr-3 rounded"><img
+                                src="./order record_files/3d1bc4c955ffc8fc08e36ee2ffa335c3" class="icon-60"
+                                alt="Generic placeholder image"></div>
+                        <div class="media-body">
+                            <p class="small text-secondary mb-1">Kreati Gel Ink Pen 0.5MM 6 IN 1- 0316</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <p class="gray">Total order:</p>
+                            <p class="gray">commission:</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right text-mute">TRX1767.00</p>
+                            <p class="text-right text-mute">TRX2.12</p>
+                        </div>
+                    </div>
+                    <div class="mt-2" style="display:none;"><button onclick="tijiao(&#39;UB2401131535246505&#39;)"
+                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                            order</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="payment-all">
+            <div>amount:&nbsp;&nbsp;TRX82</div>
+            <div><button class="btn btn-default shadow  btn-rounded btn-block btn-sm"
+                    onclick="tijiao([&quot;UB2402240042114184&quot;])">submit all orders</button></div>
+        </div>
+        <div class="payment-time">
+            <div>Payment countdown: <span id="freeze_etime">23 : 21 : 7</span></div>
+        </div>
+    </div><!-- footer-->
+    <div class="footer">
+        <div class="no-gutters">
+            <div class="col-auto mx-auto">
+                <div class="row no-gutters justify-content-center">
+                    <div class="col-auto"><a href="./homepage.html"
+                            class="btn btn-link-default active"><i
+                                class="material-icons">home</i><!--<p>homepage</p>--></a></div>
+                    <div class="col-auto"><a href="./order record.html"
+                            class="btn btn-link-default "><i
+                                class="material-icons">playlist_add_check</i><!--<p>Order</p>--></a></div>
+                    <div class="col-auto"><a href="./grab an order.html"
+                            class="btn btn-link-default "><i
+                                class="material-icons">swipe</i><!--<p>grab an order</p>--></a></div>
+                    <div class="col-auto"><a href="./personal information.html"
+                            class="btn btn-link-default "><i class="material-icons">person</i><!--<p>My</p>--></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- footer ends--><!--tj--><!-- Modal -->
+    <div class="modal fade" id="orderDetail" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content grabSuccess">
+                <div class="modal-header border-0">
+                    <h5>submit all orders</h5><button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body text-center pt-0" id="orderListInfo"></div>
+                <div class="modal-footer border-0 tabs_btn">
+                    <div class="tabs_btn1 btn btn-cancel btn-rounded mr-2 shadow">cancel</div>
+                    <div class="tabs_btn2 btn btn-default btn-rounded ml-2 shadow">submit order</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" aria-modal="true" id="add_link_popup">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content border-top border-bottom"
+                style="width:90%; margin: 0 auto; box-shadow:4px 4px 5px 3px #999;">
+                <div class="modal-header border-0 bg-template">
+                    <h5>Informações do Grupo WhatsApp / Telegram</h5>
+                </div>
+                <div class="modal-body text-center" style="max-height: 300px; overflow: scroll;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="form-group float-label active"><input type="text" class="form-control"
+                                        required="" name="to_name" autocomplete="off" value=""><label
+                                        class="form-control-label">Nome do grupo</label></div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-group float-label active"><input type="text" class="form-control"
+                                        required="" name="add_id" autocomplete="off" value=""><label
+                                        class="form-control-label">Link do grupo</label></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 text-center"><button
+                        class="btn btn-cancel btn-sm btn-rounded shadow mr-2 add_link_cancel">cancelar</button><button
+                        class="btn btn-default btn-sm btn-rounded shadow ml-2 add_link_save">Preservação</button></div>
+            </div>
+        </div>
+    </div><input name="" id="webcopyinput" type="text" style="top: -100px; position: absolute"
+        value=""><!-- jquery, popper and bootstrap js -->
+    <script src="./order record_files/jquery-3.3.1.min.js.download"></script>
+    <script src="./order record_files/popper.min.js.download"></script>
+    <script src="./order record_files/bootstrap.min.js.download"></script><!-- swiper js -->
+    <script src="./order record_files/swiper-bundle.min.js.download"></script><!-- cookie js -->
+    <script src="./order record_files/jquery.cookie.js.download"></script>
+    <script charset="utf-8" src="./order record_files/dialog.min.js.download"></script>
+    <link rel="stylesheet" href="./order record_files/layer(1).css">
+    <script src="./order record_files/layer.js.download"></script>
+    <script charset="utf-8" src="./order record_files/common.js.download"></script><!-- template custom js -->
+    <script src="./order record_files/main.js.download"></script><!-- page level script -->
+    <script>
+        function freezeTime(etime) {
+            var now = new Date();
+            var end = new Date(etime * 1000);
+            var result = Math.floor(end - now) / 1000;
+            if (result < 0) return;
+            var interval = setInterval(sub, 1000);
+            function sub() {
+                if (result > 1) {
+                    result = result - 1;
+                    var second = Math.floor(result % 60);
+                    var minite = Math.floor((result / 60) % 60);
+                    var hour = Math.floor((result / 60 / 60) % 60);
+                    hour = hour < 1 ? 0 : hour;
+
+                    var day = Math.floor((result / 24 / 60 / 60) % 60);
+                    if (day < 1) {
+                        $("#freeze_etime").html(hour + " : " + minite + " : " + second);
+                    } else {
+                        hour = hour - 36;
+                        $("#freeze_etime").html(day + "d " + hour + " : " + minite + " : " + second);
+                    }
+
+                } else {
+                    window.clearInterval(interval);
+                    window.location.reload();
+                }
+            }
+        }
+        freezeTime(parseInt("1708807331"));
+        $(function () {
+            $('.footer').find('.btn-link-default').eq(1).addClass("active");
+        });
+        var oid, add_id = '';
+        var isShare = ("0" == '0');
+        $(function () {
+            $('#load').hide();
+        });
+        $('.pagination li').click(function () {
+            var class2 = $(this).attr('class');
+            if (class2 == 'active' || class2 == 'disabled') {
+
+            } else {
+                var url = $(this).find('a').attr('href');
+                window.location.href = url;
+            }
+        });
+        $(function () {
+            $('.pagination-container select').attr('disabled', 'disabled');
+        })
+
+        $('.tabs_btn1').click(function () {
+            if ("0" == 1) {
+                $(document).dialog({
+                    type: 'confirm',
+                    titleText: "Confirme cancelamento?",
+                    buttonTextConfirm: "confirme",
+                    buttonTextCancel: "cancelar",
+                    autoClose: 0,
+                    onClickConfirmBtn: function () {
+                        $.ajax({
+                            url: "/index/order/do_order",
+                            type: "POST",
+                            dataType: "JSON",
+                            data: {
+                                oid: oid,
+                                status: 2
+                            },
+                            success: function (res) {
+                                layer.closeAll();
+                                if (res.code == 0) {
+                                    $(document).dialog({
+                                        infoText: res.info,
+                                        autoClose: 2000,
+                                        onClosed: function () {
+                                            location.reload()
+                                        }
+                                    });
+                                } else {
+                                    $(document).dialog({
+                                        type: 'alert',
+                                        titleText: res.info,
+                                        buttonTextConfirm: "OK",
+                                        autoClose: 0,
+                                        onClosed: function () {
+                                            if (res.url) window.location.href = res.url;
+                                        }
+                                    });
+                                }
+                                sumbit = true;
+                            },
+                            error: function (err) {
+                                console.log(err);
+                                sumbit = true;
+                            }
+                        });
+                    },
+                    onClickCancelBtn: function () {
+
+                    }
+                });
+            } else {
+                $('#orderDetail').modal('hide');
+            }
+        });
+
+        $('.close').click(function () {
+            $('#orderDetail').modal('hide');
+        });
+        $(function () {
+            $('.add_link').click(function () {
+                $('#add_link_popup').modal('show');
+            });
+            $('.add_link_save').click(function () {
+                var to_name = $('input[name=to_name]').val();
+                var add_id = $('input[name=add_id]').val();
+                if (to_name == '' || add_id == '') {
+                    $(document).dialog({
+                        infoText: 'Não pode estar vazio!'
+                    });
+                    return;
+                }
+                var option = '<option value="' + add_id + '" to_name="' + to_name + '" selected>[' + to_name + ']' + add_id + '</option>';
+                $('#publish_to').prepend(option);
+                $('#add_link_popup').modal('hide');
+            });
+            $('.add_link_cancel').click(function () {
+                $('#add_link_popup').modal('hide');
+            });
+
+            $('.copy_link').click(function () {
+                isShare = true;
+                var link = $(this).parent().parent().siblings('span').text();
+                copy_txt(link);
+            });
+            $('.send_with_whatsapp').click(function () {
+                isShare = true;
+                var link = $(this).parent().parent().siblings('span').text();
+                if ($(this).attr('id')) {
+                    var group = $('select[name=publish_to]').val();
+                } else {
+                    var group = $(this).parent().attr('group');
+                }
+                var text = $('#share_text').val().replace("{link}", link).replace("{group}", group);
+                window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(text));
+            });
+
+            $('.send_with_telegram').click(function () {
+                isShare = true;
+                var link = $(this).parent().parent().siblings('span').text();
+                if ($(this).attr('id')) {
+                    var group = $('select[name=publish_to]').val();
+                } else {
+                    var group = $(this).parent().attr('group');
+                }
+                var text = $('#share_text').val().replace("{link}", link).replace("{group}", group);
+                window.open('https://telegram.me/share/url?url=' + encodeURI(link) + '&text=' + encodeURI(text));
+            });
+
+            $('.send_with_tweet').click(function () {
+                isShare = true;
+                var link = $(this).parent().parent().siblings('span').text();
+                if ($(this).attr('id')) {
+                    var group = $('select[name=publish_to]').val();
+                } else {
+                    var group = $(this).parent().attr('group');
+                }
+                var text = $('#share_text').val().replace("{link}", link).replace("{group}", group);
+                window.open('https://twitter.com/intent/tweet?via=&text=' + encodeURI(text) + "&url=" + encodeURI(link) + "&related=" + encodeURIComponent('Easy shoppping: ' + text));
+            });
+        })
+
+        function tijiao(id) {
+            oid = id;
+            $('#orderDetail').modal('show');
+            $.ajax({
+                url: "/index/order/order_info_list",
+                type: "POST",
+                dataType: "JSON",
+                data: { id: oid },
+                success: function (res) {
+                    var data = res.data;
+                    if (res.code == 0) {
+                        var html = '';
+                        for (var i = 0; i < data.length; i++) {
+                            html += '<div class="records_tabs_box">\n' +
+                                '<div class="records_tabs_box_top">time to rush an order:&nbsp;\n' +
+                                '    <span>' + data[i].addtime + '</span>\n' +
+                                '    <br>order number&nbsp;<span>' + data[i].oid + '</span>\n' +
+                                '</div>\n' +
+                                '<div class="records_tabs_box_des">\n' +
+                                '    <div class="tabs_box_des_img">\n' +
+                                '        <img src="' + data[i].goods_pic + '"></div>\n' +
+                                '    <div class="tabs_box_des_r">\n' +
+                                '        <p class="tabs_box_des_r_tit" style="max-height: 95px;">' +
+                                data[i].goods_name + '</p>\n' +
+                                '        <div class="tabs_box_des_r_pic" style="display: none"><p>' +
+                                data[i].goods_price + '</p><p> x ' + data[i].goods_count + '</p></div>\n' +
+                                '    </div>\n' +
+                                '</div>\n' +
+                                '<div class="row mt-3">\n' +
+                                '    <div class="col text-left">Total order</div>\n' +
+                                '    <div class="col-auto text-right text-mute">' + data[i].num + '</div>\n' +
+                                '</div>\n' +
+                                '<div class="row mt-3">\n' +
+                                '    <div class="col text-left">commission</div>\n' +
+                                '    <div class="col-auto text-right txt1"><span id="yongjin">' +
+                                data[i].commission + '</span></div>\n' +
+                                '</div>\n' +
+                                '</div>'
+                        }
+                        $('#orderListInfo').html(html);
+                    }
+                },
+                error: function (err) {
+                    console.log(err)
+                }
+            })
+        }
+
+        var zhujiTime = "1";
+        var shopTime = "2";
+
+        zhujiTime = zhujiTime * 1000;
+        shopTime = shopTime * 1000;
+
+        //提交
+        $('.tabs_btn2').click(function () {
+            //--------------------------------
+            if (!isShare) {
+                $(document).dialog({
+                    infoText: "submit all orders",
+                    autoClose: 2000
+                });
+                return;
+            }
+            var publish_to = $(this).parent().siblings().find('select[name=publish_to]');
+            var to_name = publish_to.find('option:selected').attr('to_name');
+            var aid = publish_to.find('option:selected').attr('aid');
+            var add_id = publish_to.val();
+            var i = 0;
+            layer.open({
+                type: 2,
+                content: "match merchant information",
+                time: zhujiTime,
+                shadeClose: false,
+            });
+            var timer = setInterval(function () {
+                i++;
+                if (i == 1) {
+                    layer.open({
+                        type: 2,
+                        content: "generate product order",
+                        time: zhujiTime,
+                        shadeClose: false,
+                    })
+                } else if (i == 2) {
+                    layer.open({
+                        type: 2,
+                        content: "order submission completed",
+                        time: shopTime,
+                        shadeClose: false,
+                    })
+                    var ajaxT = setTimeout(function () {
+                        $.ajax({
+                            url: "/index/order/do_order",
+                            type: "POST",
+                            dataType: "JSON",
+                            data: {
+                                oid: oid,
+                                add_id: add_id,
+                                to_name: to_name,
+                                aid: aid
+                            },
+                            success: function (res) {
+                                layer.closeAll();
+                                console.log(res)
+                                if (res.code == 0) {
+                                    $(document).dialog({
+                                        infoText: "order processing completed",
+                                        autoClose: 2000
+                                    });
+                                    clearInterval(timer);
+                                    var linkTime = setTimeout(function () {
+                                        location.reload()
+                                    },
+                                        1800);
+                                } else {
+                                    $(document).dialog({
+                                        type: 'alert',
+                                        titleText: res.info,
+                                        buttonTextConfirm: "OK",
+                                        autoClose: 0,
+                                        onClosed: function () {
+                                            if (res.url) window.location.href = res.url;
+                                        }
+                                    });
+                                }
+                                sumbit = true;
+                            },
+                            error: function (err) {
+                                layer.closeAll();
+                                console.log(err);
+                                sumbit = true;
+                            }
+                        })
+                    },
+                        shopTime)
+                }
+            },
+                zhujiTime)
+
+        });
+
+        function copy_txt(xx) {
+            //var text = document.createElement('input');
+            var text = document.getElementById("webcopyinput");
+            text.id = 'webcopyinput';
+            text.value = '' + xx + '';
+            //text.style.position = 'fixed';
+            // text.style.top = '- 10000px';
+            // document.body.appendChild(text);
+            text.focus(); //给input输入框聚焦
+            text.setSelectionRange(0, text.value.length); //设置input框选中的范围
+            copied = document.execCommand('Copy'); //执行复制操作
+            text.blur();
+            copied = false;
+            document.body.scrollTop = 0;
+            $(document).dialog({
+                infoText: 'Copie o sucesso'
+            });
+        }</script>
+</body>
+
+</html>

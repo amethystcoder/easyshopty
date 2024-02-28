@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://www.easyshopmid12.xyz/index/my/invite -->
+<html lang="en" class="deeppurple-theme">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+  <meta name="description" content="">
+  <title>Convite</title><!-- Material design icons CSS -->
+  <link href="./Convite_files/icon" rel="stylesheet"><!-- Roboto fonts CSS -->
+  <link href="./Convite_files/css" rel="stylesheet"><!-- Bootstrap core CSS -->
+  <link href="./Convite_files/bootstrap.min.css" rel="stylesheet"><!-- Swiper CSS -->
+  <link href="./Convite_files/swiper-bundle.min.css" rel="stylesheet"><!-- Custom styles for this template -->
+  <link href="./Convite_files/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="./Convite_files/public.css">
+  <style id="dialog-body-no-scroll">
+    .body-no-scroll {
+      position: absolute;
+      overflow: hidden;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body><a href="javascript:void(0)" class="closesidemenu"><i class="material-icons icons-raised bg-dark ">close</i></a>
+  <div class="wrapper invite"><!-- header -->
+    <div class="header active" style="backdrop-filter:none">
+      <div class="row no-gutters">
+        <div class="col-auto"><a href="javascript:history.go(-1)" class="btn btn-link text-white"><i
+              class="material-icons">chevron_left</i></a></div>
+        <div class="col text-center"><button class="btn w-100 text-white"></button></div>
+        <div class="col-auto"><a href="https://www.easyshopmid12.xyz/index/my/msg"
+            class="btn  btn-link text-white position-relative"><i class="material-icons">notifications_none</i></a>
+        </div>
+      </div>
+    </div><!-- header ends -->
+    <div class="container bg-template" style="min-height: 250px">
+      <div class="row">
+        <div class="col text-center"><img src="./Convite_files/banner.6e3d838.png"
+            style="height: 200px; width: 80%; opacity: 0.1"></div>
+      </div>
+      <div class="row top-150">
+        <div class="col text-center text-white">
+          <h3>invite friends to get commission</h3>
+        </div>
+      </div>
+    </div>
+    <div class="container top-30">
+      <div class="row text-center">
+        <div class="col-12 col-md-3">
+          <div class="card shadow border-0 mb-3">
+            <!--              <div class="card-body" style="max-height: 260px; overflow-y: scroll">-->
+            <div class="card-body">
+              <div class="avatar avatar-100 no-shadow border-0">
+                <div class="overlay bg-template"></div><i
+                  class="material-icons vm md-32 text-template">monetization_on</i><i
+                  class="material-icons vm md-34 text-template">monetization_on</i><i
+                  class="material-icons vm md-36 text-template">monetization_on</i>
+              </div>
+              <!--<p class="mt-3 mb-0 font-weight-normal text-dark text-left">join my team every half hour every day . Winning 10,000 a month is just the beginning!Every invitation is the seed of opportunity, the ladder of wealth and freedom!Unlimited sharing, big kickback!Come on, the first floor is still 10 %, the second floor is still 3 %, and the third floor is still 1 %.</p></div>--><!--<div class="mt-3 mb-0 font-weight-normal text-dark text-left"><p>Every invitation is a seed of opportunity, a springboard to wealth and freedom! Unlimited sharing of big discounts! Come on, the first level is still 10%, and the second level is still 3%.</p></div>-->
+              <div class="mt-3 mb-0 font-weight-normal text-dark text-left">Each invitation is a seed of opportunity, a
+                springboard to wealth and freedom! Unlimited exchange big discounts! Come on, the first level is another
+                10% and the second level is 3%.</div>
+            </div>
+            <div class="card-footer bg-none">
+              <p><span>extension code</span><b class="l-link ml-2 btn-link" onclick="copy_code()"></b></p>
+              <input name="" id="webcopyinput" type="text" style="left: -1000px; position: absolute" value=""><button
+                onclick="copy_link()"
+                class="btn btn-default shadow btn-rounded btn-block btn-lg"><i
+                  class="material-icons text-mute">insert_link</i><span>copy invitation link</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- jquery, popper and bootstrap js -->
+  <script src="./Convite_files/jquery-3.3.1.min.js.download"></script>
+  <script src="./Convite_files/popper.min.js.download"></script>
+  <script src="./Convite_files/bootstrap.min.js.download"></script><!-- swiper js -->
+  <script src="./Convite_files/swiper-bundle.min.js.download"></script><!-- cookie js -->
+  <script src="./Convite_files/jquery.cookie.js.download"></script>
+  <script charset="utf-8" src="./Convite_files/dialog.min.js.download"></script>
+  <script charset="utf-8" src="./Convite_files/common.js.download"></script><!-- template custom js -->
+  <script src="./Convite_files/main.js.download"></script><!-- page level script -->
+  <script>
+
+    let link = ""
+    let code = ""
+    $(function () { 
+      $.ajax({
+        url: "../serve/get_user_data.php",
+        type: 'GET',
+        success: function (data) {
+            data = JSON.parse(data)
+            if(data && data.code == 0){
+                link = window.location.origin+`/${window.location.origin.includes("localhost")? "easyshopmid/" : ""}index/register.html?invite=${data.referral_code}`
+                code = data.referral_code
+                $(".l-link").html(code)
+            }
+        },
+    });
+     });
+    function copy_link() {
+      //var text = document.createElement('input');
+      var text = document.getElementById("webcopyinput");
+      text.id = 'webcopyinput';
+      text.value = '' + link + '';
+      //text.style.position = 'fixed';
+      // text.style.top = '- 10000px';
+      // document.body.appendChild(text);
+      text.focus(); //给input输入框聚焦
+      text.setSelectionRange(0, text.value.length); //设置input框选中的范围
+      copied = document.execCommand('Copy'); //执行复制操作
+      text.blur();
+      copied = false;
+      document.body.scrollTop = 0;
+      $(document).dialog({
+        infoText: 'copy complete'
+      });
+    }
+
+    function copy_code() {
+      //var text = document.createElement('input');
+      var text = document.getElementById("webcopyinput");
+      text.id = 'webcopyinput';
+      text.value = '' + code + '';
+      //text.style.position = 'fixed';
+      // text.style.top = '- 10000px';
+      // document.body.appendChild(text);
+      text.focus(); //给input输入框聚焦
+      text.setSelectionRange(0, text.value.length); //设置input框选中的范围
+      copied = document.execCommand('Copy'); //执行复制操作
+      text.blur();
+      copied = false;
+      document.body.scrollTop = 0;
+      $(document).dialog({
+        infoText: 'copy complete'
+      });
+    }
+  
+  </script>
+</body>
+
+</html>
