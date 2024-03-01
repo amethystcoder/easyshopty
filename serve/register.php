@@ -44,7 +44,8 @@
                         "user_id" => base64_encode(time()),
                         "balance" => 0,
                         "referral_code" => create_invite_code(),
-                        "user_status" => "VIP 1"
+                        "user_status" => "VIP 1",
+                        "link_added_from" => empty($referral_link) ? "" : $referral_link
                     );
                     $users[count($users)] = $new_user;
                     $saved = file_put_contents("users.json",json_encode($users));
