@@ -5,7 +5,7 @@
                         "V","B","N","M","1","2","3","4","5","6","7","8","9"];
         $result = "";
         for ($i=0; $i < 7; $i++) { 
-            $result .= $char_list[(time() * rand(111111,999999)) % (count($char_list) - 1)];
+            $result .= $char_list[(time() * random_int(1111,9999)) % (count($char_list) - 1)];
         }
         return $result;
     }
