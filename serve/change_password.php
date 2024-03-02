@@ -25,7 +25,7 @@ else{
 echo json_encode(array("code" => 3,"data"=> false, "message" => "session doesn't exist, please login to change your password"));
 }
 }
-catch(){
+catch(\Throwable $th){
 echo json_encode(array("code" => 1,"data"=> false, "message" => "an error occurred changing your password"));
 }
 ?>

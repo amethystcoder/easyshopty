@@ -11,7 +11,7 @@ else{
 echo json_encode(array("code"=> 1, "data"=>[]));
 }
 }
-catch(Throwable $th){
+catch(\Throwable $th){
 echo json_encode(array("code"=> 1, "data"=>[]));
 }
 

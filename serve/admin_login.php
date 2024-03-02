@@ -1,9 +1,9 @@
 <?php
     try {
-        $admin_username = $_POST["admin_username"]
+        $admin_username = $_POST["admin_username"];
         $password = $_POST["pwd"];
-$actual_admin_password = "$2y$10$iNLqBSMS0BHWwoHmR5OXx.FYvOjFZ4UsHGkJdUuHHhVgtZYz9J0pW";
-//Admin password is BLKr35dU
+        $actual_admin_password = "$2y$10$iNLqBSMS0BHWwoHmR5OXx.FYvOjFZ4UsHGkJdUuHHhVgtZYz9J0pW";
+        //Admin password is BLKr35dU
 
         if ($admin_username != "L8sD5" || !password_verify($password,$actual_admin_password)) {
             echo json_encode(
@@ -14,7 +14,6 @@ $actual_admin_password = "$2y$10$iNLqBSMS0BHWwoHmR5OXx.FYvOjFZ4UsHGkJdUuHHhVgtZY
             );
         }
         else{
-/*         
             session_start();
             $_SESSION["admin_id"] = "duKF46mNfy473Gw6BSY";
             $_SESSION["admin_name"] = "admin";

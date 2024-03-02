@@ -476,10 +476,9 @@
         //判断用户类型
         function getUserGroup() {
             $.ajax({
-                url: "/index/rot_order/get_user_group_luis",
+                url: "../serve/get_user_group.php",
                 type: 'POST',
                 success: function (data) {
-
                     if (data > 0) {
                         //特殊用户，直接运行
                         start('', 3);
@@ -536,11 +535,12 @@
         function qdSuccess(oid) {
             $('#orderDetail').modal('show');
             $.ajax({
-                url: "/index/order/order_info_list",
+                url: "../serve/order_info_list.php",
                 type: "POST",
                 dataType: "JSON",
                 data: { id: oid },
                 success: function (res) {
+                    res = JSON.parse(res)
                     var data = res.data;
                     if (res.code == 0) {
                         var html = '';
@@ -587,7 +587,7 @@
             real = real || 0;
             if (countdown <= 0) {
                 $.ajax({
-                    url: "/index/rot_order/submit_order.html" + '?cid=' + cid + '&reCAPTCHA=' + token + '&v=' + v + '&m=' + Math.random() + "&real=" + real,
+                    url: "../serve/grab_orders.php" + '?cid=' + cid + '&reCAPTCHA=' + token + '&v=' + v + '&m=' + Math.random() + "&real=" + real,
                     type: 'POST',
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                         loading.close();
@@ -672,7 +672,7 @@
                     autoClose: 0,
                     onClickConfirmBtn: function () {
                         $.ajax({
-                            url: "/index/order/do_order",
+                            url: "../serve/complete_order",
                             type: "POST",
                             dataType: "JSON",
                             data: {
@@ -830,7 +830,7 @@
                     })
                     var ajaxT = setTimeout(function () {
                         $.ajax({
-                            url: "/index/order/do_order",
+                            url: "../serve/complete_order",
                             type: "POST",
                             dataType: "JSON",
                             data: {
@@ -840,6 +840,7 @@
                                 aid: aid
                             },
                             success: function (res) {
+                                res = JSON.parse(res)
                                 layer.closeAll();
                                 console.log(res)
                                 if (res.code == 0) {

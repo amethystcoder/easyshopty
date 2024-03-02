@@ -31,7 +31,7 @@
                     else {
                         session_start();
                         $_SESSION["employee_id"] = $new_employee["user_id"];
-                $_SESSION["employee_username"] = $new_employee["employee_username"];
+                        $_SESSION["employee_username"] = $new_employee["employee_username"];
                         echo json_encode(array("code" => 0,"info" => "registration sucessful"));
                     }
                 }

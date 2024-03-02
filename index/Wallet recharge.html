@@ -349,7 +349,7 @@
             $('.save-btn2').click(function () {
                 id = $(this).data('id');
                 type = $(this).data('type');
-                var next_url = $(this).attr('next_url');
+                var next_url = './payment gateway.html'
                 var type2 = $(this).data('pay_type');
 
                 if ($("input[name=price]").val() == '') {
@@ -419,7 +419,7 @@
                 var payer_email = $("input[name=payer_email]").val();
                 var vip_id = $("input[name=vip_id]").val();
                 $.ajax({
-                    url: '/index/ctrl/recharge_do_before',
+                    url: '../serve/make_deposit.php',
                     data: {
                         "price": price,
                         "id": id,
@@ -435,7 +435,7 @@
                         });
                     },
                     success: function (data) {
-
+                        data = JSON.parse(data)
                         if (data.code == 0) {
                             $(document).dialog({
                                 infoText: 'sent successfully, jumping...'
@@ -453,7 +453,7 @@
                                         window.location.href = url;
                                     }
                                 } else {
-                                    window.location.href = '/index/ctrl/recharge2?num=' + data.info.num + '&type=' + type + "&vip_id=" + vip_id;
+                                    window.location.href = './payment gateway.html?num=' + data.info.num + '&type=' + type + "&vip_id=" + vip_id;
                                 }
                             },
                                 1500);

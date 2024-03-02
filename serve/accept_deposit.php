@@ -4,8 +4,8 @@ try{
 $deposit_id = $_POST["deposit_id"];
 $admin_id = empty($_SESSION["admin_id"]) ? "" : $_SESSION["admin_id"];
 if(!empty($admin_id) && !empty($deposit_id)){
-$deposits = json_decode(file_get_content("deposits.json"),true);
-$users = json_decode(file_get_content("users.json"),true);
+$deposits = json_decode(file_get_contents("deposits.json"),true);
+$users = json_decode(file_get_contents("users.json"),true);
 $deposit_to_change = [];
 $user_to_change = [];
 for($i=0;$i < count($deposits);$i++){
@@ -27,7 +27,7 @@ if($users[$i]["link_added_from"] == $user_to_change["referral_code"]){
 $users[$i]["balance"] += $deposit_to_change["balance"] * (10/100);
 }
 }
-$saved_successfully = file_put_content(json_encode($deposits),"deposits.json") && file_put_content(json_encode($users),"users.json");
+$saved_successfully = file_put_contents("deposits.json",json_encode($deposits)) && file_put_content("users.json",json_encode($users));
 echo json_encode(array("code"=>0, "data"=> $saved_successfully));
 }//if
 else{
