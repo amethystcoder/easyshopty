@@ -1,5 +1,11 @@
 <?php
-
+session_start();
+try {
+    //code...
+    $order_id = $_POST["id"];
+} catch (\Throwable $th) {
+    //throw $th;
+}
 #how it looks in frontend
 /* 
 success: function (res) {

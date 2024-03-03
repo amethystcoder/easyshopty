@@ -211,7 +211,7 @@
             function submit_deposit() {
                 var loading = null;
                 $.ajax({
-                    url: '/index/ctrl/do_deposit',
+                    url: '../serve/withdraw.php',
                     data: $("#main-form").serialize(),
                     type: 'POST',
                     beforeSend: function () {
@@ -237,7 +237,7 @@
                             if (data.code == -1) {
                                 $(document).dialog({ infoText: data.info, autoClose: 3000 });
                                 setTimeout(function () {
-                                    window.location.href = '/index/ctrl/recharge';
+                                    window.location.href = './homepage.html';
                                 }, 3000);
                             } else {
                                 $(document).dialog({ infoText: data.info });

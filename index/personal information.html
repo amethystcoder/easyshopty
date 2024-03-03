@@ -39,10 +39,10 @@
                                     onerror="this.src=&#39;/public/img/head.png&#39;" alt=""></figure>
                         </div>
                         <div class="col-auto pl-0 align-self-center">
-                            <h5 class="mb-1">9971402480&nbsp;
-                                <span class="text-mute small">VIP1</span>
+                            <h5 class="tel-code mb-1">9971402480&nbsp;
+                                <span class="status-type text-mute small">VIP1</span>
                             </h5>
-                            <p style="line-height: 20px"><span class="text-mute small">extension code&nbsp;
+                            <p style="line-height: 20px"><span class="ref-code text-mute small">extension code&nbsp;
                                     <b>SEJB37</b></span><a href="https://www.easyshopmid12.xyz/index/my/invite"
                                     style="display: inline-block; margin-left: 10px"><i
                                         class="material-icons text-template"
@@ -57,7 +57,7 @@
                 <div class="card-body border-bottom">
                     <div class="row">
                         <div class="col">
-                            <h3 class="mb-0 font-weight-normal">TRX100.09</h3>
+                            <h3 class="user-balance mb-0 font-weight-normal">TRX100.09</h3>
                             <p class="text-mute">my balance</p>
                         </div>
                         <div class="col-auto"><button class="btn btn-default btn-rounded-54 shadow"
@@ -68,7 +68,7 @@
                 <div class="card-footer bg-none">
                     <div class="row">
                         <div class="col text-center">
-                            <p><span class="text-success">TRX100.09</span><br><small class="text-mute">Available
+                            <p><span class="user-balance text-success">TRX100.09</span><br><small class="text-mute">Available
                                     balance</small></p>
                         </div>
                         <div class="col text-center border-left-dotted">
@@ -296,6 +296,25 @@
     <script>
         var msg = '';
         $(function () {
+            $.ajax({
+                url: "../serve/get_user_data.php",
+                type: 'GET',
+                success: function (data) {
+                    data = JSON.parse(data)
+                    if(data && data.code == 0){
+                        $(".user-balance").html("TRX"+data.balance)
+                        $(".ref-code").html(data.referral_code)
+                        $(".tel-code").html(data.tel)
+                        $(".status-type").html(data.user_status)
+                    }
+                    else{
+                        $(".user-balance").html("TRX"+0)
+                        $(".ref-code").html("")
+                        $(".tel-code").html("Not logged in")
+                        $(".status-type").html("login to view your info")
+                    }
+                },
+            });
             if (msg.length > 1) {
                 $(document).dialog({
                     type: 'alert',

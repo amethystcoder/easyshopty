@@ -278,7 +278,7 @@
                     if (check()) {
                         var loading = null;
                         $.ajax({
-                            url: '/index/my/bind_bank',
+                            url: '../serve/set_wallet_info.php',
                             data: $("#login-form").serialize(),
                             type: 'POST',
                             beforeSend: function () {
@@ -290,17 +290,18 @@
                                 });
                             },
                             success: function (data) {
+                                data = JSON.parse(data)
                                 loading.close();
                                 if (data.code == 0) {
                                     $(document).dialog({
-                                        infoText: data.info,
+                                        infoText: data.message,
                                         onClosed: function () {
-                                            window.location.href = "/index/my/index.html";
+                                            window.location.href = "./homepage.html";
                                         }
                                     });
                                 } else {
                                     $(document).dialog({
-                                        infoText: data.info
+                                        infoText: data.message
                                     });
                                 }
                             }

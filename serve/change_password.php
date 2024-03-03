@@ -4,8 +4,8 @@
 session_start();
 try{
 $user_id = empty($_SESSION["user_id"]) ? "" : $SESSION["user_id"];
-$new_password = $_POST["new_password"];
-$confirm_password = $_POST["confirm_password"];
+$new_password = $_POST["new_pwd"];
+$confirm_password = $_POST["password_confirm"];
 if(!empty($user_id)){
 $users = json_decode(file_get_contents("users.json"),true);
 for($i = 0;$i < count($users); $i++){

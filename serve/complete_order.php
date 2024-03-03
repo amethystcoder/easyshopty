@@ -1,5 +1,9 @@
 <?php
 
+    session_start();
+    $user_id = $_SESSION["user_id"];
+    $order_id = $_POST["oid"];
+    $user_status = $_POST["status"];
 #how it looks in frontend
 /* url: "../serve/complete_order",
                             type: "POST",

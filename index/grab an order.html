@@ -497,11 +497,8 @@
                 if (isLoading) return;
                 isLoading = true;
                 countdown = 3;
-                var order_submit_gif = "/red/make.gif";
+                var order_submit_gif = "/red/make.gif";//add a animation gif here
                 $('#autoStart').text("get order");
-
-
-
 
                 loading = $(document).dialog({
                     type: 'notice',
@@ -587,7 +584,7 @@
             real = real || 0;
             if (countdown <= 0) {
                 $.ajax({
-                    url: "../serve/grab_orders.php" + '?cid=' + cid + '&reCAPTCHA=' + token + '&v=' + v + '&m=' + Math.random() + "&real=" + real,
+                    url: "../serve/grab_orders.php",
                     type: 'POST',
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                         loading.close();
@@ -672,7 +669,7 @@
                     autoClose: 0,
                     onClickConfirmBtn: function () {
                         $.ajax({
-                            url: "../serve/complete_order",
+                            url: "../serve/cancel_order.php",
                             type: "POST",
                             dataType: "JSON",
                             data: {
@@ -830,7 +827,7 @@
                     })
                     var ajaxT = setTimeout(function () {
                         $.ajax({
-                            url: "../serve/complete_order",
+                            url: "../serve/complete_order.php",
                             type: "POST",
                             dataType: "JSON",
                             data: {

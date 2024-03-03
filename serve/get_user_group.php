@@ -1,14 +1,17 @@
 <?php
 
-#response is a number
-/* 
-i.e 
-if (data > 0) {
-                        //特殊用户，直接运行
-                        start('', 3);
-                    } else {
-                        //普通用户，延迟执行
-                        luisSetSleep();
-                    }
-*/
+$user_status = $_SESSION["user_status"];
+
+if($user_status == "VIP 1"){
+    echo 1;
+}
+elseif ($user_status == "VIP 2") {
+    echo 2;
+}
+elseif ($user_status == "VIP 3") {
+    echo 3;
+}
+else {
+    echo 0;
+}
 ?>
