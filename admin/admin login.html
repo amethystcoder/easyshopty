@@ -11,15 +11,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=0.4">
-    <link rel="shortcut icon" href="https://www.easyshopmid12.xyz/upload/4d25aa439cf12b75/850898739b67f607.png">
-    <link rel="stylesheet" href="./系统登录 · Easy shoppping_files/fonts.css">
-    <link rel="stylesheet" href="./系统登录 · Easy shoppping_files/layui.css">
-    <link rel="stylesheet" href="./系统登录 · Easy shoppping_files/console.css">
+    <link rel="shortcut icon" href="../index/login_files/logo.png">
+    <link rel="stylesheet" href="./Easy shoppping_files/fonts.css">
+    <link rel="stylesheet" href="./Easy shoppping_files/layui.css">
+    <link rel="stylesheet" href="./Easy shoppping_files/console.css">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <script>if (location.href.indexOf('#') > -1) location.replace(location.href.split('#')[0])</script>
-    <link rel="stylesheet" href="./系统登录 · Easy shoppping_files/login.css">
+    <link rel="stylesheet" href="./Easy shoppping_files/login.css">
     <script>window.ROOT_URL = '';</script>
-    <script src="./系统登录 · Easy shoppping_files/pace.min.js.download"></script>
     <style>
         .layui-badge {
             border-radius: 50%;
@@ -30,11 +29,9 @@
             height: 11px !important;
         }
     </style>
-    <link id="layuicss-laydate" rel="stylesheet" href="./系统登录 · Easy shoppping_files/laydate.css" media="all">
-    <link id="layuicss-layer" rel="stylesheet" href="./系统登录 · Easy shoppping_files/layer.css" media="all">
-    <link id="layuicss-skincodecss" rel="stylesheet" href="./系统登录 · Easy shoppping_files/code.css" media="all">
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="md5"
-        src="./系统登录 · Easy shoppping_files/md5.min.js.download"></script>
+    <link id="layuicss-laydate" rel="stylesheet" href="./Easy shoppping_files/laydate.css" media="all">
+    <link id="layuicss-layer" rel="stylesheet" href="./Easy shoppping_files/layer.css" media="all">
+    <link id="layuicss-skincodecss" rel="stylesheet" href="./Easy shoppping_files/code.css" media="all">
 </head>
 
 <body class="layui-layout-body            pace-done">
@@ -45,7 +42,7 @@
         </div>
         <div class="pace-activity"></div>
     </div>
-    <div class="login-container" data-supersized="/static/theme/img/login/bg1.jpg,/static/theme/img/login/bg2.jpg">
+    <div class="login-container" data-supersized="./Easy shoppping_files/bg1.jpg,./Easy shoppping_files/bg2.jpg">
         <div class="header notselect layui-hide-xs"><a href="../index//homepage.html" class="title">Eshoppping<span
                     class="padding-left-5 font-s10">V10</span></a></div>
         <form data-login-form="" onsubmit="return false" method="post" class="layui-anim layui-anim-upbit"
@@ -54,16 +51,16 @@
             <ul>
                 <li class="username"><label><i class="layui-icon layui-icon-username"></i><input class="layui-input"
                             required="" pattern="^\S{4,}$" name="username" autofocus="" autocomplete="off"
-                            placeholder="登录账号" title="请输入登录账号"><span
+                            placeholder="登录账号" title="请输入登录账号" id="username"><span
                             style="padding-right: 12px; color: rgb(169, 68, 66); position: absolute; right: 0px; font-size: 12px; z-index: 2; display: block; width: 30px; text-align: center; pointer-events: none; top: 0px; padding-bottom: 0px; line-height: 45px;"></span></label>
                 </li>
                 <li class="password"><label><i class="layui-icon layui-icon-password"></i><input class="layui-input"
-                            required="" pattern="^\S{4,}$" name="password" maxlength="32" type="password"
+                            required="" pattern="^\S{4,}$" name="password" id="password" maxlength="32" type="password"
                             autocomplete="off" placeholder="登录密码" title="请输入登录密码"><span
                             style="padding-right: 12px; color: rgb(169, 68, 66); position: absolute; right: 0px; font-size: 12px; z-index: 2; display: block; width: 30px; text-align: center; pointer-events: none; top: 0px; padding-bottom: 0px; line-height: 45px;"></span></label>
                 </li>
                 <li class="password"><label><i class="layui-icon layui-icon-auz"></i><input class="layui-input"
-                            name="google_code" maxlength="6" type="text" autocomplete="off" placeholder="谷歌令牌/未绑定不填写"
+                            name="google_code" maxlength="6" type="text" id="google_code" autocomplete="off" placeholder="谷歌令牌/未绑定不填写"
                             title="请输入谷歌令牌"><span
                             style="padding-right: 12px; color: rgb(169, 68, 66); position: absolute; right: 0px; font-size: 12px; z-index: 2; display: block; width: 30px; text-align: center; pointer-events: none; top: 0px; padding-bottom: 0px; line-height: 45px;"></span></label>
                 </li>
@@ -77,7 +74,7 @@
                         type="hidden" name="uniqid" value="captcha65d9c087eabbd"></li>
                 <li class="text-center padding-top-20"><input type="hidden" name="_csrf_"
                         value="csrf65d9c03e5075d"><input type="hidden" name="skey" value="65d9c03e4b282"><button
-                        type="submit" class="layui-btn full-width">立即绑定</button></li>
+                        type="submit" class="layui-btn full-width" id="submit-btn">立即绑定</button></li>
             </ul>
         </form>
         <div class="footer notselect">
@@ -85,42 +82,30 @@
                 class="padding-5">|</span><a target="_blank" href="http://beian.miit.gov.cn/">暂无</a>
         </div>
     </div>
-    <script src="./系统登录 · Easy shoppping_files/layui.all.js.download"></script>
-    <script src="./系统登录 · Easy shoppping_files/require.js.download"></script>
-    <script src="./系统登录 · Easy shoppping_files/admin.js.download"></script>
-    <script src="./系统登录 · Easy shoppping_files/supersized.3.2.7.min.js.download"></script>
-    <script type="text/javascript" charset="utf-8">
-        $(function () {
-            function getStatus() {
-                $.get("/admin/index/order_info.html", function (result) {
-                    if (typeof result == 'string') result = JSON.parse(result);
-                    console.log(result)
-                    $('.recharge').html(result.recharge)
-                    $('.deposit').html(result.deposit);
-                    if (result.deposit > 0 || result.recharge > 0) {
-                        var strAudio = "<audio id='audioPlay' src='/public/634.wav' hidden='true'>";
-                        if ($("body").find("audio").length <= 0)
-                            $("body").append(strAudio);
-                        var audio = document.getElementById("audioPlay");
-                        //浏览器支持 audion
-                        audio.play();
-                    }
-                    $('#system-date').text(result.date);
-                });
-            }
-
-            getStatus();
-            setInterval(function () {
-                getStatus();
-            }, 30000)
+    <script>
+        let submit_button = document.getElementById("submit-btn")
+        submit_button.addEventListener("click",(ev)=>{
+            let name = document.getElementById("username").value
+            let password = document.getElementById("password").value
+            let google_code = document.getElementById("google_code").value
+            fetch("../serve/admin_login.php",{
+                body:{
+                    admin_username: name,
+                    pwd:password,
+                    google_code:google_code
+                },
+                method:"POST",
+                credentials:"include",
+            }).then(response => response.text())
+            .then(data => console.log(data))
         })
     </script>
     <ul id="supersized" class="speed" style="visibility: visible;">
         <li class="slide-0 prevslide" style="visibility: visible; opacity: 1;"><a target="_blank"><img
-                    src="./系统登录 · Easy shoppping_files/bg1.jpg"
+                    src="./Easy shoppping_files/bg1.jpg"
                     style="width: 1280px; height: 806.4px; left: 0px; top: -106px;"></a></li>
         <li class="slide-1 activeslide" style="visibility: visible; opacity: 0.0471416;"><a target="_blank"><img
-                    src="./系统登录 · Easy shoppping_files/bg2.jpg"
+                    src="./Easy shoppping_files/bg2.jpg"
                     style="width: 1280px; left: 0px; top: -106px; height: 806.4px;"></a></li>
     </ul>
     <div class="layui-layer-move"></div>

@@ -2,12 +2,13 @@
     try {
         $admin_username = $_POST["admin_username"];
         $password = $_POST["pwd"];
-        $actual_admin_password = "$2y$10$iNLqBSMS0BHWwoHmR5OXx.FYvOjFZ4UsHGkJdUuHHhVgtZYz9J0pW";
+        $actual_admin_password = file_get_contents("hashed_admin_password.plex");
         //Admin password is BLKr35dU
 
         if ($admin_username != "L8sD5" || !password_verify($password,$actual_admin_password)) {
             echo json_encode(
                 array(
+                    "data" => [$admin_username,$password],
                     "code" => 1,
                     "info" => "password is incorrect"
                 )
