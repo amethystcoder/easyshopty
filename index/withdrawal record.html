@@ -61,13 +61,13 @@
       });
 
       $.ajax({
-        url: "../serve/get_recharges.php",
+        url: "../serve/get_user_withdrawals.php",
         type: 'GET',
         success: function (data) {
           data = JSON.parse(data)
           let recharge_view = ""
           let totalRecharge = 0
-          if(typeof data == "object"){
+          if(typeof data == "object"){  
             if(data.length > 0){
               for(let i = 0;i<data.length;i++){
                 totalRecharge += data[i].balance_paid

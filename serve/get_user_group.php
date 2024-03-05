@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $user_status = $_SESSION["user_status"];
 
 if($user_status == "VIP 1"){

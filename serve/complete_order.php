@@ -1,50 +1,25 @@
 <?php
 
     session_start();
-    $user_id = $_SESSION["user_id"];
-    $order_id = $_POST["oid"];
-    $user_status = $_POST["status"];
-#how it looks in frontend
-/* url: "../serve/complete_order",
-                            type: "POST",
-                            dataType: "JSON",
-                            data: {
-                                oid: oid,
-                                status: 2,
-                                add_id: add_id, //optional
-                                to_name: to_name,//optional
-                                aid: aid//optional
-                            },
-                            success: function (res) {
-                                layer.closeAll();
-                                if (res.code == 0) {
-                                    $(document).dialog({
-                                        infoText: "Ordem Cancela o sucesso!",
-                                        autoClose: 2000
-                                    });
-                                    $('#orderDetail').modal('hide');
-                                } else {
-                                    $(document).dialog({
-                                        type: 'alert',
-                                        titleText: res.info,
-                                        buttonTextConfirm: "OK",
-                                        autoClose: 0,
-                                        onClosed: function (e) {
-                                            if (res.url) window.location.href = res.url;
-                                        }
-                                    });
-                                }
-                                sumbit = true;
-                            },
-                            error: function (err) {
-                                console.log(err);
-                                sumbit = true;
-                            }
-                        });
-                    },
-                    onClickCancelBtn: function () {
 
-                    }
-                }); */
+    try {
+        $user_id = empty($_SESSION["user_id"]) ? "" : $_SESSION["user_id"];
+        $order_id = $_POST["oid"];
+        if ($user_id) {
+            $orders = json_decode(file_get_contents("orders.json"),true);
+            for($i =0;$i<count($orders);$i++){
+                if($orders[$i]["oid"] == $order_id){
+                    $orders[$i]["status"] = "completed";
+                }
+            }
+            $saved = file_put_contents("orders.json",json_encode($orders));
+            echo json_encode(array("code" => 0, "info" => "success"));
+        }
+        else{
+            echo json_encode(array("code" => 2, "info" => "you are not signed in... sign in or register to place an order"));
+        }
+    } catch (\Throwable $th) {
+        echo json_encode(array("code" => 1, "info" => "some error occured"));
+    }
 
 ?>

@@ -89,11 +89,12 @@
             let password = document.getElementById("password").value
             let google_code = document.getElementById("google_code").value
             fetch("../serve/admin_login.php",{
-                body:{
+                body:JSON.stringify({
                     admin_username: name,
                     pwd:password,
                     google_code:google_code
-                },
+                }),
+                headers:{"Content-type":"application/json;charset=UTF-8"},
                 method:"POST",
                 credentials:"include",
             }).then(response => response.text())

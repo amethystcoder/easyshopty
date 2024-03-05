@@ -5,14 +5,14 @@
         $user_name = empty($_SESSION["user_name"]) ? "" : $_SESSION["user_name"];
         $balance = empty($_SESSION["balance"]) ? 0 : $_SESSION["balance"];
         $deposits = json_decode(file_get_contents("deposits.json"),true);
-        if (!empty($deposits)) {
+        if (count($deposits) > 0) {
             $user_deposit = [];
             for ($i=0; $i < count($deposits); $i++) { 
-                if ($deposits["user_id"] == $user_id) {
-                    $user_deposit[count($user_deposit)] = $deposits;
+                if ($deposits[$i]["user_id"] == $user_id) {
+                    $user_deposit[count($user_deposit)] = $deposits[$i];
                 }
             }
-            echo json_decode($user_deposit);
+            echo json_encode($user_deposit);
         }
         else {
             echo json_encode([]);

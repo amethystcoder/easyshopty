@@ -1,1 +1,20 @@
-[]
+[
+    {
+        "goods_pic":"../serve/product_images/prod-img-1.png","goods_name":"kypris body spray and deodorant","goods_price":20,"goods_count":2
+    },
+    {
+        "goods_pic":"../serve/product_images/prod-img-2.png","goods_name":"neccessaire body wash 20L","goods_price":20,"goods_count":2
+    },
+    {
+        "goods_pic":"../serve/product_images/prod-img-3.png","goods_name":"jasmine deodorant full with body spray","goods_price":20,"goods_count":2
+    },
+    {
+        "goods_pic":"../serve/product_images/prod-img-4.png","goods_name":"make-up bundle","goods_price":20,"goods_count":2
+    },
+    {
+        "goods_pic":"../serve/product_images/prod-img-5.png","goods_name":"jones road cream pack","goods_price":20,"goods_count":2
+    },
+    {
+        "goods_pic":"../serve/product_images/prod-img-6.jpeg","goods_name":"gold numbers pins 1-10","goods_price":20,"goods_count":2
+    }
+]

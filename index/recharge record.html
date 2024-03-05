@@ -71,16 +71,16 @@
           if(typeof data == "object"){
             if(data.length > 0){
               for(let i = 0;i<data.length;i++){
-                totalRecharge += data[i].balance_paid
+                totalRecharge += parseFloat(data[i].price)
                 recharge_view += `
                 <li class="list-group-item">
                   <div class="row align-items-center">
                     <div class="col align-self-center pr-0">
-                      <h6 class="font-weight-normal mb-1">${data[i].payment_id}</h6>
+                      <h6 class="font-weight-normal mb-1">${data[i].deposit_id}</h6>
                       <p class="text-mute small text-secondary"><span class="badge badge-primary">approved</span></p>
                     </div>
                     <div class="col-auto">
-                      <h6 class="text-success">TRX ${data[i].balance_paid}</h6>
+                      <h6 class="text-success">TRX ${data[i].price}</h6>
                     </div>
                   </div>
                 </li>

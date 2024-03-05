@@ -170,10 +170,11 @@
                         autoClose: 2000
                     });
                 }
-
-                var data = { sn: 'SY2402281748028573', tNo: tNo };
+                let url = new URLSearchParams(window.location.search).get("num")
+                console.log(url)
+                var data = { deposit_id: url, tNo: tNo };
                 $.ajax({
-                    url: '/index/pay/user_ok.html',
+                    url: '../serve/verify_paid_client.php',
                     type: 'post',
                     data: data,
                     dataType: 'json',

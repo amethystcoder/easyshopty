@@ -1,47 +1,46 @@
 <?php
 session_start();
 try {
-    //code...
+    $user_id = $_SESSION["user_id"];
+    
     $order_id = $_POST["id"];
-} catch (\Throwable $th) {
-    //throw $th;
-}
-#how it looks in frontend
-/* 
-success: function (res) {
-                    res = JSON.parse(res)
-                    var data = res.data;
-                    if (res.code == 0) {
-                        var html = '';
-                        for (var i = 0; i < data.length; i++) {
-                            html += '<div class="records_tabs_box">\n' +
-                                '<div class="records_tabs_box_top">time to rush an order:&nbsp;\n' +
-                                '    <span>' + data[i].addtime + '</span>\n' +
-                                '    <br>order number&nbsp;<span>' + data[i].oid + '</span>\n' +
-                                '</div>\n' +
-                                '<div class="records_tabs_box_des">\n' +
-                                '    <div class="tabs_box_des_img">\n' +
-                                '        <img src="' + data[i].goods_pic + '"></div>\n' +
-                                '    <div class="tabs_box_des_r">\n' +
-                                '        <p class="tabs_box_des_r_tit" style="max-height: 95px;">' +
-                                data[i].goods_name + '</p>\n' +
-                                '        <div class="tabs_box_des_r_pic" style="display: none"><p>' +
-                                data[i].goods_price + '</p><p> x ' + data[i].goods_count + '</p></div>\n' +
-                                '    </div>\n' +
-                                '</div>\n' +
-                                '<div class="row mt-3">\n' +
-                                '    <div class="col text-left">Total order</div>\n' +
-                                '    <div class="col-auto text-right text-mute">' + data[i].num + '</div>\n' +
-                                '</div>\n' +
-                                '<div class="row mt-3">\n' +
-                                '    <div class="col text-left">commission</div>\n' +
-                                '    <div class="col-auto text-right txt1"><span id="yongjin">' +
-                                data[i].commission + '</span></div>\n' +
-                                '</div>\n' +
-                                '</div>'
-                        }
-                        $('#orderListInfo').html(html);
+    $orders = json_decode(file_get_contents("orders.json"),true);
+    $goods = json_decode(file_get_contents("product_list.json"),true);
+    $users = json_decode(file_get_contents("users.json"),true);
 
-*/
+    $user_status = "";
+    for ($i=0; $i < count($users); $i++) { 
+        if ($users[$i]["user_id"] == $user_id) {
+            $user_status = $users[$i]["user_status"];
+            break;
+        }
+    }
+    $commission = 0;
+    if ($user_status == "VIP 1") {
+        $commission = 0.12;
+    } elseif (user_status == "VIP 2") {
+        $commission = 0.13;
+    } elseif ($user_status == "VIP 3") {
+        $commission = 0.14;
+    }
+    
+    $selected_product = $goods[random_int(0,count($goods)-1)];
+    for($i =0;$i<count($orders);$i++){
+        if($orders[$i]["oid"] == $order_id){
+            $orders[$i]["goods"] = $selected_product; 
+            $orders[$i]["user_id"] = $user_id;
+            $selected_product["oid"] = $orders[$i]["oid"];
+            $selected_product["addtime"] = $orders[$i]["addtime"];
+            $selected_product["num"] = ($selected_product["goods_count"] * $selected_product["goods_price"]) + ($selected_product["goods_price"] * $commission);
+            $selected_product["commission"] = $commission;
+            break;
+        }
+    }
+    $saved = file_put_contents("orders.json",json_encode($orders));
+    echo json_encode(array("code" => 0, "data" => [$selected_product]));
+    
+} catch (\Throwable $th) {
+    echo json_encode(array("code" => 0, "data" => "an error occured"));
+}
 
 ?>

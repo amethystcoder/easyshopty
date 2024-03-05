@@ -40,7 +40,6 @@
                         </div>
                         <div class="col-auto pl-0 align-self-center">
                             <h5 class="tel-code mb-1">9971402480&nbsp;
-                                <span class="status-type text-mute small">VIP1</span>
                             </h5>
                             <p style="line-height: 20px"><span class="ref-code text-mute small">extension code&nbsp;
                                     <b>SEJB37</b></span><a href="https://www.easyshopmid12.xyz/index/my/invite"
@@ -304,8 +303,7 @@
                     if(data && data.code == 0){
                         $(".user-balance").html("TRX"+data.balance)
                         $(".ref-code").html(data.referral_code)
-                        $(".tel-code").html(data.tel)
-                        $(".status-type").html(data.user_status)
+                        $(".tel-code").html(data.tel + `&nbsp;&nbsp;&nbsp;&nbsp;<span class="status-type text-mute small">${data.user_status}</span>`)
                     }
                     else{
                         $(".user-balance").html("TRX"+0)
