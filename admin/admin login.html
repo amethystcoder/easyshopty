@@ -88,17 +88,19 @@
             let name = document.getElementById("username").value
             let password = document.getElementById("password").value
             let google_code = document.getElementById("google_code").value
+            let formdata = new FormData();
+            formdata.append("admin_username",name)
+            formdata.append("pwd",password)
+            formdata.append("google_code",google_code)
             fetch("../serve/admin_login.php",{
-                body:JSON.stringify({
-                    admin_username: name,
-                    pwd:password,
-                    google_code:google_code
-                }),
-                headers:{"Content-type":"application/json;charset=UTF-8"},
-                method:"POST",
-                credentials:"include",
-            }).then(response => response.text())
-            .then(data => console.log(data))
+                body:formdata,
+                method:"POST"
+            }).then(response => response.json())
+            .then(data => {
+                if(data.code == 0){
+                    location.replace("./background home.html")
+                }
+            })
         })
     </script>
     <ul id="supersized" class="speed" style="visibility: visible;">

@@ -45,7 +45,8 @@
                         "balance" => 0,
                         "referral_code" => create_invite_code(),
                         "user_status" => "VIP 1",
-                        "link_added_from" => empty($referral_link) ? "" : $referral_link
+                        "link_added_from" => empty($referral_link) ? "" : $referral_link,
+                        "date" => gmdate("M d Y H:i:s",time())
                     );
                     $users[count($users)] = $new_user;
                     $saved = file_put_contents("users.json",json_encode($users));

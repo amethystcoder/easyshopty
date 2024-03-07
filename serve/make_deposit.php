@@ -23,7 +23,8 @@ if(!empty($user_id)){
         "type"=> $type,
         "deposit_id"=> $deposit_id,
         "user_id" => $user_id,
-        "status" => "unpaid"
+        "status" => "unpaid",
+        "date" => gmdate("M d Y H:i:s",time())
     );
     $deposits[count($deposits)] = $new_deposit;
     $saved_successfully = file_put_contents("deposits.json",json_encode($deposits));

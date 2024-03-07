@@ -8,7 +8,6 @@
         if ($admin_username != "L8sD5" || !password_verify($password,$actual_admin_password)) {
             echo json_encode(
                 array(
-                    "data" => [$admin_username,$password],
                     "code" => 1,
                     "info" => "password is incorrect"
                 )
