@@ -27,12 +27,12 @@ try {
     $selected_product = $goods[random_int(0,count($goods)-1)];
     for($i =0;$i<count($orders);$i++){
         if($orders[$i]["oid"] == $order_id){
-            $orders[$i]["goods"] = $selected_product; 
-            $orders[$i]["user_id"] = $user_id;
             $selected_product["oid"] = $orders[$i]["oid"];
             $selected_product["addtime"] = $orders[$i]["addtime"];
             $selected_product["num"] = ($selected_product["goods_count"] * $selected_product["goods_price"]) + ($selected_product["goods_price"] * $commission);
             $selected_product["commission"] = $commission;
+            $orders[$i]["goods"] = $selected_product; 
+            $orders[$i]["user_id"] = $user_id;
             break;
         }
     }

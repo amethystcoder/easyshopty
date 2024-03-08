@@ -23,7 +23,7 @@ try {
                 $order_count++;
                 $incomplete_order_count++;
             }
-            elseif ($orders[$i]["user_id"] == $user_id && $orders[$i]["status"] == "successful") {
+            elseif ($orders[$i]["user_id"] == $user_id && $orders[$i]["status"] == "completed") {
                 $order_count++;
                 $complete_order_count++;
             }

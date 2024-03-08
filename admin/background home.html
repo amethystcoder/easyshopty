@@ -328,21 +328,20 @@
     <script type="text/javascript" charset="utf-8">
         $(function () {
             function getStatus() {
-                $.get("/admin/index/order_info.html", function (result) {
-                    if (typeof result == 'string') result = JSON.parse(result);
-                    console.log(result)
-                    $('.recharge').html(result.recharge)
-                    $('.deposit').html(result.deposit);
-                    if (result.deposit > 0 || result.recharge > 0) {
-                        var strAudio = "<audio id='audioPlay' src='/public/634.wav' hidden='true'>";
-                        if ($("body").find("audio").length <= 0)
-                            $("body").append(strAudio);
-                        var audio = document.getElementById("audioPlay");
-                        //浏览器支持 audion
-                        audio.play();
+                fetch("../serve/admin_get_background_data.php",{
+                    method:"GET"
+                }).then(response => response.text())
+                .then(data => {
+                    console.log(data)
+                    if(data.code == 0){
+                        //location.replace("./background home.html")
+                        /*
+                        "order_count","transaction_count","deposit_count","user_count",
+                        "withdrawal_count"=> ,"wallet_count"=>,"total_user_balance","
+                        total_order_grabbing_commission","total_number_of_people_withdrawing_cash"
+                        */
                     }
-                    $('#system-date').text(result.date);
-                });
+                })
             }
 
             getStatus();

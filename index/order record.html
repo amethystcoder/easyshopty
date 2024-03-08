@@ -235,14 +235,9 @@
                     aria-live="assertive" aria-atomic="true"></span>
             </div>
         </div>
-        <div class="container"></div>
+        <div class="order-display-area container"></div>
         <div class="payment-all">
-            <div>amount:&nbsp;&nbsp;TRX82</div>
-            <div><button class="btn btn-default shadow  btn-rounded btn-block btn-sm"
-                    onclick="tijiao([&quot;UB2402240042114184&quot;])">submit all orders</button></div>
-        </div>
-        <div class="payment-time">
-            <div>Payment countdown: <span id="freeze_etime">23 : 21 : 7</span></div>
+            
         </div>
     </div><!-- footer-->
     <div class="footer">
@@ -330,7 +325,17 @@
                     success: function (data) {
                         data = JSON.parse(data)
                         if(data && data.code == 0){
-                            
+                            let pending = data.data.filter((dt)=>dt.status == "pending")
+                            console.log(pending)
+                            if(pending.length > 0){
+                                `<div>amount:&nbsp;&nbsp;TRX82</div>`
+                                $(".payment-all").html(`
+                                <div><button class="btn btn-default shadow  btn-rounded btn-block btn-sm"
+                                        onclick="complete_all_orders()">submit all orders</button></div>
+                                </div>
+                                <div class="payment-time">
+                                <div>Payment countdown: <span id="freeze_etime">23 : 21 : 7</span></div>`)
+                            }
                         }
                         else{
                             
@@ -340,50 +345,238 @@
             }
             if(status == 1){
                 $.ajax({
-                    url: "../serve/get_user_data.php",
+                    url: "../serve/get_successful_user_orders.php",
                     type: 'GET',
                     success: function (data) {
                         data = JSON.parse(data)
                         if(data && data.code == 0){
-                            
-                        }
-                        else{
-                            
+                            let orderStr = ""
+                            for(let i = 0; i < data.data.length; i++){
+                                orderStr += `<div class="card mb-3">
+                                    <div class="card-header bg-none">
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="text-secondary small">${data.data[i].addtime}</p>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="badge badge-warning">${data.data[i].status}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body position-relative">
+                                        <div class="media">
+                                            <div class="icon icon-60 mr-3 rounded"><img
+                                                    src="${data.data[i].goods.goods_pic}" class="icon-60"
+                                                    alt="Generic placeholder image"></div>
+                                            <div class="media-body">
+                                                <p class="small text-secondary mb-1">${data.data[i].goods.goods_name}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="gray">Total order:</p>
+                                                <p class="gray">commission:</p>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="text-right text-mute">TRX${data.data[i].goods.goods_price * data.data[i].goods.goods_count}</p>
+                                                <p class="text-right text-mute">TRX${data.data[i].goods.commission ? data.data[i].goods.commission : 0}</p>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>`
+                            }
+                            $(".order-display-area").html(orderStr)
                         }
                     },
                 });
             }
             if(status == -1){
                 $.ajax({
-                    url: "../serve/get_user_data.php",
+                    url: "../serve/get_user_pending_orders.php",
                     type: 'GET',
                     success: function (data) {
                         data = JSON.parse(data)
                         if(data && data.code == 0){
-                            
-                        }
-                        else{
-                            
+                            let orderStr = ""
+                            for(let i = 0; i < data.data.length; i++){
+                                orderStr += `<div class="card mb-3">
+                                    <div class="card-header bg-none">
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="text-secondary small">${data.data[i].addtime}</p>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="badge badge-warning">${data.data[i].status}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body position-relative">
+                                        <div class="media">
+                                            <div class="icon icon-60 mr-3 rounded"><img
+                                                    src="${data.data[i].goods.goods_pic}" class="icon-60"
+                                                    alt="Generic placeholder image"></div>
+                                            <div class="media-body">
+                                                <p class="small text-secondary mb-1">${data.data[i].goods.goods_name}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="gray">Total order:</p>
+                                                <p class="gray">commission:</p>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="text-right text-mute">TRX${data.data[i].goods.goods_price * data.data[i].goods.goods_count}</p>
+                                                <p class="text-right text-mute">TRX${data.data[i].goods.commission ? data.data[i].goods.commission : 0}</p>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="mt-2" style=";"><button onclick="tijiao(&#39;${data.data[i].oid}&#39;)"
+                                    class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                                    order</button></div>
+                                `
+                            }
+                            $(".order-display-area").html(orderStr)
                         }
                     },
                 });
             }
             if(!status){
                 $.ajax({
-                    url: "../serve/get_user_data.php",
+                    url: "../serve/get_user_orders.php",
                     type: 'GET',
                     success: function (data) {
                         data = JSON.parse(data)
                         if(data && data.code == 0){
-                            
-                        }
-                        else{
-                            
+                            let orderStr = ""
+                            for(let i = 0; i < data.data.length; i++){
+                                orderStr += `<div class="card mb-3">
+                                    <div class="card-header bg-none">
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="text-secondary small">${data.data[i].addtime}</p>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="badge badge-warning">${data.data[i].status}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body position-relative">
+                                        <div class="media">
+                                            <div class="icon icon-60 mr-3 rounded"><img
+                                                    src="${data.data[i].goods.goods_pic}" class="icon-60"
+                                                    alt="Generic placeholder image"></div>
+                                            <div class="media-body">
+                                                <p class="small text-secondary mb-1">${data.data[i].goods.goods_name}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="gray">Total order:</p>
+                                                <p class="gray">commission:</p>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="text-right text-mute">TRX${data.data[i].goods.goods_price * data.data[i].goods.goods_count}</p>
+                                                <p class="text-right text-mute">TRX${data.data[i].goods.commission ? data.data[i].goods.commission : 0}</p>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                `
+                                if(data.data[i].status == "pending"){
+                                    orderStr += `<div class="mt-2" style=";"><button onclick="tijiao(&#39;${data.data[i].oid}&#39;)"
+                                        class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                                        order</button></div>`
+                                }
+                            }
+                            let pending = data.data.filter((dt)=>dt.status == "pending")
+                            console.log(pending)
+                            if(pending.length > 0){
+                                `<div>amount:&nbsp;&nbsp;TRX82</div>`
+                                $(".payment-all").html(`
+                                <div><button class="btn btn-default shadow  btn-rounded btn-block btn-sm"
+                                        onclick="complete_all_orders()">submit all orders</button></div>
+                                </div>
+                                <div class="payment-time">
+                                <div>Payment countdown: <span id="freeze_etime">23 : 21 : 7</span></div>`)
+                            }
+                            else{
+                                
+                            }
+                            $(".order-display-area").html(orderStr)
                         }
                     },
                 });
             }
         })
+
+        function complete_all_orders(){
+            i = 0
+            layer.open({
+                type: 2,
+                content: "match merchant information",
+                time: zhujiTime,
+                shadeClose: false,
+            });
+            var timer = setInterval(function () {
+                i++;
+                if (i == 1) {
+                    layer.open({
+                        type: 2,
+                        content: "generate product order",
+                        time: zhujiTime,
+                        shadeClose: false,
+                    })
+                } else if (i == 2) {
+                    layer.open({
+                        type: 2,
+                        content: "order submission completed",
+                        time: shopTime,
+                        shadeClose: false,
+                    })
+                    setTimeout(()=>{
+                        $.ajax({
+                            url: "../serve/complete_all_orders.php",
+                            type: 'GET',
+                            success: function (data) {
+                                data = JSON.parse(data)
+                                if(data && data.code == 0){
+                                    $(document).dialog({
+                                        infoText: "order processing completed",
+                                        autoClose: 2000
+                                    });
+                                    clearInterval(timer);
+                                    var linkTime = setTimeout(function () {
+                                        location.reload()
+                                    },
+                                        1800);
+                                } else {
+                                    $(document).dialog({
+                                        type: 'alert',
+                                        titleText: res.info,
+                                        buttonTextConfirm: "OK",
+                                        autoClose: 0,
+                                        onClosed: function () {
+                                            if (res.url) window.location.href = res.url;
+                                        }
+                                    });
+                                }
+                            },
+                        });
+                    },3000)
+                }
+            })
+            
+        }
         function freezeTime(etime) {
             var now = new Date();
             var end = new Date(etime * 1000);
@@ -559,7 +752,7 @@
             oid = id;
             $('#orderDetail').modal('show');
             $.ajax({
-                url: "/index/order/order_info_list",
+                url: "../serve/order_info_list.php",
                 type: "POST",
                 dataType: "JSON",
                 data: { id: oid },
@@ -648,7 +841,7 @@
                     })
                     var ajaxT = setTimeout(function () {
                         $.ajax({
-                            url: "/index/order/do_order",
+                            url: "../serve/complete_order.php",
                             type: "POST",
                             dataType: "JSON",
                             data: {
@@ -718,41 +911,7 @@
 </body>
 
 </html>
-<!-- <div class="card mb-3">
-                <div class="card-header bg-none">
-                    <div class="row">
-                        <div class="col">
-                            <p class="text-secondary small">2024-02-24 00:42:11</p>
-                        </div>
-                        <div class="col-auto">
-                            <p class="badge badge-warning">pending</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body position-relative">
-                    <div class="media">
-                        <div class="icon icon-60 mr-3 rounded"><img
-                                src="./order record_files/d247258c5ca765707724ba4d52881afd" class="icon-60"
-                                alt="Generic placeholder image"></div>
-                        <div class="media-body">
-                            <p class="small text-secondary mb-1">10pcs Soccer Disc Bucket Marker Fitness Training Flat
-                                Cone Dribbling Training Cone 19cm x 4.5cm x 0.5mm Triangle Cone</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="row">
-                        <div class="col">
-                            <p class="gray">Total order:</p>
-                            <p class="gray">commission:</p>
-                        </div>
-                        <div class="col-auto">
-                            <p class="text-right text-mute">TRX82.00</p>
-                            <p class="text-right text-mute">TRX0.10</p>
-                        </div>
-                    </div>
-                    <div class="mt-2" style=";"><button onclick="tijiao(&#39;UB2402240042114184&#39;)"
-                            class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
-                            order</button></div>
-                </div>
-            </div> -->
+<!-- for pending orders -->
+<!-- <div class="mt-2" style=";"><button onclick="tijiao(&#39;UB2402240042114184&#39;)"
+                                                class="btn btn-default shadow  btn-rounded btn-block btn-lg" style="display: block;">submit
+                                                order</button></div> -->

@@ -41,7 +41,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col text-center">
-                            <h3 class="mb-0 font-weight-normal">TRX100.09</h3>
+                            <h3 class="balance-withdrawable mb-0 font-weight-normal">TRX</h3>
                             <p class="text-mute">amount that can be withdrawn</p>
                         </div>
                         <!-- <div class="col-auto"><button class="btn btn-default btn-rounded-54 shadow" onclick="window.location.href=`/index/ctrl/recharge`"><i class="material-icons">add</i></button></div>-->
@@ -167,6 +167,19 @@
     </style>
     <script type="application/javascript">
         $(function () {
+            $.ajax({
+                url: "../serve/get_user_data.php",
+                type: 'GET',
+                success: function (data) {
+                    data = JSON.parse(data)
+                    if(data && data.code == 0){
+                        $(".balance-withdrawable").html("TRX"+data.balance)   
+                    }
+                    else{
+                        $(document).dialog({ infoText: data.message });
+                    }
+                },
+            });
             $('input[name="type"]').on('change', function () {
                 if ($(this).val() == 'TRX') {
                     $('#TRX_code_div').show();

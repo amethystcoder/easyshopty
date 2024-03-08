@@ -7,7 +7,7 @@ if(!empty($admin_id)){
 $orders = json_decode(file_get_contents("orders.json"),true);
 $user_orders = [];
 for($i =0;$i<count($orders);$i++){
-if($orders[$i]["status"] == "successful"){
+if($orders[$i]["status"] == "completed"){
 $user_orders[count($user_orders)] = $orders[$i];
 }
 }
