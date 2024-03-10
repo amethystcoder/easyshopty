@@ -4,14 +4,14 @@
     try{
         $admin_id = empty($_SESSION["admin_id"]) ? "" : $_SESSION["admin_id"] ;
         if(!empty($admin_id)){
-            $withdrawals = json_decode(file_get_contents("withdrawals.json"),true);
-            echo json_encode(array("code"=> 0, "data"=>$withdrawals));
+            $users = json_decode(file_get_contents("users.json"),true);
+            echo json_encode(array("code"=> 0, "data"=>$users));
         }
         else{
-         echo json_encode(array("code"=> 1, "data"=>[]));
+            echo json_encode(array("code"=> 1, "data"=>[]));
         }
     }
-    catch(Throwable $th){
+    catch(\Throwable $th){
         echo json_encode(array("code"=> 1, "data"=>[]));
     }
 

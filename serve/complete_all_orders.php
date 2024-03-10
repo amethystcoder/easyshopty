@@ -7,7 +7,7 @@
         if ($user_id) {
             $orders = json_decode(file_get_contents("orders.json"),true);
             for($i =0;$i<count($orders);$i++){
-                if($orders[$i]["user_id"] == $user_id){
+                if($orders[$i]["user_id"] == $user_id && $orders[$i]["status"] != "failed"){
                     $orders[$i]["status"] = "completed";
                 }
             }

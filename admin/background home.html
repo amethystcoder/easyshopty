@@ -41,38 +41,47 @@
         <div class="pace-activity"></div>
     </div>
     <div class="layui-layout layui-layout-admin layui-layout-left-hide"><!-- 顶部菜单 开始 -->
-        <div class="layui-header notselect"><a href="./background home.html"
-                class="layui-logo layui-elip">Eshoppping<sup class="padding-left-5">V10</sup></a>
+        <div class="layui-header notselect">
+            <a href="./background home.html"
+                class="layui-logo layui-elip">Eshoppping`<sup class="padding-left-5">V10</sup>
+            </a>
             <ul class="layui-nav layui-layout-left">
-                <li class="layui-nav-item" lay-unselect=""><a class="text-center" data-target-menu-type=""><i
-                            class="layui-icon layui-icon-spread-left"></i></a></li>
-                <li class="layui-nav-item layui-this"><a data-menu-node="m-1"
-                        data-open="/admin/index/main.html"><span>后台首页</span></a></li>
-                <li class="layui-nav-item"><a data-menu-node="m-62" data-open="#"><span
-                            class="layui-icon layui-icon-username padding-right-5"></span><span>角色</span></a></li>
-                <li class="layui-nav-item"><a data-menu-node="m-69" data-open="#"><span
-                            class="fa fa-balance-scale padding-right-5"></span><span>交易</span></a></li><span
+                <li class="layui-nav-item" lay-unselect="">
+                    <a class="text-center" >
+                        <i
+                            class="layui-icon layui-icon-spread-left"></i>
+                    </a>
+                </li>
+                <li class="layui-nav-item layui-this"><a 
+                         href="./background home.html"><span>后台首页</span></a></li>
+                <li class="layui-nav-item">
+                    <a  href="./System management background·Easy shopping.html">
+                    <span class="layui-icon layui-icon-username padding-right-5"></span>
+                    <span>角色</span></a></li>
+                <li class="layui-nav-item">
+                    <a  href="./Trades·Easy shopping.html">
+                        <span class="fa fa-balance-scale padding-right-5"></span><span>交易</span></a></li><span
                     class="layui-nav-bar"></span>
             </ul>
             <ul class="layui-nav layui-layout-right">
                 <li lay-unselect="" class="layui-nav-item" style="text-align: center"><a
                         style="line-height: 24px">当地时间<br><span id="system-date">2024-02-24 14:16:18</span></a></li>
-                <li lay-unselect="" class="layui-nav-item"><a
-                        href="../index/login.html">
+                <li lay-unselect="" class="layui-nav-item">
+                    <a href="./user recharges·Easy shopping.html">
                         充值
                         <span class="layui-badge recharge">0</span></a></li>
-                <li lay-unselect="" class="layui-nav-item"><a
-                        href="../index/login.html">
+                <li lay-unselect="" class="layui-nav-item">
+                    <a href="./user withdrawals·Easy shopping.html">
                         提现<span class="layui-badge deposit">0</span></a></li>
-                <li lay-unselect="" class="layui-nav-item"><a data-reload=""><i
+                <li lay-unselect="" class="layui-nav-item"><a ><i
                             class="layui-icon layui-icon-refresh-3"></i></a></li>
                 <li class="layui-nav-item">
                     <dl class="layui-nav-child">
-                        <dd lay-unselect=""><a data-modal="/admin/index/info/10058.html"><i
+                        <dd lay-unselect=""><a ><i
                                     class="layui-icon layui-icon-set-fill margin-right-5"></i>基本资料</a></dd>
-                        <dd lay-unselect=""><a data-modal="/admin/index/pass/10058.html"><i
+                        <dd lay-unselect=""><a ><i
                                     class="layui-icon layui-icon-component margin-right-5"></i>安全设置</a></dd>
-                        <dd lay-unselect=""><a data-confirm="确定要退出登录吗？" data-load="/admin/login/out.html"><i
+                        <dd lay-unselect=""><a><i
                                     class="layui-icon layui-icon-release margin-right-5"></i>退出登录</a></dd>
                     </dl><a><span><i class="layui-icon layui-icon-username margin-right-5"></i>mly000165</span><span
                             class="layui-nav-more"></span></a>
@@ -187,7 +196,7 @@
                                 <div class="store-total-item nowrap"
                                     style="background:linear-gradient(-125deg,#57bdbf,#2f9de2)">
                                     <div>首冲人数</div>
-                                    <div>38</div>
+                                    <div>0</div>
                                     <div>今日首冲人数 <span class="num2">0</span></div>
                                     <p>昨日首冲人数 <span class="num3">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-template-1"></i>
@@ -196,7 +205,7 @@
                                 <div class="store-total-item nowrap"
                                     style="background:linear-gradient(-125deg,#ff7d7d,#fb2c95)">
                                     <div>用户总量</div>
-                                    <div>79</div>
+                                    <div id="user-count">0</div>
                                     <div>今日新增用户 <span class="num2">0</span></div>
                                     <p>昨日新增用户 <span class="num3">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-user"></i>
@@ -205,7 +214,7 @@
                                 <div class="store-total-item nowrap"
                                     style="background:linear-gradient(-113deg,#c543d8,#925cc3)">
                                     <div>订单总量</div>
-                                    <div>10533</div>
+                                    <div id="order-count">0</div>
                                     <div>今日新增订单 <span class="num2">0</span></div>
                                     <p>昨日新增订单 <span class="num3">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-read"></i>
@@ -214,7 +223,7 @@
                                 <div class="store-total-item nowrap"
                                     style="background: linear-gradient(-113deg,#8e8cb3,#2219d0);">
                                     <div>订单总金额</div>
-                                    <div>19958432</div>
+                                    <div id="order-count">0</div>
                                     <div>今日新增订单总金额 <span class="num2">0</span></div>
                                     <p>昨日新增订单总金额 <span class="num3">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-rmb"></i>
@@ -223,7 +232,7 @@
                                 <div class="store-total-item nowrap"
                                     style="background:linear-gradient(-141deg,#ecca1b,#f39526)">
                                     <div>用户充值</div>
-                                    <div>248464</div>
+                                    <div id="deposit-count">0</div>
                                     <div>今日新增充值 <span class="num2">0</span></div>
                                     <p>昨日新增充值 <span class="num3">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-survey"></i>
@@ -232,7 +241,7 @@
                                 <div class="store-total-item nowrap"
                                     style="background:linear-gradient(-141deg,#ecca1b,#f39526)">
                                     <div>充值人数</div>
-                                    <div>38</div>
+                                    <div id="transaction-count">0</div>
                                     <div>今日充值人数 <span class="num2">0</span></div>
                                     <p>昨日充值人数 <span class="num3">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-survey"></i>
@@ -241,7 +250,7 @@
                                 <div class="store-total-item nowrap"
                                     style="background: linear-gradient(-141deg,#ec4b1b,#f39526);">
                                     <div>用户提现</div>
-                                    <div>201209</div>
+                                    <div id="withdrawal-count">0</div>
                                     <div>今日新增提现 <span class="num2">0</span></div>
                                     <p>昨日新增提现 <span class="num3">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-dollar"></i>
@@ -250,7 +259,7 @@
                                 <div class="store-total-item nowrap"
                                     style="background: linear-gradient(-141deg,#ec4b1b,#f39526);">
                                     <div>提现人数</div>
-                                    <div>56</div>
+                                    <div id="total-number-of-people-withdrawing-cash">0</div>
                                     <div>今日提现人数 <span class="num2">0</span></div>
                                     <p>昨日提现人数 <span class="num3">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-dollar"></i>
@@ -259,7 +268,7 @@
                                 <div class="store-total-item nowrap"
                                     style="background: linear-gradient(-141deg,#963064,#8a0920);">
                                     <div>抢单佣金</div>
-                                    <div>57711.49</div>
+                                    <div id="total-order-grabbing-commission">0</div>
                                     <div>今日新增佣金 <span class="num2">0</span></div>
                                     <p>昨日新增佣金 <span class="num3">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-survey"></i>
@@ -277,7 +286,7 @@
                                 <div class="store-total-item nowrap"
                                     style="background: linear-gradient(-141deg,#ea7575,#abd6c6);">
                                     <div>下级返佣</div>
-                                    <div>5653.73</div>
+                                    <div>0</div>
                                     <div>今日新增佣金 <span class="num2">0</span></div>
                                     <p>昨日新增佣金 <span class="num3">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-survey"></i>
@@ -286,7 +295,7 @@
                                 <div class="store-total-item nowrap"
                                     style="background: linear-gradient(-141deg,#2f3331,#565115);">
                                     <div>用户总余额</div>
-                                    <div style="font-size: 14px">27681.94(30)</div>
+                                    <div style="font-size: 14px" id="total-user-balance">0</div>
                                     <div>今日利息宝转出 <span class="num2">0</span></div>
                                     <p>今日利息宝收益 <span class="num3">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-dollar"></i>
@@ -295,7 +304,7 @@
                     </div>
                     <div id="agent_content">暂无数据</div>
                     <script>
-                        $(function () {
+                        /* $(function () {
                             $.ajax({
                                 url: "/admin/index/main.html",
                                 data: { type: "shop" },
@@ -316,7 +325,7 @@
                                     }
                                 });
                             }
-                        });
+                        }); */
                     </script>
                 </div>
             </div>
@@ -328,20 +337,32 @@
     <script type="text/javascript" charset="utf-8">
         $(function () {
             function getStatus() {
-                fetch("../serve/admin_get_background_data.php",{
-                    method:"GET"
-                }).then(response => response.text())
-                .then(data => {
-                    console.log(data)
-                    if(data.code == 0){
-                        //location.replace("./background home.html")
-                        /*
-                        "order_count","transaction_count","deposit_count","user_count",
-                        "withdrawal_count"=> ,"wallet_count"=>,"total_user_balance","
-                        total_order_grabbing_commission","total_number_of_people_withdrawing_cash"
-                        */
-                    }
-                })
+                fetch("../serve/admin_get_background_data.php", {
+                    method: "GET"
+                }).then(response => response.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.code == 0) {
+                            let order_count= document.getElementById("order-count")
+                            let transaction_count= document.getElementById("transaction-count")
+                            let deposit_count= document.getElementById("deposit-count")
+                            let user_count= document.getElementById("user-count")
+                            let withdrawal_count= document.getElementById("withdrawal-count")
+                            let wallet_count= document.getElementById("wallet-count")
+                            let total_user_balance= document.getElementById("total-user-balance")
+                            let total_order_grabbing_commission = document.getElementById("total-order-grabbing-commission")
+                            let total_number_of_people_withdrawing_cash= document.getElementById("total-number-of-people-withdrawing-cash")
+                            order_count.innerHTML = data.data.order_count
+                            transaction_count.innerHTML = data.data.transaction_count
+                            deposit_count.innerHTML = data.data.deposit_count
+                            user_count.innerHTML = data.data.user_count
+                            withdrawal_count.innerHTML = data.data.withdrawal_count
+                            //wallet_count.innerHTML = data.data.wallet_count
+                            total_user_balance.innerHTML = data.data.total_user_balance
+                            total_order_grabbing_commission.innerHTML = data.data.total_order_grabbing_commission
+                            total_number_of_people_withdrawing_cash.innerHTML = data.data.total_number_of_people_withdrawing_cash
+                        }
+                    })
             }
 
             getStatus();

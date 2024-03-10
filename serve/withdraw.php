@@ -1,5 +1,15 @@
 <?php
 
+function create_withdrawal_id() {
+    $char_list = ["Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C",
+                    "V","B","N","M","1","2","3","4","5","6","7","8","9"];
+    $result = "WIT";
+    for ($i=0; $i < 20; $i++) { 
+        $result .= $char_list[(time() * random_int(1111,9999)) % (count($char_list) - 1)];
+    }
+    return $result;
+}
+
     session_start();
     try {
         $user_id = empty($_SESSION["user_id"]) ? "" : $_SESSION["user_id"];
@@ -28,6 +38,7 @@
                 if($paypassword == $user_wallet["paypassword"]){
                     if ($user["balance"] >= $num) {
                         $new_withdrawal = array(
+                            "withdrawal_id"=>create_withdrawal_id(),
                             "status" => "pending",
                             "user_id" => $user_id,
                             "num" => $num,

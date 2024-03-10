@@ -59,7 +59,7 @@
                     <!--<button class="btn  btn-link text-dark"><i class="material-icons">menu</i><span class="new-notification"></span></button>-->
                 </div>
                 <div class="col text-center"><!--<img src="/red/logo-header.png" alt="" class="header-logo">--></div>
-                <div class="col-auto"><a href="https://www.easyshopmid12.xyz/index/my/msg"
+                <div class="col-auto"><a href=""
                         class="btn  btn-link text-dark position-relative"><i
                             class="material-icons">notifications_none</i></a></div>
             </div>
@@ -292,7 +292,7 @@
         <script charset="utf-8" src="./grab an order_files/common.js.download"></script><!-- template custom js -->
         <script src="./grab an order_files/main.js.download"></script>
         <script src="./grab an order_files/1api.js.download"></script><span style="display: none;"><audio id="audio"
-                src="/static_new/img/hongbao.mp3" controls="controls"></audio></span>
+                src="./mixkit-arabian-mystery-harp-notification-2489.wav" controls="controls"></audio></span>
     </div><!-- Modal -->
     <div class="modal fade" id="vip_modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
@@ -398,7 +398,7 @@
                     data = JSON.parse(data)
                     if (data && data.code == 0) {
                         $(".user-status").html(data.data.user_status)
-                        $(".all-orders").html(data.data.all_orders)
+                        $(".all-orders").html(data.data.user_status == "VIP 1" ? 66 : data.data.user_status == "VIP 2" ? 68 : data.data.user_status == "VIP 3" ? 70 : "")
                         $(".pending-orders").html(data.data.pending_orders)
                         $(".completed-orders").html(data.data.completed_orders)
                         $(".balance-p").html("TRX"+data.data.balance)
@@ -406,11 +406,11 @@
                             balance</small></p>`)
                         $(".commission-section").html(
                             data.data.user_status == "VIP 1" ? 
-                            "commission&nbsp;0.12% | 25&nbsp;order" : 
+                            "commission&nbsp;0.12% | 66&nbsp;order" : 
                             data.data.user_status == "VIP 2" ? 
-                            "commission&nbsp;0.13% | 28&nbsp;order" : 
+                            "commission&nbsp;0.13% | 68&nbsp;order" : 
                             data.data.user_status == "VIP 3" ?
-                             "commission&nbsp;0.14% | 30&nbsp;order" : 
+                             "commission&nbsp;0.14% | 70&nbsp;order" : 
                             "")
                         
                     }
@@ -473,7 +473,7 @@
                 if (isLoading) return;
                 isLoading = true;
                 countdown = 3;
-                var order_submit_gif = "/red/make.gif";//add a animation gif here
+                var order_submit_gif = "./grab an order_files/gears-spinning.gif";//add a animation gif here
                 $('#autoStart').text("get order");
 
                 loading = $(document).dialog({
