@@ -269,11 +269,6 @@
                                                 <font style="vertical-align: inherit;">VIP3</font>
                                             </font>
                                         </option>
-                                        <option value="4">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">VIP4</font>
-                                            </font>
-                                        </option>
                                     </select>
                                     <div class="layui-unselect layui-form-select">
                                         <div class="layui-select-title"><input type="text" placeholder="please choose"
@@ -298,11 +293,6 @@
                                             <dd lay-value="3" class="">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">VIP3</font>
-                                                </font>
-                                            </dd>
-                                            <dd lay-value="4" class="">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">VIP4</font>
                                                 </font>
                                             </dd>
                                         </dl>
@@ -576,11 +566,136 @@
                                 let username = document.getElementById("username").value
                                 let tel = document.getElementById("tel").value
                                 let addtime = document.getElementById("addtime").value
-                                fetch(`../serve/search_users.php?group_id=${group_id}&level=${level}&
-                                agent_service_id=${agent_service_id}&agent_id=${agent_id}&
-                                selectList=${selectList}&order=${order}&username=${username}&tel=${tel}&addtime=${addtime}`)
+                                let invite_code = document.getElementById("invite_code").value
+                                fetch(`../serve/search_users.php?group_id=${group_id}&level=${level}&agent_service_id=${agent_service_id}&agent_id=${agent_id}&selectList=${selectList}&order=${order}&username=${username}&tel=${tel}&addtime=${addtime}&invite_code=${invite_code}`)
                                 .then(Response => Response.json())
-                                .then(result => {console.log(result)})
+                                .then(result => {
+                                    console.log(result)
+                                    let rtStr = ""
+                                    for(let i = 0; i < result.data.length; i++){
+                                        rtStr += `
+                                        
+                                            <tr data-index="${i}">
+                                                <td class="list-table-check-td think-checkbox">
+                                                    <label><input class="list-check-box" value="${data[i].user_id}" type="checkbox"></label>
+                                                    </td>
+                                                <td data-field="id" data-key="1-0-1" class="">
+                                                    <div class="layui-table-cell laytable-cell-1-0-1">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">${i}</font>
+                                                        </font>
+                                                    </div>
+                                            </td>
+                                            <td class="text-left nowrap">
+                                            <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">${data[i].date}</font>
+                                            </font></td>
+                                            <td class="text-left nowrap">
+                                                <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">${data[i].user_id}</font>
+                                            </font></td>
+                                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">---</font>
+                                            </font></td>
+                                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">${data[i].user_name}</font></font></td>
+                                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">${data[i].user_status}</font>
+                                            </font></td>
+                                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">-</font></font></td>
+                                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">${data[i].balance}</font></font></td>
+                                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">${data[i].user_status == "VIP 1" ? 
+                                                "0.12%" : 
+                                                data[i].user_status == "VIP 2" ? 
+                                                "0.13%" : 
+                                                data[i].user_status == "VIP 3" ?
+                                                "0.14" : 
+                                                ""}</font>
+                                            </font></td><td class="text-left nowrap">
+                                            <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">0</font></font>
+                                            </td>
+                                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">${data[i].cummulative_deposit_amount}</font>
+                                            </font></td>
+                                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">${data[i].cummulative_deposits}</font></font></td>
+                                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">${data[i].cummulative_withdrawal_amount}</font>
+                                            </font></td>
+                                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">${data[i].cummulative_withdrawals}</font>
+                                            </font></td>
+                                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">0.00</font>
+                                            </font></td>
+                                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">0.0000</font>
+                                            </font></td>
+                                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">-</font>
+                                            </font></td>
+                                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">${data[i].referral_code}</font>
+                                            </font></td>
+                                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">${data[i].last_ip_login}</font>
+                                            </font></td>
+                                            <td class="text-left nowrap"><a class="layui-btn layui-btn-normal layui-btn-xs">
+                                            <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">${data[i].is_real ? result.data[i].is_real : "unverified"}</font>
+                                            </font></a></td>
+                                            <td data-field="edit" data-key="1-0-22" class="">
+                                                <div class="layui-table-cell laytable-cell-1-0-22"><a
+                                                        data-dbclick=""
+                                                        class="layui-btn layui-btn-xs layui-btn-danger"
+                                                        data-title="打针计划"
+                                                        data-open="/admin/inyectar/index.html?uid=4788">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">inject</font>
+                                                        </font>
+                                                    </a><a data-dbclick=""
+                                                        class="layui-btn layui-btn-xs layui-btn-danger"
+                                                        data-title="编辑等级"
+                                                        data-modal="/admin/users/edit_level.html?id=4788">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">grade</font>
+                                                        </font>
+                                                    </a><a data-dbclick="" class="layui-btn layui-btn-xs"
+                                                        data-title="编辑用户信息"
+                                                        data-modal="/admin/users/edit_users.html?id=4788">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">edit</font>
+                                                        </font>
+                                                    </a><!--<a class="layui-btn layui-btn-xs layui-btn"
+                                                        data-action=""
+                                                        data-value="user_id#${data[i].user_id};status#JPQNZ7" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
+                                                        class="layui-btn layui-btn-xs layui-btn-danger"
+                                                        data-title="查看团队" data-reload="true"
+                                                        data-open="">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">View the team
+                                                            </font>
+                                                        </font>
+                                                    </a><a data-dbclick=""
+                                                        class="layui-btn layui-btn-xs layui-btn-normal"
+                                                        data-title="查看账变" data-reload="true"
+                                                        data-open="">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">Account
+                                                                changes</font>
+                                                        </font>
+                                                    </a></div>
+                                            </td>
+                                        </tr>
+                                            `
+                                        }
+                                    let UserBody = document.querySelector(".user-tbody")
+                                    UserBody.innerHTML = rtStr
+                                })
                             }
                         </script>
                         <div class="layui-form layui-form-pane form-search">
@@ -664,22 +779,6 @@
                                                     <div class="layui-table-cell laytable-cell-1-0-3"><span>
                                                             <font style="vertical-align: inherit;">
                                                                 <font style="vertical-align: inherit;">USER ID
-                                                                </font>
-                                                            </font>
-                                                        </span></div>
-                                                </th>
-                                                <th data-field="agent" data-key="1-0-3" class="">
-                                                    <div class="layui-table-cell laytable-cell-1-0-3"><span>
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">First level agent
-                                                                </font>
-                                                            </font>
-                                                        </span></div>
-                                                </th>
-                                                <th data-field="service" data-key="1-0-4" class="">
-                                                    <div class="layui-table-cell laytable-cell-1-0-4"><span>
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">Secondary agent
                                                                 </font>
                                                             </font>
                                                         </span></div>
@@ -937,12 +1036,6 @@
                             <td class="text-left nowrap">
                                 <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">${data[i].user_id}</font>
-                            </font></td>
-                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">---</font>
-                            </font></td>
-                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">---</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">---</font>
