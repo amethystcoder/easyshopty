@@ -52,16 +52,14 @@
                             "tymd" => time(),
                             
                         );
-                        $users[count($users)] = $new_user;
-                        $saved = file_put_contents("users.json",json_encode($users));
-                        if (!isset($saved)) {
-                            echo json_encode(array("code" => 3,"info" => "an issue occured registering you"));
-                        }
-                        else {
-                            $referral_user = find_user($users,$referral_link);
-                            if (isset($referral_user)) {
-                                //TODO 
-                                #insert code for changing user deposit according to commission
+                        $referral_user = find_user($users,$referral_link);
+                        if (isset($referral_user)) {
+                            //TODO 
+                            #insert code for changing user deposit according to commission
+                            $users[count($users)] = $new_user;
+                            $saved = file_put_contents("users.json",json_encode($users));
+                            if (!isset($saved)) {
+                                echo json_encode(array("code" => 3,"info" => "an issue occured registering you"));
                             }
                             session_start();
                             $_SESSION["user_id"] = $new_user["user_id"];
@@ -70,6 +68,9 @@
                             $_SESSION["referral_code"] = $new_user["referral_code"];
                             $_SESSION["user_status"] = $new_user["user_status"];
                             echo json_encode(array("code" => 0,"info" => "registration sucessful"));
+                        }
+                        else{
+                            echo json_encode(array("code" => 5,"info" => "enter a valid invite code"));
                         }
                     }
                     else {
