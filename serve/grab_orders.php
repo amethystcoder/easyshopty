@@ -16,6 +16,7 @@ try {
     $selected_product["code"] = 0;
     $selected_product["oid"] = create_oid();
     $selected_product["addtime"] = gmdate("M d Y H:i:s",time());
+    $selected_product["tymd"] = time();
     $selected_product["status"] = "pending";
     $orders[count($orders)] = $selected_product;
     $saved = file_put_contents("orders.json",json_encode($orders));

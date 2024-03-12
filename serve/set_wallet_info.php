@@ -28,6 +28,7 @@ try {
             $new_wallet_info["paypassword"] = $paypassword;
             $new_wallet_info["user_id"] = $user_id;
             $new_wallet_info["date"] = gmdate("M d Y H:i:s",time());
+            $new_wallet_info["tymd"] = time();
             $data[count($data)] = $new_wallet_info;
         }
         $saved_successfully = file_put_contents("wallet_info.json",json_encode($data));

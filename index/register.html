@@ -17,7 +17,7 @@
     <meta property="og:description" content="Easy shoppping">
     <meta name="twitter:description" content="Easy shoppping">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.easyshopmid12.xyz/index/user/register.html">
+    <meta property="og:url" content="">
     <!-- Material design icons CSS -->
     <link href="./registered account_files/icon" rel="stylesheet"><!-- Roboto fonts CSS -->
     <link href="./registered account_files/css" rel="stylesheet"><!-- Bootstrap core CSS -->
@@ -58,14 +58,19 @@
                                         type="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">+968</button>
                                     <div class="dropdown-menu">
-                                        <a class="n1 dropdown-item">+968</a>
-                                        <a class="n2 dropdown-item">+965</a>
+                                        <a class="n1 dropdown-item" onclick="changePre('+968')">+968</a>
+                                        <a class="n2 dropdown-item"  onclick="changePre('+965')">+965</a>
                                         </div>
                                         <input type="hidden" name="pre" value="968" class="pree">
-                                        <input type="hidden" name="invite" class="inv">
-                                </div><input type="text" name="tel" placeholder="your mobile phone number"
+                                </div>
+                                <input type="text" name="tel" placeholder="your mobile phone number"
                                     class="form-control"
                                     aria-label="Recipient&#39;s username"><!--<div class="input-group-append"><button class="btn btn-link get-code" type="button">Send</button></div>-->
+                            </div>
+                            <div class="form-group">
+                                <input type="text"
+                                    class="inv form-control form-control-lg text-center" name="invite"
+                                    placeholder="Enter Invite Code" value="" required="">
                             </div>
                             <!--<div class="form-group"><input type="password" name="verify" class="form-control form-control-lg text-center"
                                    placeholder="Please enter the verification code" value="" required="" autofocus=""></div>-->
@@ -111,6 +116,15 @@
             let inv = window.location.href.split("=")[1]
             $("input[name=invite]").val(inv)
 
+            $(".n1").on("click",()=>{
+                $(".clsbtn").html("+968")
+                $("input[name=pre]").val("+968")
+            })
+            $(".n2").on("click",()=>{
+                $(".clsbtn").html("+965")
+                $("input[name=pre]").val("+965")
+            })
+
             /*检查表单*/
             function check() {
 
@@ -120,14 +134,6 @@
                     $(document).toast( $.i18n.prop('string_register_verify')});
                     return false;
                 }*/
-                $(".n1").on("click",()=>{
-                    $(".clsbtn").html("+968")
-                    $("input[name=pre]").val("+968")
-                })
-                $(".n2").on("click",()=>{
-                    $(".clsbtn").html("+965")
-                    $("input[name=pre]").val("+965")
-                })
 
                 if ($("input[name=pwd]").val() == '') {
                     $(document).dialog({

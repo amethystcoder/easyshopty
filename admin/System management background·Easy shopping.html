@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0085)https://www.easyshopmid12.xyz/admin/index.html#/admin/users/index.html?spm=m-62-63-64 -->
 <html lang="en" class="translated-ltr" style="">
 
 <head>
@@ -11,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=0.4">
-    <link rel="shortcut icon" href="https://www.easyshopmid12.xyz/upload/4d25aa439cf12b75/850898739b67f607.png">
+    <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="./System management background·Easy shopping_files/fonts.css">
     <link rel="stylesheet" href="./System management background·Easy shopping_files/layui.css">
     <link rel="stylesheet" href="./System management background·Easy shopping_files/console.css">
@@ -190,15 +189,14 @@
                 </div>
                 <div class="layui-card-body layui-anim layui-anim-upbit">
                     <div class="think-box-shadow">
-                        <form class="layui-form layui-form-pane form-search"
-                            action=""
-                            onsubmit="return false" method="get" autocomplete="off">
+                        <div class="layui-form layui-form-pane form-search" autocomplete="off">
                             <div class="layui-form-item layui-inline"><label class="layui-form-label">
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">First level agent</font>
                                     </font>
                                 </label>
-                                <div class="layui-input-inline"><select name="agent_id">
+                                <div class="layui-input-inline">
+                                    <select name="agent_id" id="agent_id">
                                         <option value="0">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">all</font>
@@ -224,7 +222,7 @@
                                         <font style="vertical-align: inherit;">Secondary agent</font>
                                     </font>
                                 </label>
-                                <div class="layui-input-inline"><select name="agent_service_id">
+                                <div class="layui-input-inline"><select name="agent_service_id" id="agent_service_id">
                                         <option value="0">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">all</font>
@@ -250,28 +248,28 @@
                                         <font style="vertical-align: inherit;">level</font>
                                     </font>
                                 </label>
-                                <div class="layui-input-inline"><select name="level">
+                                <div class="layui-input-inline"><select name="level" id="level">
                                         <option value="-1">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">All levels</font>
                                             </font>
                                         </option>
-                                        <option value="1" {if="" $level="=$vo.level}" selected{="" if}="">
+                                        <option value="1">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">VIP1</font>
                                             </font>
                                         </option>
-                                        <option value="2" {if="" $level="=$vo.level}" selected{="" if}="">
+                                        <option value="2">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">VIP2</font>
                                             </font>
                                         </option>
-                                        <option value="3" {if="" $level="=$vo.level}" selected{="" if}="">
+                                        <option value="3">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">VIP3</font>
                                             </font>
                                         </option>
-                                        <option value="4" {if="" $level="=$vo.level}" selected{="" if}="">
+                                        <option value="4">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">VIP4</font>
                                             </font>
@@ -316,38 +314,38 @@
                                         <font style="vertical-align: inherit;">Overlay group</font>
                                     </font>
                                 </label>
-                                <div class="layui-input-inline"><select name="group_id">
+                                <div class="layui-input-inline"><select name="group_id" id="group_id">
                                         <option value="-1">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">All overlay groups</font>
                                             </font>
                                         </option>
-                                        <option value="27" {if="" $group_id="=$k}" selected{="" if}="">
+                                        <option value="27">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">Standby (later customers)</font>
                                             </font>
                                         </option>
-                                        <option value="30" {if="" $group_id="=$k}" selected{="" if}="">
+                                        <option value="30" >
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">Day 2 Client Accounts</font>
                                             </font>
                                         </option>
-                                        <option value="31" {if="" $group_id="=$k}" selected{="" if}="">
+                                        <option value="31">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">Day 2 own account (self)</font>
                                             </font>
                                         </option>
-                                        <option value="32" {if="" $group_id="=$k}" selected{="" if}="">
+                                        <option value="32">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">Day 6 own account (self)</font>
                                             </font>
                                         </option>
-                                        <option value="33" {if="" $group_id="=$k}" selected{="" if}="">
+                                        <option value="33">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">Day 4 Client Accounts</font>
                                             </font>
                                         </option>
-                                        <option value="34" {if="" $group_id="=$k}" selected{="" if}="">
+                                        <option value="34">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">Day 4 own account (self)</font>
                                             </font>
@@ -452,34 +450,31 @@
                                         <font style="vertical-align: inherit;">sort by</font>
                                     </font>
                                 </label>
-                                <div class="layui-input-inline"><select name="order">
-                                        <option value="">
+                                <div class="layui-input-inline"><select name="order" id="order">
+                                        <option value="default">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">Default sort</font>
                                             </font>
                                         </option>
-                                        <option value="recharge" {if="" $order="=&#39;recharge&#39;}" selected{=""
-                                            if}="">
+                                        <option value="recharge">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">Recharge amount in reverse order
                                                 </font>
                                             </font>
                                         </option>
-                                        <option value="recharge_count" {if="" $order="=&#39;recharge_count&#39;}"
-                                            selected{="" if}="">
+                                        <option value="recharge_count" >
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">Recharge times in reverse order
                                                 </font>
                                             </font>
                                         </option>
-                                        <option value="deposit" {if="" $order="=&#39;deposit&#39;}" selected{="" if}="">
+                                        <option value="deposit" >
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">Withdrawal amount in reverse
                                                     order</font>
                                             </font>
                                         </option>
-                                        <option value="deposit_count" {if="" $order="=&#39;deposit_count&#39;}"
-                                            selected{="" if}="">
+                                        <option value="deposit_count">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">Withdrawal times in reverse order
                                                 </font>
@@ -529,7 +524,7 @@
                                         <font style="vertical-align: inherit;">user name</font>
                                     </font>
                                 </label>
-                                <div class="layui-input-inline"><input name="username" value=""
+                                <div class="layui-input-inline"><input name="username" value="" id="username"
                                         placeholder="Please enter user name" class="layui-input"></div>
                             </div>
                             <div class="layui-form-item layui-inline"><label class="layui-form-label">
@@ -537,7 +532,7 @@
                                         <font style="vertical-align: inherit;">phone number</font>
                                     </font>
                                 </label>
-                                <div class="layui-input-inline"><input name="tel" value=""
+                                <div class="layui-input-inline"><input name="tel" value="" id="tel"
                                         placeholder="Please enter the phone number" class="layui-input"></div>
                             </div>
                             <div class="layui-form-item layui-inline"><label class="layui-form-label">
@@ -545,7 +540,7 @@
                                         <font style="vertical-align: inherit;">Invitation code</font>
                                     </font>
                                 </label>
-                                <div class="layui-input-inline"><input name="invite_code" value=""
+                                <div class="layui-input-inline"><input name="invite_code" value="" id="invite_code"
                                         placeholder="Invitation code" class="layui-input"></div>
                             </div>
                             <div class="layui-form-item layui-inline"><label class="layui-form-label">
@@ -553,21 +548,41 @@
                                         <font style="vertical-align: inherit;">Registration time</font>
                                     </font>
                                 </label>
-                                <div class="layui-input-inline"><input data-date-range="" name="addtime" value=""
+                                <div class="layui-input-inline"><input data-date-range="" name="addtime" value="" id="addtime"
                                         placeholder="Please select registration time" class="layui-input"
                                         autocomplete="off" lay-key="1"></div>
                             </div>
-                            <div class="layui-form-item layui-inline"><button class="layui-btn layui-btn-primary"><i
-                                        class="layui-icon">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Search</font>
-                                        </font>
-                                    </i>
+                            <div class="layui-form-item layui-inline">
+                                <button class="layui-btn layui-btn-primary" onclick="search_users()"><i
+                                    class="layui-icon">
                                     <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">​</font>
+                                        <font style="vertical-align: inherit;">Search</font>
                                     </font>
-                                </button></div>
-                        </form>
+                                </i>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">​</font>
+                                </font>
+                            </button>
+                            </div>
+                        </div>
+                        <script>
+                            function search_users(){
+                                let group_id = document.getElementById("group_id").value
+                                let level = document.getElementById("level").value
+                                let agent_service_id = document.getElementById("agent_service_id").value
+                                let agent_id = document.getElementById("agent_id").value
+                                let selectList = document.getElementById("selectList").value
+                                let order = document.getElementById("order").value
+                                let username = document.getElementById("username").value
+                                let tel = document.getElementById("tel").value
+                                let addtime = document.getElementById("addtime").value
+                                fetch(`../serve/search_users.php?group_id=${group_id}&level=${level}&
+                                agent_service_id=${agent_service_id}&agent_id=${agent_id}&
+                                selectList=${selectList}&order=${order}&username=${username}&tel=${tel}&addtime=${addtime}`)
+                                .then(Response => Response.json())
+                                .then(result => {console.log(result)})
+                            }
+                        </script>
                         <div class="layui-form layui-form-pane form-search">
                             <div class="layui-form-item layui-inline"><label class="layui-form-label">
                                     <font style="vertical-align: inherit;">
@@ -577,7 +592,7 @@
                                 <div class="layui-input-inline"><input id="in_cale" value="" type="number"
                                         placeholder="Minimum 1.1" class="layui-input"></div>
                             </div>
-                            <div class="layui-form-item layui-inline"><a data-post="/admin/inyectar/batch_inyectar.html"
+                            <div class="layui-form-item layui-inline"><a data-post=""
                                     data-csrf="csrf65e9f624c8d25" onclick="set_inyectar(this)"
                                     class="layui-btn layui-btn-danger">
                                     <font style="vertical-align: inherit;">
@@ -592,6 +607,7 @@
                                 var ids = [];
                                 var $this = $(el);
                                 for (var i = 0; i < sel.data.length; i++) ids.push(sel.data[i].id);
+                                console.log(sel)
                                 if (ids.length < 1) return $.msg.tips('请选择要打针的用户！');
                                 var data = {};
                                 data.uids = ids;
@@ -613,7 +629,7 @@
                         <div class="layui-form layui-border-box layui-table-view" lay-filter="LAY-table-1"
                             lay-id="userTable" style=" ">
                             <div class="layui-table-box">
-                                <div class="layui-table-header">
+                                <div class="layui-table-header" style="overflow-x: scroll;">
                                     <table cellspacing="0" cellpadding="0" border="0" class="layui-table"
                                         lay-skin="line,row" lay-size="lg">
                                         <thead>
@@ -640,6 +656,14 @@
                                                     <div class="layui-table-cell laytable-cell-1-0-2"><span>
                                                             <font style="vertical-align: inherit;">
                                                                 <font style="vertical-align: inherit;">Registration time
+                                                                </font>
+                                                            </font>
+                                                        </span></div>
+                                                </th>
+                                                <th data-field="user_id" data-key="1-0-3" class="">
+                                                    <div class="layui-table-cell laytable-cell-1-0-3"><span>
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">USER ID
                                                                 </font>
                                                             </font>
                                                         </span></div>
@@ -797,1340 +821,12 @@
                                                             </font>
                                                         </span></div>
                                                 </th>
+
                                             </tr>
                                         </thead>
-                                    </table>
-                                </div>
-                                <div class="layui-table-body layui-table-main">
-                                    <table cellspacing="0" cellpadding="0" border="0" class="layui-table"
-                                        lay-skin="line,row" lay-size="lg">
                                         <tbody class="user-tbody"></tbody>
                                     </table>
                                 </div>
-                                <div class="layui-table-fixed layui-table-fixed-l">
-                                    <div class="layui-table-header">
-                                        <table cellspacing="0" cellpadding="0" border="0" class="layui-table"
-                                            lay-skin="line,row" lay-size="lg">
-                                            <thead>
-                                                <tr>
-                                                    <th data-field="0" data-key="1-0-0" data-unresize="true"
-                                                        class=" layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary" lay-filter="layTableAllChoose">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </th>
-                                                    <th data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1"><span>
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">UID</font>
-                                                                </font>
-                                                            </span></div>
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                        </table>
-                                    </div>
-                                    <div class="layui-table-body" style="height: 1016px;">
-                                        <table cellspacing="0" cellpadding="0" border="0" class="layui-table"
-                                            lay-skin="line,row" lay-size="lg">
-                                            <tbody>
-                                                <tr data-index="0" class="">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4788</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="1" class="">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4786</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="2" class="layui-table-hover">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4783</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="3" class="">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4769</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="4">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4768</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="5" class="">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4763</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="6" class="">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4762</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="7" class="">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4747</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="8" class="">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4746</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="9" class="">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4741</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="10" class="">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4740</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="11">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4739</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="12" class="">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4738</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="13">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4619</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="14">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4618</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="15" class="">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4617</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="16" class="">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4616</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="17">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4610</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="18">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4601</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="19">
-                                                    <td data-field="0" data-key="1-0-0" class="layui-table-col-special">
-                                                        <div
-                                                            class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
-                                                            <input type="checkbox" name="layTableCheckbox"
-                                                                lay-skin="primary">
-                                                            <div class="layui-unselect layui-form-checkbox"
-                                                                lay-skin="primary"><i
-                                                                    class="layui-icon layui-icon-ok"></i></div>
-                                                        </div>
-                                                    </td>
-                                                    <td data-field="id" data-key="1-0-1" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-1">
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">4581</font>
-                                                            </font>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="layui-table-fixed layui-table-fixed-r" style="right: -1px;">
-                                    <div class="layui-table-header">
-                                        <table cellspacing="0" cellpadding="0" border="0" class="layui-table"
-                                            lay-skin="line,row" lay-size="lg">
-                                            <thead>
-                                                <tr>
-                                                    <th data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><span>
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">operate
-                                                                    </font>
-                                                                </font>
-                                                            </span></div>
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                        </table>
-                                        <div class="layui-table-mend"></div>
-                                    </div>
-                                    <div class="layui-table-body" style="height: 1016px;">
-                                        <table cellspacing="0" cellpadding="0" border="0" class="layui-table"
-                                            lay-skin="line,row" lay-size="lg">
-                                            <tbody>
-                                                <tr data-index="0" class="">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4788">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4788">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4788">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4788.html"
-                   data-value="id#4788;status#JPQNZ7" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4788">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4788">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="1" class="">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4786">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4786">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4786">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4786.html"
-                   data-value="id#4786;status#MZV8WU" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4786">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4786">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="2" class="layui-table-hover">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4783">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4783">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4783">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4783.html"
-                   data-value="id#4783;status#DEH3F4" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4783">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4783">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="3" class="">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4769">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4769">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4769">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4769.html"
-                   data-value="id#4769;status#QYJ76D" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4769">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4769">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="4">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4768">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4768">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4768">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4768.html"
-                   data-value="id#4768;status#E9V2MG" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4768">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4768">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="5" class="">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4763">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4763">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4763">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4763.html"
-                   data-value="id#4763;status#G7PSMW" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4763">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4763">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="6" class="">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4762">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4762">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4762">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4762.html"
-                   data-value="id#4762;status#XL9T2V" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4762">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4762">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="7" class="">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4747">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4747">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4747">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4747.html"
-                   data-value="id#4747;status#MZ9BN6" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4747">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4747">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="8" class="">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4746">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4746">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4746">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4746.html"
-                   data-value="id#4746;status#UY7GA9" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4746">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4746">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="9" class="">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4741">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4741">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4741">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4741.html"
-                   data-value="id#4741;status#CT3QJE" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4741">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4741">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="10" class="">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4740">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4740">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4740">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4740.html"
-                   data-value="id#4740;status#NGP7SX" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4740">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4740">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="11">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4739">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4739">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4739">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4739.html"
-                   data-value="id#4739;status#EHANVC" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4739">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4739">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="12" class="">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4738">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4738">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4738">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4738.html"
-                   data-value="id#4738;status#TSLDJ3" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4738">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4738">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="13">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4619">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4619">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4619">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4619.html"
-                   data-value="id#4619;status#76ZBFG" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4619">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4619">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="14">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4618">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4618">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4618">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4618.html"
-                   data-value="id#4618;status#JBPURN" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4618">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4618">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="15" class="">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4617">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4617">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4617">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4617.html"
-                   data-value="id#4617;status#H8675G" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4617">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4617">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="16" class="">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4616">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4616">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4616">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4616.html"
-                   data-value="id#4616;status#RWF3QN" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4616">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4616">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="17">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4610">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4610">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4610">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4610.html"
-                   data-value="id#4610;status#SVWL4N" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4610">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4610">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="18">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4601">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4601">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4601">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4601.html"
-                   data-value="id#4601;status#B985HT" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4601">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4601">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                                <tr data-index="19">
-                                                    <td data-field="edit" data-key="1-0-22" class="">
-                                                        <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                                                data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="打针计划"
-                                                                data-open="/admin/inyectar/index.html?uid=4581">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">inject</font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="编辑等级"
-                                                                data-modal="/admin/users/edit_level.html?id=4581">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">grade</font>
-                                                                </font>
-                                                            </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                                                data-title="编辑用户信息"
-                                                                data-modal="/admin/users/edit_users.html?id=4581">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">edit</font>
-                                                                </font>
-                                                            </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                   data-action="/admin/users/edit_users_ewm/2/4581.html"
-                   data-value="id#4581;status#BQCKVT" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                                                data-title="查看团队" data-reload="true"
-                                                                data-open="/admin/users/tuandui.html?id=4581">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">View the team
-                                                                    </font>
-                                                                </font>
-                                                            </a><a data-dbclick=""
-                                                                class="layui-btn layui-btn-xs layui-btn-normal"
-                                                                data-title="查看账变" data-reload="true"
-                                                                data-open="/admin/users/caiwu.html?id=4581">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Account
-                                                                        changes</font>
-                                                                </font>
-                                                            </a></div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
                             <style>
                                 .laytable-cell-1-0-0 {
                                     width: 40px;
@@ -2192,216 +888,55 @@
                                 limit: limit
                             });
                         </script>
-                        <div class="pagination-container nowrap"><span>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">A total of 92 records, displayed on each page
-                                    </font>
-                                </font><select onchange="location.href=this.options[this.selectedIndex].value"
-                                    data-auto-none="">
-                                    <option data-num="10"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=10&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">10</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="20"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=20&amp;page=1"
-                                        selected="">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">20</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="30"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=30&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">30</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="40"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=40&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">40</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="50"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=50&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">50</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="60"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=60&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">60</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="70"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=70&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">70</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="80"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=80&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">80</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="90"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=90&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">90</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="100"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=100&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">100</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="110"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=110&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">110</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="120"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=120&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">120</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="130"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=130&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">130</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="140"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=140&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">140</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="150"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=150&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">150</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="160"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=160&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">160</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="170"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=170&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">170</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="180"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=180&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">180</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="190"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=190&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">190</font>
-                                        </font>
-                                    </option>
-                                    <option data-num="200"
-                                        value="/admin.html#/admin/users/index.html?spm=m-62-63-64&amp;limit=200&amp;page=1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">200</font>
-                                        </font>
-                                    </option>
-                                </select>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Page 1 of 5 pages is currently displayed.
-                                    </font>
-                                </font>
-                            </span>
-                            <ul class="pagination">
-                                <li class="disabled"><span>
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">«</font>
-                                        </font>
-                                    </span></li>
-                                <li class="active"><span>
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">1</font>
-                                        </font>
-                                    </span></li>
-                                <li><a data-open="/admin/users/index.html?spm=m-62-63-64&amp;page=2"
-                                        onclick="return false"
-                                        href="https://www.easyshopmid12.xyz/admin/users/index.html?spm=m-62-63-64&amp;page=2">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">2</font>
-                                        </font>
-                                    </a></li>
-                                <li><a data-open="/admin/users/index.html?spm=m-62-63-64&amp;page=3"
-                                        onclick="return false"
-                                        href="https://www.easyshopmid12.xyz/admin/users/index.html?spm=m-62-63-64&amp;page=3">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">3</font>
-                                        </font>
-                                    </a></li>
-                                <li><a data-open="/admin/users/index.html?spm=m-62-63-64&amp;page=4"
-                                        onclick="return false"
-                                        href="https://www.easyshopmid12.xyz/admin/users/index.html?spm=m-62-63-64&amp;page=4">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">4</font>
-                                        </font>
-                                    </a></li>
-                                <li><a data-open="/admin/users/index.html?spm=m-62-63-64&amp;page=5"
-                                        onclick="return false"
-                                        href="https://www.easyshopmid12.xyz/admin/users/index.html?spm=m-62-63-64&amp;page=5">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">5</font>
-                                        </font>
-                                    </a></li>
-                                <li><a data-open="/admin/users/index.html?spm=m-62-63-64&amp;page=2"
-                                        onclick="return false"
-                                        href="https://www.easyshopmid12.xyz/admin/users/index.html?spm=m-62-63-64&amp;page=2">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">»</font>
-                                        </font>
-                                    </a></li>
-                            </ul>
-                        </div>
-                    </div>
+                        
                 </div>
             </div>
+            <div class="pagination-container nowrap">
+            <ul class="pagination">
+                
+            </ul>
+        </div>
+    </div>
         </div><!-- 主体内容 结束 -->
     </div>
     <script src="./System management background·Easy shopping_files/layui.all.js.download"></script>
     <script src="./System management background·Easy shopping_files/require.js.download"></script>
-    <script src="./System management background·Easy shopping_files/admin.js.download"></script>
+    <!-- <script src="./System management background·Easy shopping_files/admin.js.download"></script> -->
     <script type="text/javascript" charset="utf-8">
-        $(function () {
-            function getStatus() {
-                $.get("../serve/admin_get_all_users.php", function (result) {
-                    if (typeof result == 'string') result = JSON.parse(result);
+        window.addEventListener("load",function () {
+            let done_first = 0
+            let tableSize = 30
+            let state = 0
+            function getStatus(num = 0) {
+                fetch("../serve/admin_get_all_users.php")
+                .then(Response => Response.json())
+                .then(result => {
                     console.log(result)
+                    data = result.data.slice(state * tableSize,(state + 1) * tableSize)
                     //$('.recharge').html(result.recharge)
                     //$('.deposit').html(result.deposit);
                     let rtStr = ""
-                    for(let i = 0; i < result.data.length; i++){
-                        rtStr += `<tr>
-                            <td class="list-table-check-td think-checkbox">
-                            <label><input class="list-check-box" value="${result.data[i].user_id}" type="checkbox"></label>
+                    for(let i = 0; i < data.length; i++){
+                        rtStr += `
+                        
+                            <tr data-index="${i}">
+                                <td class="list-table-check-td think-checkbox">
+                                    <label><input class="list-check-box" value="${data[i].user_id}" type="checkbox"></label>
+                                    </td>
+                                <td data-field="id" data-key="1-0-1" class="">
+                                    <div class="layui-table-cell laytable-cell-1-0-1">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">${i}</font>
+                                        </font>
+                                    </div>
                             </td>
                             <td class="text-left nowrap">
                             <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${result.data[i].user_id}</font>
+                            <font style="vertical-align: inherit;">${data[i].date}</font>
                             </font></td>
                             <td class="text-left nowrap">
-                            <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${result.data[i].date}</font>
+                                <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${data[i].user_id}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">---</font>
@@ -2413,30 +948,36 @@
                             <font style="vertical-align: inherit;">---</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${result.data[i].user_name}</font></font></td>
+                            <font style="vertical-align: inherit;">${data[i].user_name}</font></font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${result.data[i].user_status}</font>
+                            <font style="vertical-align: inherit;">${data[i].user_status}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">-</font></font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">0.00</font></font></td>
+                            <font style="vertical-align: inherit;">${data[i].balance}</font></font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">0</font>
+                            <font style="vertical-align: inherit;">${data[i].user_status == "VIP 1" ? 
+                                "0.12%" : 
+                                data[i].user_status == "VIP 2" ? 
+                                "0.13%" : 
+                                data[i].user_status == "VIP 3" ?
+                                 "0.14" : 
+                                ""}</font>
                             </font></td><td class="text-left nowrap">
                             <font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">0</font></font>
                             </td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">0.00</font>
+                            <font style="vertical-align: inherit;">${data[i].cummulative_deposit_amount}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">0</font></font></td>
+                            <font style="vertical-align: inherit;">${data[i].cummulative_deposits}</font></font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">0.00</font>
+                            <font style="vertical-align: inherit;">${data[i].cummulative_withdrawal_amount}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">0</font>
+                            <font style="vertical-align: inherit;">${data[i].cummulative_withdrawals}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">0.00</font>
@@ -2445,38 +986,117 @@
                             <font style="vertical-align: inherit;">0.0000</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Li Anxu</font>
+                            <font style="vertical-align: inherit;">-</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">JPQNZ7</font>
+                            <font style="vertical-align: inherit;">${data[i].referral_code}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">94.205.52.90</font>
+                            <font style="vertical-align: inherit;">${data[i].last_ip_login}</font>
                             </font></td>
                             <td class="text-left nowrap"><a class="layui-btn layui-btn-normal layui-btn-xs">
                             <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${result.data[i].is_real ? result.data[i].is_real : "unverified"}</font>
+                            <font style="vertical-align: inherit;">${data[i].is_real ? result.data[i].is_real : "unverified"}</font>
                             </font></a></td>
+                            <td data-field="edit" data-key="1-0-22" class="">
+                                <div class="layui-table-cell laytable-cell-1-0-22"><a
+                                        data-dbclick=""
+                                        class="layui-btn layui-btn-xs layui-btn-danger"
+                                        data-title="打针计划"
+                                        data-open="/admin/inyectar/index.html?uid=4788">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">inject</font>
+                                        </font>
+                                    </a><a data-dbclick=""
+                                        class="layui-btn layui-btn-xs layui-btn-danger"
+                                        data-title="编辑等级"
+                                        data-modal="/admin/users/edit_level.html?id=4788">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">grade</font>
+                                        </font>
+                                    </a><a data-dbclick="" class="layui-btn layui-btn-xs"
+                                        data-title="编辑用户信息"
+                                        data-modal="/admin/users/edit_users.html?id=4788">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">edit</font>
+                                        </font>
+                                    </a><!--<a class="layui-btn layui-btn-xs layui-btn"
+                                        data-action=""
+                                        data-value="user_id#${data[i].user_id};status#JPQNZ7" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
+                                        class="layui-btn layui-btn-xs layui-btn-danger"
+                                        data-title="查看团队" data-reload="true"
+                                        data-open="">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">View the team
+                                            </font>
+                                        </font>
+                                    </a><a data-dbclick=""
+                                        class="layui-btn layui-btn-xs layui-btn-normal"
+                                        data-title="查看账变" data-reload="true"
+                                        data-open="">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Account
+                                                changes</font>
+                                        </font>
+                                    </a></div>
+                            </td>
                         </tr>
                             `
                     }
-                    $(".user-tbody").html(rtStr)
-                    if (result.deposit > 0 || result.recharge > 0) {
-                        var strAudio = "<audio id='audioPlay' src='/public/634.wav' hidden='true'>";
-                        if ($("body").find("audio").length <= 0)
-                            $("body").append(strAudio);
-                        var audio = document.getElementById("audioPlay");
-                        //浏览器支持 audion
-                        audio.play();
+                    let UserBody = document.querySelector(".user-tbody")
+                    UserBody.innerHTML = rtStr
+                    let pagStr = ""
+                    let l = 0
+                    for(a = 0; a < result.data.length; a + 30){
+                        pagStr += `
+                    <li class="${state == 0 ? "disabled" : "active"}"><span>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">«</font>
+                        </font>
+                    </span></li>
+                    <li class="active"><a onclick="reget_status(${l + 1})" href="">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">${l + 1}</font>
+                        </font>
+                    </a></li>
+                    <li><a onclick="reget_status(${state + 1})" href="">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">»</font>
+                            </font>
+                        </a></li>
+                    `
+                    l++
                     }
-                    $('#system-date').text(result.date);
-                });
+                    let pagination = document.querySelector(".pagination")
+                    pagination.innerHTML = pagStr
+                    if(done_first == 0){
+                        var strAudio = "<audio id='audioPlay' src='./mixkit-arabian-mystery-harp-notification-2489.wav' hidden='true'>";
+                            let body = document.querySelector("body")
+                            body.appendChild(strAudio);
+                            var audio = document.getElementById("audioPlay");
+                            //浏览器支持 audion
+                            audio.play();
+                        $('#system-date').text(result.date);
+                        done_first++
+                    }
+                })
             }
 
-            getStatus();
+            getStatus(state);
             setInterval(function () {
-                getStatus();
+                getStatus(state);
             }, 30000)
+
+            function reget_status(num){
+                state = num
+                getStatus(state)
+            }
+
+            function search_users(){
+                $.get("../serve/search_users.php", (result)=>{
+
+                })
+            }
         })
     </script>
     <div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate"
