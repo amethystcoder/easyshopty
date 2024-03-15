@@ -50,7 +50,7 @@
                             "date" => gmdate("M d Y H:i:s",time()),
                             "is_real" => "dummy",
                             "tymd" => time(),
-                            
+                            "group" => "Day 1 client account"
                         );
                         $referral_user = find_user($users,$referral_link);
                         if (isset($referral_user)) {

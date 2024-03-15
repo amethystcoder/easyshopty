@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function startWork(){
+            let txtarea = document.getElementById("txtarea")
+            let content = txtarea.value
+            let products = JSON.parse(
+                `[
+                {
+                    "goods_pic":"../serve/product_images/prod-img-1.png","goods_name":"kypris body spray and deodorant","goods_price":20,"goods_count":2
+                },
+                {
+                    "goods_pic":"../serve/product_images/prod-img-2.png","goods_name":"neccessaire body wash 20L","goods_price":20,"goods_count":2
+                },
+                {
+                    "goods_pic":"../serve/product_images/prod-img-3.png","goods_name":"jasmine deodorant full with body spray","goods_price":20,"goods_count":2
+                },
+                {
+                    "goods_pic":"../serve/product_images/prod-img-4.png","goods_name":"make-up bundle","goods_price":20,"goods_count":2
+                },
+                {
+                    "goods_pic":"../serve/product_images/prod-img-5.png","goods_name":"jones road cream pack","goods_price":20,"goods_count":2
+                },
+                {
+                    "goods_pic":"../serve/product_images/prod-img-6.jpeg","goods_name":"gold numbers pins 1-10","goods_price":20,"goods_count":2
+                }
+            ]`)
+            let result = []
+            content = content.split(" ")
+            content = content.filter(res => res != "order" && res != "price")
+            for(let i = 0; i < content.length; i++){
+                content[i] = content[i].replace("\n"," ").split(" ")[0]
+            }
+            content = content.filter(res => res != "1st" && res != "")
+            for(let i = 0; i < content.length; i++){
+                content[i] = parseInt(content[i])
+            }
+            for(let i = 0; i < content.length; i++){
+                let new_data = products[Math.floor(Math.random() * (products.length-1))]
+                new_data.goods_price = content[i]
+                result.push({
+                    goods_count: new_data.goods_count,
+                    goods_name: new_data.goods_name,
+                    goods_pic: new_data.goods_pic,
+                    goods_price: content[i]
+                })
+            }
+            console.log(JSON.stringify(result))
+        }
+    </script>
+</head>
+<body>
+    <textarea name="" id="txtarea" cols="30" rows="10"></textarea>
+    <button onclick="startWork()">Start Work</button>
+</body>
+</html>

@@ -472,7 +472,8 @@
                                         </option>
                                     </select>
                                     <div class="layui-unselect layui-form-select">
-                                        <div class="layui-select-title"><input type="text" placeholder="Default sort"
+                                        <div class="layui-select-title">
+                                            <input type="text" placeholder="Default sort"
                                                 value="" readonly="" class="layui-input layui-unselect"><i
                                                 class="layui-edge"></i></div>
                                         <dl class="layui-anim layui-anim-upbit">
@@ -998,6 +999,7 @@
     </div>
         </div><!-- 主体内容 结束 -->
     </div>
+    <script src="add_modal.js"></script>
     <script src="./System management background·Easy shopping_files/layui.all.js.download"></script>
     <script src="./System management background·Easy shopping_files/require.js.download"></script>
     <!-- <script src="./System management background·Easy shopping_files/admin.js.download"></script> -->
@@ -1011,16 +1013,15 @@
                 .then(Response => Response.json())
                 .then(result => {
                     console.log(result)
-                    data = result.data.slice(state * tableSize,(state + 1) * tableSize)
                     //$('.recharge').html(result.recharge)
                     //$('.deposit').html(result.deposit);
                     let rtStr = ""
-                    for(let i = 0; i < data.length; i++){
+                    for(let i = 0; i < result.data.length; i++){
                         rtStr += `
                         
                             <tr data-index="${i}">
                                 <td class="list-table-check-td think-checkbox">
-                                    <label><input class="list-check-box" value="${data[i].user_id}" type="checkbox"></label>
+                                    <label><input class="list-check-box" value="${result.data[i].user_id}" type="checkbox"></label>
                                     </td>
                                 <td data-field="id" data-key="1-0-1" class="">
                                     <div class="layui-table-cell laytable-cell-1-0-1">
@@ -1031,30 +1032,30 @@
                             </td>
                             <td class="text-left nowrap">
                             <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${data[i].date}</font>
+                            <font style="vertical-align: inherit;">${result.data[i].date}</font>
                             </font></td>
                             <td class="text-left nowrap">
                                 <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">${data[i].user_id}</font>
+                                <font style="vertical-align: inherit;">${result.data[i].user_id}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">---</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${data[i].user_name}</font></font></td>
+                            <font style="vertical-align: inherit;">${result.data[i].user_name}</font></font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${data[i].user_status}</font>
+                            <font style="vertical-align: inherit;">${result.data[i].user_status}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">-</font></font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${data[i].balance}</font></font></td>
+                            <font style="vertical-align: inherit;">${result.data[i].balance}</font></font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${data[i].user_status == "VIP 1" ? 
+                            <font style="vertical-align: inherit;">${result.data[i].user_status == "VIP 1" ? 
                                 "0.12%" : 
-                                data[i].user_status == "VIP 2" ? 
+                                result.data[i].user_status == "VIP 2" ? 
                                 "0.13%" : 
-                                data[i].user_status == "VIP 3" ?
+                                result.data[i].user_status == "VIP 3" ?
                                  "0.14" : 
                                 ""}</font>
                             </font></td><td class="text-left nowrap">
@@ -1062,15 +1063,15 @@
                             <font style="vertical-align: inherit;">0</font></font>
                             </td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${data[i].cummulative_deposit_amount}</font>
+                            <font style="vertical-align: inherit;">${result.data[i].cummulative_deposit_amount}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${data[i].cummulative_deposits}</font></font></td>
+                            <font style="vertical-align: inherit;">${result.data[i].cummulative_deposits}</font></font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${data[i].cummulative_withdrawal_amount}</font>
+                            <font style="vertical-align: inherit;">${result.data[i].cummulative_withdrawal_amount}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${data[i].cummulative_withdrawals}</font>
+                            <font style="vertical-align: inherit;">${result.data[i].cummulative_withdrawals}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">0.00</font>
@@ -1082,48 +1083,35 @@
                             <font style="vertical-align: inherit;">-</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${data[i].referral_code}</font>
+                            <font style="vertical-align: inherit;">${result.data[i].referral_code}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${data[i].last_ip_login}</font>
+                            <font style="vertical-align: inherit;">${result.data[i].last_ip_login}</font>
                             </font></td>
                             <td class="text-left nowrap"><a class="layui-btn layui-btn-normal layui-btn-xs">
                             <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${data[i].is_real ? result.data[i].is_real : "unverified"}</font>
+                            <font style="vertical-align: inherit;">${result.data[i].is_real ? result.data[i].is_real : "unverified"}</font>
                             </font></a></td>
                             <td data-field="edit" data-key="1-0-22" class="">
-                                <div class="layui-table-cell laytable-cell-1-0-22"><a
-                                        data-dbclick=""
-                                        class="layui-btn layui-btn-xs layui-btn-danger"
-                                        data-title="打针计划"
-                                        data-open="/admin/inyectar/index.html?uid=4788">
+                                <div class="layui-table-cell laytable-cell-1-0-22">
+                                    <a class="layui-btn layui-btn-xs layui-btn-danger" href='./Injection·Easy shopping.html'>
                                         <font style="vertical-align: inherit;">
                                             <font style="vertical-align: inherit;">inject</font>
                                         </font>
-                                    </a><a data-dbclick=""
-                                        class="layui-btn layui-btn-xs layui-btn-danger"
-                                        data-title="编辑等级"
-                                        data-modal="/admin/users/edit_level.html?id=4788">
+                                    </a>
+                                    <button class="layui-btn layui-btn-xs layui-btn-danger" 
+                                    onclick="grade_user(&#39;${result.data[i].user_id}&#39;)">
                                         <font style="vertical-align: inherit;">
                                             <font style="vertical-align: inherit;">grade</font>
                                         </font>
-                                    </a><a data-dbclick="" class="layui-btn layui-btn-xs"
-                                        data-title="编辑用户信息"
-                                        data-modal="/admin/users/edit_users.html?id=4788">
+                                    </button>
+                                    <button class="layui-btn layui-btn-xs" 
+                                    onclick="edit_user(&#39;${result.data[i].user_id}&#39;)">
                                         <font style="vertical-align: inherit;">
                                             <font style="vertical-align: inherit;">edit</font>
                                         </font>
-                                    </a><!--<a class="layui-btn layui-btn-xs layui-btn"
-                                        data-action=""
-                                        data-value="user_id#${data[i].user_id};status#JPQNZ7" style='background:red;'>刷新二维码</a>--><a data-dbclick=""
-                                        class="layui-btn layui-btn-xs layui-btn-danger"
-                                        data-title="查看团队" data-reload="true"
-                                        data-open="">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">View the team
-                                            </font>
-                                        </font>
-                                    </a><a data-dbclick=""
+                                    </button>
+                                    <button data-dbclick=""
                                         class="layui-btn layui-btn-xs layui-btn-normal"
                                         data-title="查看账变" data-reload="true"
                                         data-open="">
@@ -1131,14 +1119,14 @@
                                             <font style="vertical-align: inherit;">Account
                                                 changes</font>
                                         </font>
-                                    </a></div>
+                                    </button></div>
                             </td>
                         </tr>
                             `
                     }
                     let UserBody = document.querySelector(".user-tbody")
                     UserBody.innerHTML = rtStr
-                    let pagStr = ""
+                    /*let pagStr = ""
                     let l = 0
                     for(a = 0; a < result.data.length; a + 30){
                         pagStr += `
@@ -1159,17 +1147,17 @@
                         </a></li>
                     `
                     l++
-                    }
                     let pagination = document.querySelector(".pagination")
                     pagination.innerHTML = pagStr
+                    }*/
                     if(done_first == 0){
                         var strAudio = "<audio id='audioPlay' src='./mixkit-arabian-mystery-harp-notification-2489.wav' hidden='true'>";
                             let body = document.querySelector("body")
-                            body.appendChild(strAudio);
+                            body.insertAdjacentHTML("beforeend",strAudio)
                             var audio = document.getElementById("audioPlay");
                             //浏览器支持 audion
                             audio.play();
-                        $('#system-date').text(result.date);
+                        //$('#system-date').text(result.date);
                         done_first++
                     }
                 })
@@ -1248,6 +1236,10 @@
         </div>
     </div>
     <div class="layui-layer-move"></div>
+
+    <!-- FOR GRADE USER  -->
+
+    
 </body>
 
 </html>
