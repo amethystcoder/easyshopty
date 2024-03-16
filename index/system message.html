@@ -1,5 +1,71 @@
 <!DOCTYPE html>
 <!-- saved from url=(0042)https://www.easyshopmid12.xyz/index/my/msg -->
-<html class="pixel-ratio-1"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>system message</title><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="stylesheet" href="./system message_files/light7.css"><link rel="stylesheet" href="./system message_files/common.css"><link rel="stylesheet" href="./system message_files/announcement.css"></head><body style=""><div class="page index-page page-current page-inited" id="announcement"><header class="bar bar-nav fxbt"><a href="https://www.easyshopmid12.xyz/index/my/index" class="icon icon-left pull-left"></a><div class="title">system message</div></header><div class="content scroll-wrapper"><img src="./system message_files/announcement.png" class="announcement-img"><div class="system-announcement"><img src="./system message_files/icon-gg.png" class="ggico">system announcement</div><div class="notice__wrap"><div class="notice__wrap--title">System notification</div><p></p><p>Your withdrawal order: CO2401131643448589 withdraw successfully!</p></div></div></div><script type="text/javascript" src="./system message_files/jquery.min.js.download"></script><script type="text/javascript" src="./system message_files/light7.js.download"></script><script type="text/javascript" src="./system message_files/utils.js.download"></script><script type="text/javascript">$(function() {
+<html class="pixel-ratio-1">
 
-});</script></body></html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>system message</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="./system message_files/light7.css">
+    <link rel="stylesheet" href="./system message_files/common.css">
+    <link rel="stylesheet" href="./system message_files/announcement.css">
+</head>
+
+<body style="">
+    <div class="page index-page page-current page-inited" id="announcement">
+        <header class="bar bar-nav fxbt"><a href="https://www.easyshopmid12.xyz/index/my/index"
+                class="icon icon-left pull-left"></a>
+            <div class="title">system message</div>
+        </header>
+        <div class="content scroll-wrapper"><img src="./system message_files/announcement.png" class="announcement-img">
+            <div class="system-announcement">
+                <img src="./system message_files/icon-gg.png" class="ggico">system announcement
+            </div>
+            <div class="msgs"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./system message_files/jquery.min.js.download"></script>
+    <script type="text/javascript" src="./system message_files/light7.js.download"></script>
+    <script type="text/javascript" src="./system message_files/utils.js.download"></script>
+    <script type="text/javascript">
+        $(function () {
+        $.ajax({
+            url: "../serve/get_sys_messages.php",
+            type: 'GET',
+            success: function (data) {
+                data = JSON.parse(data)
+                console.log(data)
+                if(data && data.code == 0){
+                    let det = ``
+                    if(data.data.length == 0){
+                        det = `
+                    <p>No messages</p>
+                    `
+                    }
+                    else{
+                        for(let i = 0; i < data.data.length; i++){
+                            det += `
+                            <div class="notice__wrap">
+                                <div class="notice__wrap--title">System notification</div>
+                                <p></p>
+                                <p>${data.data[i].message}!</p>
+                            </div>`
+                        }
+                    }
+                    $(".msgs").html(det)
+                }
+                else{
+                    let det = `
+                    <p>No messages</p>
+                    `
+                    $(".msgs").html(det)
+                }
+            },
+        });
+        });</script>
+</body>
+
+</html>

@@ -265,12 +265,13 @@
                         });
                     },
                     success: function (data) {
+                        data = JSON.parse(data)
                         loading.close();
                         if (data.code == 0) {
-                            // $(document).dialog({infoText: 'Withdrawal completed'});
-                            // setTimeout(function () {
-                            //     window.location.href = '/index/my/index';
-                            // }, 2000);
+                            $(document).dialog({ infoText: data.info });
+                             setTimeout(function () {
+                                 window.location.href = './homepage.html';
+                             }, 2000);
                             $("#numSpan").html($("#num").val())
                             $(".showSub").css("top", "0")
 

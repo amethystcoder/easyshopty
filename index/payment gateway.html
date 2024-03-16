@@ -93,18 +93,18 @@
         <div class="container">
             <h6 class="subtitle text-center">Order</h6>
             <div class="flex-row padding-top-10 pay-item">
-                <div class="txt">SN: SY2402281748028573</div>
+                <div class="dep-name txt"></div>
             </div>
             <div class="flex-row padding-top-10 pay-item">
-                <div class="txt">amount: TRX200.00</div>
+                <div class="dep-amt txt"></div>
             </div>
             <div class="flex-row padding-top-10 pay-item">
-                <div class="txt">TRX amount: $200.00</div>
+                <div class="dep-amt-sec txt"></div>
             </div>
             <h6 class="subtitle text-center">TRX Tron(TRC20)</h6>
             <div class="row">
                 <div class="col-12 text-center"><img src="./Wallet recharge_files/wallet_qr.jpg"
-                        style="width: 50%"></div>
+                        style="width: 90%"></div>
             </div>
             <div class="padding-top-20">
                 <!--<div class="flex-row padding-top-10 pay-item"><div class="txt">TQKpqmG9ApiGSaR1BkbWUCagcMo4XmstXD</div><div><button onclick="copy_txt('TQKpqmG9ApiGSaR1BkbWUCagcMo4XmstXD')"
@@ -162,6 +162,24 @@
         style="left: -1000px; position: absolute" value="">
     <script>
         $(function () {
+            let url = new URLSearchParams(window.location.search).get("num")
+            console.log(url)
+            $.ajax({
+                url: '../serve/get_deposit_info.php',
+                type: 'post',
+                data: {url},
+                dataType: 'json',
+                success: function (res) {
+                    if (res.code == 0) {
+                        $(".dep-name").html(`SN: ${res.info.deposit_id}`)
+                        $(".dep-amt").html(`amount: TRX${res.info.price}`)
+                        $(".dep-amt-sec").html(`TRX amount: $${res.info.price}`)
+                    }
+                    else{
+                        $(document).dialog({ infoText: res.info });
+                    }
+                }
+            });
             $('#save-btn').click(function () {
                 var tNo = $('#transNo').val();
                 if (tNo == '') {
@@ -170,8 +188,6 @@
                         autoClose: 2000
                     });
                 }
-                let url = new URLSearchParams(window.location.search).get("num")
-                console.log(url)
                 var data = { deposit_id: url, tNo: tNo };
                 $.ajax({
                     url: '../serve/verify_paid_client.php',

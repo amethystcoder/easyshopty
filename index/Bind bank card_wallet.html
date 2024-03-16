@@ -49,18 +49,18 @@
                     <!----><!--<div class="col-12 col-md-6"><div class="form-group float-label "><input type="number"
                                class="form-control" required="" name="bank_branch" minlength="4" maxlength="4"  value=""><label class="form-control-label">Branch Code</label></div></div>--><!--<div class="col-12 col-md-6"><div class="form-group float-label active"><select name="bank_type" class="form-control"><option value="SAVINGS">SAVINGS</option><option value="CHECKING">CHECKING</option></select><label class="form-control-label">The type of beneficiary bank account.</label></div></div>--><!--<div class="col-12 col-md-6"><div class="form-group float-label "><input type="text" class="form-control" required="" name="account_digit" maxlength="2"  value=""><label class="form-control-label">account digit</label></div></div>-->
                     <div class="col-12 col-md-6">
-                        <div class="form-group float-label active"><input type="text" class="form-control" required=""
-                                name="username" maxlength="60" value="李安旭"><label class="form-control-label">Real
+                        <div class="form-group float-label active"><input type="text" class="acc-name form-control" required=""
+                                name="username" maxlength="60" value=""><label class="form-control-label">Real
                                 name</label></div>
                     </div><!---->
                     <div class="col-12 col-md-6">
-                        <div class="form-group float-label active"><input type="text" class="form-control" required=""
-                                name="id_number" maxlength="50" value="TJd6GmNT5GXwrqZBgUKyY22uuC9EJVtdCr"><label
+                        <div class="form-group float-label active"><input type="text" class="acc-TRX form-control" required=""
+                                name="id_number" maxlength="50" value=""><label
                                 class="form-control-label">TRX code/bank account</label></div>
                     </div>
                     <div class="col-12 col-md-6">
-                        <div class="form-group float-label active"><input type="tel" class="form-control" required=""
-                                name="tel" maxlength="20" value="447440332932"><label class="form-control-label">Contact
+                        <div class="form-group float-label active"><input type="tel" class="acc-tel form-control" required=""
+                                name="tel" maxlength="20" value=""><label class="form-control-label">Contact
                                 number</label></div>
                     </div>
                     <!----><!----><!--<div class="col-12 col-md-6"><div class="form-group float-label document_id  active"><div class="input-group"><div class="input-group-prepend"><select class="form-control" name="document_type"><option value="CPF">CPF</option><option value="CNPJ">CNPJ</option></select></div><input type="text" class="form-control" required="" name="document_id" maxlength="14" value=""></div><label class="form-control-label">Document ID</label></div></div>-->
@@ -68,7 +68,7 @@
                 <!--<h6 class="subtitle">Your card/wallet information</h6>--><!--<h6 class="subtitle">more information</h6>--><!--<div class="row"><div class="col-12 col-md-6"><div class="form-group float-label active"><input type="text" class="form-control" required="" name="qq" maxlength="60" value=""><label class="form-control-label">WhatsApp</label></div></div></div>-->
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <div class="form-group float-label active"><input type="password" class="form-control"
+                        <div class="form-group float-label active"><input type="password" class="acc-pwd form-control"
                                 required="" name="paypassword" maxlength="60" value=""><label
                                 class="form-control-label">Please enter the fund password</label></div>
                     </div>
@@ -104,6 +104,27 @@
     <script charset="utf-8" src="./Bind bank card_wallet_files/common.js.download"></script><!-- template custom js -->
     <script src="./Bind bank card_wallet_files/main.js.download"></script>
     <script type="application/javascript">$(function () {
+        $.ajax({
+            url: "../serve/get_wallet_info.php",
+            type: 'GET',
+            success: function (data) {
+                data = JSON.parse(data)
+                if(data && data.code == 0){
+                    $(".acc-name").val(data.data.user_name)
+                    $(".acc-tel").val(data.data.tel)
+                    $(".acc-TRX").val(data.data.id_number)
+                    $(".acc-pwd").val(data.data.paypassword)
+                }
+                else{
+                    setTimeout(()=>{
+                        $(document).dialog({ infoText: data.info });
+                    },2500)
+                    $(".acc-name").val('李安旭')
+                    $(".acc-TRX").val('TJd6GmNT5GXwrqZBgUKyY22uuC9EJVtdCr')
+                    $(".acc-tel").val('447440332932')
+                }
+            },
+        });
             var bankname = "";
             if (bankname) {
                 $('.bank-item').each(function () {

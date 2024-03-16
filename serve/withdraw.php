@@ -62,15 +62,17 @@ function create_withdrawal_id() {
                 if(password_verify($paypassword,$user["pwd"])){
                     if ($user["balance"] >= $num) {
                         $new_withdrawal = array(
+                            "withdrawal_id"=>create_withdrawal_id(),
                             "status" => "pending",
                             "user_id" => $user_id,
                             "num" => $num,
                             "TRX_code" => $TRX_code,
-                            "date_of_withdrawal" => gmdate("M d Y H:i:s",time())
+                            "date_of_withdrawal" => gmdate("M d Y H:i:s",time()),
+                            "tymd" => time()
                         );
                         $withdrawals[count($withdrawals)] = $new_withdrawal;
                         $saved_successfully = file_put_contents("withdrawals.json",json_encode($withdrawals));
-                        echo json_encode(array("code" => 0, "data" => $new_withdrawal, "message" => "created successfully"));
+                        echo json_encode(array("code" => 0, "data" => $new_withdrawal, "info" => "created successfully"));
                     }
                     else {
                         echo json_encode(array("code" => 1, "info" => "you cannot withdraw more than your balance"));

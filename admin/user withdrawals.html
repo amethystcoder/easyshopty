@@ -67,7 +67,7 @@
                 <li lay-unselect="" class="layui-nav-item" style="text-align: center"><a
                         style="line-height: 24px">当地时间<br><span id="system-date">2024-02-24 14:16:18</span></a></li>
                 <li lay-unselect="" class="layui-nav-item">
-                    <a href="./user rechargesg.html">
+                    <a href="./user recharges.html">
                         充值
                         <span class="layui-badge recharge">0</span></a></li>
                 <li lay-unselect="" class="layui-nav-item layui-this">
@@ -84,7 +84,7 @@
                         <dd lay-unselect=""><a><i
                                     class="layui-icon layui-icon-release margin-right-5"></i>退出登录</a></dd>
                     </dl><a><span><i class="layui-icon layui-icon-username margin-right-5">
-                    </i>Tayyab <a href="./admin login.html">Logout</a></span>
+                    </i>Tayyab <a href="./admin login.html" style="background-color: #393D49;">Logout</a></span>
                     <span class="layui-nav-more"></span></a>
                 </li><span class="layui-nav-bar"></span>
             </ul>
@@ -141,7 +141,7 @@
                                 </font>
                             </span><span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
-                            <dd class=""><a data-target-tips="订单列表" data-open="/admin/deal/order_list.html"
+                            <dd class=""><a data-target-tips="订单列表" href="./Trades.html"
                                     data-menu-node="m-69-72-75"><span
                                         class="nav-icon padding-left-5 layui-icon layui-icon-cart-simple"></span><span
                                         class="nav-text padding-left-5">
@@ -149,7 +149,7 @@
                                             <font style="vertical-align: inherit;">Order List</font>
                                         </font>
                                     </span></a></dd>
-                            <dd class=""><a data-target-tips="充值管理" data-open="/admin/deal/user_recharge.html"
+                            <dd class=""><a data-target-tips="充值管理" href="./user recharges.html"
                                     data-menu-node="m-69-72-74"><span
                                         class="nav-icon padding-left-5 layui-icon layui-icon-chart-screen"></span><span
                                         class="nav-text padding-left-5">
@@ -157,7 +157,7 @@
                                             <font style="vertical-align: inherit;">Recharge management</font>
                                         </font>
                                     </span></a></dd>
-                            <dd class="layui-this"><a data-target-tips="提现管理" data-open="/admin/deal/deposit_list.html"
+                            <dd class="layui-this"><a data-target-tips="提现管理" href="./user withdrawals.html"
                                     data-menu-node="m-69-72-76"><span
                                         class="nav-icon padding-left-5 fa fa-legal"></span><span
                                         class="nav-text padding-left-5">
@@ -450,12 +450,6 @@
                                             <font style="vertical-align: inherit;">User Info</font>
                                         </font>
                                     </th>
-                                    <th class="text-left nowrap" title="User/Mobile Phone/Level/Balance">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">First level agent/second level agent
-                                            </font>
-                                        </font>
-                                    </th>
                                     <th class="text-left nowrap" title="Withdrawal amount/handling fee/actual arrival">
                                         <font style="vertical-align: inherit;">
                                             <font style="vertical-align: inherit;">Withdrawal Amount</font>
@@ -484,11 +478,6 @@
                                     </th>
                                     <th class="text-left nowrap">
                                         <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Agent review</font>
-                                        </font>
-                                    </th>
-                                    <th class="text-left nowrap">
-                                        <font style="vertical-align: inherit;">
                                             <font style="vertical-align: inherit;">tripartite status</font>
                                         </font>
                                     </th>
@@ -506,40 +495,6 @@
                                 
                             </ul>
                         </div>
-                        <!-- <script>
-                            var payType = 'TRX';
-                            $('.deposit_apply').click(function () {
-                                var data = {
-                                    "id": $(this).attr('data-id'),
-                                    "status": 2,
-                                    "payout_type": payType,
-                                    "_csrf_": $(this).attr('data-csrf'),
-                                };
-                                layer.confirm('确定对该比订单付款吗？', {
-                                    btn: [payType, '取消'], //可以无限个按钮
-                                }, function (index, layero) {
-                                    depositListApply(data);
-                                }, function (index) {
-                                    depositListApply(data);
-                                });
-                            });
-
-                            function depositListApply(data) {
-                                var lIndex = layer.load(2);
-                                $.ajax({
-                                    type: 'POST',
-                                    url: "/admin/deal/do_deposit.html",
-                                    data: data,
-                                    success: function (res) {
-                                        layer.close(lIndex);
-                                        layer.alert(res.info, function (index) {
-                                            if (res.code == 1) location.reload();
-                                            layer.close(index);
-                                        });
-                                    }
-                                });
-                            }
-                        </script> -->
                     </div>
                 </div>
             </div>
@@ -573,13 +528,13 @@
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">${result.data[i].user_id} </font>
                                 </font>
-                            </td>
-                            <td>
+                                <br>
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">--- </font>
-                                </font><br>
+                                    <font style="vertical-align: inherit;">${result.data[i].user.user_name} </font>
+                                </font>
+                                <br>
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">---</font>
+                                    <font style="vertical-align: inherit;">${result.data[i].user.tel} </font>
                                 </font>
                             </td>
                             <td class="text-left nowrap">
@@ -614,11 +569,6 @@
                                         <font style="vertical-align: inherit;">${result.data[i].status}</font>
                                     </font>
                                 </a></td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].status} review</font>
-                                </font>
-                            </td>
                             <td class="text-left">
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">Not submittedRespected </font>
@@ -627,7 +577,20 @@
                                     <font style="vertical-align: inherit;"unsubmitted</font>
                                 </font>
                             </td>
-                            <td class="text-left nowrap"></td>
+                            <td class="text-left nowrap">
+                                <button class="layui-btn layui-btn-xs layui-btn-danger" 
+                                onclick="decline_withdrawal(&#39;${result.data[i].withdrawal_id}&#39;)">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">decline</font>
+                                    </font>
+                                </button>
+                                <button class="layui-btn layui-btn-xs" 
+                                onclick="accept_withdrawal(&#39;${result.data[i].withdrawal_id}&#39;)">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">accept</font>
+                                    </font>
+                                </button>
+                            </td>
                         </tr>
                         `
                     }
@@ -648,6 +611,40 @@
                 getStatus();
             }, 30000)
         })
+        function accept_withdrawal(WithdrawalId){
+            let formdata = new FormData()
+            formdata.append("withdrawal_id",WithdrawalId)
+            fetch("../serve/accept_withdrawal.php",{
+                method: "POST",
+                body: formdata
+            })
+            .then(Response => Response.json())
+            .then(res => {
+                if(res.code == 0){
+                    window.location.reload()
+                }
+                else{
+                    alert(res.data)
+                }
+            })
+        }
+        function decline_withdrawal(WithdrawalId){
+            let formdata = new FormData()
+            formdata.append("withdrawal_id",WithdrawalId)
+            fetch("../serve/decline_withdrawal.php",{
+                method: "POST",
+                body: formdata
+            })
+            .then(Response => Response.json())
+            .then(res => {
+                if(res.code == 0){
+                    window.location.reload()
+                }
+                else{
+                    alert(res.data)
+                }
+            })
+        }
     </script>
     <div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate"
         style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;"
