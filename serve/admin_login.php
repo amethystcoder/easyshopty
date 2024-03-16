@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_WARNING);
     try {
         $admin_username = $_POST["admin_username"];
         $password = $_POST["pwd"];

@@ -39,10 +39,10 @@
                                     onerror="this.src=&#39;/public/img/head.png&#39;" alt=""></figure>
                         </div>
                         <div class="col-auto pl-0 align-self-center">
-                            <h5 class="tel-code mb-1">9971402480&nbsp;
+                            <h5 class="tel-code mb-1">&nbsp;
                             </h5>
                             <p style="line-height: 20px"><span class="ref-code text-mute small">extension code&nbsp;
-                                    <b>SEJB37</b></span><a href="https://www.easyshopmid12.xyz/index/my/invite"
+                                    <b></b></span><a href="https://www.easyshopmid12.xyz/index/my/invite"
                                     style="display: inline-block; margin-left: 10px"><i
                                         class="material-icons text-template"
                                         style="font-size: 20px">card_giftcard</i></a></p>
@@ -56,18 +56,18 @@
                 <div class="card-body border-bottom">
                     <div class="row">
                         <div class="col">
-                            <h3 class="user-balance mb-0 font-weight-normal">TRX100.09</h3>
+                            <h3 class="user-balance mb-0 font-weight-normal">loading...</h3>
                             <p class="text-mute">my balance</p>
                         </div>
                         <div class="col-auto"><button class="btn btn-default btn-rounded-54 shadow"
-                                onclick="window.location.href=`/index/ctrl/recharge`"><i
-                                    class="material-icons">add</i></button></div>
+                                onclick="window.location.href=`./Wallet recharge.html`"><i
+                                    class="material-icons">loading...</i></button></div>
                     </div>
                 </div>
                 <div class="card-footer bg-none">
                     <div class="row">
                         <div class="col text-center">
-                            <p><span class="user-balance text-success">TRX100.09</span><br><small class="text-mute">Available
+                            <p><span class="user-balance text-success">loading...</span><br><small class="text-mute">Available
                                     balance</small></p>
                         </div>
                         <div class="col text-center border-left-dotted">
@@ -287,7 +287,7 @@
                     data = JSON.parse(data)
                     if(data && data.code == 0){
                         $(".user-balance").html("TRX"+data.balance)
-                        $(".ref-code").html(data.referral_code)
+                        //$(".ref-code").html(data.referral_code)
                         $(".tel-code").html(data.tel + `&nbsp;&nbsp;&nbsp;&nbsp;<span class="status-type text-mute small">${data.user_status}</span>`)
                     }
                     else{

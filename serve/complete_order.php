@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL ^ E_WARNING);
     session_start();
 
     try {
@@ -9,9 +9,12 @@
             $orders = json_decode(file_get_contents("orders.json"),true);
             $users = json_decode(file_get_contents("users.json"),true);
             $user = null;
+            $user_position = null;
             for($i =0;$i<count($users);$i++){
                 if($users[$i]["user_id"] == $user_id){
                     $user = $users[$i];
+                    $user_position = $i;
+                    break;
                 }
             }
             if (isset($user)) {
@@ -24,8 +27,11 @@
                             break;
                         }
                         else {
+                            $user["balance"] -= ($amnt - 5);
+                            $users[$user_position] = $user;
                             $orders[$i]["status"] = "completed";
                             $saved = file_put_contents("orders.json",json_encode($orders));
+                            $saved_user = file_put_contents("users.json",json_encode($users));
                             echo json_encode(array("code" => 0, "info" => "success"));
                             break;
                         }

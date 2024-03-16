@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_WARNING);
     session_start();
     try {
         $employee_username = $_POST["employee_username"];

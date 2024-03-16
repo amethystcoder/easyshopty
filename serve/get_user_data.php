@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL ^ E_WARNING);
     session_start();
     try {
         $user_id = empty($_SESSION["user_id"]) ? "" : $_SESSION["user_id"];

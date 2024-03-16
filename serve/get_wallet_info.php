@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL ^ E_WARNING);
     session_start();
     try {
         $user_id = empty($_SESSION["user_id"]) ? "" : $_SESSION["user_id"];
@@ -15,7 +15,7 @@
             echo json_encode(array("code" => 0, "data" => $user_wallet));
         }
         else {
-            echo json_encode(array("code" => 1, "info" => "wallet not found"));
+            echo json_encode(array("code" => 1, "info" => "withdrawal data not found"));
         }
     } catch (\Throwable $th) {
         echo json_encode(array("code" => 2, "info" => "some error occured processing your request"));

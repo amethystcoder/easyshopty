@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL ^ E_WARNING);
 function get_total_commissions($arr){
     $count = 0;
     for ($i=0; $i < count($arr); $i++) { 

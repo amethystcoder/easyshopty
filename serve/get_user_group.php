@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_WARNING);
 session_start();
 $user_status = $_SESSION["user_status"];
 

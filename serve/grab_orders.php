@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_WARNING);
 session_start();
 function create_oid() {
     $char_list = ["Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C",
@@ -12,17 +13,29 @@ function create_oid() {
 
 try {
     $orders = json_decode(file_get_contents("orders.json"),true);
-    $selected_product = [];
-    $selected_product["code"] = 0;
-    $selected_product["oid"] = create_oid();
-    $selected_product["addtime"] = gmdate("M d Y H:i:s",time());
-    $selected_product["tymd"] = time();
-    $selected_product["status"] = "pending";
-    $orders[count($orders)] = $selected_product;
-    $saved = file_put_contents("orders.json",json_encode($orders));
-    echo json_encode($selected_product);
+    $incomplete_order_exists = false;
+    for ($i=0; $i < count($orders); $i++) { 
+        if ($orders[$i]["status"] == "pending") {
+            $incomplete_order_exists = true;
+            break;
+        }
+    }
+    if ($incomplete_order_exists) {
+        echo json_encode(["code" => 1, "info"=>"please complete all pending orders before making a new order"]);
+    }
+    else {
+        $selected_product = [];
+        $selected_product["code"] = 0;
+        $selected_product["oid"] = create_oid();
+        $selected_product["addtime"] = gmdate("M d Y H:i:s",time());
+        $selected_product["tymd"] = time();
+        $selected_product["status"] = "pending";
+        $orders[count($orders)] = $selected_product;
+        $saved = file_put_contents("orders.json",json_encode($orders));
+        echo json_encode($selected_product);
+    }
 } catch (\Throwable $th) {
-    echo json_encode(["code" => 0, "info"=>"an error occured"]);
+    echo json_encode(["code" => 2, "info"=>"an error occured"]);
 }
 
 ?>

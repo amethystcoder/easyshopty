@@ -25,30 +25,28 @@ try {
             break;
         }
     }
+    /* $ord_num = 0;
+    if ($user_grade == "Day 1") {
+        $commission = 0.12;
+    } elseif ($user_grade == "Day 2") {
+        $commission = 0.13;
+    } elseif ($user_grade == "Day 4") {
+        $commission = 0.14;
+    }elseif ($user_grade == "Day 6") {
+        $commission = 0.14;
+    } */
     $commission = 0;
     if ($user_status == "VIP 1") {
         $commission = 0.12;
-    } elseif (user_status == "VIP 2") {
+    } elseif ($user_status == "VIP 2") {
         $commission = 0.13;
     } elseif ($user_status == "VIP 3") {
         $commission = 0.14;
     }
 
-    $new_tymd = time()-$tymd;
-    $time = 60 * 60 * 24;
-    $v_time = round($new_tymd / $time);
-    $mist = 0;
-    
-    if ($v_time < 1) {
-        //$goods = $products["1"];
-    }
-    elseif ($v_time > 1 && $v_time <= 2 ) {
-       //$goods = $products["2"];
-    }
-    elseif ($v_time > 3 && $v_time <= 4 ) {
-        //$goods = $products["4"];
-    }
     if ($user_order_count <= count($goods)) {
+        if($user_order_count <= $ord_num){}
+        else{}
         $selected_product = $goods[$user_order_count];
         for($i =0;$i<count($orders);$i++){
             if($orders[$i]["oid"] == $order_id){

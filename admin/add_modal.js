@@ -387,6 +387,7 @@ function submit_data(user_id) {
             alert("some issue occured")
         }
     })
+    .catch(err => alert("an error occured" + err))
 }
 
 function submit_grade_data(user_id) {
@@ -400,7 +401,7 @@ function submit_grade_data(user_id) {
         method:"POST",
         body:formdata
     })
-    .then(Response => Response.json())
+    .then(Response => Response.text())
     .then(data => {
         if (data.code == 0) {
             window.location.reload()
@@ -409,4 +410,5 @@ function submit_grade_data(user_id) {
             alert("some issue occured")
         }
     })
+    .catch(err => alert("an error occured" + err))
 }

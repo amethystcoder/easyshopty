@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL ^ E_WARNING);
 session_start();
 
 try {
@@ -23,27 +23,6 @@ try {
             }
         }
         $users = $filtered;
-    }
-    if (condition) {
-        # code...
-    }
-    if (condition) {
-        # code...
-    }
-    if (condition) {
-        # code...
-    }
-    if (condition) {
-        # code...
-    }
-    if (condition) {
-        # code...
-    }
-    if (condition) {
-        # code...
-    }
-    if (condition) {
-        # code...
     }
     echo json_encode([]);
 

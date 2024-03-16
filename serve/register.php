@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL ^ E_WARNING);
     function create_invite_code() {
         $char_list = ["Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C",
                         "V","B","N","M","1","2","3","4","5","6","7","8","9"];
@@ -50,7 +50,8 @@
                             "date" => gmdate("M d Y H:i:s",time()),
                             "is_real" => "dummy",
                             "tymd" => time(),
-                            "group" => "Day 1 client account"
+                            "group" => "Day 1 client account",
+                            "ip_address" => $_SERVER["REMOTE_ADDR"] 
                         );
                         $referral_user = find_user($users,$referral_link);
                         if (isset($referral_user)) {

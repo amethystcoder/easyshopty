@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL ^ E_WARNING);
     try{
         $employee_username = $_POST["employee_username"];
         $phone_number = $_POST["pre"].$_POST["tel"];

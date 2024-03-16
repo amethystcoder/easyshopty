@@ -31,7 +31,7 @@
                 <div class="col-auto"><a href="javascript:history.go(-1)" class="btn btn-link text-white"><i
                             class="material-icons">chevron_left</i></a></div>
                 <div class="col text-center"><button class="btn w-100 text-white">withdrawal</button></div>
-                <div class="col-auto"><a href="https://www.easyshopmid12.xyz/index/support/index.html"
+                <div class="col-auto"><a href="./customer service center.html"
                         class="btn  btn-link text-white position-relative"><i
                             class="material-icons">support_agent</i></a></div>
             </div>
@@ -55,9 +55,9 @@
                     <div class="card-body bg-none">
                         <div class="row">
                             <dt class="col-5 text-secondary small">Account name</dt>
-                            <dd class="col-7 small">李安旭</dd>
+                            <dd class="acc-name col-7 small"></dd>
                             <dt class="col-5 text-secondary small">Mobile number</dt>
-                            <dd class="col-7 small">997****480</dd>
+                            <dd class="acc-tel col-7 small"></dd>
                             <!----><!--<dt class="col-12 text-secondary small">--><!--    <div class="custom-control custom-radio switch-type">--><!--        <input type="radio" name="type" class="custom-control-input" id="customradio3" value="wallet" checked="">--><!--        <label class="custom-control-label" for="customradio3">--><!--            Withdrawal to PAYID--><!--        </label>--><!--    </div>--><!--</dt>--><!---->
                             <dt class="col-12 text-secondary small switch-type">
                                 <div class="custom-control custom-radio"><input type="radio" name="type"
@@ -180,12 +180,41 @@
                     }
                 },
             });
+            $.ajax({
+                url: "../serve/get_wallet_info.php",
+                type: 'GET',
+                success: function (data) {
+                    data = JSON.parse(data)
+                    if(data && data.code == 0){
+                        $(".acc-name").html(data.data.username)
+                        $(".acc-tel").html(underview(data.data.tel))
+                    }
+                    else{
+                        setTimeout(()=>{
+                            $(document).dialog({ infoText: data.info });
+                        },2500)
+                        $(".acc-name").html('李安旭')
+                        $(".acc-tel").html('997****480')
+                    }
+                },
+            });
             $('input[name="type"]').on('change', function () {
                 if ($(this).val() == 'TRX') {
                     $('#TRX_code_div').show();
                 } else $('#TRX_code_div').hide();
             })
             $("input[name=num]").focus();
+
+            function underview(param){
+                if(typeof param == "string"){
+                    let start = (param.length / 2) - 1;
+                    for(let i = start;i < (start + 4); i++){
+                        param[i] = '*'
+                    }
+                    return param
+                }
+                return
+            }
 
             function check() {
                 if ($("input[name=num]").val() == '') {
