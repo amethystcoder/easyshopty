@@ -287,7 +287,7 @@
                     data = JSON.parse(data)
                     if(data && data.code == 0){
                         $(".user-balance").html("TRX"+data.balance)
-                        //$(".ref-code").html(data.referral_code)
+                        $(".ref-code").html(data.referral_code)
                         $(".tel-code").html(data.tel + `&nbsp;&nbsp;&nbsp;&nbsp;<span class="status-type text-mute small">${data.user_status}</span>`)
                     }
                     else{
