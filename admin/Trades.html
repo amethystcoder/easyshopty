@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" class="translated-ltr" style="">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>System management background·Easy shopping</title>
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=0.4">
+    <link rel="shortcut icon" href="https://www.easyshopmid12.xyz/upload/4d25aa439cf12b75/850898739b67f607.png">
+    <link rel="stylesheet" href="./Trades·Easy shopping_files/fonts.css">
+    <link rel="stylesheet" href="./Trades·Easy shopping_files/layui.css">
+    <link rel="stylesheet" href="./Trades·Easy shopping_files/console.css">
+    <script>window.ROOT_URL = '';</script>
+    <script src="./Trades·Easy shopping_files/pace.min.js.download"></script>
+    <style>
+        .layui-badge {
+            border-radius: 50%;
+            top: 10px !important;
+        }
+
+        ::-webkit-scrollbar {
+            height: 11px !important;
+        }
+    </style>
+    <link id="layuicss-laydate" rel="stylesheet" href="./Trades·Easy shopping_files/laydate.css" media="all">
+    <link id="layuicss-layer" rel="stylesheet" href="./Trades·Easy shopping_files/layer.css" media="all">
+    <link id="layuicss-skincodecss" rel="stylesheet" href="./Trades·Easy shopping_files/code.css" media="all">
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="./Trades·Easy shopping_files/m=el_main_css">
+</head>
+
+<body class="layui-layout-body            pace-done" style="">
+    <div class="pace  pace-inactive">
+        <div class="pace-progress" data-progress-text="100%" data-progress="99"
+            style="transform: translate3d(100%, 0px, 0px);">
+            <div class="pace-progress-inner"></div>
+        </div>
+        <div class="pace-activity"></div>
+    </div>
+    <div class="layui-layout layui-layout-admin"><!-- 顶部菜单 开始 -->
+        <div class="layui-header notselect">
+            <a href="./background home.html"
+                class="layui-logo layui-elip">Eshoppping`<sup class="padding-left-5">V10</sup>
+            </a>
+            <ul class="layui-nav layui-layout-left">
+                <li class="layui-nav-item" lay-unselect="">
+                    <a class="text-center" >
+                        <i 
+                            class="layui-icon layui-icon-spread-left"></i>
+                    </a>
+                </li>
+                <li class="layui-nav-item"><a 
+                         href="./background home.html"><span>后台首页</span></a></li>
+                <li class="layui-nav-item">
+                    <a  href="./System management background.html">
+                    <span class="layui-icon layui-icon-username padding-right-5"></span>
+                    <span>角色</span></a></li>
+                <li class="layui-nav-item layui-this">
+                    <a  href="./Trades.html">
+                        <span class="fa fa-balance-scale padding-right-5"></span><span>交易</span></a></li><span
+                    class="layui-nav-bar"></span>
+            </ul>
+            <ul class="layui-nav layui-layout-right">
+                <li lay-unselect="" class="layui-nav-item" style="text-align: center"><a
+                        style="line-height: 24px">当地时间<br><span id="system-date">2024-02-24 14:16:18</span></a></li>
+                <li lay-unselect="" class="layui-nav-item">
+                    <a href="./user recharges.html">
+                        充值
+                        <span class="layui-badge recharge">0</span></a></li>
+                <li lay-unselect="" class="layui-nav-item">
+                    <a href="./user withdrawals.html">
+                        提现<span class="layui-badge deposit">0</span></a></li>
+                <li lay-unselect="" class="layui-nav-item"><a ><i
+                            class="layui-icon layui-icon-refresh-3"></i></a></li>
+                <li class="layui-nav-item">
+                    <dl class="layui-nav-child">
+                        <dd lay-unselect=""><a ><i
+                                    class="layui-icon layui-icon-set-fill margin-right-5"></i>基本资料</a></dd>
+                        <dd lay-unselect=""><a ><i
+                                    class="layui-icon layui-icon-component margin-right-5"></i>安全设置</a></dd>
+                        <dd lay-unselect=""><a><i
+                                    class="layui-icon layui-icon-release margin-right-5"></i>退出登录</a></dd>
+                    </dl><a><span><i class="layui-icon layui-icon-username margin-right-5"></i>Tayyab <a href="./admin login.html">Logout</a></span><span
+                            class="layui-nav-more"></span></a>
+                </li><span class="layui-nav-bar"></span>
+            </ul>
+        </div><!-- 顶部菜单 结束 --><!-- 左则菜单 开始 -->
+        <div class="layui-side layui-bg-black notselect">
+            <div class="layui-side-scroll">
+                <ul class="layui-nav layui-nav-tree layui-hide" data-menu-layout="m-62">
+                    <li class="layui-nav-item layui-nav-itemed" data-submenu-layout="m-62-63"><a data-target-tips="会员管理"
+                            style="background:#393D49"><span
+                                class="nav-icon layui-hide layui-icon layui-icon-triangle-d"></span><span
+                                class="nav-text padding-left-5">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Member management</font>
+                                </font>
+                            </span><span class="layui-nav-more"></span></a>
+                        <dl class="layui-nav-child">
+                            <dd class=""><a data-target-tips="会员列表" data-open="/admin/users/index.html"
+                                    data-menu-node="m-62-63-64"><span
+                                        class="nav-icon padding-left-5 layui-icon layui-icon-username"></span><span
+                                        class="nav-text padding-left-5">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">member list</font>
+                                        </font>
+                                    </span></a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed" data-submenu-layout="m-62-98"><a data-target-tips="代理管理"
+                            style="background:#393D49"><span
+                                class="nav-icon layui-hide layui-icon layui-icon-user"></span><span
+                                class="nav-text padding-left-5">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Agency management</font>
+                                </font>
+                            </span><span class="layui-nav-more"></span></a>
+                        <dl class="layui-nav-child">
+                            <dd><a data-target-tips="代理列表" data-open="/admin/agent/index.html"
+                                    data-menu-node="m-62-98-99"><span
+                                        class="nav-icon padding-left-5 layui-icon layui-icon-link"></span><span
+                                        class="nav-text padding-left-5">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">proxy list</font>
+                                        </font>
+                                    </span></a></dd>
+                        </dl>
+                    </li><span class="layui-nav-bar"></span>
+                </ul>
+                <ul class="layui-nav layui-nav-tree" data-menu-layout="m-69">
+                    <li class="layui-nav-item layui-nav-itemed" data-submenu-layout="m-69-72"><a data-target-tips="交易管理"
+                            style="background:#393D49"><span
+                                class="nav-icon layui-hide layui-icon layui-icon-triangle-d"></span><span
+                                class="nav-text padding-left-5">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Transaction management</font>
+                                </font>
+                            </span><span class="layui-nav-more"></span></a>
+                        <dl class="layui-nav-child">
+                            <dd class="layui-this"><a data-target-tips="订单列表" data-open="/admin/deal/order_list.html"
+                                    data-menu-node="m-69-72-75"><span
+                                        class="nav-icon padding-left-5 layui-icon layui-icon-cart-simple"></span><span
+                                        class="nav-text padding-left-5">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Order List</font>
+                                        </font>
+                                    </span></a></dd>
+                            <dd><a data-target-tips="充值管理" data-open="/admin/deal/user_recharge.html"
+                                    data-menu-node="m-69-72-74"><span
+                                        class="nav-icon padding-left-5 layui-icon layui-icon-chart-screen"></span><span
+                                        class="nav-text padding-left-5">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Recharge management</font>
+                                        </font>
+                                    </span></a></dd>
+                            <dd><a data-target-tips="提现管理" data-open="/admin/deal/deposit_list.html"
+                                    data-menu-node="m-69-72-76"><span
+                                        class="nav-icon padding-left-5 fa fa-legal"></span><span
+                                        class="nav-text padding-left-5">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Withdrawal management</font>
+                                        </font>
+                                    </span></a></dd>
+                        </dl>
+                    </li><span class="layui-nav-bar"></span>
+                </ul>
+            </div>
+        </div><!-- 左则菜单 结束 --><!-- 主体内容 开始 -->
+        <div class="layui-body layui-bg-gray">
+            <div class="layui-card layui-bg-gray">
+                <style>
+                    .layui-tab-card>.layui-tab-title .layui-this {
+                        background-color: #fff;
+                    }
+                </style>
+                <div class="layui-card-header layui-anim layui-anim-fadein notselect"><span
+                        class="layui-icon layui-icon-next font-s10 color-desc margin-right-5"></span>
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Order List</font>
+                    </font>
+                    <div class="pull-right"></div>
+                </div>
+                <div class="layui-card-body layui-anim layui-anim-upbit">
+                    <div class="think-box-shadow">
+                        <fieldset>
+                            <legend>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Conditional search</font>
+                                </font>
+                            </legend>
+                            <form class="layui-form layui-form-pane form-search"
+                                action="https://www.easyshopmid12.xyz/admin/deal/order_list.html?spm=m-69-72-75"
+                                onsubmit="return false" method="get" autocomplete="off">
+                                <div class="layui-form-item layui-inline"><label class="layui-form-label">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">state</font>
+                                        </font>
+                                    </label>
+                                    <div class="layui-input-inline"><select name="status">
+                                            <option value="-1">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">all</font>
+                                                </font>
+                                            </option>
+                                            <option value="0">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">Pending payment</font>
+                                                </font>
+                                            </option>
+                                            <option value="1">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">Transaction complete</font>
+                                                </font>
+                                            </option>
+                                            <option value="2">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">User cancels</font>
+                                                </font>
+                                            </option>
+                                            <option value="3">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">Force completion</font>
+                                                </font>
+                                            </option>
+                                            <option value="4">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">Forced cancellation</font>
+                                                </font>
+                                            </option>
+                                            <option value="5">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">Transaction frozen</font>
+                                                </font>
+                                            </option>
+                                        </select>
+                                        <div class="layui-unselect layui-form-select">
+                                            <div class="layui-select-title"><input type="text"
+                                                    placeholder="please choose" value="全部" readonly=""
+                                                    class="layui-input layui-unselect"><i class="layui-edge"></i></div>
+                                            <dl class="layui-anim layui-anim-upbit">
+                                                <dd lay-value="-1" class="layui-this">
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">all</font>
+                                                    </font>
+                                                </dd>
+                                                <dd lay-value="0" class="">
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">Pending payment</font>
+                                                    </font>
+                                                </dd>
+                                                <dd lay-value="1" class="">
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">Transaction complete
+                                                        </font>
+                                                    </font>
+                                                </dd>
+                                                <dd lay-value="2" class="">
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">User cancels</font>
+                                                    </font>
+                                                </dd>
+                                                <dd lay-value="3" class="">
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">Force completion</font>
+                                                    </font>
+                                                </dd>
+                                                <dd lay-value="4" class="">
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">Forced cancellation
+                                                        </font>
+                                                    </font>
+                                                </dd>
+                                                <dd lay-value="5" class="">
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">Transaction frozen</font>
+                                                    </font>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item layui-inline"><label class="layui-form-label">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">order number</font>
+                                        </font>
+                                    </label>
+                                    <div class="layui-input-inline"><input name="oid" value=""
+                                            placeholder="Please enter order number" class="layui-input"></div>
+                                </div>
+                                <div class="layui-form-item layui-inline"><label class="layui-form-label">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">user name</font>
+                                        </font>
+                                    </label>
+                                    <div class="layui-input-inline"><input name="username" value=""
+                                            placeholder="Please enter user name" class="layui-input"></div>
+                                </div>
+                                <div class="layui-form-item layui-inline"><label class="layui-form-label">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Phone number</font>
+                                        </font>
+                                    </label>
+                                    <div class="layui-input-inline"><input name="mobile" value=""
+                                            placeholder="Please enter user mobile phone number" class="layui-input">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item layui-inline"><label class="layui-form-label">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">order time</font>
+                                        </font>
+                                    </label>
+                                    <div class="layui-input-inline"><input data-date-range="" name="addtime" value=""
+                                            placeholder="Please select the time to add" class="layui-input"
+                                            autocomplete="off" lay-key="3"></div>
+                                </div>
+                                <div class="layui-form-item layui-inline"><button class="layui-btn layui-btn-primary"><i
+                                            class="layui-icon">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">Search</font>
+                                            </font>
+                                        </i>
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">​</font>
+                                        </font>
+                                    </button></div>
+                            </form>
+                        </fieldset>
+                        <script>form.render()</script>
+                        <table class="layui-table margin-top-15" lay-skin="line">
+                            <thead>
+                                <tr>
+                                    <th class="text-left nowrap">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">order number</font>
+                                        </font>
+                                    </th>
+                                    <th class="text-left nowrap">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">username</font>
+                                        </font>
+                                    </th>
+                                    <th class="text-left nowrap">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">User balance</font>
+                                        </font>
+                                    </th>
+                                    <th class="text-left nowrap">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">User frozen amount</font>
+                                        </font>
+                                    </th>
+                                    <!--<th class='text-left nowrap'>商品名称</th><th class='text-left nowrap'>商品单价</th><th class='text-left nowrap'>交易数量</th>-->
+                                    <th class="text-left nowrap">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Transaction amount</font>
+                                        </font>
+                                    </th>
+                                    <th class="text-left nowrap">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">commission</font>
+                                        </font>
+                                    </th>
+                                    <th class="text-left nowrap">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Do single level</font>
+                                        </font>
+                                    </th>
+                                    <th class="text-left nowrap">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Order time/payment time</font>
+                                        </font>
+                                    </th>
+                                    <th class="text-left nowrap">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">last payment time</font>
+                                        </font>
+                                    </th>
+                                    <th class="text-left nowrap">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Whether to pay</font>
+                                        </font>
+                                    </th>
+                                    <th class="text-left nowrap">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Order Status</font>
+                                        </font>
+                                    </th>
+                                    <th class="text-left nowrap">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">operate</font>
+                                        </font>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="order-tbody"></tbody>
+                        </table>
+                        <div class="pagination-container nowrap">
+                            <ul class="pagination">
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- 主体内容 结束 -->
+    </div>
+    <script src="./Trades·Easy shopping_files/layui.all.js.download"></script>
+    <script src="./Trades·Easy shopping_files/require.js.download"></script>
+    <!-- <script src="./Trades·Easy shopping_files/admin.js.download"></script> -->
+    <script type="text/javascript" charset="utf-8">
+        window.addEventListener("load",function () {
+            function getStatus() {
+                fetch("../serve/get_all_orders_admin.php")
+                .then(Response => Response.json())
+                .then(result => {
+                    console.log(result)
+                    //$('.recharge').html(result.recharge)
+                    //$('.deposit').html(result.deposit);
+                    let retStr = ""
+                    for(let i = 0;i < result.data.length;i++){
+                        retStr += `
+                        <tr>
+                            <td class="text-left nowrap">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">${result.data[i].oid}</font>
+                                </font>
+                            </td>
+                            <td class="text-left nowrap">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">${result.data[i].user.user_name}</font>
+                                </font>
+                            </td>
+                            <td class="text-left nowrap">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">${result.data[i].user.balance}</font>
+                                </font>
+                            </td>
+                            <td class="text-left nowrap">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">0.00</font>
+                                </font>
+                            </td>
+                            <!--<td class='text-left nowrap'>Deli Mechanical Pencil Triangle Shape 0.5mm U60200</td><td class='text-left nowrap'>TRX19.00</td><td class='text-left nowrap'>1</td>-->
+                            <td class="text-left nowrap">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">${result.data[i].goods.num}</font>
+                                </font>
+                            </td>
+                            <td class="text-left nowrap">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">${result.data[i].goods.commission}</font>
+                                </font>
+                            </td>
+                            <td class="text-left nowrap">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">${result.data[i].user.user_status}</font>
+                                </font>
+                            </td>
+                            <td class="text-left nowrap">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">${result.data[i].goods.addtime} </font>
+                                </font><br>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">-</font>
+                                </font>
+                            </td>
+                            <td class="text-left nowrap">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">${result.data[i].goods.addtime}</font>
+                                </font>
+                            </td>
+                            <td><a class="layui-btn layui-btn-xs layui-btn-primary">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Unpaid</font>
+                                    </font>
+                                </a></td>
+                            <td class="text-left nowrap">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">${result.data[i].status}</font>
+                                </font>
+                            </td>
+                            <td class="text-left nowrap"><a data-csrf="csrf65e9f64b8d0b7"
+                                    class="layui-btn layui-btn-xs layui-btn-danger"
+                                    data-action=""
+                                    data-value="id#${result.data[i].oid};status#5">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">freeze</font>
+                                    </font>
+                                </a><a data-csrf="csrf65e9f64b8d210" class="layui-btn layui-btn-xs layui-btn"
+                                    data-action="../serve/accept_order.php"
+                                    data-value="id#${result.data[i].oid};status#3">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Forced payment</font>
+                                    </font>
+                                </a><a data-csrf="csrf65e9f64b8d25f"
+                                    class="layui-btn layui-btn-xs layui-btn-warm"
+                                    data-action="../serve/decline_order.php"
+                                    data-value="id#${result.data[i].oid};status#4">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">cancel order</font>
+                                    </font>
+                                </a></td>
+                        </tr>
+                        `
+                    }
+                    let OrdBody = document.querySelector(".order-tbody")
+                    OrdBody.innerHTML = retStr
+                    if (result.deposit > 0 || result.recharge > 0) {
+                        var strAudio = "<audio id='audioPlay' src='/public/634.wav' hidden='true'>";
+                            let body = document.querySelector("body")
+                            body.appendChild(strAudio);
+                        var audio = document.getElementById("audioPlay");
+                        //浏览器支持 audion
+                        audio.play();
+                    }
+                    $('#system-date').text(result.date);
+                })
+            }
+
+            getStatus();
+            setInterval(function () {
+                getStatus();
+            }, 30000)
+        })
+    </script>
+    <div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate"
+        style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;"
+        data-id="">
+        <div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd">
+            <div class=" VIpgJd-yAWNEb-hvhgNd-l4eHX-i3jM8c"><img src="./Trades·Easy shopping_files/24px.svg" width="24"
+                    height="24" alt=""></div>
+            <div class=" VIpgJd-yAWNEb-hvhgNd-k77Iif-i3jM8c">
+                <div class="VIpgJd-yAWNEb-hvhgNd-IuizWc" dir="ltr">Original text</div>
+                <div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div>
+            </div>
+            <div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid ltr">
+                <div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od ltr" dir="ltr">
+                    <div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">Rate this translation</div>
+                    <div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">Your feedback will be used to help improve Google Translate
+                    </div>
+                </div>
+                <div class="VIpgJd-yAWNEb-hvhgNd-xgov5 ltr"><button id="goog-gt-thumbUpButton" type="button"
+                        class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Good translation" aria-label="Good translation"
+                        aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24"
+                                viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M">
+                                <path
+                                    d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z">
+                                </path>
+                            </svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24"
+                                viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M">
+                                <path
+                                    d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z">
+                                </path>
+                            </svg></span></button><button id="goog-gt-thumbDownButton" type="button"
+                        class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Poor translation" aria-label="Poor translation"
+                        aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24"
+                                viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M">
+                                <path
+                                    d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z">
+                                </path>
+                            </svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24"
+                                viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M">
+                                <path
+                                    d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z">
+                                </path>
+                            </svg></span></button></div>
+            </div>
+            <div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce">
+                <form id="goog-gt-votingForm" action="https://translate.googleapis.com/translate_voting?client=te_lib"
+                    method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl"
+                        id="goog-gt-votingInputSrcLang"><input type="text" name="tl"
+                        id="goog-gt-votingInputTrgLang"><input type="text" name="query"
+                        id="goog-gt-votingInputSrcText"><input type="text" name="gtrans"
+                        id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote">
+                </form><iframe name="votingFrame" frameborder="0"
+                    src="./Trades·Easy shopping_files/saved_resource.html"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="layui-layer-move"></div>
+</body>
+
+</html>
