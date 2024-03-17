@@ -52,7 +52,7 @@ function grade_user(user) {
                         <div class="layui-unselect layui-form-select">
                         <div class="layui-select-title">
                         <input type="text" placeholder="please choose" id="overlay-input"
-                            value="${result.data.user_group}" readonly="" class="layui-input layui-unselect">
+                            value="${result.data.group}" readonly="" class="layui-input layui-unselect">
                             </div>
                             <div style="display:flex">
                                 <p>Please choose one</p>
@@ -209,7 +209,7 @@ function edit_user(user) {
                             <div class="layui-unselect layui-form-select">
                                 <div class="layui-select-title">
                                     <input type="text" placeholder="please choose" id="overlay-input"
-                                        value="${result.data.user_group}" readonly="" class="layui-input layui-unselect">
+                                        value="${result.data.group}" readonly="" class="layui-input layui-unselect">
                                         </div>
                                         <div style="display:flex">
                                             <p>Please choose one</p>

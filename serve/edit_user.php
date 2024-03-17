@@ -32,6 +32,9 @@ session_start();
                     if (!empty($pwd)) {
                         $users[$i]["pwd"] = password_hash($pwd,PASSWORD_BCRYPT);
                     }
+                    if (!empty($overlay)) {
+                        $users[$i]["group"] = $overlay;
+                    }
                     break;
                 }
             }
