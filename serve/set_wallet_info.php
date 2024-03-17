@@ -32,7 +32,7 @@ try {
             $data[count($data)] = $new_wallet_info;
         }
         $saved_successfully = file_put_contents("wallet_info.json",json_encode($data));
-        echo json_encode(array("code" => 0, "message" => "saved successfully"));
+        echo json_encode(array("code" => 0, "message" => $new_wallet_info));
     }
     else{
         echo json_encode(array("code" => 1, "message" => "you are not logged in"));

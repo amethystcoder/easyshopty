@@ -644,6 +644,17 @@
                                                         <font style="vertical-align: inherit;">edit</font>
                                                     </font>
                                                 </button>
+                                                <a data-dbclick="" class="layui-btn layui-btn-xs 
+                                                layui-btn-normal" data-title="查看账变" data-reload="true"
+                                                 data-open="/admin/users/caiwu.html?id=4810">
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">Account changes</font>
+                                                            </font>
+                                                        </font>
+                                                    </font>
+                                                </a>
                                                 <button data-dbclick=""
                                                     class="layui-btn layui-btn-xs layui-btn-normal"
                                                     data-title="查看账变" data-reload="true"
@@ -1056,11 +1067,6 @@
                             </font></a></td>
                             <td data-field="edit" data-key="1-0-22" class="">
                                 <div class="layui-table-cell laytable-cell-1-0-22">
-                                    <a class="layui-btn layui-btn-xs layui-btn-danger" href='./Injection.html'>
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">inject</font>
-                                        </font>
-                                    </a>
                                     <button class="layui-btn layui-btn-xs layui-btn-danger" 
                                     onclick="grade_user(&#39;${result.data[i].user_id}&#39;)">
                                         <font style="vertical-align: inherit;">
@@ -1073,15 +1079,17 @@
                                             <font style="vertical-align: inherit;">edit</font>
                                         </font>
                                     </button>
-                                    <button data-dbclick=""
-                                        class="layui-btn layui-btn-xs layui-btn-normal"
-                                        data-title="查看账变" data-reload="true"
-                                        data-open="">
+                                    <a data-dbclick="" class="layui-btn layui-btn-xs layui-btn-normal" 
+                                    href='./account details.html?user_id=${result.data[i].user_id}'>
                                         <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Account
-                                                changes</font>
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">Account changes</font>
+                                                </font>
+                                            </font>
                                         </font>
-                                    </button></div>
+                                    </a>
+                                </div>
                             </td>
                         </tr>
                             `

@@ -50,7 +50,7 @@
                                class="form-control" required="" name="bank_branch" minlength="4" maxlength="4"  value=""><label class="form-control-label">Branch Code</label></div></div>--><!--<div class="col-12 col-md-6"><div class="form-group float-label active"><select name="bank_type" class="form-control"><option value="SAVINGS">SAVINGS</option><option value="CHECKING">CHECKING</option></select><label class="form-control-label">The type of beneficiary bank account.</label></div></div>--><!--<div class="col-12 col-md-6"><div class="form-group float-label "><input type="text" class="form-control" required="" name="account_digit" maxlength="2"  value=""><label class="form-control-label">account digit</label></div></div>-->
                     <div class="col-12 col-md-6">
                         <div class="form-group float-label active"><input type="text" class="acc-name form-control" required=""
-                                name="username" maxlength="60" value=""><label class="form-control-label">Real
+                                name="user_name" maxlength="60" value=""><label class="form-control-label">Real
                                 name</label></div>
                     </div><!---->
                     <div class="col-12 col-md-6">
@@ -149,7 +149,7 @@
 
             /*检查表单*/
             function check() {
-                if ($("input[name=username]").val() == '') {
+                if ($("input[name=user_name]").val() == '') {
                     $(document).dialog({
                         infoText: "cannot be empty!"
                     });
@@ -300,7 +300,12 @@
                         var loading = null;
                         $.ajax({
                             url: '../serve/set_wallet_info.php',
-                            data: $("#login-form").serialize(),
+                            data: {
+                                id_number:$(".acc-TRX").val(),
+                                tel:$(".acc-tel").val(),
+                                username:$(".acc-name").val(),
+                                paypassword:$(".acc-pwd").val()
+                            },
                             type: 'POST',
                             beforeSend: function () {
                                 loading = $(document).dialog({
@@ -314,6 +319,7 @@
                                 data = JSON.parse(data)
                                 loading.close();
                                 if (data.code == 0) {
+                                    console.log("From server",data.message)
                                     $(document).dialog({
                                         infoText: data.message,
                                         onClosed: function () {
