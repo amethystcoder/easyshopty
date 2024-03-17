@@ -58,28 +58,28 @@ function grade_user(user) {
                                 <p>Please choose one</p>
                                 <button style="background-color: green;color:white;
                                 border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                onclick="change_overlay('Don't join - 0')">Don't join</button> 
+                                onclick="change_overlay('Don't join')">Don't join</button> 
                                 <button style="background-color: green;color:white;
                                 border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                onclick="change_overlay('Standby (later customers) - 27')">Standby (later customers)</button> 
+                                onclick="change_overlay('Standby (later customers)')">Standby (later customers)</button> 
                                 <button style="background-color: green;color:white;
                                 border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                onclick="change_overlay('Day 2 Client Accounts - 30')">Day 2 Client Accounts</button> 
+                                onclick="change_overlay('Day 2 Client Accounts')">Day 2 Client Accounts</button> 
                                 <button style="background-color: green;color:white;
                                 border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                onclick="change_overlay('Day 2 own account (self) - 31')">Day 2 own account (self)</button> 
+                                onclick="change_overlay('Day 2 own account (self)')">Day 2 own account (self)</button> 
                                 <button style="background-color: green;color:white;
                                 border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                onclick="change_overlay('Day 6 own account (self) - 32')">Day 6 own account (self)</button>
+                                onclick="change_overlay('Day 6 own account (self)')">Day 6 own account (self)</button>
                                 <button style="background-color: green;color:white;
                                 border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                onclick="change_overlay('Day 4 Client Accounts - 33')">Day 4 Client Accounts</button>
+                                onclick="change_overlay('Day 4 Client Accounts')">Day 4 Client Accounts</button>
                                 <button style="background-color: green;color:white;
                                 border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                onclick="change_overlay('Day 4 own account (self) - 34')">Day 4 own account (self)</button>
+                                onclick="change_overlay('Day 4 own account (self)')">Day 4 own account (self)</button>
                                 <button style="background-color: green;color:white;
                                 border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                onclick="change_overlay('Spare 1 - 35')">Spare 1</button>
+                                onclick="change_overlay('Spare 1')">Spare 1</button>
                         </div>
                         </div>
                     </div>
@@ -215,28 +215,28 @@ function edit_user(user) {
                                             <p>Please choose one</p>
                                             <button style="background-color: green;color:white;
                                             border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                            onclick="change_overlay('Don't join - 0')">Don't join</button> 
+                                            onclick="change_overlay('Don't join')">Don't join</button> 
                                             <button style="background-color: green;color:white;
                                             border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                            onclick="change_overlay('Standby (later customers) - 27')">Standby (later customers)</button> 
+                                            onclick="change_overlay('Standby (later customers)')">Standby (later customers)</button> 
                                             <button style="background-color: green;color:white;
                                             border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                            onclick="change_overlay('Day 2 Client Accounts - 30')">Day 2 Client Accounts</button> 
+                                            onclick="change_overlay('Day 2 Client Accounts')">Day 2 Client Accounts</button> 
                                             <button style="background-color: green;color:white;
                                             border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                            onclick="change_overlay('Day 2 own account (self) - 31')">Day 2 own account (self)</button> 
+                                            onclick="change_overlay('Day 2 own account (self)')">Day 2 own account (self)</button> 
                                             <button style="background-color: green;color:white;
                                             border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                            onclick="change_overlay('Day 6 own account (self) - 32')">Day 6 own account (self)</button>
+                                            onclick="change_overlay('Day 6 own account (self)')">Day 6 own account (self)</button>
                                             <button style="background-color: green;color:white;
                                             border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                            onclick="change_overlay('Day 4 Client Accounts - 33')">Day 4 Client Accounts</button>
+                                            onclick="change_overlay('Day 4 Client Accounts')">Day 4 Client Accounts</button>
                                             <button style="background-color: green;color:white;
                                             border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                            onclick="change_overlay('Day 4 own account (self) - 34')">Day 4 own account (self)</button>
+                                            onclick="change_overlay('Day 4 own account (self)')">Day 4 own account (self)</button>
                                             <button style="background-color: green;color:white;
                                             border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                            onclick="change_overlay('Spare 1 - 35')">Spare 1</button>
+                                            onclick="change_overlay('Spare 1')">Spare 1</button>
                                 </div>
                             </div>
                         </div>
