@@ -449,7 +449,7 @@
                                             <font style="vertical-align: inherit;">${result.data[i].user_id}</font>
                                         </font></td>
                                         <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">---</font>
+                                        <font style="vertical-align: inherit;">${result.data[i].tel}</font>
                                         </font></td>
                                         <td class="text-left nowrap"><font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">${result.data[i].user_name}</font></font></td>
@@ -686,14 +686,6 @@
                                                             </font>
                                                         </span></div>
                                                 </th>
-                                                <th data-field="parent_name" data-key="1-0-18" class="">
-                                                    <div class="layui-table-cell laytable-cell-1-0-18"><span>
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;">Superior user
-                                                                </font>
-                                                            </font>
-                                                        </span></div>
-                                                </th>
                                                 <th data-field="invite_code" data-key="1-0-19" class="">
                                                     <div class="layui-table-cell laytable-cell-1-0-19"><span>
                                                             <font style="vertical-align: inherit;">
@@ -827,7 +819,7 @@
                     //$('.recharge').html(result.recharge)
                     //$('.deposit').html(result.deposit);
                     let rtStr = ""
-                    for(let i = 0; i < result.data.length; i++){
+                    for(let i = result.data.length - 1; i >= 0 ; i--){
                         rtStr += `
                             <tr data-index="${i}">
                                 <td class="list-table-check-td think-checkbox">
@@ -849,7 +841,7 @@
                                 <font style="vertical-align: inherit;">${result.data[i].user_id}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">---</font>
+                            <font style="vertical-align: inherit;">${result.data[i].tel}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">${result.data[i].user_name}</font></font></td>
@@ -888,9 +880,6 @@
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">0.0000</font>
-                            </font></td>
-                            <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">-</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">${result.data[i].referral_code}</font>

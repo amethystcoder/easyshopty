@@ -192,7 +192,7 @@
                                     <font style="vertical-align: inherit;">Conditional search</font>
                                 </font>
                             </legend>
-                            <form class="layui-form layui-form-pane form-search" autocomplete="off">
+                            <form class="layui-form layui-form-pane form-search" id="withdrawal-form" autocomplete="off">
                                 <div class="layui-form-item layui-inline"><label class="layui-form-label">
                                         <font style="vertical-align: inherit;">
                                             <font style="vertical-align: inherit;">state</font>
@@ -301,18 +301,31 @@
                                             placeholder="Please select launch time" class="layui-input"
                                             autocomplete="off" lay-key="7"></div>
                                 </div>
-                                <div class="layui-form-item layui-inline"><button class="layui-btn layui-btn-primary"><i
-                                            class="layui-icon">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Search</font>
-                                            </font>
-                                        </i>
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">​</font>
-                                        </font>
-                                    </button></div>
                             </form>
                         </fieldset>
+                        <div class="layui-form-item layui-inline">
+                            <button class="layui-btn layui-btn-primary" onclick="submitWithdrawalSearch()"><i
+                            class="layui-icon">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Search</font>
+                            </font>
+                        </i>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">​</font>
+                        </font>
+                    </button></div>
+                        <script>
+                            function submitWithdrawalSearch(){
+                                let WithdrawalForm = document.querySelector("#withdrawal-form")
+                                let formdata = new FormData(WithdrawalForm)
+                                fetch("",{
+                                    method: "POST",
+                                    body:formdata
+                                })
+                                .then(Response => Response.text())
+                                .then(data => console.log(data))
+                            }
+                        </script>
                         <fieldset>
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Current payment method: TRX</font>

@@ -58,7 +58,10 @@ function grade_user(user) {
                                 <p>Please choose one</p>
                                 <button style="background-color: green;color:white;
                                 border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                onclick="change_overlay('Don't join')">Don't join</button> 
+                                onclick="change_overlay('Day 1 Client Accounts')">Day 1 Client Accounts</button>
+                                <button style="background-color: green;color:white;
+                                border:hidden;border-radius:10px;padding:5px;margin:5px;" 
+                                onclick="change_overlay('Day 2 own account (self)')">Day 2 own account (self)</button> 
                                 <button style="background-color: green;color:white;
                                 border:hidden;border-radius:10px;padding:5px;margin:5px;" 
                                 onclick="change_overlay('Standby (later customers)')">Standby (later customers)</button> 
@@ -215,7 +218,10 @@ function edit_user(user) {
                                             <p>Please choose one</p>
                                             <button style="background-color: green;color:white;
                                             border:hidden;border-radius:10px;padding:5px;margin:5px;" 
-                                            onclick="change_overlay('Don't join')">Don't join</button> 
+                                            onclick="change_overlay('Day 1 Client Accounts')">Day 1 Client Accounts</button>
+                                            <button style="background-color: green;color:white;
+                                            border:hidden;border-radius:10px;padding:5px;margin:5px;" 
+                                            onclick="change_overlay('Day 2 own account (self)')">Day 2 own account (self)</button> 
                                             <button style="background-color: green;color:white;
                                             border:hidden;border-radius:10px;padding:5px;margin:5px;" 
                                             onclick="change_overlay('Standby (later customers)')">Standby (later customers)</button> 
