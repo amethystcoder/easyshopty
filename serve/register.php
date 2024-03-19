@@ -51,7 +51,8 @@ error_reporting(E_ALL ^ E_WARNING);
                             "is_real" => "dummy",
                             "tymd" => time(),
                             "group" => "Day 1 client account",
-                            "ip_address" => $_SERVER["REMOTE_ADDR"] 
+                            "ip_address" => $_SERVER["REMOTE_ADDR"],
+                            "commission_bonus" => 0
                         );
                         $referral_user = find_user($users,$referral_link);
                         if (isset($referral_user)) {

@@ -421,7 +421,7 @@
                 $.ajax({
                     url: '../serve/make_deposit.php',
                     data: {
-                        "price": price,
+                        "price": parseInt(price),
                         "id": id,
                         "type": type
                     },

@@ -244,7 +244,8 @@
                                     <p class="text-secondary"></p>
                                 </div>
                             </div>
-                        </a></div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div><!-- footer-->
@@ -316,7 +317,20 @@
                     buttonTextCancel: "cancel",
                     autoClose: 0,
                     onClickConfirmBtn: function () {
-                        window.location.href = "./login.html";
+                        $.ajax({
+                            url: "../serve/logout.php",
+                            type: 'GET',
+                            success: function (data) {
+                                console.log(data)
+                                data = JSON.parse(data)
+                                if(data && data.code == 0){
+                                    window.location.href = "./login.html";
+                                }
+                                else{
+                                    alert("could not logout successfully")
+                                }
+                            },
+                        });
                     },
                     onClickCancelBtn: function () {
 

@@ -65,7 +65,7 @@
             </ul>
             <ul class="layui-nav layui-layout-right">
                 <li lay-unselect="" class="layui-nav-item" style="text-align: center"><a
-                        style="line-height: 24px">当地时间<br><span id="system-date">2024-02-24 14:16:18</span></a></li>
+                        style="line-height: 24px">当地时间<br><span id="system-date"></span></a></li>
                 <li lay-unselect="" class="layui-nav-item layui-this">
                     <a href="./user recharges.html">
                         充值
@@ -83,7 +83,7 @@
                                     class="layui-icon layui-icon-component margin-right-5"></i>安全设置</a></dd>
                         <dd lay-unselect=""><a><i
                                     class="layui-icon layui-icon-release margin-right-5"></i>退出登录</a></dd>
-                    </dl><a><span><i class="layui-icon layui-icon-username margin-right-5"></i>Tayyab <a href="./admin login.html" style="background-color: #393D49;">Logout</a></span><span
+                    </dl><a><span><i class="layui-icon layui-icon-username margin-right-5"></i>dddd <a href="./admin login.html" style="background-color: #393D49;">Logout</a></span><span
                             class="layui-nav-more"></span></a>
                 </li><span class="layui-nav-bar"></span>
             </ul>
@@ -191,7 +191,7 @@
                                     <font style="vertical-align: inherit;">Conditional search</font>
                                 </font>
                             </legend>
-                            <form class="layui-form layui-form-pane form-search"
+                            <div class="layui-form layui-form-pane form-search"
                                 autocomplete="off">
                                 <div class="layui-form-item layui-inline"><label class="layui-form-label">
                                         <font style="vertical-align: inherit;">
@@ -222,26 +222,26 @@
                                         </select>
                                         <div class="layui-unselect layui-form-select">
                                             <div class="layui-select-title"><input type="text" placeholder="all"
-                                                    value="" readonly="" class="layui-input layui-unselect"><i
+                                                    value="" readonly="" id="state-input" class="layui-input layui-unselect"><i
                                                     class="layui-edge"></i></div>
                                             <dl class="layui-anim layui-anim-upbit">
-                                                <dd lay-value="" class="layui-select-tips">
+                                                <dd lay-value="" class="layui-select-tips" onclick="setState('all')">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">all</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="1" class="">
+                                                <dd lay-value="1" class="" onclick="setState('pending')">
                                                     <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">unpaid</font>
+                                                        <font style="vertical-align: inherit;">pending</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="2" class="">
+                                                <dd lay-value="2" class="" onclick="setState('successful')">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Recharge successful
                                                         </font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="3" class="">
+                                                <dd lay-value="3" class="" onclick="setState('declined')">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Recharge failed</font>
                                                     </font>
@@ -274,20 +274,20 @@
                                         </select>
                                         <div class="layui-unselect layui-form-select">
                                             <div class="layui-select-title"><input type="text"
-                                                    placeholder="please choose" value="全部" readonly=""
+                                                    placeholder="please choose" id="confirm-input"  value="全部" readonly=""
                                                     class="layui-input layui-unselect"><i class="layui-edge"></i></div>
-                                            <dl class="layui-anim layui-anim-upbit">
-                                                <dd lay-value="99" class="layui-this">
+                                            <dl class="layui-anim layui-anim-upbit" >
+                                                <dd lay-value="99" class="layui-this" onclick="setConfirm('all')">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">all</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="0" class="">
+                                                <dd lay-value="0" class="" onclick="setConfirm('unconfirmed')">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">unconfirmed</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="1" class="">
+                                                <dd lay-value="1" class="" onclick="setConfirm('confirmed')">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">confirmed</font>
                                                     </font>
@@ -308,32 +308,22 @@
                                                 </font>
                                             </option>
                                             <option value="Bankspay">Bankspay</option>
-                                            <option value="Bankspay">Bankspay</option>
-                                            <option value="Bankspay">Bankspay</option>
                                             <option value="bipay">bipay</option>
                                             <option value="bit">bit</option>
                                             <option value="Brotherpay">Brotherpay</option>
                                             <option value="Ceanpay">Ceanpay</option>
-                                            <option value="Dianshangbaopay">Dianshangbaopay</option>
-                                            <option value="Dianshangbaopay">Dianshangbaopay</option>
+                                            <option value="Dianshangbaopay">Dianshangbaopay</option>n>
                                             <option value="Dyb168pay">Dyb168pay</option>
                                             <option value="Dzxumpay">Dzxumpay</option>
                                             <option value="Easypay">Easypay</option>
                                             <option value="Fastpay">Fastpay</option>
                                             <option value="Globalpay">Globalpay</option>
-                                            <option value="Globalpay">Globalpay</option>
-                                            <option value="Globalpay">Globalpay</option>
-                                            <option value="Globalpay">Globalpay</option>
                                             <option value="Globalpay20">Globalpay20</option>
-                                            <option value="Globalpay51">Globalpay51</option>
                                             <option value="Globalpay51">Globalpay51</option>
                                             <option value="Gmspay">Gmspay</option>
                                             <option value="Goldbodipay">Goldbodipay</option>
-                                            <option value="Goldbodipay">Goldbodipay</option>
-                                            <option value="Gudsjpay">Gudsjpay</option>
                                             <option value="Gudsjpay">Gudsjpay</option>
                                             <option value="Hooyopay">Hooyopay</option>
-                                            <option value="Huarenpay">Huarenpay</option>
                                             <option value="Huarenpay">Huarenpay</option>
                                             <option value="Intfpay">Intfpay</option>
                                             <option value="Ipf360">Ipf360</option>
@@ -341,7 +331,6 @@
                                             <option value="Junhepay">Junhepay</option>
                                             <option value="Kighjpay">Kighjpay</option>
                                             <option value="Letspay">Letspay</option>
-                                            <option value="Lexmpay">Lexmpay</option>
                                             <option value="Lexmpay">Lexmpay</option>
                                             <option value="Liu6pay">Liu6pay</option>
                                             <option value="luxpag">luxpag</option>
@@ -368,17 +357,13 @@
                                             <option value="Stppay">Stppay</option>
                                             <option value="Sunpay">Sunpay</option>
                                             <option value="Threektmxpay">Threektmxpay</option>
-                                            <option value="Threektmxpay">Threektmxpay</option>
                                             <option value="Threektpay">Threektpay</option>
                                             <option value="Tikpay">Tikpay</option>
-                                            <option value="Timepay">Timepay</option>
-                                            <option value="Timepay">Timepay</option>
                                             <option value="Timepay">Timepay</option>
                                             <option value="tokpay">tokpay</option>
                                             <option value="Topstandpay">Topstandpay</option>
                                             <option value="Vippay">Vippay</option>
                                             <option value="Vnmcard">Vnmcard</option>
-                                            <option value="Wepayglobal">Wepayglobal</option>
                                             <option value="Wepayglobal">Wepayglobal</option>
                                             <option value="Wowpay">Wowpay</option>
                                             <option value="wx">wx</option>
@@ -391,56 +376,42 @@
                                                     class="layui-input layui-unselect"><i class="layui-edge"></i></div>
                                             <dl class="layui-anim layui-anim-upbit">
                                                 <dd lay-value="-" class="layui-this">全部</dd>
-                                                <dd lay-value="Bankspay" class="">Bankspay</dd>
-                                                <dd lay-value="Bankspay" class="">Bankspay</dd>
-                                                <dd lay-value="Bankspay" class="">Bankspay</dd>
-                                                <dd lay-value="bipay" class="">bipay</dd>
-                                                <dd lay-value="bit" class="">bit</dd>
-                                                <dd lay-value="Brotherpay" class="">Brotherpay</dd>
-                                                <dd lay-value="Ceanpay" class="">Ceanpay</dd>
-                                                <dd lay-value="Dianshangbaopay" class="">Dianshangbaopay</dd>
-                                                <dd lay-value="Dianshangbaopay" class="">Dianshangbaopay</dd>
-                                                <dd lay-value="Dyb168pay" class="">Dyb168pay</dd>
-                                                <dd lay-value="Dzxumpay" class="">Dzxumpay</dd>
-                                                <dd lay-value="Easypay" class="">Easypay</dd>
-                                                <dd lay-value="Fastpay" class="">Fastpay</dd>
-                                                <dd lay-value="Globalpay" class="">Globalpay</dd>
-                                                <dd lay-value="Globalpay" class="">Globalpay</dd>
-                                                <dd lay-value="Globalpay" class="">Globalpay</dd>
-                                                <dd lay-value="Globalpay" class="">Globalpay</dd>
-                                                <dd lay-value="Globalpay20" class="">Globalpay20</dd>
-                                                <dd lay-value="Globalpay51" class="">Globalpay51</dd>
-                                                <dd lay-value="Globalpay51" class="">Globalpay51</dd>
-                                                <dd lay-value="Gmspay" class="">Gmspay</dd>
-                                                <dd lay-value="Goldbodipay" class="">Goldbodipay</dd>
-                                                <dd lay-value="Goldbodipay" class="">Goldbodipay</dd>
-                                                <dd lay-value="Gudsjpay" class="">Gudsjpay</dd>
-                                                <dd lay-value="Gudsjpay" class="">Gudsjpay</dd>
-                                                <dd lay-value="Hooyopay" class="">Hooyopay</dd>
-                                                <dd lay-value="Huarenpay" class="">Huarenpay</dd>
-                                                <dd lay-value="Huarenpay" class="">Huarenpay</dd>
-                                                <dd lay-value="Intfpay" class="">Intfpay</dd>
-                                                <dd lay-value="Ipf360" class="">Ipf360</dd>
-                                                <dd lay-value="Jbbankpay" class="">Jbbankpay</dd>
-                                                <dd lay-value="Junhepay" class="">Junhepay</dd>
-                                                <dd lay-value="Kighjpay" class="">Kighjpay</dd>
-                                                <dd lay-value="Letspay" class="">Letspay</dd>
-                                                <dd lay-value="Lexmpay" class="">Lexmpay</dd>
-                                                <dd lay-value="Lexmpay" class="">Lexmpay</dd>
-                                                <dd lay-value="Liu6pay" class="">Liu6pay</dd>
-                                                <dd lay-value="luxpag" class="">luxpag</dd>
-                                                <dd lay-value="Mcopay" class="">Mcopay</dd>
-                                                <dd lay-value="Mcopay" class="">Mcopay</dd>
-                                                <dd lay-value="Misafepay" class="">Misafepay</dd>
-                                                <dd lay-value="Mxpay" class="">Mxpay</dd>
-                                                <dd lay-value="Mywsypay" class="">Mywsypay</dd>
-                                                <dd lay-value="Opaysecpay" class="">Opaysecpay</dd>
-                                                <dd lay-value="Payscheappay" class="">Payscheappay</dd>
-                                                <dd lay-value="pix" class="">pix</dd>
-                                                <dd lay-value="Pnsafepay" class="">Pnsafepay</dd>
-                                                <dd lay-value="Qeapay" class="">Qeapay</dd>
-                                                <dd lay-value="Qeapay" class="">Qeapay</dd>
-                                                <dd lay-value="qeapay" class="">qeapay</dd>
+                                                <dd lay-value="Bankspay" class="" onclick="addchannel('Bankspay')">Bankspay</dd>
+                                                <dd lay-value="bipay" class="" onclick="addchannel('Bankspay')">bipay</dd>
+                                                <dd lay-value="bit" class="" onclick="addchannel('bit')">bit</dd>
+                                                <dd lay-value="Brotherpay" class="" onclick="addchannel('Bankspay')">Brotherpay</dd>
+                                                <dd lay-value="Ceanpay" class="" onclick="addchannel('Bankspay')">Ceanpay</dd>
+                                                <dd lay-value="Dianshangbaopay" class="" onclick="addchannel('Bankspay')">Dianshangbaopay</dd>
+                                                <dd lay-value="Dyb168pay" class="" onclick="addchannel('Bankspay')">Dyb168pay</dd>
+                                                <dd lay-value="Dzxumpay" class="" onclick="addchannel('Bankspay')">Dzxumpay</dd>
+                                                <dd lay-value="Easypay" class="" onclick="addchannel('Bankspay')">Easypay</dd>
+                                                <dd lay-value="Fastpay" class="" onclick="addchannel('Bankspay')">Fastpay</dd>
+                                                <dd lay-value="Globalpay" class="" onclick="addchannel('Bankspay')">Globalpay</dd>
+                                                <dd lay-value="Globalpay20" class="" onclick="addchannel('Bankspay')">Globalpay20</dd>
+                                                <dd lay-value="Globalpay51" class="" onclick="addchannel('Bankspay')">Globalpay51</dd>
+                                                <dd lay-value="Gmspay" class="" onclick="addchannel('Bankspay')">Gmspay</dd>
+                                                <dd lay-value="Goldbodipay" class="" onclick="addchannel('Bankspay')">Goldbodipay</dd>
+                                                <dd lay-value="Gudsjpay" class="" onclick="addchannel('Bankspay')">Gudsjpay</dd>
+                                                <dd lay-value="Hooyopay" class="" onclick="addchannel('Bankspay')">Hooyopay</dd>
+                                                <dd lay-value="Huarenpay" class="" onclick="addchannel('Bankspay')">Huarenpay</dd>
+                                                <dd lay-value="Intfpay" class="" onclick="addchannel('Bankspay')">Intfpay</dd>
+                                                <dd lay-value="Ipf360" class="" onclick="addchannel('Bankspay')">Ipf360</dd>
+                                                <dd lay-value="Jbbankpay" class="" onclick="addchannel('Bankspay')">Jbbankpay</dd>
+                                                <dd lay-value="Junhepay" class="" onclick="addchannel('Bankspay')">Junhepay</dd>
+                                                <dd lay-value="Kighjpay" class="" onclick="addchannel('Bankspay')">Kighjpay</dd>
+                                                <dd lay-value="Letspay" class="" onclick="addchannel('Bankspay')">Letspay</dd>
+                                                <dd lay-value="Lexmpay" class="" onclick="addchannel('Bankspay')">Lexmpay</dd>
+                                                <dd lay-value="Liu6pay" class="" onclick="addchannel('Bankspay')">Liu6pay</dd>
+                                                <dd lay-value="luxpag" class="" onclick="addchannel('Bankspay')">luxpag</dd>
+                                                <dd lay-value="Mcopay" class="" onclick="addchannel('Bankspay')">Mcopay</dd>
+                                                <dd lay-value="Misafepay" class="" onclick="addchannel('Bankspay')">Misafepay</dd>
+                                                <dd lay-value="Mxpay" class="" onclick="addchannel('Bankspay')">Mxpay</dd>
+                                                <dd lay-value="Mywsypay" class="" onclick="addchannel('Bankspay')">Mywsypay</dd>
+                                                <dd lay-value="Opaysecpay" class="" onclick="addchannel('Bankspay')">Opaysecpay</dd>
+                                                <dd lay-value="Payscheappay" class="" onclick="addchannel('Bankspay')">Payscheappay</dd>
+                                                <dd lay-value="pix" class="" onclick="addchannel('Bankspay')">pix</dd>
+                                                <dd lay-value="Pnsafepay" class="" onclick="addchannel('Bankspay')">Pnsafepay</dd>
+                                                <dd lay-value="Qeapay" class="" onclick="addchannel('Bankspay')">Qeapay</dd>
                                                 <dd lay-value="Rapypay" class="">Rapypay</dd>
                                                 <dd lay-value="Ruspay" class="">Ruspay</dd>
                                                 <dd lay-value="Seapay" class="">Seapay</dd>
@@ -452,58 +423,18 @@
                                                 <dd lay-value="Stppay" class="">Stppay</dd>
                                                 <dd lay-value="Sunpay" class="">Sunpay</dd>
                                                 <dd lay-value="Threektmxpay" class="">Threektmxpay</dd>
-                                                <dd lay-value="Threektmxpay" class="">Threektmxpay</dd>
                                                 <dd lay-value="Threektpay" class="">Threektpay</dd>
                                                 <dd lay-value="Tikpay" class="">Tikpay</dd>
-                                                <dd lay-value="Timepay" class="">Timepay</dd>
-                                                <dd lay-value="Timepay" class="">Timepay</dd>
                                                 <dd lay-value="Timepay" class="">Timepay</dd>
                                                 <dd lay-value="tokpay" class="">tokpay</dd>
                                                 <dd lay-value="Topstandpay" class="">Topstandpay</dd>
                                                 <dd lay-value="Vippay" class="">Vippay</dd>
                                                 <dd lay-value="Vnmcard" class="">Vnmcard</dd>
                                                 <dd lay-value="Wepayglobal" class="">Wepayglobal</dd>
-                                                <dd lay-value="Wepayglobal" class="">Wepayglobal</dd>
                                                 <dd lay-value="Wowpay" class="">Wowpay</dd>
                                                 <dd lay-value="wx" class="">wx</dd>
                                                 <dd lay-value="yulupay" class="">yulupay</dd>
                                                 <dd lay-value="zfb" class="">zfb</dd>
-                                            </dl>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="layui-form-item layui-inline"><label class="layui-form-label">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">First level agent</font>
-                                        </font>
-                                    </label>
-                                    <div class="layui-input-inline"><select name="agent_id">
-                                            <option value="0">全部</option>
-                                        </select>
-                                        <div class="layui-unselect layui-form-select">
-                                            <div class="layui-select-title"><input type="text"
-                                                    placeholder="please choose" value="全部" readonly=""
-                                                    class="layui-input layui-unselect"><i class="layui-edge"></i></div>
-                                            <dl class="layui-anim layui-anim-upbit">
-                                                <dd lay-value="0" class="layui-this">全部</dd>
-                                            </dl>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="layui-form-item layui-inline"><label class="layui-form-label">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Secondary agent</font>
-                                        </font>
-                                    </label>
-                                    <div class="layui-input-inline"><select name="agent_service_id">
-                                            <option value="0">全部</option>
-                                        </select>
-                                        <div class="layui-unselect layui-form-select">
-                                            <div class="layui-select-title"><input type="text"
-                                                    placeholder="please choose" value="全部" readonly=""
-                                                    class="layui-input layui-unselect"><i class="layui-edge"></i></div>
-                                            <dl class="layui-anim layui-anim-upbit">
-                                                <dd lay-value="0" class="layui-this">全部</dd>
                                             </dl>
                                         </div>
                                     </div>
@@ -551,8 +482,18 @@
                                             <font style="vertical-align: inherit;">​</font>
                                         </font>
                                     </button></div>
-                            </form>
+                                </div>
                         </fieldset>
+                        <script>
+                            function setConfirm(dat){
+                                let Confirm = document.getElementById("confirm-input")
+                                Confirm.value = dat
+                            }
+                            function setState(dat){
+                                let State = document.getElementById("state-input")
+                                State.value = dat
+                            }
+                        </script>
                         <script>form.render()</script>
                         <fieldset>
                             <legend>
@@ -641,6 +582,14 @@
     <!-- <script src="./user_recharges/admin.js.download"></script> -->
     <script type="text/javascript" charset="utf-8">
         window.addEventListener("load",function () {
+            let systemDate = document.getElementById("system-date")
+            let date = new Date()
+            systemDate.innerHTML = date.toUTCString()
+            setInterval(()=>{
+                let systemDate = document.getElementById("system-date")
+                let date = new Date()
+                systemDate.innerHTML = date.toUTCString()
+            },1000)
             let played = 0
             function getStatus() {
                 fetch("../serve/admin_get_all_deposits.php")
@@ -648,7 +597,7 @@
                 .then(result => {
                     console.log(result)
                     let retStr = ""
-                    for(let i = 0;i < result.data.length;i++){
+                    for(let i = result.data.length - 1;i >= 0 ;i--){
                         retStr += `
                         <tr>
                             <td class="text-left nowrap">
@@ -706,7 +655,12 @@
                                 </font>
                             </td>
                             <td class="text-left nowrap"><a
-                                    class="layui-btn layui-btn-normal layui-btn-xs btn-success">
+                                    class="layui-btn layui-btn-normal layui-btn-xs btn-success" 
+                                    style="background-color:${result.data[i].status == "pending"
+                                    ? "purple" : result.data[i].status == "successful" ? 
+                                        "green" : result.data[i].status == "declined" ?
+                                        "red" : ""}"
+                                    >
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">${result.data[i].status}</font>
                                     </font>

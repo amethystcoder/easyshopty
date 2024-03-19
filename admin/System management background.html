@@ -69,7 +69,7 @@
             </ul>
             <ul class="layui-nav layui-layout-right">
                 <li lay-unselect="" class="layui-nav-item" style="text-align: center"><a
-                        style="line-height: 24px">当地时间<br><span id="system-date">2024-02-24 14:16:18</span></a></li>
+                        style="line-height: 24px">当地时间<br><span id="system-date"></span></a></li>
                 <li lay-unselect="" class="layui-nav-item">
                     <a href="./user recharges.html"> 
                         充值
@@ -87,7 +87,7 @@
                                     class="layui-icon layui-icon-component margin-right-5"></i>安全设置</a></dd>
                         <dd lay-unselect=""><a><i
                                     class="layui-icon layui-icon-release margin-right-5"></i>退出登录</a></dd>
-                    </dl><a><span><i class="layui-icon layui-icon-username margin-right-5"></i>Tayyab <a href="./admin login.html" style="background-color: #393D49;">Logout</a></span><span
+                    </dl><a><span><i class="layui-icon layui-icon-username margin-right-5"></i>dddd <a href="./admin login.html" style="background-color: #393D49;">Logout</a></span><span
                             class="layui-nav-more"></span></a>
                 </li><span class="layui-nav-bar"></span>
             </ul>
@@ -172,59 +172,6 @@
                 <div class="layui-card-body layui-anim layui-anim-upbit">
                     <div class="think-box-shadow">
                         <div class="layui-form layui-form-pane form-search" autocomplete="off">
-                            <div class="layui-form-item layui-inline"><label class="layui-form-label">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">First level agent</font>
-                                    </font>
-                                </label>
-                                <div class="layui-input-inline">
-                                    <select name="agent_id" id="agent_id">
-                                        <option value="0">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">all</font>
-                                            </font>
-                                        </option>
-                                    </select>
-                                    <div class="layui-unselect layui-form-select">
-                                        <div class="layui-select-title"><input type="text" placeholder="please choose"
-                                                value="全部" readonly="" class="layui-input layui-unselect"><i
-                                                class="layui-edge"></i></div>
-                                        <dl class="layui-anim layui-anim-upbit">
-                                            <dd lay-value="0" class="layui-this">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">all</font>
-                                                </font>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="layui-form-item layui-inline"><label class="layui-form-label">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Secondary agent</font>
-                                    </font>
-                                </label>
-                                <div class="layui-input-inline"><select name="agent_service_id" id="agent_service_id">
-                                        <option value="0">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">all</font>
-                                            </font>
-                                        </option>
-                                    </select>
-                                    <div class="layui-unselect layui-form-select">
-                                        <div class="layui-select-title"><input type="text" placeholder="please choose"
-                                                value="全部" readonly="" class="layui-input layui-unselect"><i
-                                                class="layui-edge"></i></div>
-                                        <dl class="layui-anim layui-anim-upbit">
-                                            <dd lay-value="0" class="layui-this">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">all</font>
-                                                </font>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="layui-form-item layui-inline"><label class="layui-form-label">
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">level</font>
@@ -419,81 +366,6 @@
                             </div>
                             <div class="layui-form-item layui-inline"><label class="layui-form-label">
                                     <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">sort by</font>
-                                    </font>
-                                </label>
-                                <div class="layui-input-inline"><select name="order" id="order">
-                                        <option value="default">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Default sort</font>
-                                            </font>
-                                        </option>
-                                        <option value="recharge">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Recharge amount in reverse order
-                                                </font>
-                                            </font>
-                                        </option>
-                                        <option value="recharge_count" >
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Recharge times in reverse order
-                                                </font>
-                                            </font>
-                                        </option>
-                                        <option value="deposit" >
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Withdrawal amount in reverse
-                                                    order</font>
-                                            </font>
-                                        </option>
-                                        <option value="deposit_count">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Withdrawal times in reverse order
-                                                </font>
-                                            </font>
-                                        </option>
-                                    </select>
-                                    <div class="layui-unselect layui-form-select">
-                                        <div class="layui-select-title">
-                                            <input type="text" placeholder="Default sort"
-                                                value="" readonly="" class="layui-input layui-unselect"><i
-                                                class="layui-edge"></i></div>
-                                        <dl class="layui-anim layui-anim-upbit">
-                                            <dd lay-value="" class="layui-select-tips">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">Default sort</font>
-                                                </font>
-                                            </dd>
-                                            <dd lay-value="recharge" class="">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">Recharge amount in reverse
-                                                        order</font>
-                                                </font>
-                                            </dd>
-                                            <dd lay-value="recharge_count" class="">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">Recharge times in reverse
-                                                        order</font>
-                                                </font>
-                                            </dd>
-                                            <dd lay-value="deposit" class="">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">Withdrawal amount in reverse
-                                                        order</font>
-                                                </font>
-                                            </dd>
-                                            <dd lay-value="deposit_count" class="">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">Withdrawal times in reverse
-                                                        order</font>
-                                                </font>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="layui-form-item layui-inline"><label class="layui-form-label">
-                                    <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">user name</font>
                                     </font>
                                 </label>
@@ -673,49 +545,6 @@
                                 })
                             }
                         </script>
-                        <div class="layui-form layui-form-pane form-search">
-                            <div class="layui-form-item layui-inline"><label class="layui-form-label">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Injection range</font>
-                                    </font>
-                                </label>
-                                <div class="layui-input-inline"><input id="in_cale" value="" type="number"
-                                        placeholder="Minimum 1.1" class="layui-input"></div>
-                            </div>
-                            <div class="layui-form-item layui-inline"><a data-post=""
-                                    data-csrf="csrf65e9f624c8d25" onclick="set_inyectar(this)"
-                                    class="layui-btn layui-btn-danger">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Batch injections
-                                        </font>
-                                    </font>
-                                </a></div>
-                        </div>
-                        <script>
-                            function set_inyectar(el) {
-                                var sel = table.checkStatus('userTable');
-                                var ids = [];
-                                var $this = $(el);
-                                for (var i = 0; i < sel.data.length; i++) ids.push(sel.data[i].id);
-                                console.log(sel)
-                                if (ids.length < 1) return $.msg.tips('请选择要打针的用户！');
-                                var data = {};
-                                data.uids = ids;
-                                data.scale = $('#in_cale').val();
-                                data.scale = data.scale.length > 0 ? parseFloat(data.scale) : 0;
-                                if (data.scale < 1.1) return $.msg.tips('请输入打针比例！');
-                                console.log(data);
-
-                                $.msg.confirm('确定打针？', function () {
-                                    $.form.load($this.attr('data-post'), data, 'post', false, true);
-                                });
-                            }
-
-                            var test = "0";
-                            $("#selectList").find("option[value=" + test + "]").prop("selected", true);
-                            form.render()
-                        </script>
-                        
                         <div class="layui-form layui-border-box layui-table-view" lay-filter="LAY-table-1"
                             lay-id="userTable" style=" ">
                             <div class="layui-table-box">
@@ -979,6 +808,14 @@
     <!-- <script src="./System_management_background/admin.js.download"></script> -->
     <script type="text/javascript" charset="utf-8">
         window.addEventListener("load",function () {
+            let systemDate = document.getElementById("system-date")
+            let date = new Date()
+            systemDate.innerHTML = date.toUTCString()
+            setInterval(()=>{
+                let systemDate = document.getElementById("system-date")
+                let date = new Date()
+                systemDate.innerHTML = date.toUTCString()
+            },1000)
             let done_first = 0
             let tableSize = 30
             let state = 0

@@ -18,8 +18,10 @@ function create_withdrawal_id() {
         $num = $_POST["num"];
         $users = json_decode(file_get_contents("users.json"),true);
         $withdrawals = json_decode(file_get_contents("withdrawals.json"),true);
+        $orders = json_decode(file_get_contents("orders.json"),true);
         $wallet = json_decode(file_get_contents("wallet_info.json"),true);
         $user = null;
+        $pending_order_exists = false;
         $user_wallet = null;
         if (!empty($user_id)) {
             for ($i=0; $i < count($users); $i++) { 
@@ -34,54 +36,68 @@ function create_withdrawal_id() {
                     break;
                 }
             }
-            if (isset($user_wallet) && $user_wallet["paypassword"] != "") {
-                if($paypassword == $user_wallet["paypassword"]){
-                    if ($user["balance"] >= $num) {
-                        $new_withdrawal = array(
-                            "withdrawal_id"=>create_withdrawal_id(),
-                            "status" => "pending",
-                            "user_id" => $user_id,
-                            "num" => $num,
-                            "TRX_code" => $TRX_code,
-                            "date_of_withdrawal" => gmdate("M d Y H:i:s",time()),
-                            "tymd" => time()
-                        );
-                        $withdrawals[count($withdrawals)] = $new_withdrawal;
-                        $saved_successfully = file_put_contents("withdrawals.json",json_encode($withdrawals));
-                        echo json_encode(array("code" => 0, "data" => $new_withdrawal, "message" => "created successfully"));
-                    }
-                    else {
-                        echo json_encode(array("code" => 1, "info" => "you cannot withdraw more than your balance"));
-                    }
+            for ($i=0; $i < count($orders); $i++) { 
+                if ($orders[$i]["user_id"] == $user_id && $orders[$i]["status"] == "pending") {
+                    $pending_order_exists = true;
+                    break;
                 }
-                else{
-                    echo json_encode(array("code" => 2, "info" => "pay password is incorrect"));
-                }
+            }
+            if ($pending_order_exists) {
+                echo json_encode(array("code" => -1, "info" => "There are open orders in this account. In this state, you cannot continue to grab orders and withdraw cash"));
             }
             else {
-                if(password_verify($paypassword,$user["pwd"])){
-                    if ($user["balance"] >= $num) {
-                        $new_withdrawal = array(
-                            "withdrawal_id"=>create_withdrawal_id(),
-                            "status" => "pending",
-                            "user_id" => $user_id,
-                            "num" => $num,
-                            "TRX_code" => $TRX_code,
-                            "date_of_withdrawal" => gmdate("M d Y H:i:s",time()),
-                            "tymd" => time()
-                        );
-                        $withdrawals[count($withdrawals)] = $new_withdrawal;
-                        $saved_successfully = file_put_contents("withdrawals.json",json_encode($withdrawals));
-                        echo json_encode(array("code" => 0, "data" => $new_withdrawal, "info" => "created successfully"));
+                if (isset($user_wallet) && $user_wallet["paypassword"] != "") {
+                    if($paypassword == $user_wallet["paypassword"]){
+                        if ($user["balance"] >= $num) {
+                            $new_withdrawal = array(
+                                "withdrawal_id"=>create_withdrawal_id(),
+                                "status" => "pending",
+                                "user_id" => $user_id,
+                                "num" => $num,
+                                "TRX_code" => $TRX_code,
+                                "date_of_withdrawal" => gmdate("M d Y H:i:s",time()),
+                                "tymd" => time()
+                            );
+                            $withdrawals[count($withdrawals)] = $new_withdrawal;
+                            $saved_successfully = file_put_contents("withdrawals.json",json_encode($withdrawals));
+                            echo json_encode(array("code" => 0, "data" => $new_withdrawal, "message" => "created successfully"));
+                        }
+                        else {
+                            echo json_encode(array("code" => 1, "info" => "you cannot withdraw more than your balance"));
+                        }
                     }
-                    else {
-                        echo json_encode(array("code" => 1, "info" => "you cannot withdraw more than your balance"));
+                    else{
+                        echo json_encode(array("code" => 2, "info" => "pay password is incorrect"));
                     }
                 }
-                else{
-                    echo json_encode(array("code" => 2, "info" => "pay password is incorrect"));
+                else {
+                    if(password_verify($paypassword,$user["pwd"])){
+                        if ($user["balance"] >= $num) {
+                            $new_withdrawal = array(
+                                "withdrawal_id"=>create_withdrawal_id(),
+                                "status" => "pending",
+                                "user_id" => $user_id,
+                                "num" => $num,
+                                "TRX_code" => $TRX_code,
+                                "date_of_withdrawal" => gmdate("M d Y H:i:s",time()),
+                                "tymd" => time()
+                            );
+                            $withdrawals[count($withdrawals)] = $new_withdrawal;
+                            $saved_successfully = file_put_contents("withdrawals.json",json_encode($withdrawals));
+                            echo json_encode(array("code" => 0, "data" => $new_withdrawal, "info" => "created successfully"));
+                        }
+                        else {
+                            echo json_encode(array("code" => 1, "info" => "you cannot withdraw more than your balance"));
+                        }
+                    }
+                    else{
+                        echo json_encode(array("code" => 2, "info" => "pay password is incorrect"));
+                    }
                 }
             }
+        }
+        else {
+            echo json_encode(array("code" => 4, "info" => "You are not logged in, kindly login to be able to withdraw"));
         }
     } catch (\Throwable $th) {
         echo json_encode(array("code" => 3, "info" => "some error occured"));

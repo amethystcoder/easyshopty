@@ -274,13 +274,11 @@
                              }, 2000);
                             $("#numSpan").html($("#num").val())
                             $(".showSub").css("top", "0")
-
-
                         } else {
                             if (data.code == -1) {
                                 $(document).dialog({ infoText: data.info, autoClose: 3000 });
                                 setTimeout(function () {
-                                    window.location.href = './homepage.html';
+                                    window.location.href = './order record.html';
                                 }, 3000);
                             } else {
                                 $(document).dialog({ infoText: data.info });

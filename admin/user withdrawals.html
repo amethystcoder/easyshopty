@@ -65,7 +65,7 @@
             </ul>
             <ul class="layui-nav layui-layout-right">
                 <li lay-unselect="" class="layui-nav-item" style="text-align: center"><a
-                        style="line-height: 24px">当地时间<br><span id="system-date">2024-02-24 14:16:18</span></a></li>
+                        style="line-height: 24px">当地时间<br><span id="system-date"></span></a></li>
                 <li lay-unselect="" class="layui-nav-item">
                     <a href="./user recharges.html">
                         充值
@@ -84,7 +84,7 @@
                         <dd lay-unselect=""><a><i
                                     class="layui-icon layui-icon-release margin-right-5"></i>退出登录</a></dd>
                     </dl><a><span><i class="layui-icon layui-icon-username margin-right-5">
-                    </i>Tayyab <a href="./admin login.html" style="background-color: #393D49;">Logout</a></span>
+                    </i>dddd <a href="./admin login.html" style="background-color: #393D49;">Logout</a></span>
                     <span class="layui-nav-more"></span></a>
                 </li><span class="layui-nav-bar"></span>
             </ul>
@@ -192,70 +192,7 @@
                                     <font style="vertical-align: inherit;">Conditional search</font>
                                 </font>
                             </legend>
-                            <form class="layui-form layui-form-pane form-search"
-                                action=""
-                                onsubmit="return false" method="get" autocomplete="off"><!--
-            <div class="layui-form-item layui-inline" style="margin-right: 10px"><button data-action='/admin/deal/do_deposit2.html' data-csrf="csrf65e9f691d1dde" data-rule="id#{key}"
-                        class='layui-btn layui-btn-sm layui-btn-danger'>批量通过
-                </button><button data-action='/admin/deal/do_deposit3.html' data-csrf="csrf65e9f691d2066" data-rule="id#{key}"
-                        class='layui-btn layui-btn-sm layui-btn-warning'>批量拒绝
-                </button></div>            -->
-                                <div class="layui-form-item layui-inline"><label class="layui-form-label">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Agent review</font>
-                                        </font>
-                                    </label>
-                                    <div class="layui-input-inline"><select name="agent_status">
-                                            <option value="">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">all</font>
-                                                </font>
-                                            </option>
-                                            <option value="1">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">Not reviewed</font>
-                                                </font>
-                                            </option>
-                                            <option value="2">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">passed</font>
-                                                </font>
-                                            </option>
-                                            <option value="3">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">Dismissed</font>
-                                                </font>
-                                            </option>
-                                        </select>
-                                        <div class="layui-unselect layui-form-select">
-                                            <div class="layui-select-title"><input type="text" placeholder="all"
-                                                    value="" readonly="" class="layui-input layui-unselect"><i
-                                                    class="layui-edge"></i></div>
-                                            <dl class="layui-anim layui-anim-upbit">
-                                                <dd lay-value="" class="layui-select-tips">
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">all</font>
-                                                    </font>
-                                                </dd>
-                                                <dd lay-value="1" class="">
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">Not reviewed</font>
-                                                    </font>
-                                                </dd>
-                                                <dd lay-value="2" class="">
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">passed</font>
-                                                    </font>
-                                                </dd>
-                                                <dd lay-value="3" class="">
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">Dismissed</font>
-                                                    </font>
-                                                </dd>
-                                            </dl>
-                                        </div>
-                                    </div>
-                                </div>
+                            <form class="layui-form layui-form-pane form-search" autocomplete="off">
                                 <div class="layui-form-item layui-inline"><label class="layui-form-label">
                                         <font style="vertical-align: inherit;">
                                             <font style="vertical-align: inherit;">state</font>
@@ -316,58 +253,6 @@
                                                 <dd lay-value="4" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Transfer failed</font>
-                                                    </font>
-                                                </dd>
-                                            </dl>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="layui-form-item layui-inline"><label class="layui-form-label">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">First level agent</font>
-                                        </font>
-                                    </label>
-                                    <div class="layui-input-inline"><select name="agent_id">
-                                            <option value="0">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">all</font>
-                                                </font>
-                                            </option>
-                                        </select>
-                                        <div class="layui-unselect layui-form-select">
-                                            <div class="layui-select-title"><input type="text"
-                                                    placeholder="please choose" value="全部" readonly=""
-                                                    class="layui-input layui-unselect"><i class="layui-edge"></i></div>
-                                            <dl class="layui-anim layui-anim-upbit">
-                                                <dd lay-value="0" class="layui-this">
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">all</font>
-                                                    </font>
-                                                </dd>
-                                            </dl>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="layui-form-item layui-inline"><label class="layui-form-label">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Secondary agent</font>
-                                        </font>
-                                    </label>
-                                    <div class="layui-input-inline"><select name="agent_service_id">
-                                            <option value="0">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">all</font>
-                                                </font>
-                                            </option>
-                                        </select>
-                                        <div class="layui-unselect layui-form-select">
-                                            <div class="layui-select-title"><input type="text"
-                                                    placeholder="please choose" value="全部" readonly=""
-                                                    class="layui-input layui-unselect"><i class="layui-edge"></i></div>
-                                            <dl class="layui-anim layui-anim-upbit">
-                                                <dd lay-value="0" class="layui-this">
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">all</font>
                                                     </font>
                                                 </dd>
                                             </dl>
@@ -505,6 +390,14 @@
     <!-- <script src="./user_withdrawals/admin.js.download"></script> -->
     <script type="text/javascript" charset="utf-8">
         window.addEventListener("load",function () {
+            let systemDate = document.getElementById("system-date")
+            let date = new Date()
+            systemDate.innerHTML = date.toUTCString()
+            setInterval(()=>{
+                let systemDate = document.getElementById("system-date")
+                let date = new Date()
+                systemDate.innerHTML = date.toUTCString()
+            },1000)
             function getStatus() {
                 fetch("../serve/admin_get_all_withdrawals.php")
                 .then(Response => Response.json())
@@ -564,7 +457,11 @@
                                     <font style="vertical-align: inherit;">-</font>
                                 </font>
                             </td>
-                            <td class="text-left nowrap"><a class="layui-btn layui-btn-xs layui-btn-danger">
+                            <td class="text-left nowrap"><a class="layui-btn layui-btn-xs layui-btn-danger"
+                                style="background-color:${result.data[i].status == "pending"
+                                    ? "purple" : result.data[i].status == "successful" ? 
+                                        "green" : result.data[i].status == "declined" ?
+                                        "red" : ""}">
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">${result.data[i].status}</font>
                                     </font>

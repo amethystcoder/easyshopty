@@ -65,7 +65,7 @@
             </ul>
             <ul class="layui-nav layui-layout-right">
                 <li lay-unselect="" class="layui-nav-item" style="text-align: center"><a
-                        style="line-height: 24px">当地时间<br><span id="system-date">2024-02-24 14:16:18</span></a></li>
+                        style="line-height: 24px">当地时间<br><span id="system-date"></span></a></li>
                 <li lay-unselect="" class="layui-nav-item">
                     <a href="./user recharges.html">
                         充值
@@ -83,7 +83,7 @@
                                     class="layui-icon layui-icon-component margin-right-5"></i>安全设置</a></dd>
                         <dd lay-unselect=""><a><i
                                     class="layui-icon layui-icon-release margin-right-5"></i>退出登录</a></dd>
-                    </dl><a><span><i class="layui-icon layui-icon-username margin-right-5"></i>Tayyab <a href="./admin login.html" style="background-color: #393D49;">Logout</a></span><span
+                    </dl><a><span><i class="layui-icon layui-icon-username margin-right-5"></i>dddd <a href="./admin login.html" style="background-color: #393D49;">Logout</a></span><span
                             class="layui-nav-more"></span></a>
                 </li><span class="layui-nav-bar"></span>
             </ul>
@@ -412,6 +412,14 @@
     <!-- <script src="./Trades/admin.js.download"></script> -->
     <script type="text/javascript" charset="utf-8">
         window.addEventListener("load",function () {
+            let systemDate = document.getElementById("system-date")
+            let date = new Date()
+            systemDate.innerHTML = date.toUTCString()
+            setInterval(()=>{
+                let systemDate = document.getElementById("system-date")
+                let date = new Date()
+                systemDate.innerHTML = date.toUTCString()
+            },1000)
             function getStatus() {
                 fetch("../serve/get_all_orders_admin.php")
                 .then(Response => Response.json())
@@ -420,7 +428,7 @@
                     //$('.recharge').html(result.recharge)
                     //$('.deposit').html(result.deposit);
                     let retStr = ""
-                    for(let i = 0;i < result.data.length;i++){
+                    for(let i = result.data.length - 1;i >= 0;i--){
                         retStr += `
                         <tr>
                             <td class="text-left nowrap">
@@ -472,37 +480,57 @@
                                     <font style="vertical-align: inherit;">${result.data[i].goods.addtime}</font>
                                 </font>
                             </td>
-                            <td><a class="layui-btn layui-btn-xs layui-btn-primary">
+                            <td>
+                                ${result.data[i].status == "completed" ? 
+                                `
+                                <a class="layui-btn layui-btn-xs layui-btn">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Already Paid</font>
+                                    </font>
+                                </a>
+                                ` : `
+                                <a class="layui-btn layui-btn-xs layui-btn-primary">
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">Unpaid</font>
                                     </font>
-                                </a></td>
+                                </a>
+                                `}
+                            </td>
                             <td class="text-left nowrap">
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">${result.data[i].status}</font>
                                 </font>
                             </td>
-                            <td class="text-left nowrap"><a data-csrf="csrf65e9f64b8d0b7"
-                                    class="layui-btn layui-btn-xs layui-btn-danger"
-                                    data-action=""
-                                    data-value="id#${result.data[i].oid};status#5">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">freeze</font>
-                                    </font>
-                                </a><a data-csrf="csrf65e9f64b8d210" class="layui-btn layui-btn-xs layui-btn"
-                                    data-action="../serve/accept_order.php"
-                                    data-value="id#${result.data[i].oid};status#3">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Forced payment</font>
-                                    </font>
-                                </a><a data-csrf="csrf65e9f64b8d25f"
-                                    class="layui-btn layui-btn-xs layui-btn-warm"
-                                    data-action="../serve/decline_order.php"
-                                    data-value="id#${result.data[i].oid};status#4">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">cancel order</font>
-                                    </font>
-                                </a></td>
+                            <td class="text-left nowrap">
+                                ${result.data[i].status == "completed" ? `
+                                <a class="layui-btn layui-btn-xs layui-btn">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Capital Flow</font>
+                                </font>
+                            </a>
+                                ` : `
+                                <a 
+                                class="layui-btn layui-btn-xs layui-btn-danger"
+                                data-action=""
+                                data-value="id#${result.data[i].oid};status#5">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">freeze</font>
+                                </font>
+                            </a><a class="layui-btn layui-btn-xs layui-btn"
+                                data-action="../serve/accept_order.php"
+                                data-value="id#${result.data[i].oid};status#3">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Forced payment</font>
+                                </font>
+                            </a><a 
+                                class="layui-btn layui-btn-xs layui-btn-warm"
+                                data-action="../serve/decline_order.php"
+                                data-value="id#${result.data[i].oid};status#4">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">cancel order</font>
+                                </font>
+                            </a>`}
+                               </td>
                         </tr>
                         `
                     }

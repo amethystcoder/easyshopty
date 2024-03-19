@@ -570,6 +570,7 @@
                         });
                     },
                     success: function (data) {
+                        console.log(data)
                         data = JSON.parse(data)
                         loading.close();
                         $('#autoStart').text("start grabbing orders");
@@ -588,6 +589,7 @@
                                     }
                                 });
                             } else {
+                                console.log(data)
                                 $(document).dialog({
                                     type: 'alert',
                                     titleText: data.info,
