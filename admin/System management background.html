@@ -546,15 +546,16 @@
                             }
                         </script>
                         <div class="layui-form layui-border-box layui-table-view" lay-filter="LAY-table-1"
-                            lay-id="userTable" style=" ">
+                            lay-id="userTable" style="">
                             <div class="layui-table-box">
-                                <div class="layui-table-header" style="overflow-x: scroll;">
+                                <div class="layui-table-header" style="overflow-x: scroll; display:flex">
                                     <table cellspacing="0" cellpadding="0" border="0" class="layui-table"
-                                        lay-skin="line,row" lay-size="lg">
-                                        <thead>
-                                            <tr>
+                                        lay-skin="line,row" lay-size="lg" style="position: relative;">
+                                        <thead style="position: relative;">
+                                            <tr style="position: relative;top:0;padding-left: 50px;padding-right:50px;">
                                                 <th data-field="0" data-key="1-0-0" data-unresize="true"
-                                                    class=" layui-table-col-special">
+                                                    class=" layui-table-col-special" style="position: fixed;z-index:2;
+                                                    background-color:#f2f2f2;">
                                                     <div
                                                         class="layui-table-cell laytable-cell-1-0-0 laytable-cell-checkbox">
                                                         <input type="checkbox" name="layTableCheckbox"
@@ -563,6 +564,14 @@
                                                             lay-skin="primary"><i class="layui-icon layui-icon-ok"></i>
                                                         </div>
                                                     </div>
+                                                </th>
+                                                <th data-field="id" data-key="1-0-1" class="" style="position: fixed;z-index:2;
+                                                background-color:#f2f2f2;">
+                                                    <div class="layui-table-cell laytable-cell-1-0-1"><span>
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">UID</font>
+                                                            </font>
+                                                        </span></div>
                                                 </th>
                                                 <th data-field="id" data-key="1-0-1" class="">
                                                     <div class="layui-table-cell laytable-cell-1-0-1"><span>
@@ -709,6 +718,14 @@
                                                             </font>
                                                         </span></div>
                                                 </th>
+                                                <th data-field="edit" data-key="1-0-22" class="" style="position: fixed;z-index:2;
+                                                background-color:#f2f2f2;right:35px;">
+                                                    <div class="layui-table-cell laytable-cell-1-0-22"><span>
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">operate</font>
+                                                            </font>
+                                                        </span></div>
+                                                </th>
                                                 <th data-field="edit" data-key="1-0-22" class="">
                                                     <div class="layui-table-cell laytable-cell-1-0-22"><span>
                                                             <font style="vertical-align: inherit;">
@@ -716,7 +733,6 @@
                                                             </font>
                                                         </span></div>
                                                 </th>
-
                                             </tr>
                                         </thead>
                                         <tbody class="user-tbody"></tbody>
@@ -821,11 +837,20 @@
                     let rtStr = ""
                     for(let i = result.data.length - 1; i >= 0 ; i--){
                         rtStr += `
-                            <tr data-index="${i}">
-                                <td class="list-table-check-td think-checkbox">
+                            <tr data-index="${i}" style="position: relative;top:0;padding-left: 50px;padding-right:50px;">
+                                <td class="list-table-check-td think-checkbox" style="position: fixed;z-index:2;
+                                background-color:#ffffff;">
                                     <label><input class="list-check-box" value="${result.data[i].user_id}" type="checkbox"></label>
                                     </td>
-                                <td data-field="id" data-key="1-0-1" class="">
+                                <td data-field="id" data-key="1-0-1" class="" style="position: fixed;z-index:2;
+                                background-color:#ffffff;">
+                                    <div class="layui-table-cell laytable-cell-1-0-1">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">${i}</font>
+                                        </font>
+                                    </div>
+                            </td>
+                            <td data-field="id" data-key="1-0-1" class="">
                                     <div class="layui-table-cell laytable-cell-1-0-1">
                                         <font style="vertical-align: inherit;">
                                             <font style="vertical-align: inherit;">${i}</font>
@@ -849,17 +874,11 @@
                             <font style="vertical-align: inherit;">${result.data[i].user_status}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">-</font></font></td>
+                            <font style="vertical-align: inherit;">${result.data[i].group}</font></font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">${result.data[i].balance}</font></font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${result.data[i].user_status == "VIP 1" ? 
-                                "0.12%" : 
-                                result.data[i].user_status == "VIP 2" ? 
-                                "0.13%" : 
-                                result.data[i].user_status == "VIP 3" ?
-                                 "0.14" : 
-                                ""}</font>
+                            <font style="vertical-align: inherit;">${result.data[i].earnings}</font>
                             </font></td><td class="text-left nowrap">
                             <font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">0</font></font>
@@ -885,12 +904,39 @@
                             <font style="vertical-align: inherit;">${result.data[i].referral_code}</font>
                             </font></td>
                             <td class="text-left nowrap"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">${result.data[i].last_ip_login}</font>
+                            <font style="vertical-align: inherit;">${result.data[i].ip_address}</font>
                             </font></td>
                             <td class="text-left nowrap"><a class="layui-btn layui-btn-normal layui-btn-xs">
                             <font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">${result.data[i].is_real ? result.data[i].is_real : "unverified"}</font>
                             </font></a></td>
+                            <td data-field="edit" data-key="1-0-22" class="" style="position: fixed;z-index:2;
+                            background-color:#ffffff;right:35px;">
+                                <div class="layui-table-cell laytable-cell-1-0-22">
+                                    <button class="layui-btn layui-btn-xs layui-btn-danger" 
+                                    onclick="grade_user(&#39;${result.data[i].user_id}&#39;)">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">grade</font>
+                                        </font>
+                                    </button>
+                                    <button class="layui-btn layui-btn-xs" 
+                                    onclick="edit_user(&#39;${result.data[i].user_id}&#39;)">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">edit</font>
+                                        </font>
+                                    </button>
+                                    <a data-dbclick="" class="layui-btn layui-btn-xs layui-btn-normal" 
+                                    href='./account details.html?user_id=${result.data[i].user_id}'>
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">Account changes</font>
+                                                </font>
+                                            </font>
+                                        </font>
+                                    </a>
+                                </div>
+                            </td>
                             <td data-field="edit" data-key="1-0-22" class="">
                                 <div class="layui-table-cell laytable-cell-1-0-22">
                                     <button class="layui-btn layui-btn-xs layui-btn-danger" 

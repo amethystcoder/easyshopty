@@ -98,7 +98,7 @@
                     <li>
                         <div class="card shadow border-0 mb-3">
                             <div class="card-body">
-                                <h5 class="bal mb-0 font-weight-normal">TRX119.09</h5>
+                                <h5 class="earn-one mb-0 font-weight-normal"></h5>
                                 <p class="text-secondary text-mute small">Earnings Today</p>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                     <li>
                         <div class="card shadow border-0 mb-3">
                             <div class="card-body">
-                                <h5 class="bal mb-0 font-weight-normal">TRX119.09</h5>
+                                <h5 class="earn-one mb-0 font-weight-normal"></h5>
                                 <p class="text-secondary text-mute small">Today's commission</p>
                             </div>
                         </div>
@@ -118,7 +118,7 @@
                     <li>
                         <div class="card shadow border-0 mb-3">
                             <div class="card-body">
-                                <h5 class="bal mb-0 font-weight-normal">TRX119.09</h5>
+                                <h5 class="earn-two mb-0 font-weight-normal"></h5>
                                 <p class="text-secondary text-mute small">gain</p>
                             </div>
                         </div>
@@ -467,6 +467,8 @@
                         if(data.user_status == "VIP 3"){
                             $(".curr-level-three").html("Current level")
                         }
+                        $(".earn-one").html(`TRX${data.earnings_today}`)
+                        $(".earn-two").html(`TRX${data.earnings}`)
                     }
                     else{
                         $(".bal").html(`TRX${0}`)

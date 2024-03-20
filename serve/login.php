@@ -1,5 +1,28 @@
 <?php
-error_reporting(E_ALL ^ E_WARNING);
+    error_reporting(E_ALL ^ E_WARNING);
+
+    function get_ip() {
+        $ip = '';
+        if (isset($_SERVER['HTTP_CLIENT_IP'])){
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        }else if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])){
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }else if(isset($_SERVER['HTTP_X_FORWARDED'])){
+            $ip = $_SERVER['HTTP_X_FORWARDED'];
+        }else if(isset($_SERVER['HTTP_FORWARDED_FOR'])){
+            $ip = $_SERVER['HTTP_FORWARDED_FOR'];
+        }else if(isset($_SERVER['HTTP_FORWARDED'])){
+            $ip = $_SERVER['HTTP_FORWARDED'];
+        }else if(isset($_SERVER['REMOTE_ADDR'])){
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        /* if( empty($ip) || $ip == '0.0.0.0' || substr( $ip, 0, 2 ) == '::' ){
+            $ip = file_get_contents('https://api.ipify.org/');
+            $ip = ($ip===false?$ip:'');
+        } */
+        return $ip;
+    }
+
     try {
         $phone_number = $_POST["pre"].$_POST["tel"];
         $password = $_POST["pwd"];
@@ -34,7 +57,7 @@ error_reporting(E_ALL ^ E_WARNING);
             );
         }
         else{
-            $users[$num]["ip_address"] = $_SERVER["REMOTE_ADDR"];
+            $users[$num]["ip_address"] = get_ip();
             $saved = file_put_contents("users.json",json_encode($users));
             session_start();
             $_SESSION["user_id"] = $user["user_id"];

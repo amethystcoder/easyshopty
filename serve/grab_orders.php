@@ -33,7 +33,7 @@ try {
         }
         else {
             for ($i=0; $i < count($orders); $i++) { 
-                if ($orders[$i]["status"] == "pending") {
+                if ($orders[$i]["status"] == "pending" && $orders[$i]["user_id"] == $user_id) {
                     $incomplete_order_exists = true;
                     break;
                 }

@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL ^ E_WARNING);
+    error_reporting(E_ALL ^ E_WARNING);
     function create_invite_code() {
         $char_list = ["Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C",
                         "V","B","N","M","1","2","3","4","5","6","7","8","9"];
@@ -17,6 +17,28 @@ error_reporting(E_ALL ^ E_WARNING);
             }
         }
         return null;
+    }
+
+    function get_ip() {
+        $ip = '';
+        if (isset($_SERVER['HTTP_CLIENT_IP'])){
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        }else if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])){
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }else if(isset($_SERVER['HTTP_X_FORWARDED'])){
+            $ip = $_SERVER['HTTP_X_FORWARDED'];
+        }else if(isset($_SERVER['HTTP_FORWARDED_FOR'])){
+            $ip = $_SERVER['HTTP_FORWARDED_FOR'];
+        }else if(isset($_SERVER['HTTP_FORWARDED'])){
+            $ip = $_SERVER['HTTP_FORWARDED'];
+        }else if(isset($_SERVER['REMOTE_ADDR'])){
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        /* if( empty($ip) || $ip == '0.0.0.0' || substr( $ip, 0, 2 ) == '::' ){
+            $ip = file_get_contents('https://api.ipify.org/');
+            $ip = ($ip===false?$ip:'');
+        } */
+        return $ip;
     }
 
     try{
@@ -51,7 +73,7 @@ error_reporting(E_ALL ^ E_WARNING);
                             "is_real" => "dummy",
                             "tymd" => time(),
                             "group" => "Day 1 client account",
-                            "ip_address" => $_SERVER["REMOTE_ADDR"],
+                            "ip_address" => get_ip(),
                             "commission_bonus" => 0
                         );
                         $referral_user = find_user($users,$referral_link);

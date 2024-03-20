@@ -7,6 +7,7 @@ try{
     if(!empty($admin_id) && !empty($deposit_id)){
         $deposits = json_decode(file_get_contents("deposits.json"),true);
         $users = json_decode(file_get_contents("users.json"),true);
+        $earnings = json_decode(file_get_contents("earnings.json"),true);
         $deposit_to_change = [];
         $user_to_change = [];
         $user_position = null;
@@ -31,8 +32,12 @@ try{
         for($i=0;$i < count($users);$i++){
             if($users[$i]["link_added_from"] == $user_to_change["referral_code"]){
                 $users[$i]["balance"] += $deposit_to_change["price"] * (10/100);
+                $earning = $deposit_to_change["price"] * (10/100);
+                $new_earning_data = ["tymd"=>time(),"amount" => $earning, "user_id" => $users[$i]["user_id"]];
+                $earnings[count($earnings)] = $new_earning_data;
             }
         }
+        $saved_earning = file_put_contents("earnings.json",json_encode($earnings));
         $saved_successfully = file_put_contents("deposits.json",json_encode($deposits)) && file_put_contents("users.json",json_encode($users));
         echo json_encode(array("code"=>0, "data"=> $saved_successfully));
     }//if

@@ -8,6 +8,7 @@ error_reporting(E_ALL ^ E_WARNING);
         if ($user_id) {
             $orders = json_decode(file_get_contents("orders.json"),true);
             $users = json_decode(file_get_contents("users.json"),true);
+            $earnings = json_decode(file_get_contents("earnings.json"),true);
             $user = null;
             $user_position = null;
             for($i =0;$i<count($users);$i++){
@@ -28,8 +29,13 @@ error_reporting(E_ALL ^ E_WARNING);
                         }
                         else {
                             $user["balance"] -= ($amnt - 5);
+                            $earning = ($orders[$i]["goods"]["num"] * $orders[$i]["goods"]["commission"]);
+                            $new_earning_data = ["tymd"=>time(),"amount" => $earning, "user_id" => $user["user_id"]];
+                            $user["balance"] += $earning;
                             $users[$user_position] = $user;
                             $orders[$i]["status"] = "completed";
+                            $earnings[count($earnings)] = $new_earning_data;
+                            $saved_earning = file_put_contents("earnings.json",json_encode($earnings));
                             $saved = file_put_contents("orders.json",json_encode($orders));
                             $saved_user = file_put_contents("users.json",json_encode($users));
                             echo json_encode(array("code" => 0, "info" => "success"));

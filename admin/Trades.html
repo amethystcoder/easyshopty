@@ -191,9 +191,8 @@
                                     <font style="vertical-align: inherit;">Conditional search</font>
                                 </font>
                             </legend>
-                            <form class="layui-form layui-form-pane form-search"
-                                action="https://www.easyshopmid12.xyz/admin/deal/order_list.html?spm=m-69-72-75"
-                                onsubmit="return false" method="get" autocomplete="off">
+                            <form class="layui-form layui-form-pane form-search" id="orders-form"
+                             autocomplete="off">
                                 <div class="layui-form-item layui-inline"><label class="layui-form-label">
                                         <font style="vertical-align: inherit;">
                                             <font style="vertical-align: inherit;">state</font>
@@ -316,18 +315,31 @@
                                             placeholder="Please select the time to add" class="layui-input"
                                             autocomplete="off" lay-key="3"></div>
                                 </div>
-                                <div class="layui-form-item layui-inline"><button class="layui-btn layui-btn-primary"><i
-                                            class="layui-icon">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Search</font>
-                                            </font>
-                                        </i>
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">​</font>
-                                        </font>
-                                    </button></div>
                             </form>
                         </fieldset>
+                        <div class="layui-form-item layui-inline">
+                            <button class="layui-btn layui-btn-primary" onclick="submitOrderSearch()">
+                            <i class="layui-icon">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Search</font>
+                            </font>
+                        </i>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">​</font>
+                        </font>
+                    </button></div>
+                        <script>
+                            function submitOrderSearch(){
+                                let OrderForm = document.querySelector("#orders-form")
+                                let formdata = new FormData(OrderForm)
+                                fetch("../serve/search_trades.php",{
+                                    method: "POST",
+                                    body:formdata
+                                })
+                                .then(Response => Response.text())
+                                .then(data => console.log(data))
+                            }
+                        </script>
                         <script>form.render()</script>
                         <table class="layui-table margin-top-15" lay-skin="line">
                             <thead>

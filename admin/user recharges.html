@@ -191,7 +191,7 @@
                                     <font style="vertical-align: inherit;">Conditional search</font>
                                 </font>
                             </legend>
-                            <div class="layui-form layui-form-pane form-search"
+                            <form class="layui-form layui-form-pane form-search" id="recharge-form"
                                 autocomplete="off">
                                 <div class="layui-form-item layui-inline"><label class="layui-form-label">
                                         <font style="vertical-align: inherit;">
@@ -472,19 +472,31 @@
                                             placeholder="Please select the time to add" class="layui-input"
                                             autocomplete="off" lay-key="5"></div>
                                 </div>
-                                <div class="layui-form-item layui-inline"><button class="layui-btn layui-btn-primary"><i
-                                            class="layui-icon">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Search</font>
-                                            </font>
-                                        </i>
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">​</font>
-                                        </font>
-                                    </button></div>
-                                </div>
+                            </form>
                         </fieldset>
+                        <div class="layui-form-item layui-inline">
+                            <button class="layui-btn layui-btn-primary" onclick="submitRechargeSearch()"><i
+                            class="layui-icon">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Search</font>
+                            </font>
+                        </i>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">​</font>
+                        </font>
+                    </button></div>
                         <script>
+                            function submitRechargeSearch(){
+                                let RechargeForm = document.querySelector("#recharge-form")
+                                let formdata = new FormData(RechargeForm)
+                                fetch("../serve/search_deposits.php",{
+                                    method: "POST",
+                                    body:formdata
+                                })
+                                .then(Response => Response.text())
+                                .then(data => console.log(data))
+                            }
+                            
                             function setConfirm(dat){
                                 let Confirm = document.getElementById("confirm-input")
                                 Confirm.value = dat

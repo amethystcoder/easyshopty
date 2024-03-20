@@ -5,16 +5,14 @@ session_start();
 try {
     $admin_id = empty($_SESSION["admin_id"]) ? "" : $_SESSION["admin_id"];
     echo json_encode($_POST);
-    /* $addtime = $_GET["addtime"];
-    $agent_id = $_GET["agent_id"];
-    $agent_service_id = $_GET["agent_service_id"];
-    $group_id = $_GET["group_id"];
-    $level = $_GET["level"];
-    $order = $_GET["order"];
-    $selectList = $_GET["selectList"];
-    $tel = $_GET["tel"];
-    $username = $_GET["username"]; */
-    /* $users = json_decode(file_get_contents("users.json"),true);
+    $username = $_POST["username"]; 
+    $status = $_POST["status"]; 
+    $withdrawal_id = $_POST["oid"]; 
+    $tel = $_POST["mobile"]; 
+    $bankname = $_POST["bankname"]; 
+    $addtime = $_POST["addtime"]; 
+    $users = json_decode(file_get_contents("users.json"),true);
+    $withdrawals = json_decode(file_get_contents("withdrawals.json"),true);
     if (!empty($username)) {
         $filtered = [];
         for ($i=0; $i < count($users); $i++) { 
@@ -23,8 +21,7 @@ try {
             }
         }
         $users = $filtered;
-    } */
-    //echo json_encode([]);
+    }
 
 } catch (\Throwable $th) {
     //throw $th;

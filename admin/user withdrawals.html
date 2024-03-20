@@ -318,7 +318,7 @@
                             function submitWithdrawalSearch(){
                                 let WithdrawalForm = document.querySelector("#withdrawal-form")
                                 let formdata = new FormData(WithdrawalForm)
-                                fetch("",{
+                                fetch("../serve/search_withdrawals.php",{
                                     method: "POST",
                                     body:formdata
                                 })
