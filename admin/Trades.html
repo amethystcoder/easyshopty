@@ -199,37 +199,37 @@
                                         </font>
                                     </label>
                                     <div class="layui-input-inline"><select name="status">
-                                            <option value="-1">
+                                            <option value="">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">all</font>
                                                 </font>
                                             </option>
-                                            <option value="0">
+                                            <option value="pending">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">Pending payment</font>
                                                 </font>
                                             </option>
-                                            <option value="1">
+                                            <option value="completed">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">Transaction complete</font>
                                                 </font>
                                             </option>
-                                            <option value="2">
+                                            <option value="pending">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">User cancels</font>
                                                 </font>
                                             </option>
-                                            <option value="3">
+                                            <option value="completed">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">Force completion</font>
                                                 </font>
                                             </option>
-                                            <option value="4">
+                                            <option value="declined">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">Forced cancellation</font>
                                                 </font>
                                             </option>
-                                            <option value="5">
+                                            <option value="frozen">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">Transaction frozen</font>
                                                 </font>
@@ -240,39 +240,39 @@
                                                     placeholder="please choose" value="全部" readonly=""
                                                     class="layui-input layui-unselect"><i class="layui-edge"></i></div>
                                             <dl class="layui-anim layui-anim-upbit">
-                                                <dd lay-value="-1" class="layui-this">
+                                                <dd lay-value="" class="layui-this">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">all</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="0" class="">
+                                                <dd lay-value="pending" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Pending payment</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="1" class="">
+                                                <dd lay-value="completed" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Transaction complete
                                                         </font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="2" class="">
+                                                <dd lay-value="pending" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">User cancels</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="3" class="">
+                                                <dd lay-value="completed" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Force completion</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="4" class="">
+                                                <dd lay-value="declined" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Forced cancellation
                                                         </font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="5" class="">
+                                                <dd lay-value="frozen" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Transaction frozen</font>
                                                     </font>
@@ -328,18 +328,6 @@
                             <font style="vertical-align: inherit;">​</font>
                         </font>
                     </button></div>
-                        <script>
-                            function submitOrderSearch(){
-                                let OrderForm = document.querySelector("#orders-form")
-                                let formdata = new FormData(OrderForm)
-                                fetch("../serve/search_trades.php",{
-                                    method: "POST",
-                                    body:formdata
-                                })
-                                .then(Response => Response.text())
-                                .then(data => console.log(data))
-                            }
-                        </script>
                         <script>form.render()</script>
                         <table class="layui-table margin-top-15" lay-skin="line">
                             <thead>
@@ -423,6 +411,11 @@
     <script src="./Trades/require.js.download"></script>
     <!-- <script src="./Trades/admin.js.download"></script> -->
     <script type="text/javascript" charset="utf-8">
+        let searchMode = false
+        function submitOrderSearch(){
+            searchMode = true;
+            getStatus()
+        }
         window.addEventListener("load",function () {
             let systemDate = document.getElementById("system-date")
             let date = new Date()
@@ -432,139 +425,144 @@
                 let date = new Date()
                 systemDate.innerHTML = date.toUTCString()
             },1000)
-            function getStatus() {
-                fetch("../serve/get_all_orders_admin.php")
-                .then(Response => Response.json())
-                .then(result => {
-                    console.log(result)
-                    //$('.recharge').html(result.recharge)
-                    //$('.deposit').html(result.deposit);
-                    let retStr = ""
-                    for(let i = result.data.length - 1;i >= 0;i--){
-                        retStr += `
-                        <tr>
-                            <td class="text-left nowrap">
+        })
+        function getStatus() {
+            let OrderForm = document.querySelector("#orders-form")
+            let formdata = new FormData(OrderForm)
+            fetch(searchMode ? "../serve/search_trades.php" : "../serve/get_all_orders_admin.php",{
+                method:"POST",
+                body:formdata
+            })
+            .then(Response => Response.json())
+            .then(result => {
+                console.log(result)
+                //$('.recharge').html(result.recharge)
+                //$('.deposit').html(result.deposit);
+                let retStr = ""
+                for(let i = result.data.length - 1;i >= 0;i--){
+                    retStr += `
+                    <tr>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].oid}</font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].user.user_name}</font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].user.balance}</font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">0.00</font>
+                            </font>
+                        </td>
+                        <!--<td class='text-left nowrap'>Deli Mechanical Pencil Triangle Shape 0.5mm U60200</td><td class='text-left nowrap'>TRX19.00</td><td class='text-left nowrap'>1</td>-->
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].goods.num}</font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].goods.commission}</font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].user.user_status}</font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].goods.addtime} </font>
+                            </font><br>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">-</font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].goods.addtime}</font>
+                            </font>
+                        </td>
+                        <td>
+                            ${result.data[i].status == "completed" ? 
+                            `
+                            <a class="layui-btn layui-btn-xs layui-btn">
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].oid}</font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].user.user_name}</font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].user.balance}</font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">0.00</font>
-                                </font>
-                            </td>
-                            <!--<td class='text-left nowrap'>Deli Mechanical Pencil Triangle Shape 0.5mm U60200</td><td class='text-left nowrap'>TRX19.00</td><td class='text-left nowrap'>1</td>-->
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].goods.num}</font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].goods.commission}</font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].user.user_status}</font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].goods.addtime} </font>
-                                </font><br>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">-</font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].goods.addtime}</font>
-                                </font>
-                            </td>
-                            <td>
-                                ${result.data[i].status == "completed" ? 
-                                `
-                                <a class="layui-btn layui-btn-xs layui-btn">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Already Paid</font>
-                                    </font>
-                                </a>
-                                ` : `
-                                <a class="layui-btn layui-btn-xs layui-btn-primary">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Unpaid</font>
-                                    </font>
-                                </a>
-                                `}
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].status}</font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap">
-                                ${result.data[i].status == "completed" ? `
-                                <a class="layui-btn layui-btn-xs layui-btn">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Capital Flow</font>
+                                    <font style="vertical-align: inherit;">Already Paid</font>
                                 </font>
                             </a>
-                                ` : `
-                                <a 
-                                class="layui-btn layui-btn-xs layui-btn-danger"
-                                data-action=""
-                                data-value="id#${result.data[i].oid};status#5">
+                            ` : `
+                            <a class="layui-btn layui-btn-xs layui-btn-primary">
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">freeze</font>
+                                    <font style="vertical-align: inherit;">Unpaid</font>
                                 </font>
-                            </a><a class="layui-btn layui-btn-xs layui-btn"
-                                data-action="../serve/accept_order.php"
-                                data-value="id#${result.data[i].oid};status#3">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Forced payment</font>
-                                </font>
-                            </a><a 
-                                class="layui-btn layui-btn-xs layui-btn-warm"
-                                data-action="../serve/decline_order.php"
-                                data-value="id#${result.data[i].oid};status#4">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">cancel order</font>
-                                </font>
-                            </a>`}
-                               </td>
-                        </tr>
-                        `
-                    }
-                    let OrdBody = document.querySelector(".order-tbody")
-                    OrdBody.innerHTML = retStr
-                    if (result.deposit > 0 || result.recharge > 0) {
-                        var strAudio = "<audio id='audioPlay' src='/public/634.wav' hidden='true'>";
-                            let body = document.querySelector("body")
-                            body.appendChild(strAudio);
-                        var audio = document.getElementById("audioPlay");
-                        //浏览器支持 audion
-                        audio.play();
-                    }
-                    $('#system-date').text(result.date);
-                })
-            }
+                            </a>
+                            `}
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].status}</font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap">
+                            ${result.data[i].status == "completed" ? `
+                            <a class="layui-btn layui-btn-xs layui-btn">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Capital Flow</font>
+                            </font>
+                        </a>
+                            ` : `
+                            <a 
+                            class="layui-btn layui-btn-xs layui-btn-danger"
+                            data-action=""
+                            data-value="id#${result.data[i].oid};status#5">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">freeze</font>
+                            </font>
+                        </a><a class="layui-btn layui-btn-xs layui-btn"
+                            data-action="../serve/accept_order.php"
+                            data-value="id#${result.data[i].oid};status#3">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Forced payment</font>
+                            </font>
+                        </a><a 
+                            class="layui-btn layui-btn-xs layui-btn-warm"
+                            data-action="../serve/decline_order.php"
+                            data-value="id#${result.data[i].oid};status#4">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">cancel order</font>
+                            </font>
+                        </a>`}
+                           </td>
+                    </tr>
+                    `
+                }
+                let OrdBody = document.querySelector(".order-tbody")
+                OrdBody.innerHTML = retStr
+                if (result.deposit > 0 || result.recharge > 0) {
+                    var strAudio = "<audio id='audioPlay' src='/public/634.wav' hidden='true'>";
+                        let body = document.querySelector("body")
+                        body.appendChild(strAudio);
+                    var audio = document.getElementById("audioPlay");
+                    //浏览器支持 audion
+                    audio.play();
+                }
+                $('#system-date').text(result.date);
+            })
+        }
 
+        getStatus();
+        setInterval(function () {
             getStatus();
-            setInterval(function () {
-                getStatus();
-            }, 30000)
-        })
+        }, 30000)
     </script>
     <div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate"
         style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;"

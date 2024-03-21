@@ -72,9 +72,9 @@
                             "date" => gmdate("M d Y H:i:s",time()),
                             "is_real" => "dummy",
                             "tymd" => time(),
-                            "group" => "Day 1 client account",
+                            "group" => "Dont join",
                             "ip_address" => get_ip(),
-                            "commission_bonus" => 0
+                            "order_state_amount" => 66
                         );
                         $referral_user = find_user($users,$referral_link);
                         if (isset($referral_user)) {

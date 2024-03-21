@@ -164,11 +164,11 @@
                                 class="layui-icon layui-icon-next font-s10 color-desc margin-right-5"></span>
                             <font style="vertical-align: inherit;">
                                 <font id="user-name" style="vertical-align: inherit;">
-                                    Current user: Li Anxu (506012904) |
+                                    
                                 </font>
                             </font><span>
                                 <font style="vertical-align: inherit;">
-                                    <font id="cummulative-deposits" style="vertical-align: inherit;">Cumulative deposits: 11954</font>
+                                    <font id="cummulative-deposits" style="vertical-align: inherit;"></font>
                                 </font>
                             </span>
                             <font style="vertical-align: inherit;">
@@ -176,7 +176,7 @@
                                 </font>
                             </font><span>
                                 <font style="vertical-align: inherit;">
-                                    <font id="cummulative-withdrawals" style="vertical-align: inherit;">Cumulative withdrawals: 8854</font>
+                                    <font id="cummulative-withdrawals" style="vertical-align: inherit;"></font>
                                 </font>
                             </span>
                             <div class="pull-right"></div>
@@ -187,9 +187,7 @@
                                     <font style="vertical-align: inherit;">Conditional search</font>
                                 </font>
                             </legend>
-                            <form class="layui-form layui-form-pane form-search"
-                                action=""
-                                onsubmit="return false" method="get" autocomplete="off">
+                            <form class="layui-form layui-form-pane form-search" id="account-form" autocomplete="off">
                                 <div class="layui-form-item layui-inline"><label class="layui-form-label">
                                         <font style="vertical-align: inherit;">
                                             <font style="vertical-align: inherit;">type</font>
@@ -201,27 +199,27 @@
                                                     <font style="vertical-align: inherit;">All states</font>
                                                 </font>
                                             </option>
-                                            <option value="-1">
+                                            <!-- <option value="-1">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">system</font>
                                                 </font>
-                                            </option>
-                                            <option value="1">
+                                            </option> -->
+                                            <option value="recharge">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">top up</font>
                                                 </font>
                                             </option>
-                                            <option value="2">
+                                            <option value="orders">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">trade</font>
                                                 </font>
                                             </option>
-                                            <option value="3">
+                                            <!-- <option value="3">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">Rebate</font>
                                                 </font>
-                                            </option>
-                                            <option value="4">
+                                            </option> -->
+                                            <!-- <option value="4">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">forced transaction</font>
                                                 </font>
@@ -236,18 +234,18 @@
                                                     <font style="vertical-align: inherit;">Subordinate transaction
                                                         rebates</font>
                                                 </font>
-                                            </option>
-                                            <option value="7">
+                                            </option> -->
+                                            <option value="withdraw">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">withdraw</font>
                                                 </font>
                                             </option>
-                                            <option value="8">
+                                            <option value="rejected withdraw">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">Withdrawal rejected</font>
                                                 </font>
                                             </option>
-                                            <option value="21">
+                                            <!-- <option value="21">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">Interest deposit</font>
                                                 </font>
@@ -263,7 +261,7 @@
                                                     <font style="vertical-align: inherit;">Interest treasure rebate
                                                     </font>
                                                 </font>
-                                            </option>
+                                            </option> -->
                                         </select>
                                         <div class="layui-unselect layui-form-select">
                                             <div class="layui-select-title"><input type="text" placeholder="All states"
@@ -275,22 +273,22 @@
                                                         <font style="vertical-align: inherit;">All states</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="-1" class="">
+                                                <!-- <dd lay-value="-1" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">system</font>
                                                     </font>
-                                                </dd>
-                                                <dd lay-value="1" class="">
+                                                </dd> -->
+                                                <dd lay-value="recharge" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">top up</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="2" class="">
+                                                <dd lay-value="orders" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">trade</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="3" class="">
+                                                <!-- <dd lay-value="3" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Rebate</font>
                                                     </font>
@@ -310,19 +308,19 @@
                                                         <font style="vertical-align: inherit;">Subordinate transaction
                                                             rebates</font>
                                                     </font>
-                                                </dd>
-                                                <dd lay-value="7" class="">
+                                                </dd> -->
+                                                <dd lay-value="withdraw" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">withdraw</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="8" class="">
+                                                <dd lay-value="rejected withdraw" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Withdrawal rejected
                                                         </font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="21" class="">
+                                                <!-- <dd lay-value="21" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Interest deposit</font>
                                                     </font>
@@ -338,7 +336,7 @@
                                                         <font style="vertical-align: inherit;">Interest treasure rebate
                                                         </font>
                                                     </font>
-                                                </dd>
+                                                </dd> -->
                                             </dl>
                                         </div>
                                     </div>
@@ -352,18 +350,19 @@
                                             placeholder="Please select registration time" class="layui-input"
                                             autocomplete="off" lay-key="11"></div>
                                 </div>
-                                <div class="layui-form-item layui-inline"><button class="layui-btn layui-btn-primary"><i
-                                            class="layui-icon">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Search</font>
-                                            </font>
-                                        </i>
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">​</font>
-                                        </font>
-                                    </button></div>
                             </form>
                         </fieldset>
+                        <div class="layui-form-item layui-inline">
+                            <button class="layui-btn layui-btn-primary" onclick="searchAccount()"><i
+                                    class="layui-icon">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Search</font>
+                                    </font>
+                                </i>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">​</font>
+                                </font>
+                            </button></div>
                         <div class="layui-tab">
                             <ul class="layui-tab-title">
                                 <li class="layui-this">
@@ -614,37 +613,6 @@
                             </div>
                         </div>
                         <script>
-                            $(function () {
-                                var table = layui.table;
-
-                                //第一个实例
-                                table.render({
-                                    elem: '#demo0'
-                                    , where: {
-                                        iasjax: 1,
-                                        level: 1,
-                                        addtime: "",
-                                        type: "",
-                                        id: 4810
-                                    }
-                                    , height: 512
-                                    , totalRow: true
-                                    , url: '/admin/users/caiwu.html' //数据接口
-                                    , page: true //开启分页
-                                    , cols: [[ //表头
-                                        { field: 'id', title: 'ID', width: 100, sort: true, fixed: 'left' }
-                                        , { field: 'tel', title: '账号', totalRowText: '合计' }
-                                        , { field: 'oid', title: '订单编号', sort: true }
-                                        , { field: 'num', title: '金额', sort: true, totalRow: true }
-                                        , { field: 'type', title: '类型' }
-                                        , { field: 'status', title: '状态' }
-                                        , { field: 'addtime', title: '发生时间', width: 150 }
-                                    ]]
-                                });
-
-                            })
-                        </script>
-                        <script>
                             var test = "0";
                             $("#selectList").find("option[value=" + test + "]").prop("selected", true);
                             form.render()
@@ -658,113 +626,120 @@
     <script src="./account_details/require.js.download"></script>
     <!-- <script src="./account_details/admin.js.download"></script> -->
     <script type="text/javascript" charset="utf-8">
+        let searchMode = false;
+        function searchAccount(){
+            searchMode = true;
+            getStatus()
+        }
         window.addEventListener("load", () => {
-            function getStatus() {
-                let userId = new URLSearchParams(window.location.search).get("user_id")
-                let formdata = new FormData()
-                formdata.append("user_id",userId)
-                fetch("../serve/admin_get_all_user_transactions.php",{
-                    method: "POST",
-                    body:formdata,
-                })
-                .then(Response => Response.json())
-                .then(result => {
-                    console.log(result)
-                    //$('.recharge').html(result.recharge)
-                    //$('.deposit').html(result.deposit);
-                    if(result.code == 0){
-                        let userName = document.getElementById("user-name")
-                        let cummulativeDeposits = document.getElementById("cummulative-deposits")
-                        let cummulativeWithdrawals = document.getElementById("cummulative-withdrawals")
-                        userName.innerHTML = `Current User: ${result.data.user.user_name}`
-                        cummulativeDeposits.innerHTML = `Cummulative Deposits: ${result.data.cummulative_deposits}`
-                        cummulativeWithdrawals.innerHTML = `Cummulative Withdrawals: ${result.data.cummulative_withdrawals}`
-                        let tableData = result.data.data
-                        let total = 0
-                        let rtStr = ""
-                        for(let i = 0; i < tableData.length; i++){
-                            rtStr += `
-                            <tr data-index="0" class="">
-                                <td data-field="id" data-key="6-0-0" class="">
-                                    <div class="layui-table-cell laytable-cell-6-0-0">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">${tableData[i].user_id}
-                                            </font>
-                                        </font>
-                                    </div>
-                                </td>
-                                <td data-field="oid" data-key="6-0-2" class="">
-                                    <div class="layui-table-cell laytable-cell-6-0-2">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">
-                                                ${tableData[i].order_number}</font>
-                                        </font>
-                                    </div>
-                                </td>
-                                <td data-field="num" data-key="6-0-3" class="">
-                                    <div class="layui-table-cell laytable-cell-6-0-3">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">${tableData[i].amount}
-                                            </font>
-                                        </font>
-                                    </div>
-                                </td>
-                                <td data-field="type" data-key="6-0-4" class="">
-                                    <div class="layui-table-cell laytable-cell-6-0-4"><span
-                                            class="layui-btn layui-btn-sm layui-btn-danger">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">${tableData[i].type}
-                                                </font>
-                                            </font>
-                                        </span></div>
-                                </td>
-                                <td data-field="status" data-key="6-0-5" class="">
-                                    <div class="layui-table-cell laytable-cell-6-0-5">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">${tableData[i].state}
-                                            </font>
-                                        </font>
-                                    </div>
-                                </td>
-                                <td data-field="addtime" data-key="6-0-6" class="">
-                                    <div class="layui-table-cell laytable-cell-6-0-6">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">
-                                                ${tableData[i].date}</font>
-                                        </font>
-                                    </div>
-                                </td>
-                            </tr>
-                                `
-                                total += parseInt(tableData[i].amount)
-                        }
-                        let totalAmount = document.getElementById("total-amount")
-                        totalAmount.innerHTML = total
-                        let UserBody = document.querySelector(".user-tbody")
-                        UserBody.innerHTML = rtStr
-
-                        if(done_first == 0){
-                            var strAudio = "<audio id='audioPlay' src='./mixkit-arabian-mystery-harp-notification-2489.wav' hidden='true'>";
-                                let body = document.querySelector("body")
-                                body.insertAdjacentHTML("beforeend",strAudio)
-                                var audio = document.getElementById("audioPlay");
-                                //浏览器支持 audion
-                                audio.play();
-                            //$('#system-date').text(result.date);
-                            done_first++
-                        }
-                    }
-                    if(result.code == 1){
-                        alert("you are not logged in or you did not supply a valid user to display")
-                    }
-                })
-            }
-
-            getStatus();
-            setInterval(function () {
-                getStatus();
-            }, 30000)
+            getStatus()
         })
+        function getStatus() {
+            let userId = new URLSearchParams(window.location.search).get("user_id")
+            let AccountForm = document.querySelector("#account-form")
+            let formdata = new FormData(AccountForm)
+            formdata.append("user_id",userId)
+            fetch(searchMode ? "../serve/account_details_search.php" : "../serve/admin_get_all_user_transactions.php",{
+                method: "POST",
+                body:formdata,
+            })
+            .then(Response => Response.json())
+            .then(result => {
+                console.log(result)
+                //$('.recharge').html(result.recharge)
+                //$('.deposit').html(result.deposit);
+                if(result.code == 0){
+                    let userName = document.getElementById("user-name")
+                    let cummulativeDeposits = document.getElementById("cummulative-deposits")
+                    let cummulativeWithdrawals = document.getElementById("cummulative-withdrawals")
+                    userName.innerHTML = `Current User: ${result.data.user.user_name}`
+                    cummulativeDeposits.innerHTML = `Cummulative Deposits: ${result.data.cummulative_deposits}`
+                    cummulativeWithdrawals.innerHTML = `Cummulative Withdrawals: ${result.data.cummulative_withdrawals}`
+                    let tableData = result.data.data
+                    let total = 0
+                    let rtStr = ""
+                    for(let i = 0; i < tableData.length; i++){
+                        rtStr += `
+                        <tr data-index="0" class="">
+                            <td data-field="id" data-key="6-0-0" class="">
+                                <div class="layui-table-cell laytable-cell-6-0-0">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">${tableData[i].user_id}
+                                        </font>
+                                    </font>
+                                </div>
+                            </td>
+                            <td data-field="oid" data-key="6-0-2" class="">
+                                <div class="layui-table-cell laytable-cell-6-0-2">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            ${tableData[i].order_number}</font>
+                                    </font>
+                                </div>
+                            </td>
+                            <td data-field="num" data-key="6-0-3" class="">
+                                <div class="layui-table-cell laytable-cell-6-0-3">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">${tableData[i].amount}
+                                        </font>
+                                    </font>
+                                </div>
+                            </td>
+                            <td data-field="type" data-key="6-0-4" class="">
+                                <div class="layui-table-cell laytable-cell-6-0-4"><span
+                                        class="layui-btn layui-btn-sm layui-btn-danger">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">${tableData[i].type}
+                                            </font>
+                                        </font>
+                                    </span></div>
+                            </td>
+                            <td data-field="status" data-key="6-0-5" class="">
+                                <div class="layui-table-cell laytable-cell-6-0-5">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">${tableData[i].state}
+                                        </font>
+                                    </font>
+                                </div>
+                            </td>
+                            <td data-field="addtime" data-key="6-0-6" class="">
+                                <div class="layui-table-cell laytable-cell-6-0-6">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            ${tableData[i].date}</font>
+                                    </font>
+                                </div>
+                            </td>
+                        </tr>
+                            `
+                            total += parseInt(tableData[i].amount)
+                    }
+                    let totalAmount = document.getElementById("total-amount")
+                    totalAmount.innerHTML = total
+                    let UserBody = document.querySelector(".user-tbody")
+                    UserBody.innerHTML = rtStr
+
+                    if(done_first == 0){
+                        var strAudio = "<audio id='audioPlay' src='./mixkit-arabian-mystery-harp-notification-2489.wav' hidden='true'>";
+                            let body = document.querySelector("body")
+                            body.insertAdjacentHTML("beforeend",strAudio)
+                            var audio = document.getElementById("audioPlay");
+                            //浏览器支持 audion
+                            audio.play();
+                        //$('#system-date').text(result.date);
+                        done_first++
+                    }
+                }
+                if(result.code == 1){
+                    alert("you are not logged in or you did not supply a valid user to display")
+                }
+            })
+        }
+
+        getStatus();
+        setInterval(function () {
+            getStatus();
+        }, 30000)
     </script>
     <div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate"
         style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;"

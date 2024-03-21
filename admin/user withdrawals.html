@@ -204,22 +204,22 @@
                                                     <font style="vertical-align: inherit;">all</font>
                                                 </font>
                                             </option>
-                                            <option value="1">
+                                            <option value="pending">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">Not reviewed</font>
                                                 </font>
                                             </option>
-                                            <option value="2">
+                                            <option value="successful">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">passed</font>
                                                 </font>
                                             </option>
-                                            <option value="3">
+                                            <option value="declined">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">Dismissed</font>
                                                 </font>
                                             </option>
-                                            <option value="4">
+                                            <option value="failed">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">Transfer failed</font>
                                                 </font>
@@ -235,22 +235,22 @@
                                                         <font style="vertical-align: inherit;">all</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="1" class="">
+                                                <dd lay-value="pending" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Not reviewed</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="2" class="">
+                                                <dd lay-value="successful" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">passed</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="3" class="">
+                                                <dd lay-value="declined" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Dismissed</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="4" class="">
+                                                <dd lay-value="failed" class="">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Transfer failed</font>
                                                     </font>
@@ -314,18 +314,6 @@
                             <font style="vertical-align: inherit;">​</font>
                         </font>
                     </button></div>
-                        <script>
-                            function submitWithdrawalSearch(){
-                                let WithdrawalForm = document.querySelector("#withdrawal-form")
-                                let formdata = new FormData(WithdrawalForm)
-                                fetch("../serve/search_withdrawals.php",{
-                                    method: "POST",
-                                    body:formdata
-                                })
-                                .then(Response => Response.text())
-                                .then(data => console.log(data))
-                            }
-                        </script>
                         <fieldset>
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Current payment method: TRX</font>
@@ -402,6 +390,11 @@
     <script src="./user_withdrawals/require.js.download"></script>
     <!-- <script src="./user_withdrawals/admin.js.download"></script> -->
     <script type="text/javascript" charset="utf-8">
+        let searchMode = false;
+        function submitWithdrawalSearch(){
+            searchMode = true;
+            getStatus()
+        }
         window.addEventListener("load",function () {
             let systemDate = document.getElementById("system-date")
             let date = new Date()
@@ -411,116 +404,121 @@
                 let date = new Date()
                 systemDate.innerHTML = date.toUTCString()
             },1000)
-            function getStatus() {
-                fetch("../serve/admin_get_all_withdrawals.php")
-                .then(Response => Response.json())
-                .then(result => {
-                    console.log(result)
-                    let retStr = ""
-                    for(let i = 0;i < result.data.length;i++){
-                        retStr += `
-                        <tr>
-                            <td class="list-table-check-td think-checkbox"><input class="list-check-box"
-                                    value="${result.data[i].withdrawal_id}" type="checkbox"></td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].withdrawal_id} </font>
-                                </font><br>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">TRX</font>
-                                </font><br>
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].user_id} </font>
-                                </font>
-                                <br>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].user.user_name} </font>
-                                </font>
-                                <br>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].user.tel} </font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].num} </font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].TRX_code}
-                                    </font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;"></font>
-                                </font><br>&nbsp;&nbsp;<br>
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].date_of_withdrawal}</font>
-                                </font><br>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].date_of_withdrawal}</font>
-                                </font><br>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">-</font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap"><a class="layui-btn layui-btn-xs layui-btn-danger"
-                                style="background-color:${result.data[i].status == "pending"
-                                    ? "purple" : result.data[i].status == "successful" ? 
-                                        "green" : result.data[i].status == "declined" ?
-                                        "red" : ""}">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">${result.data[i].status}</font>
-                                    </font>
-                                </a></td>
-                            <td class="text-left">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Not submittedRespected </font>
-                                </font><br>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;"unsubmitted</font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap">
-                                <button class="layui-btn layui-btn-xs layui-btn-danger" 
-                                onclick="decline_withdrawal(&#39;${result.data[i].withdrawal_id}&#39;)">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">decline</font>
-                                    </font>
-                                </button>
-                                <button class="layui-btn layui-btn-xs" 
-                                onclick="accept_withdrawal(&#39;${result.data[i].withdrawal_id}&#39;)">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">accept</font>
-                                    </font>
-                                </button>
-                            </td>
-                        </tr>
-                        `
-                    }
-                    let withBody = document.querySelector(".withdrawal-tbody")
-                    withBody.innerHTML = retStr
-                        var strAudio = "<audio id='audioPlay' src='/public/634.wav' hidden='true'>";
-                        let body = document.querySelector("body")
-                        body.appendChild(strAudio);
-                    var audio = document.getElementById("audioPlay");
-                    //浏览器支持 audion
-                    audio.play();
-                    $('#system-date').text(result.date);
-                })
-            }
-
-            getStatus();
-            setInterval(function () {
-                getStatus();
-            }, 30000)
         })
+        function getStatus() {
+            let WithdrawalForm = document.querySelector("#withdrawal-form")
+            let formdata = new FormData(WithdrawalForm)
+            fetch(searchMode ? "../serve/search_withdrawals.php" : "../serve/admin_get_all_withdrawals.php",{
+                method:"POST",
+                body: formdata
+            })
+            .then(Response => Response.json())
+            .then(result => {
+                console.log(result)
+                let retStr = ""
+                for(let i = 0;i < result.data.length;i++){
+                    retStr += `
+                    <tr>
+                        <td class="list-table-check-td think-checkbox"><input class="list-check-box"
+                                value="${result.data[i].withdrawal_id}" type="checkbox"></td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].withdrawal_id} </font>
+                            </font><br>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">TRX</font>
+                            </font><br>
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].user_id} </font>
+                            </font>
+                            <br>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].user.user_name} </font>
+                            </font>
+                            <br>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].user.tel} </font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].num} </font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].TRX_code}
+                                </font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;"></font>
+                            </font><br>&nbsp;&nbsp;<br>
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].date_of_withdrawal}</font>
+                            </font><br>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].date_of_withdrawal}</font>
+                            </font><br>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">-</font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap"><a class="layui-btn layui-btn-xs layui-btn-danger"
+                            style="background-color:${result.data[i].status == "pending"
+                                ? "purple" : result.data[i].status == "successful" ? 
+                                    "green" : result.data[i].status == "declined" ?
+                                    "red" : ""}">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">${result.data[i].status}</font>
+                                </font>
+                            </a></td>
+                        <td class="text-left">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Not submittedRespected </font>
+                            </font><br>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;"unsubmitted</font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap">
+                            <button class="layui-btn layui-btn-xs layui-btn-danger" 
+                            onclick="decline_withdrawal(&#39;${result.data[i].withdrawal_id}&#39;)">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">decline</font>
+                                </font>
+                            </button>
+                            <button class="layui-btn layui-btn-xs" 
+                            onclick="accept_withdrawal(&#39;${result.data[i].withdrawal_id}&#39;)">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">accept</font>
+                                </font>
+                            </button>
+                        </td>
+                    </tr>
+                    `
+                }
+                let withBody = document.querySelector(".withdrawal-tbody")
+                withBody.innerHTML = retStr
+                    var strAudio = "<audio id='audioPlay' src='/public/634.wav' hidden='true'>";
+                    let body = document.querySelector("body")
+                    body.appendChild(strAudio);
+                var audio = document.getElementById("audioPlay");
+                //浏览器支持 audion
+                audio.play();
+                $('#system-date').text(result.date);
+            })
+        }
+
+        getStatus();
+        setInterval(function () {
+            getStatus();
+        }, 30000)
         function accept_withdrawal(WithdrawalId){
             let formdata = new FormData()
             formdata.append("withdrawal_id",WithdrawalId)

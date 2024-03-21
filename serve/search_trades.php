@@ -46,34 +46,98 @@ try {
     $orders = json_decode(file_get_contents("orders.json"),true);
     $final_orders = [];
     $user = null;
-    //Get user
-    if (!empty($username) && !empty($tel)) {
-        $user = get_user($users,$username,$tel);
-    }
-    elseif (!empty($username)) {
-        $user = get_user_with_username($users,$username);
-    }
-    elseif (!empty($tel)) {
-        $user = get_user_with_phone($users,$tel);
-    }
-    //get orders
-    if (!empty($oid)) {
-        for ($i=0; $i < count($orders); $i++) { 
-            if ($orders[$i]["oid"] == $oid) {
-                $final_orders[count($final_orders)] = $$orders[$i];
-                break;
+    $final = [];
+    if (!empty($admin_id)) {
+        //Get user
+        if (!empty($username) && !empty($tel)) {
+            $user = get_user($users,$username,$tel);
+        }
+        elseif (!empty($username)) {
+            $user = get_user_with_username($users,$username);
+        }
+        elseif (!empty($tel)) {
+            $user = get_user_with_phone($users,$tel);
+        }
+
+        if (isset($user)) {
+            if (!empty($addtime)) {
+                $final = [];
+                for ($i=0; $i < count($orders); $i++) { 
+                    if ($orders[$i]["goods"]["addtime"] == $addtime && $user["user_id"] == $orders[$i]["user_id"]) {
+                        $final[count($final)] = $orders[$i];
+                    }
+                }
+                $orders = $final;
+            }
+            if (!empty($oid)) {
+                $final = [];
+                for ($i=0; $i < count($orders); $i++) { 
+                    if ($orders[$i]["oid"] == $oid && $user["user_id"] == $orders[$i]["user_id"]) {
+                        $final[count($final)] = $orders[$i];
+                    }
+                }
+                $orders = $final;
+            }
+            if (!empty($status)) {
+                $final = [];
+                for ($i=0; $i < count($orders); $i++) { 
+                    if ($orders[$i]["status"] == $status && $user["user_id"] == $orders[$i]["user_id"]) {
+                        $final[count($final)] = $orders[$i];
+                    }
+                }
+                $orders = $final;
+            }
+            for ($i=0; $i < count($orders); $i++) { 
+                for ($j=0; $j < count($users); $j++) { 
+                    if ($orders[$i]["user_id"] == $users[$j]["user_id"]) {
+                        $orders[$i]["user"] = $users[$j];
+                    }
+                }
+            }
+        } else {
+            if (!empty($addtime)) {
+                $final = [];
+                for ($i=0; $i < count($orders); $i++) { 
+                    if ($orders[$i]["goods"]["addtime"] == $addtime) {
+                        $final[count($final)] = $orders[$i];
+                    }
+                }
+                $orders = $final;
+            }
+            if (!empty($oid)) {
+                $final = [];
+                for ($i=0; $i < count($orders); $i++) { 
+                    if ($orders[$i]["oid"] == $oid) {
+                        $final[count($final)] = $orders[$i];
+                    }
+                }
+                $orders = $final;
+            }
+            if (!empty($status)) {
+                $final = [];
+                for ($i=0; $i < count($orders); $i++) { 
+                    if ($orders[$i]["status"] == $status) {
+                        $final[count($final)] = $orders[$i];
+                    }
+                }
+                $orders = $final;
+            }
+            for ($i=0; $i < count($orders); $i++) { 
+                for ($j=0; $j < count($users); $j++) { 
+                    if ($orders[$i]["user_id"] == $users[$j]["user_id"]) {
+                        $orders[$i]["user"] = $users[$j];
+                    }
+                }
             }
         }
-        echo json_encode(["code" => 0, "data" => $final_orders]);
-        
+        echo json_encode(["code" => 0, "data" => $orders, "info"=> "successful"]);
     }
-    if (isset($user)) {
-        
+    else{
+        echo json_encode(["code" => 1, "data" => [], "info"=> "you are not logged in"]);
     }
-    else{}
 
 } catch (\Throwable $th) {
-    //throw $th;
+    echo json_encode(["code" => 1, "data" => [], "info"=> "some issue occured"]);
 }
 
 ?>

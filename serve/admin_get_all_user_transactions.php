@@ -66,7 +66,7 @@ try {
         echo json_encode(array("code"=> 0, "data"=>$all_user_data));
     }
     else {
-        echo json_encode(array("code"=> 1, "data"=>$user_id));
+        echo json_encode(array("code"=> 1, "data"=>[]));
     }
 } catch (\Throwable $th) {
     echo json_encode(array("code"=> 2, "data"=>[]));

@@ -204,17 +204,17 @@
                                                     <font style="vertical-align: inherit;">all</font>
                                                 </font>
                                             </option>
-                                            <option value="1">
+                                            <option value="pending">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">unpaid</font>
                                                 </font>
                                             </option>
-                                            <option value="2">
+                                            <option value="successful">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">Recharge successful</font>
                                                 </font>
                                             </option>
-                                            <option value="3">
+                                            <option value="declined">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">Recharge failed</font>
                                                 </font>
@@ -230,18 +230,18 @@
                                                         <font style="vertical-align: inherit;">all</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="1" class="" onclick="setState('pending')">
+                                                <dd lay-value="pending" class="" onclick="setState('pending')">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">pending</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="2" class="" onclick="setState('successful')">
+                                                <dd lay-value="successful" class="" onclick="setState('successful')">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Recharge successful
                                                         </font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="3" class="" onclick="setState('declined')">
+                                                <dd lay-value="declined" class="" onclick="setState('declined')">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">Recharge failed</font>
                                                     </font>
@@ -256,17 +256,17 @@
                                         </font>
                                     </label>
                                     <div class="layui-input-inline"><select name="status2">
-                                            <option value="99">
+                                            <option value="">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">all</font>
                                                 </font>
                                             </option>
-                                            <option value="0">
+                                            <option value="pending">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">unconfirmed</font>
                                                 </font>
                                             </option>
-                                            <option value="1">
+                                            <option value="successful">
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">confirmed</font>
                                                 </font>
@@ -277,17 +277,17 @@
                                                     placeholder="please choose" id="confirm-input"  value="全部" readonly=""
                                                     class="layui-input layui-unselect"><i class="layui-edge"></i></div>
                                             <dl class="layui-anim layui-anim-upbit" >
-                                                <dd lay-value="99" class="layui-this" onclick="setConfirm('all')">
+                                                <dd lay-value="" class="layui-this" onclick="setConfirm('all')">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">all</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="0" class="" onclick="setConfirm('unconfirmed')">
+                                                <dd lay-value="pending" class="" onclick="setConfirm('unconfirmed')">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">unconfirmed</font>
                                                     </font>
                                                 </dd>
-                                                <dd lay-value="1" class="" onclick="setConfirm('confirmed')">
+                                                <dd lay-value="successful" class="" onclick="setConfirm('confirmed')">
                                                     <font style="vertical-align: inherit;">
                                                         <font style="vertical-align: inherit;">confirmed</font>
                                                     </font>
@@ -307,68 +307,7 @@
                                                     <font style="vertical-align: inherit;">all</font>
                                                 </font>
                                             </option>
-                                            <option value="Bankspay">Bankspay</option>
-                                            <option value="bipay">bipay</option>
                                             <option value="bit">bit</option>
-                                            <option value="Brotherpay">Brotherpay</option>
-                                            <option value="Ceanpay">Ceanpay</option>
-                                            <option value="Dianshangbaopay">Dianshangbaopay</option>n>
-                                            <option value="Dyb168pay">Dyb168pay</option>
-                                            <option value="Dzxumpay">Dzxumpay</option>
-                                            <option value="Easypay">Easypay</option>
-                                            <option value="Fastpay">Fastpay</option>
-                                            <option value="Globalpay">Globalpay</option>
-                                            <option value="Globalpay20">Globalpay20</option>
-                                            <option value="Globalpay51">Globalpay51</option>
-                                            <option value="Gmspay">Gmspay</option>
-                                            <option value="Goldbodipay">Goldbodipay</option>
-                                            <option value="Gudsjpay">Gudsjpay</option>
-                                            <option value="Hooyopay">Hooyopay</option>
-                                            <option value="Huarenpay">Huarenpay</option>
-                                            <option value="Intfpay">Intfpay</option>
-                                            <option value="Ipf360">Ipf360</option>
-                                            <option value="Jbbankpay">Jbbankpay</option>
-                                            <option value="Junhepay">Junhepay</option>
-                                            <option value="Kighjpay">Kighjpay</option>
-                                            <option value="Letspay">Letspay</option>
-                                            <option value="Lexmpay">Lexmpay</option>
-                                            <option value="Liu6pay">Liu6pay</option>
-                                            <option value="luxpag">luxpag</option>
-                                            <option value="Mcopay">Mcopay</option>
-                                            <option value="Mcopay">Mcopay</option>
-                                            <option value="Misafepay">Misafepay</option>
-                                            <option value="Mxpay">Mxpay</option>
-                                            <option value="Mywsypay">Mywsypay</option>
-                                            <option value="Opaysecpay">Opaysecpay</option>
-                                            <option value="Payscheappay">Payscheappay</option>
-                                            <option value="pix">pix</option>
-                                            <option value="Pnsafepay">Pnsafepay</option>
-                                            <option value="Qeapay">Qeapay</option>
-                                            <option value="Qeapay">Qeapay</option>
-                                            <option value="qeapay">qeapay</option>
-                                            <option value="Rapypay">Rapypay</option>
-                                            <option value="Ruspay">Ruspay</option>
-                                            <option value="Seapay">Seapay</option>
-                                            <option value="Sepropay">Sepropay</option>
-                                            <option value="sixgpay">sixgpay</option>
-                                            <option value="Speedlyppay">Speedlyppay</option>
-                                            <option value="speedypay">speedypay</option>
-                                            <option value="Starspay">Starspay</option>
-                                            <option value="Stppay">Stppay</option>
-                                            <option value="Sunpay">Sunpay</option>
-                                            <option value="Threektmxpay">Threektmxpay</option>
-                                            <option value="Threektpay">Threektpay</option>
-                                            <option value="Tikpay">Tikpay</option>
-                                            <option value="Timepay">Timepay</option>
-                                            <option value="tokpay">tokpay</option>
-                                            <option value="Topstandpay">Topstandpay</option>
-                                            <option value="Vippay">Vippay</option>
-                                            <option value="Vnmcard">Vnmcard</option>
-                                            <option value="Wepayglobal">Wepayglobal</option>
-                                            <option value="Wowpay">Wowpay</option>
-                                            <option value="wx">wx</option>
-                                            <option value="yulupay">yulupay</option>
-                                            <option value="zfb">zfb</option>
                                         </select>
                                         <div class="layui-unselect layui-form-select">
                                             <div class="layui-select-title"><input type="text"
@@ -376,65 +315,7 @@
                                                     class="layui-input layui-unselect"><i class="layui-edge"></i></div>
                                             <dl class="layui-anim layui-anim-upbit">
                                                 <dd lay-value="-" class="layui-this">全部</dd>
-                                                <dd lay-value="Bankspay" class="" onclick="addchannel('Bankspay')">Bankspay</dd>
-                                                <dd lay-value="bipay" class="" onclick="addchannel('Bankspay')">bipay</dd>
                                                 <dd lay-value="bit" class="" onclick="addchannel('bit')">bit</dd>
-                                                <dd lay-value="Brotherpay" class="" onclick="addchannel('Bankspay')">Brotherpay</dd>
-                                                <dd lay-value="Ceanpay" class="" onclick="addchannel('Bankspay')">Ceanpay</dd>
-                                                <dd lay-value="Dianshangbaopay" class="" onclick="addchannel('Bankspay')">Dianshangbaopay</dd>
-                                                <dd lay-value="Dyb168pay" class="" onclick="addchannel('Bankspay')">Dyb168pay</dd>
-                                                <dd lay-value="Dzxumpay" class="" onclick="addchannel('Bankspay')">Dzxumpay</dd>
-                                                <dd lay-value="Easypay" class="" onclick="addchannel('Bankspay')">Easypay</dd>
-                                                <dd lay-value="Fastpay" class="" onclick="addchannel('Bankspay')">Fastpay</dd>
-                                                <dd lay-value="Globalpay" class="" onclick="addchannel('Bankspay')">Globalpay</dd>
-                                                <dd lay-value="Globalpay20" class="" onclick="addchannel('Bankspay')">Globalpay20</dd>
-                                                <dd lay-value="Globalpay51" class="" onclick="addchannel('Bankspay')">Globalpay51</dd>
-                                                <dd lay-value="Gmspay" class="" onclick="addchannel('Bankspay')">Gmspay</dd>
-                                                <dd lay-value="Goldbodipay" class="" onclick="addchannel('Bankspay')">Goldbodipay</dd>
-                                                <dd lay-value="Gudsjpay" class="" onclick="addchannel('Bankspay')">Gudsjpay</dd>
-                                                <dd lay-value="Hooyopay" class="" onclick="addchannel('Bankspay')">Hooyopay</dd>
-                                                <dd lay-value="Huarenpay" class="" onclick="addchannel('Bankspay')">Huarenpay</dd>
-                                                <dd lay-value="Intfpay" class="" onclick="addchannel('Bankspay')">Intfpay</dd>
-                                                <dd lay-value="Ipf360" class="" onclick="addchannel('Bankspay')">Ipf360</dd>
-                                                <dd lay-value="Jbbankpay" class="" onclick="addchannel('Bankspay')">Jbbankpay</dd>
-                                                <dd lay-value="Junhepay" class="" onclick="addchannel('Bankspay')">Junhepay</dd>
-                                                <dd lay-value="Kighjpay" class="" onclick="addchannel('Bankspay')">Kighjpay</dd>
-                                                <dd lay-value="Letspay" class="" onclick="addchannel('Bankspay')">Letspay</dd>
-                                                <dd lay-value="Lexmpay" class="" onclick="addchannel('Bankspay')">Lexmpay</dd>
-                                                <dd lay-value="Liu6pay" class="" onclick="addchannel('Bankspay')">Liu6pay</dd>
-                                                <dd lay-value="luxpag" class="" onclick="addchannel('Bankspay')">luxpag</dd>
-                                                <dd lay-value="Mcopay" class="" onclick="addchannel('Bankspay')">Mcopay</dd>
-                                                <dd lay-value="Misafepay" class="" onclick="addchannel('Bankspay')">Misafepay</dd>
-                                                <dd lay-value="Mxpay" class="" onclick="addchannel('Bankspay')">Mxpay</dd>
-                                                <dd lay-value="Mywsypay" class="" onclick="addchannel('Bankspay')">Mywsypay</dd>
-                                                <dd lay-value="Opaysecpay" class="" onclick="addchannel('Bankspay')">Opaysecpay</dd>
-                                                <dd lay-value="Payscheappay" class="" onclick="addchannel('Bankspay')">Payscheappay</dd>
-                                                <dd lay-value="pix" class="" onclick="addchannel('Bankspay')">pix</dd>
-                                                <dd lay-value="Pnsafepay" class="" onclick="addchannel('Bankspay')">Pnsafepay</dd>
-                                                <dd lay-value="Qeapay" class="" onclick="addchannel('Bankspay')">Qeapay</dd>
-                                                <dd lay-value="Rapypay" class="">Rapypay</dd>
-                                                <dd lay-value="Ruspay" class="">Ruspay</dd>
-                                                <dd lay-value="Seapay" class="">Seapay</dd>
-                                                <dd lay-value="Sepropay" class="">Sepropay</dd>
-                                                <dd lay-value="sixgpay" class="">sixgpay</dd>
-                                                <dd lay-value="Speedlyppay" class="">Speedlyppay</dd>
-                                                <dd lay-value="speedypay" class="">speedypay</dd>
-                                                <dd lay-value="Starspay" class="">Starspay</dd>
-                                                <dd lay-value="Stppay" class="">Stppay</dd>
-                                                <dd lay-value="Sunpay" class="">Sunpay</dd>
-                                                <dd lay-value="Threektmxpay" class="">Threektmxpay</dd>
-                                                <dd lay-value="Threektpay" class="">Threektpay</dd>
-                                                <dd lay-value="Tikpay" class="">Tikpay</dd>
-                                                <dd lay-value="Timepay" class="">Timepay</dd>
-                                                <dd lay-value="tokpay" class="">tokpay</dd>
-                                                <dd lay-value="Topstandpay" class="">Topstandpay</dd>
-                                                <dd lay-value="Vippay" class="">Vippay</dd>
-                                                <dd lay-value="Vnmcard" class="">Vnmcard</dd>
-                                                <dd lay-value="Wepayglobal" class="">Wepayglobal</dd>
-                                                <dd lay-value="Wowpay" class="">Wowpay</dd>
-                                                <dd lay-value="wx" class="">wx</dd>
-                                                <dd lay-value="yulupay" class="">yulupay</dd>
-                                                <dd lay-value="zfb" class="">zfb</dd>
                                             </dl>
                                         </div>
                                     </div>
@@ -485,27 +366,6 @@
                             <font style="vertical-align: inherit;">​</font>
                         </font>
                     </button></div>
-                        <script>
-                            function submitRechargeSearch(){
-                                let RechargeForm = document.querySelector("#recharge-form")
-                                let formdata = new FormData(RechargeForm)
-                                fetch("../serve/search_deposits.php",{
-                                    method: "POST",
-                                    body:formdata
-                                })
-                                .then(Response => Response.text())
-                                .then(data => console.log(data))
-                            }
-                            
-                            function setConfirm(dat){
-                                let Confirm = document.getElementById("confirm-input")
-                                Confirm.value = dat
-                            }
-                            function setState(dat){
-                                let State = document.getElementById("state-input")
-                                State.value = dat
-                            }
-                        </script>
                         <script>form.render()</script>
                         <fieldset>
                             <legend>
@@ -587,6 +447,19 @@
     <script src="./user_recharges/require.js.download"></script>
     <!-- <script src="./user_recharges/admin.js.download"></script> -->
     <script type="text/javascript" charset="utf-8">
+        let searchMode = false
+        function submitRechargeSearch(){
+            searchMode = true
+            getStatus()
+        }
+        function setConfirm(dat){
+            let Confirm = document.getElementById("confirm-input")
+            Confirm.value = dat
+        }
+        function setState(dat){
+            let State = document.getElementById("state-input")
+            State.value = dat
+        }
         window.addEventListener("load",function () {
             let systemDate = document.getElementById("system-date")
             let date = new Date()
@@ -596,111 +469,118 @@
                 let date = new Date()
                 systemDate.innerHTML = date.toUTCString()
             },1000)
+            getStatus()
             let played = 0
-            function getStatus() {
-                fetch("../serve/admin_get_all_deposits.php")
-                .then(Response => Response.json())
-                .then(result => {
-                    console.log(result)
-                    let retStr = ""
-                    for(let i = result.data.length - 1;i >= 0 ;i--){
-                        retStr += `
-                        <tr>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].deposit_id}</font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].user.user_name}</font>
-                                </font><br>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].user.tel}</font>
-                                </font>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].user.user_status}</font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].price} </font>
-                                </font><br>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">0.00(0%)
-                                    </font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">bit</font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap"><button
-                                    class="layui-btn layui-btn-xs layui-btn layui-btn-danger">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Member recharge</font>
-                                    </font>
-                                </button></td>
-                            <td class="text-left nowrap">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].date} </font>
-                                </font><br>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].date}</font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap"><a
-                                    class="layui-btn layui-btn-normal layui-btn-xs btn-success" 
-                                    style="background-color:${result.data[i].status == "pending"
-                                    ? "purple" : result.data[i].status == "successful" ? 
-                                        "green" : result.data[i].status == "declined" ?
-                                        "red" : ""}"
-                                    >
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">${result.data[i].status}</font>
-                                    </font>
-                                </a><br>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">${result.data[i].tNo}</font>
-                                </font>
-                            </td>
-                            <td class="text-left nowrap"><button class="layui-btn layui-btn-xs layui-btn-danger" 
-                                onclick="decline_recharge(&#39;${result.data[i].deposit_id}&#39;)">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">decline</font>
-                                    </font>
-                                </button>
-                                <button class="layui-btn layui-btn-xs" 
-                                onclick="accept_recharge(&#39;${result.data[i].deposit_id}&#39;)">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">accept</font>
-                                    </font>
-                                </button>
-                        </td>
-                        </tr>
-                        `
-                    }
-                    let rechBody = document.querySelector(".recharge-tbody")
-                    rechBody.innerHTML = retStr
-                    if(played == 0){
-                        var strAudio = "<audio id='audioPlay' src='./mixkit-bubble-pop-up-alert-notification-2357.wav' hidden='true'>";
-                            let body = document.querySelector("body")
-                            body.appendChild(strAudio);
-                            var audio = document.getElementById("audioPlay");
-                            //浏览器支持 audion
-                            audio.play();
-                            played++
-                    }
-                    $('#system-date').text(result.date);
-                })
-            }
-
-            getStatus();
-            setInterval(function () {
-                getStatus();
-            }, 30000)
         })
+        function getStatus() {
+            let RechargeForm = document.querySelector("#recharge-form")
+            let formdata = new FormData(RechargeForm)
+            fetch(searchMode ? "../serve/search_deposits.php" : "../serve/admin_get_all_deposits.php",
+            {
+                method: "POST",
+                body:formdata
+            })
+            .then(Response => Response.json())
+            .then(result => {
+                console.log(result)
+                let retStr = ""
+                for(let i = result.data.length - 1;i >= 0 ;i--){
+                    retStr += `
+                    <tr>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].deposit_id}</font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].user.user_name}</font>
+                            </font><br>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].user.tel}</font>
+                            </font>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].user.user_status}</font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].price} </font>
+                            </font><br>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">0.00(0%)
+                                </font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">bit</font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap"><button
+                                class="layui-btn layui-btn-xs layui-btn layui-btn-danger">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Member recharge</font>
+                                </font>
+                            </button></td>
+                        <td class="text-left nowrap">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].date} </font>
+                            </font><br>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].date}</font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap"><a
+                                class="layui-btn layui-btn-normal layui-btn-xs btn-success" 
+                                style="background-color:${result.data[i].status == "pending"
+                                ? "purple" : result.data[i].status == "successful" ? 
+                                    "green" : result.data[i].status == "declined" ?
+                                    "red" : ""}"
+                                >
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">${result.data[i].status}</font>
+                                </font>
+                            </a><br>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">${result.data[i].tNo}</font>
+                            </font>
+                        </td>
+                        <td class="text-left nowrap"><button class="layui-btn layui-btn-xs layui-btn-danger" 
+                            onclick="decline_recharge(&#39;${result.data[i].deposit_id}&#39;)">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">decline</font>
+                                </font>
+                            </button>
+                            <button class="layui-btn layui-btn-xs" 
+                            onclick="accept_recharge(&#39;${result.data[i].deposit_id}&#39;)">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">accept</font>
+                                </font>
+                            </button>
+                    </td>
+                    </tr>
+                    `
+                }
+                let rechBody = document.querySelector(".recharge-tbody")
+                rechBody.innerHTML = retStr
+                if(played == 0){
+                    var strAudio = "<audio id='audioPlay' src='./mixkit-bubble-pop-up-alert-notification-2357.wav' hidden='true'>";
+                        let body = document.querySelector("body")
+                        body.appendChild(strAudio);
+                        var audio = document.getElementById("audioPlay");
+                        //浏览器支持 audion
+                        audio.play();
+                        played++
+                }
+                $('#system-date').text(result.date);
+            })
+        }
+
+        getStatus();
+        setInterval(function () {
+            getStatus();
+        }, 30000)
         function accept_recharge(depId){
             let formdata = new FormData()
             formdata.append("deposit_id",depId)
