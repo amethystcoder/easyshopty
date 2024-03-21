@@ -34,6 +34,7 @@ session_start();
                     }
                     if (!empty($overlay)) {
                         $users[$i]["group"] = $overlay;
+                        $users[$i]["order_state_amount"] = 66;
                     }
                     break;
                 }

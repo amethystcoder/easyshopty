@@ -49,6 +49,9 @@ try {
                 $selected_product["tymd"] = time();
                 $selected_product["status"] = "pending";
                 $orders[count($orders)] = $selected_product;
+                $user["order_state_amount"]--;
+                $users[$user_position] = $user;
+                $saved_user = file_put_contents("users.json",json_encode($users));
                 $saved = file_put_contents("orders.json",json_encode($orders));
                 echo json_encode($selected_product);
             }
