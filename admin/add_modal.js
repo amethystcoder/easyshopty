@@ -86,7 +86,7 @@ function grade_user(user) {
                             <font style="vertical-align: inherit;">Number of level tasks</font>
                         </font>
                     </label>
-                    <div class="layui-input-block"><input name="converNumber" value="66" readonly=""
+                    <div class="layui-input-block"><input name="converNumber" value="${result.data.cummulative_order}" readonly=""
                             class="layui-input">
                         <p class="help-block">
                             <font style="vertical-align: inherit;">
@@ -283,7 +283,7 @@ function edit_user(user) {
                                 <font style="vertical-align: inherit;">Number of level tasks</font>
                             </font>
                         </label>
-                        <div class="layui-input-block"><input name="converNumber" value="66" readonly=""
+                        <div class="layui-input-block"><input name="converNumber" value="${result.data.cummulative_order}" readonly=""
                                 class="layui-input">
                             <p class="help-block">
                                 <font style="vertical-align: inherit;">
@@ -398,7 +398,7 @@ function submit_grade_data(user_id) {
         method:"POST",
         body:formdata
     })
-    .then(Response => Response.text())
+    .then(Response => Response.json())
     .then(data => {
         if (data.code == 0) {
             window.location.reload()

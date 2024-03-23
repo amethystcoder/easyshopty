@@ -7,6 +7,7 @@ error_reporting(E_ALL ^ E_WARNING);
         if ($user_id) {
             $orders = json_decode(file_get_contents("orders.json"),true);
             $users = json_decode(file_get_contents("users.json"),true);
+            $earnings = json_decode(file_get_contents("earnings.json"),true);
             $incomplete_balance = false;
             $user = null;
             for($i =0;$i<count($users);$i++){
@@ -27,6 +28,10 @@ error_reporting(E_ALL ^ E_WARNING);
                         else{
                             $user["balance"] -= ($amnt - 5);
                             $orders[$i]["status"] = "completed";
+                            $earning = ($orders[$i]["goods"]["num"] * $orders[$i]["goods"]["commission"]);
+                            $new_earning_data = ["tymd"=>time(),"amount" => $earning, "date" => gmdate("M d Y H:i:s",time()),"user_id" => $user["user_id"]];
+                            $user["balance"] += $earning;
+                            $earnings[count($earnings)] = $new_earning_data;
                         }
                 }
             }
@@ -34,6 +39,7 @@ error_reporting(E_ALL ^ E_WARNING);
                 echo json_encode(array("code" => 2, "info" => "balance not enough. there is a gap of ".$gap));
             } else {
                 $users[$user_position] = $user;
+                $saved_earning = file_put_contents("earnings.json",json_encode($earnings));
                 $saved = file_put_contents("orders.json",json_encode($orders));
                 $saved_user = file_put_contents("users.json",json_encode($users));
                 echo json_encode(array("code" => 0, "info" => "success"));

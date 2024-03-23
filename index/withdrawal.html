@@ -173,7 +173,7 @@
                 success: function (data) {
                     data = JSON.parse(data)
                     if(data && data.code == 0){
-                        $(".balance-withdrawable").html("TRX"+data.balance)   
+                        $(".balance-withdrawable").html("TRX"+Math.round(data.balance)+".00")   
                     }
                     else{
                         $(document).dialog({ infoText: data.message });
@@ -269,12 +269,20 @@
                         loading.close();
                         if (data.code == 0) {
                             $(document).dialog({ infoText: data.info });
+                            localStorage.setItem('message',JSON.stringify({
+                                message:"congratulations your withdrawal has been approved",
+                                success:true
+                            }))
                              setTimeout(function () {
                                  window.location.href = './homepage.html';
                              }, 2000);
                             $("#numSpan").html($("#num").val())
                             $(".showSub").css("top", "0")
                         } else {
+                            localStorage.setItem('message',JSON.stringify({
+                                message:"your withdrawal has been declined, please put your correct Tron TRX address",
+                                success:false
+                            }))
                             if (data.code == -1) {
                                 $(document).dialog({ infoText: data.info, autoClose: 3000 });
                                 setTimeout(function () {
@@ -282,11 +290,9 @@
                                 }, 3000);
                             } else {
                                 $(document).dialog({ infoText: data.info });
-                                if (data.url) {
-                                    setTimeout(function () {
-                                        window.location.href = data.url;
-                                    }, 3000);
-                                }
+                                setTimeout(function () {
+                                    window.location.href = './homepage.html';
+                                }, 3000);
                             }
                         }
                     }

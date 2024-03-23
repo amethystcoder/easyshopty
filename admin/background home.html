@@ -71,7 +71,7 @@
                 <li lay-unselect="" class="layui-nav-item"> 
                     <a href="./user withdrawals.html">
                         提现<span class="layui-badge deposit">0</span></a></li>
-                <li lay-unselect="" class="layui-nav-item"><a ><i
+                <li lay-unselect="" class="layui-nav-item" onclick="window.location.reload()"><a ><i
                             class="layui-icon layui-icon-refresh-3"></i></a></li>
                 <li class="layui-nav-item">
                     <dl class="layui-nav-child">
@@ -192,20 +192,11 @@
                         <div class="layui-row layui-col-space15" id="shop_content">
                             <div class="layui-col-sm6 layui-col-md3">
                                 <div class="store-total-item nowrap"
-                                    style="background:linear-gradient(-125deg,#57bdbf,#2f9de2)">
-                                    <div>首冲人数</div>
-                                    <div>0</div>
-                                    <div>今日首冲人数 <span class="num2">0</span></div>
-                                    <p>昨日首冲人数 <span class="num3">0</span></p>
-                                </div><i class="store-total-icon layui-icon layui-icon-template-1"></i>
-                            </div>
-                            <div class="layui-col-sm6 layui-col-md3">
-                                <div class="store-total-item nowrap"
                                     style="background:linear-gradient(-125deg,#ff7d7d,#fb2c95)">
                                     <div>用户总量</div>
                                     <div id="user-count">0</div>
-                                    <div>今日新增用户 <span class="num2">0</span></div>
-                                    <p>昨日新增用户 <span class="num3">0</span></p>
+                                    <div>今日新增用户 <span class="num2" id="users-today">0</span></div>
+                                    <p>昨日新增用户 <span class="num3" id="users-yesterday">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-user"></i>
                             </div>
                             <div class="layui-col-sm6 layui-col-md3">
@@ -213,8 +204,8 @@
                                     style="background:linear-gradient(-113deg,#c543d8,#925cc3)">
                                     <div>订单总量</div>
                                     <div id="order-count">0</div>
-                                    <div>今日新增订单 <span class="num2">0</span></div>
-                                    <p>昨日新增订单 <span class="num3">0</span></p>
+                                    <div>今日新增订单 <span class="num2" id="orders-today">0</span></div>
+                                    <p>昨日新增订单 <span class="num3" id="orders-yesterday">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-read"></i>
                             </div>
                             <div class="layui-col-sm6 layui-col-md3">
@@ -222,8 +213,8 @@
                                     style="background: linear-gradient(-113deg,#8e8cb3,#2219d0);">
                                     <div>订单总金额</div>
                                     <div id="order-count">0</div>
-                                    <div>今日新增订单总金额 <span class="num2">0</span></div>
-                                    <p>昨日新增订单总金额 <span class="num3">0</span></p>
+                                    <div>今日新增订单总金额 <span class="num2" id="orders-today">0</span></div>
+                                    <p>昨日新增订单总金额 <span class="num3" id="orders-yesterday">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-rmb"></i>
                             </div>
                             <div class="layui-col-sm6 layui-col-md3">
@@ -231,8 +222,8 @@
                                     style="background:linear-gradient(-141deg,#ecca1b,#f39526)">
                                     <div>用户充值</div>
                                     <div id="deposit-count">0</div>
-                                    <div>今日新增充值 <span class="num2">0</span></div>
-                                    <p>昨日新增充值 <span class="num3">0</span></p>
+                                    <div>今日新增充值 <span class="num2" id="recharges-today">0</span></div>
+                                    <p>昨日新增充值 <span class="num3" id="recharges-yesterday">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-survey"></i>
                             </div>
                             <div class="layui-col-sm6 layui-col-md3">
@@ -240,8 +231,8 @@
                                     style="background:linear-gradient(-141deg,#ecca1b,#f39526)">
                                     <div>充值人数</div>
                                     <div id="transaction-count">0</div>
-                                    <div>今日充值人数 <span class="num2">0</span></div>
-                                    <p>昨日充值人数 <span class="num3">0</span></p>
+                                    <div>今日充值人数 <span class="num2" id="users-recharging-today">0</span></div>
+                                    <p>昨日充值人数 <span class="num3" id="users-recharging-yesterday">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-survey"></i>
                             </div>
                             <div class="layui-col-sm6 layui-col-md3">
@@ -249,8 +240,8 @@
                                     style="background: linear-gradient(-141deg,#ec4b1b,#f39526);">
                                     <div>用户提现</div>
                                     <div id="withdrawal-count">0</div>
-                                    <div>今日新增提现 <span class="num2">0</span></div>
-                                    <p>昨日新增提现 <span class="num3">0</span></p>
+                                    <div>今日新增提现 <span class="num2" id="withdrawals-today">0</span></div>
+                                    <p>昨日新增提现 <span class="num3" id="withdrawals-yesterday">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-dollar"></i>
                             </div>
                             <div class="layui-col-sm6 layui-col-md3">
@@ -258,8 +249,8 @@
                                     style="background: linear-gradient(-141deg,#ec4b1b,#f39526);">
                                     <div>提现人数</div>
                                     <div id="total-number-of-people-withdrawing-cash">0</div>
-                                    <div>今日提现人数 <span class="num2">0</span></div>
-                                    <p>昨日提现人数 <span class="num3">0</span></p>
+                                    <div>今日提现人数 <span class="num2" id="users-withdrawing-today">0</span></div>
+                                    <p>昨日提现人数 <span class="num3" id="users-withdrawing-yesterday">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-dollar"></i>
                             </div>
                             <div class="layui-col-sm6 layui-col-md3">
@@ -267,26 +258,8 @@
                                     style="background: linear-gradient(-141deg,#963064,#8a0920);">
                                     <div>抢单佣金</div>
                                     <div id="total-order-grabbing-commission">0</div>
-                                    <div>今日新增佣金 <span class="num2">0</span></div>
-                                    <p>昨日新增佣金 <span class="num3">0</span></p>
-                                </div><i class="store-total-icon layui-icon layui-icon-survey"></i>
-                            </div>
-                            <div class="layui-col-sm6 layui-col-md3">
-                                <div class="store-total-item nowrap"
-                                    style="background: linear-gradient(-141deg,#1bec78,#155623);">
-                                    <div>利息宝转入</div>
-                                    <div>0</div>
-                                    <div>今日新增利息宝 <span class="num2">0</span></div>
-                                    <p>昨日新增利息宝 <span class="num3">0</span></p>
-                                </div><i class="store-total-icon layui-icon layui-icon-dollar"></i>
-                            </div>
-                            <div class="layui-col-sm6 layui-col-md3">
-                                <div class="store-total-item nowrap"
-                                    style="background: linear-gradient(-141deg,#ea7575,#abd6c6);">
-                                    <div>下级返佣</div>
-                                    <div>0</div>
-                                    <div>今日新增佣金 <span class="num2">0</span></div>
-                                    <p>昨日新增佣金 <span class="num3">0</span></p>
+                                    <div>今日新增佣金 <span class="num2" id="earnings-today">0</span></div>
+                                    <p>昨日新增佣金 <span class="num3" id="earnings-yesterday">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-survey"></i>
                             </div>
                             <div class="layui-col-sm6 layui-col-md3">
@@ -294,8 +267,6 @@
                                     style="background: linear-gradient(-141deg,#2f3331,#565115);">
                                     <div>用户总余额</div>
                                     <div style="font-size: 14px" id="total-user-balance">0</div>
-                                    <div>今日利息宝转出 <span class="num2">0</span></div>
-                                    <p>今日利息宝收益 <span class="num3">0</span></p>
                                 </div><i class="store-total-icon layui-icon layui-icon-dollar"></i>
                             </div>
                         </div>
@@ -311,14 +282,43 @@
     <script type="text/javascript" charset="utf-8">
         window.addEventListener("load",function () {
             let systemDate = document.getElementById("system-date")
+            let dateCont = document.getElementById("date-cont")
             let date = new Date()
             systemDate.innerHTML = date.toUTCString()
+            dateCont.innerHTML = "当地时间： "+date.toUTCString()
             setInterval(()=>{
                 let systemDate = document.getElementById("system-date")
                 let date = new Date()
                 systemDate.innerHTML = date.toUTCString()
             },1000)
             function getStatus() {
+                let recharges = document.querySelector(".recharge")
+                let withdrawals = document.querySelector(".deposit")
+                let lastCheck = localStorage.getItem("lastCheck")
+                let checkStr = ""
+                if(lastCheck && lastCheck != null){
+                    checkStr = `?last_check=${lastCheck}`
+                }
+                fetch(`../serve/get_withdraw_recharge_status.php${checkStr}`)
+                .then(Response => Response.json())
+                .then(data => {
+                    if(data.code == 0){
+                        recharges.innerHTML = data.data.recharge_count
+                        withdrawals.innerHTML = data.data.withdraw_count
+                        localStorage.setItem('lastCheck',data.last_check)
+                        if(data.data.recharge_count > 0 || data.data.withdraw_count > 0){
+                            //play audio
+                            var strAudio = "<audio id='audioPlay' src='./mixkit-arabian-mystery-harp-notification-2489.wav' hidden='true'>";
+                            let body = document.querySelector("body")
+                            body.insertAdjacentHTML("beforeend",strAudio)
+                            var audio = document.getElementById("audioPlay");
+                            //浏览器支持 audion
+                            audio.play();
+                        }
+                    }
+                    else{
+                    }
+                })
                 fetch("../serve/admin_get_background_data.php", {
                     method: "GET"
                 }).then(response => response.json())
@@ -343,6 +343,35 @@
                             total_user_balance.innerHTML = data.data.total_user_balance
                             total_order_grabbing_commission.innerHTML = data.data.total_order_grabbing_commission
                             total_number_of_people_withdrawing_cash.innerHTML = data.data.total_number_of_people_withdrawing_cash
+                            
+                            let usersToday = document.getElementById("users-today")
+                            let usersYesterday = document.getElementById("users-yesterday")
+                            let ordersToday = document.getElementById("orders-today")
+                            let ordersYesterday = document.getElementById("orders-yesterday")
+                            let rechargesToday = document.getElementById("recharges-today")
+                            let rechargesYesterday = document.getElementById("recharges-yesterday")
+                            let withdrawalsToday = document.getElementById("withdrawals-today")
+                            let withdrawalsYesterday = document.getElementById("withdrawals-yesterday")
+                            let earningsToday = document.getElementById("earnings-today")
+                            let earningsYesterday = document.getElementById("earnings-yesterday")
+                            let usersWithdrawingToday = document.getElementById("users-withdrawing-today")
+                            let usersWithdrawingYesterday = document.getElementById("users-withdrawing-yesterday")
+                            let usersRechargingToday = document.getElementById("users-recharging-today")
+                            let usersRechargingYesterday = document.getElementById("users-recharging-yesterday")
+                            usersToday.innerHTML = data.data.users_today
+                            usersYesterday.innerHTML = data.data.users_yesterday
+                            ordersToday.innerHTML = data.data.orders_today
+                            ordersYesterday.innerHTML = data.data.orders_yesterday
+                            rechargesToday.innerHTML = data.data.recharges_today
+                            rechargesYesterday.innerHTML = data.data.recharges_yesterday
+                            withdrawalsToday.innerHTML = data.data.withdrawals_today
+                            withdrawalsYesterday.innerHTML = data.data.withdrawals_yesterday
+                            earningsToday.innerHTML = data.data.earnings_today
+                            earningsYesterday.innerHTML = data.data.earnings_yesterday
+                            usersRechargingToday = data.data.users_recharging_today
+                            usersRechargingYesterday = data.data.users_recharging_yesterday
+                            usersWithdrawingToday = data.data.users_withdrawing_today
+                            usersWithdrawingYesterday = data.data.users_withdrawing_yesterday
                         }
                     })
             }
@@ -350,7 +379,7 @@
             getStatus();
             setInterval(function () {
                 getStatus();
-            }, 30000)
+            }, 3000)
         })
     </script>
     <div class="layui-layer-move"></div>

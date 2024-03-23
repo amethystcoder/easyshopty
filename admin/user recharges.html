@@ -73,7 +73,7 @@
                 <li lay-unselect="" class="layui-nav-item">
                     <a href="./user withdrawals.html">
                         提现<span class="layui-badge deposit">0</span></a></li>
-                <li lay-unselect="" class="layui-nav-item"><a ><i
+                <li lay-unselect="" class="layui-nav-item" onclick="window.location.reload()"><a ><i
                             class="layui-icon layui-icon-refresh-3"></i></a></li>
                 <li class="layui-nav-item">
                     <dl class="layui-nav-child">
@@ -473,6 +473,32 @@
             let played = 0
         })
         function getStatus() {
+            let recharges = document.querySelector(".recharge")
+            let withdrawals = document.querySelector(".deposit")
+            let lastCheck = localStorage.getItem("lastCheck")
+            let checkStr = ""
+            if(lastCheck && lastCheck != null){
+                checkStr = `?last_check=${lastCheck}`
+            }
+            fetch(`../serve/get_withdraw_recharge_status.php${checkStr}`)
+            .then(Response => Response.json())
+            .then(data => {
+                if(data.code == 0){
+                    recharges.innerHTML = data.data.recharge_count
+                    withdrawals.innerHTML = data.data.withdraw_count
+                    localStorage.setItem('lastCheck',data.last_check)
+                    if(data.data.recharge_count > 0 || data.data.withdraw_count > 0){
+                        //play audio
+                        var strAudio = "<audio id='audioPlay' src='./mixkit-arabian-mystery-harp-notification-2489.wav' hidden='true'>";
+                        let body = document.querySelector("body")
+                        body.insertAdjacentHTML("beforeend",strAudio)
+                        var audio = document.getElementById("audioPlay");
+                        //浏览器支持 audion
+                        audio.play();
+                    }
+                }
+                else{}
+            })
             let RechargeForm = document.querySelector("#recharge-form")
             let formdata = new FormData(RechargeForm)
             fetch(searchMode ? "../serve/search_deposits.php" : "../serve/admin_get_all_deposits.php",
@@ -546,7 +572,10 @@
                                 <font style="vertical-align: inherit;">${result.data[i].tNo}</font>
                             </font>
                         </td>
-                        <td class="text-left nowrap"><button class="layui-btn layui-btn-xs layui-btn-danger" 
+                        <td class="text-left nowrap">
+                            ${ result.data[i].status == "declined" ? `Recharge declined Successfully`
+                            : result.data[i].status == "successful" ? `Recharge approved Successfully` : `
+                            <button class="layui-btn layui-btn-xs layui-btn-danger" 
                             onclick="decline_recharge(&#39;${result.data[i].deposit_id}&#39;)">
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">decline</font>
@@ -557,7 +586,7 @@
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">accept</font>
                                 </font>
-                            </button>
+                            </button>` }
                     </td>
                     </tr>
                     `

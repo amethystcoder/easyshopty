@@ -9,22 +9,25 @@ try {
     $goods = json_decode(file_get_contents("product_list.json"),true);
     $users = json_decode(file_get_contents("users.json"),true);
     $tymd = null;
+    $group = null;
     $user_order_count = 0;
-
-    for ($i=0; $i < count($orders); $i++) { 
-        if ($orders[$i]["user_id"] == $user_id) {
-            $user_order_count++;
-        }
-    }
 
     $user_status = "";
     for ($i=0; $i < count($users); $i++) { 
         if ($users[$i]["user_id"] == $user_id) {
             $user_status = $users[$i]["user_status"];
             $tymd = $users[$i]["tymd"];
+            $group = $users[$i]["group"];
             break;
         }
     }
+
+    for ($i=0; $i < count($orders); $i++) { 
+        if ($orders[$i]["user_id"] == $user_id && $orders[$i]["group"] == $group) {
+            $user_order_count++;
+        }
+    }
+
     /* $ord_num = 0;
     if ($user_grade == "Day 1") {
         $commission = 0.12;
@@ -36,12 +39,24 @@ try {
         $commission = 0.14;
     } */
     $commission = 0;
-    if ($user_status == "VIP 1") {
-        $commission = 0.12;
-    } elseif ($user_status == "VIP 2") {
-        $commission = 0.13;
-    } elseif ($user_status == "VIP 3") {
-        $commission = 0.14;
+    if ($group == "Day 4 own account (self)" && $user_order_count == 48) {
+        $commission = 770;
+    }
+    else{
+        if ($user_status == "VIP 1") {
+            $commission = 0.12;
+        } elseif ($user_status == "VIP 2") {
+            $commission = 0.13;
+        } elseif ($user_status == "VIP 3") {
+            $commission = 0.14;
+        }
+    }
+
+    for ($i=0; $i < count($goods); $i++) { 
+        if ($goods[$i]["name"] == $group) {
+            $goods = $goods[$i]["products"];
+            break;
+        }
     }
 
     if ($user_order_count <= count($goods)) {

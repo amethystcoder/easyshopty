@@ -9,6 +9,7 @@ error_reporting(E_ALL ^ E_WARNING);
             $users = json_decode(file_get_contents("users.json"),true);
             $deposits = json_decode(file_get_contents("deposits.json"),true);
             $withdrawals = json_decode(file_get_contents("withdrawals.json"),true);
+            $orders = json_decode(file_get_contents("orders.json"),true);
             $user = null;
             for ($i=0; $i < count($users); $i++) { 
                 if($users[$i]["user_id"] == $user_id){
@@ -16,6 +17,7 @@ error_reporting(E_ALL ^ E_WARNING);
                     $users[$i]["cummulative_withdrawal_amount"] = 0;
                     $users[$i]["cummulative_deposits"] = 0;
                     $users[$i]["cummulative_deposit_amount"] = 0;
+                    $users[$i]["cummulative_order"] = 0;
                     for ($j=0; $j < count($deposits); $j++) { 
                         if ($users[$i]["user_id"] == $deposits[$j]["user_id"]) {
                             $users[$i]["cummulative_deposits"]++;
@@ -26,6 +28,11 @@ error_reporting(E_ALL ^ E_WARNING);
                         if ($users[$i]["user_id"] == $deposits[$j]["user_id"]) {
                             $users[$i]["cummulative_withdrawals"]++;
                             $users[$i]["cummulative_withdrawal_amount"] += $withdrawals[$k]["num"];
+                        }
+                    }
+                    for ($l=0; $l < count($orders); $l++) { 
+                        if ($users[$i]["user_id"] == $orders[$i]["user_id"] && $users[$i]["group"] == $orders[$i]["group"]) {
+                            $users[$i]["cummulative_order"]++;
                         }
                     }
                     $user = $users[$i];

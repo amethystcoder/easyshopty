@@ -350,6 +350,35 @@
                         class="material-icons text-template md-18 ">close</i></button></div>
         </div>
     </div>
+    <div style="position: fixed;right:0;top:0;padding:20px;
+    background-color:white;z-index:5;max-width:300px;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius:10px;margin:10px;" class="notif blocked">
+        hello
+    </div>
+    <style>
+        .blocked{
+            display: none;
+        }
+        .success{
+            border-left:solid thin green;
+        }
+        .failure{
+            border-left:solid thin red;
+        }
+        .slide-into{
+            animation: slideInto 1.5s ease-in forwards;
+        }
+        .slide-out{
+            animation: slideOut 3s ease-out forwards;
+        }
+        @keyframes slideInto {
+            from{transform: translateX(200px);}
+            to{transform: translateX(0);}
+        }
+        @keyframes slideOut {
+            to{transform: translateX(400px);}
+        }
+    </style>
     <script type="text/javascript">var app = { 'online_popup': "" }</script><!-- jquery, popper and bootstrap js -->
     <script src="./homepage_files/jquery-3.3.1.min.js.download"></script>
     <script src="./homepage_files/popper.min.js.download"></script>
@@ -364,6 +393,19 @@
     <script src="./homepage_files/main.js.download"></script><!-- page level script -->
     <script>
         $(function () {
+            let message = localStorage.getItem('message')
+            if(typeof message == "string"){
+                message = JSON.parse(message)
+                console.log(message)
+                $(".notif").html(message.message)
+                $(".notif").removeClass("blocked")
+                $(".notif").addClass("slide-into")
+                $(".notif").addClass(message.success ? "success" : "failure")
+                setTimeout(()=>{
+                    $(".notif").addClass("slide-out")
+                    localStorage.removeItem('message')
+                },2500)
+            }
             $('.footer').find('.btn-link-default').eq(0).addClass("active");
             var bannerSwiper = new Swiper('.swiper-container-banner', {
                 slidesPerView: 1,
@@ -378,12 +420,6 @@
                     expires: date
                 });
             });
-            /* $('.announcement-task .a-t-items').click(function () {
-                if (!$(this).hasClass('not')) {
-                    cid = $(this).data('cid');
-                    window.location.href = '/index/rot_order/index.html?type=' + cid;
-                }
-            }); */
             if ("none" != 'none' || sessionStorage.getItem('login_flag') == '1') {
                 setTimeout(function () {
                     $('.tanchuang').modal('show');
@@ -457,7 +493,7 @@
                 success: function (data) {
                     data = JSON.parse(data)
                     if(data && data.code == 0){
-                        $(".bal").html(`TRX${data.balance}`)
+                        $(".bal").html(`TRX${Math.round(data.balance)}.00`)
                         if(data.user_status == "VIP 1"){
                             $(".curr-level-one").html("Current level")
                         }
@@ -467,8 +503,8 @@
                         if(data.user_status == "VIP 3"){
                             $(".curr-level-three").html("Current level")
                         }
-                        $(".earn-one").html(`TRX${data.earnings_today}`)
-                        $(".earn-two").html(`TRX${data.earnings}`)
+                        $(".earn-one").html(`TRX${Math.round(data.earnings_today)}.00`)
+                        $(".earn-two").html(`TRX${Math.round(data.earnings)}.00`)
                     }
                     else{
                         $(".bal").html(`TRX${0}`)

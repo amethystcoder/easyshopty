@@ -30,7 +30,7 @@ error_reporting(E_ALL ^ E_WARNING);
                         else {
                             $user["balance"] -= ($amnt - 5);
                             $earning = ($orders[$i]["goods"]["num"] * $orders[$i]["goods"]["commission"]);
-                            $new_earning_data = ["tymd"=>time(),"amount" => $earning, "user_id" => $user["user_id"]];
+                            $new_earning_data = ["tymd"=>time(),"amount" => $earning, "date" => gmdate("M d Y H:i:s",time()), "user_id" => $user["user_id"]];
                             $user["balance"] += $earning;
                             $users[$user_position] = $user;
                             $orders[$i]["status"] = "completed";

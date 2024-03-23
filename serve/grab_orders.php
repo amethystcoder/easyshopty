@@ -48,6 +48,7 @@ try {
                 $selected_product["addtime"] = gmdate("M d Y H:i:s",time());
                 $selected_product["tymd"] = time();
                 $selected_product["status"] = "pending";
+                $selected_product["group"] = $user["group"];
                 $orders[count($orders)] = $selected_product;
                 $user["order_state_amount"]--;
                 $users[$user_position] = $user;

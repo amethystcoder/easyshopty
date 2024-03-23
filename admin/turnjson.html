@@ -6,6 +6,8 @@
     <title>Document</title>
     <script>
         function startWork(){
+            let nameInput = document.getElementById("name-imp")
+            let dat = nameInput.value
             let txtarea = document.getElementById("txtarea")
             let content = txtarea.value
             let products = JSON.parse(
@@ -39,7 +41,7 @@
             for(let i = 0; i < content.length; i++){
                 content[i] = parseInt(content[i])
             }
-            for(let i = 0; i < content.length; i++){
+            for(let i = 0; i < 66; i++){
                 let new_data = products[Math.floor(Math.random() * (products.length-1))]
                 new_data.goods_price = content[i]
                 result.push({
@@ -49,11 +51,12 @@
                     goods_price: content[i]
                 })
             }
-            console.log(JSON.stringify(result))
+            console.log(JSON.stringify({name:dat,products:result}))
         }
     </script>
 </head>
 <body>
+    <input type="text" name="" id="name-imp">
     <textarea name="" id="txtarea" cols="30" rows="10"></textarea>
     <button onclick="startWork()">Start Work</button>
 </body>

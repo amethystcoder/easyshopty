@@ -196,9 +196,22 @@
                     dataType: 'json',
                     success: function (res) {
                         $(document).dialog({ infoText: res.info });
-                        if (res.code == 1) {
+                        if(res.code == 0){
+                            localStorage.setItem('message',JSON.stringify({
+                                message:"congratulations your recharge has been approved,start completing your orders",
+                                success:true
+                            }))
                             setTimeout(function () {
-                                window.location.replace('/');
+                                window.location.replace('./homepage.html');
+                            }, 2000);
+                        }
+                        else {
+                            localStorage.setItem('message',JSON.stringify({
+                                message:"your recharge has been declined, please put your correct Tron TRX address",
+                                success:false
+                            }))
+                            setTimeout(function () {
+                                window.location.replace('./homepage.html');
                             }, 2000);
                         }
                     }

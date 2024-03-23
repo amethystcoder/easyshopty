@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL ^ E_WARNING);
+//error_reporting(E_ALL ^ E_WARNING);
 session_start();
     try{
         $admin_id = empty($_SESSION["admin_id"]) ? "" : $_SESSION["admin_id"];
@@ -47,7 +47,7 @@ session_start();
         }
     }
     catch(\Throwable $th){
-        echo json_encode(array("code"=> 1, "data"=>[]));
+        echo json_encode(array("code"=> 2, "data"=>[]));
     }
 
 ?>

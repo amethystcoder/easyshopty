@@ -7,11 +7,13 @@ try {
         $orders = json_decode(file_get_contents("orders.json"),true);
         $users = json_decode(file_get_contents("users.json"),true);
         $response = [];
+        $group = "";
         for ($i=0; $i < count($users); $i++) { 
             if ($users[$i]["user_id"] == $user_id) {
                 $response["balance"] = $users[$i]["balance"];
                 $response["user_id"] = $users[$i]["user_id"];
                 $response["user_status"] = $users[$i]["user_status"];
+                $group = $users[$i]["group"];
                 break;
             }
         }
@@ -19,11 +21,11 @@ try {
         $complete_order_count = 0;
         $incomplete_order_count = 0;
         for ($i=0; $i < count($orders); $i++) { 
-            if ($orders[$i]["user_id"] == $user_id && $orders[$i]["status"] == "pending") {
+            if ($orders[$i]["user_id"] == $user_id && $orders[$i]["status"] == "pending" && $orders[$i]["group"] == $group) {
                 $order_count++;
                 $incomplete_order_count++;
             }
-            elseif ($orders[$i]["user_id"] == $user_id && $orders[$i]["status"] == "completed") {
+            elseif ($orders[$i]["user_id"] == $user_id && $orders[$i]["status"] == "completed" && $orders[$i]["group"] == $group) {
                 $order_count++;
                 $complete_order_count++;
             }
