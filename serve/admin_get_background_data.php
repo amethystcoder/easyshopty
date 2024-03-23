@@ -71,7 +71,7 @@ try {
         $day_today = explode(" ",$date_today)[1];
 
         for ($i=0; $i < count($users); $i++) { 
-            $user_day = explode(" ",$users[$i]["date"]);
+            $user_day = explode(" ",$users[$i]["date"])[1];
             if ($user_day == $day_today) {
                 $users_today++;
             }
@@ -80,7 +80,7 @@ try {
             }
         }
         for ($i=0; $i < count($orders); $i++) { 
-            $order_day = explode(" ",$orders[$i]["goods"]["addtime"]);
+            $order_day = explode(" ",$orders[$i]["goods"]["addtime"])[1];
             if ($order_day == $day_today) {
                 $orders_today++;
             }
@@ -89,7 +89,7 @@ try {
             }
         }
         for ($i=0; $i < count($withdrawals); $i++) { 
-            $withdrawal_day = explode(" ",$withdrawals[$i]["date_of_withdrawal"]);
+            $withdrawal_day = explode(" ",$withdrawals[$i]["date_of_withdrawal"])[1];
             if ($withdrawal_day == $day_today) {
                 $withdrawals_today++;
                 $users_withdrawals_today = array_search($withdrawals[$i]["user_id"],$users_withdrawing_today);
@@ -106,7 +106,7 @@ try {
             }
         }
         for ($i=0; $i < count($earnings); $i++) { 
-            $earning_day = explode(" ",$earnings[$i]["date"]);
+            $earning_day = explode(" ",$earnings[$i]["date"])[1];
             if ($earning_day == $day_today) {
                 $earnings_today++;
             }
@@ -115,7 +115,7 @@ try {
             }
         }
         for ($i=0; $i < count($deposits); $i++) { 
-            $deposit_day = explode(" ",$deposits[$i]["date"]);
+            $deposit_day = explode(" ",$deposits[$i]["date"])[1];
             if ($deposit_day == $day_today) {
                 $recharges_today++;
                 $users_recharges_today = array_search($deposits[$i]["user_id"],$users_recharging_today);
