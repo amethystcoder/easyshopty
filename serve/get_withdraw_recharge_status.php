@@ -12,7 +12,7 @@ try {
         }
     }
     for ($i=0; $i < count($deposits); $i++) { 
-        if ($deposits[$i]["tymd"] < $time && $deposits[$i]["tymd"] > ($time - 300)) {
+        if ($deposits[$i]["tymd"] < $time && $deposits[$i]["tymd"] > ($time - 30)) {
             $t_data["recharge_count"]++;   
         }
     }
