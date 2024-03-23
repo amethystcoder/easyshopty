@@ -534,13 +534,7 @@
                 }
                 let withBody = document.querySelector(".withdrawal-tbody")
                 withBody.innerHTML = retStr
-                    var strAudio = "<audio id='audioPlay' src='/public/634.wav' hidden='true'>";
-                    let body = document.querySelector("body")
-                    body.appendChild(strAudio);
-                var audio = document.getElementById("audioPlay");
-                //浏览器支持 audion
-                audio.play();
-                $('#system-date').text(result.date);
+
             })
         }
 

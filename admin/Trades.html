@@ -573,15 +573,6 @@
                 }
                 let OrdBody = document.querySelector(".order-tbody")
                 OrdBody.innerHTML = retStr
-                if (result.deposit > 0 || result.recharge > 0) {
-                    var strAudio = "<audio id='audioPlay' src='/public/634.wav' hidden='true'>";
-                        let body = document.querySelector("body")
-                        body.appendChild(strAudio);
-                    var audio = document.getElementById("audioPlay");
-                    //浏览器支持 audion
-                    audio.play();
-                }
-                $('#system-date').text(result.date);
             })
         }
 
