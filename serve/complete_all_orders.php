@@ -19,7 +19,7 @@ error_reporting(E_ALL ^ E_WARNING);
             }
             for($i =0;$i<count($orders);$i++){
                 if($orders[$i]["user_id"] == $user_id && $orders[$i]["status"] == "pending"){
-                    $amnt = $orders[$i]["goods"]["goods_price"] * $orders[$i]["goods"]["goods_count"];
+                    $amnt = $orders[$i]["goods"]["goods_price"];
                     if ($user["balance"] < $amnt) {
                         $gap = $amnt - $user["balance"];
                         $incomplete_balance = true;
@@ -27,7 +27,7 @@ error_reporting(E_ALL ^ E_WARNING);
                     }
                     else{
                         $orders[$i]["status"] = "completed";
-                        $earning = ($orders[$i]["goods"]["num"] * $orders[$i]["goods"]["commission"]);
+                        $earning = ($orders[$i]["goods"]["goods_price"] * ($orders[$i]["goods"]["commission"] * 0.01));
                         $new_earning_data = ["tymd"=>time(),"amount" => $earning, "date" => gmdate("M d Y H:i:s",time()),"user_id" => $user["user_id"]];
                         $user["balance"] += $earning;
                         $earnings[count($earnings)] = $new_earning_data;
