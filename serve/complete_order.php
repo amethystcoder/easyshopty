@@ -5,7 +5,7 @@ error_reporting(E_ALL ^ E_WARNING);
     try {
         $user_id = empty($_SESSION["user_id"]) ? "" : $_SESSION["user_id"];
         $order_id = $_POST["oid"];
-        if ($user_id) {
+        if (!empty($user_id)) {
             $orders = json_decode(file_get_contents("orders.json"),true);
             $users = json_decode(file_get_contents("users.json"),true);
             $earnings = json_decode(file_get_contents("earnings.json"),true);
@@ -21,14 +21,13 @@ error_reporting(E_ALL ^ E_WARNING);
             if (isset($user)) {
                 for($i =0;$i<count($orders);$i++){
                     if($orders[$i]["oid"] == $order_id){
-                        $amnt = $orders[$i]["goods"]["goods_price"] * $orders[$i]["goods"]["goods_count"] + 5;
+                        $amnt = $orders[$i]["goods"]["goods_price"] * $orders[$i]["goods"]["goods_count"];
                         if ($user["balance"] < $amnt) {
                             $gap = $amnt - $user["balance"];
                             echo json_encode(array("code" => 2, "info" => "balance not enough. there is a gap of ".$gap));
                             break;
                         }
                         else {
-                            $user["balance"] -= ($amnt - 5);
                             $earning = ($orders[$i]["goods"]["num"] * $orders[$i]["goods"]["commission"]);
                             $new_earning_data = ["tymd"=>time(),"amount" => $earning, "date" => gmdate("M d Y H:i:s",time()), "user_id" => $user["user_id"]];
                             $user["balance"] += $earning;

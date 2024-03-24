@@ -8,13 +8,13 @@ try{
         $deposits = json_decode(file_get_contents("deposits.json"),true);
         $users = json_decode(file_get_contents("users.json"),true);
         $earnings = json_decode(file_get_contents("earnings.json"),true);
+        $messages = json_decode(file_get_contents("messages.json"),true);
         $deposit_to_change = [];
         $user_to_change = [];
         $user_position = null;
         for($i=0;$i < count($deposits);$i++){
             if($deposits[$i]["deposit_id"] == $deposit_id){
                 $deposits[$i]["status"] = "successful";
-                $messages = json_decode(file_get_contents("messages.json"),true);
                 $new_message = ["message" => "Your recharge with id ".$deposits[$i]["deposit_id"]."and balance ".$deposits[$i]["price"]." has been accepted","user_id" => $deposits[$i]["user_id"]];
                 $messages[count($messages)] = $new_message;
                 file_put_contents("messages.json",json_encode($messages));

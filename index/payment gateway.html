@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0067)https://www.easyshopmid12.xyz/index/pay/bit/SY2402281748028573.html -->
 <html lang="en" class="deeppurple-theme" style="cursor: url(&quot;img/touch.png&quot;), move;">
 
 <head>
@@ -14,6 +13,7 @@
     <link href="./Wallet recharge_files/swiper-bundle.min.css" rel="stylesheet"><!-- Custom styles for this template -->
     <link href="./Wallet recharge_files/style.css" rel="stylesheet">
     <link rel="stylesheet" href="./Wallet recharge_files/public.css">
+    <link rel="shortcut icon" href="./login_files/logo.png">
     <style>
         .recharge-slide {
             height: 170px;
@@ -161,7 +161,23 @@
     <script src="./Wallet recharge_files/main.js.download"></script><input name="" id="webcopyinput" type="text"
         style="left: -1000px; position: absolute" value="">
     <script>
+        function isLoggedIn(){
+            $.ajax({
+                url: "../serve/is_user_logged_in.php",
+                type: 'GET',
+                success: function (data) {
+                    data = JSON.parse(data)
+                    if(!data.result){
+                        window.location.replace('./login.html')
+                    }
+                },
+            });
+        }
         $(function () {
+            isLoggedIn()
+            setInterval(()=>{
+                isLoggedIn()
+            },10000)
             let url = new URLSearchParams(window.location.search).get("num")
             console.log(url)
             $.ajax({

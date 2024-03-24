@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0052)https://www.easyshopmid12.xyz/index/order/index.html -->
 <html lang="en" class="deeppurple-theme" style="cursor: url(&quot;img/touch.png&quot;), move;">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport"
@@ -15,6 +13,7 @@
     <link href="./order record_files/style.css" rel="stylesheet">
     <link rel="stylesheet" href="./order record_files/public.css">
     <link href="./order record_files/layer.css" type="text/css" rel="styleSheet" id="layermcss">
+    <link rel="shortcut icon" href="./login_files/logo.png">
     <style>
         .van-overlay {
             position: fixed;
@@ -316,7 +315,23 @@
     <script charset="utf-8" src="./order record_files/common.js.download"></script><!-- template custom js -->
     <script src="./order record_files/main.js.download"></script><!-- page level script -->
     <script>
+        function isLoggedIn(){
+            $.ajax({
+                url: "../serve/is_user_logged_in.php",
+                type: 'GET',
+                success: function (data) {
+                    data = JSON.parse(data)
+                    if(!data.result){
+                        window.location.replace('./login.html')
+                    }
+                },
+            });
+        }
         $(function () {
+            isLoggedIn()
+            setInterval(()=>{
+                isLoggedIn()
+            },10000)
             let status = new URLSearchParams(window.location.search).get("status")
             if(status == 5){
                 $.ajax({
@@ -380,8 +395,8 @@
                                                 <p class="gray">commission:</p>
                                             </div>
                                             <div class="col-auto">
-                                                <p class="text-right text-mute">TRX${data.data[i].goods.goods_price * data.data[i].goods.goods_count}</p>
-                                                <p class="text-right text-mute">TRX${data.data[i].goods.commission ? data.data[i].goods.commission : 0}</p>
+                                                <p class="text-right text-mute">TRX${data.data[i].goods.goods_price}</p>
+                                                <p class="text-right text-mute">TRX${Math.round(data.data[i].goods.commission ? data.data[i].goods.commission * data.data[i].goods.goods_price : 0)}</p>
                                             </div>
                                         </div>
                                         
@@ -430,8 +445,8 @@
                                                 <p class="gray">commission:</p>
                                             </div>
                                             <div class="col-auto">
-                                                <p class="text-right text-mute">TRX${data.data[i].goods.goods_price * data.data[i].goods.goods_count}</p>
-                                                <p class="text-right text-mute">TRX${data.data[i].goods.commission ? data.data[i].goods.commission : 0}</p>
+                                                <p class="text-right text-mute">TRX${data.data[i].goods.goods_price}</p>
+                                                <p class="text-right text-mute">TRX${Math.round(data.data[i].goods.commission ? data.data[i].goods.commission * data.data[i].goods.goods_price : 0)}</p>
                                             </div>
                                         </div>
                                         
@@ -484,8 +499,8 @@
                                                 <p class="gray">commission:</p>
                                             </div>
                                             <div class="col-auto">
-                                                <p class="text-right text-mute">TRX${data.data[i].goods.goods_price * data.data[i].goods.goods_count}</p>
-                                                <p class="text-right text-mute">TRX${data.data[i].goods.commission ? data.data[i].goods.commission : 0}</p>
+                                                <p class="text-right text-mute">TRX${data.data[i].goods.goods_price}</p>
+                                                <p class="text-right text-mute">TRX${Math.round(data.data[i].goods.commission ? data.data[i].goods.commission * data.data[i].goods.goods_price : 0)}</p>
                                             </div>
                                         </div>
                                         
@@ -749,49 +764,60 @@
         })
 
         function tijiao(id) {
-            oid = id;
-            $('#orderDetail').modal('show');
-            $.ajax({
-                url: "../serve/order_info_list.php",
-                type: "POST",
-                dataType: "JSON",
-                data: { id: oid },
-                success: function (res) {
-                    var data = res.data;
-                    if (res.code == 0) {
-                        var html = '';
-                        for (var i = 0; i < data.length; i++) {
-                            html += '<div class="records_tabs_box">\n' +
-                                '<div class="records_tabs_box_top">time to rush an order:&nbsp;\n' +
-                                '    <span>' + data[i].addtime + '</span>\n' +
-                                '    <br>order number&nbsp;<span>' + data[i].oid + '</span>\n' +
-                                '</div>\n' +
-                                '<div class="records_tabs_box_des">\n' +
-                                '    <div class="tabs_box_des_img">\n' +
-                                '        <img src="' + data[i].goods_pic + '"></div>\n' +
-                                '    <div class="tabs_box_des_r">\n' +
-                                '        <p class="tabs_box_des_r_tit" style="max-height: 95px;">' +
-                                data[i].goods_name + '</p>\n' +
-                                '        <div class="tabs_box_des_r_pic" style="display: none"><p>' +
-                                data[i].goods_price + '</p><p> x ' + data[i].goods_count + '</p></div>\n' +
-                                '    </div>\n' +
-                                '</div>\n' +
-                                '<div class="row mt-3">\n' +
-                                '    <div class="col text-left">Total order</div>\n' +
-                                '    <div class="col-auto text-right text-mute">' + data[i].num + '</div>\n' +
-                                '</div>\n' +
-                                '<div class="row mt-3">\n' +
-                                '    <div class="col text-left">commission</div>\n' +
-                                '    <div class="col-auto text-right txt1"><span id="yongjin">' +
-                                data[i].commission + '</span></div>\n' +
-                                '</div>\n' +
-                                '</div>'
-                        }
-                        $('#orderListInfo').html(html);
-                    }
-                },
-                error: function (err) {
-                    console.log(err)
+            i = 0
+            layer.open({
+                type: 2,
+                content: "match merchant information",
+                time: zhujiTime,
+                shadeClose: false,
+            });
+            var timer = setInterval(function () {
+                i++;
+                if (i == 1) {
+                    layer.open({
+                        type: 2,
+                        content: "generate product order",
+                        time: zhujiTime,
+                        shadeClose: false,
+                    })
+                } else if (i == 2) {
+                    layer.open({
+                        type: 2,
+                        content: "order submission completed",
+                        time: shopTime,
+                        shadeClose: false,
+                    })
+                    setTimeout(()=>{
+                        $.ajax({
+                            url: "../serve/complete_order.php",
+                            type: 'POST',
+                            data: {oid:id},
+                            success: function (data) {
+                                data = JSON.parse(data)
+                                if(data && data.code == 0){
+                                    $(document).dialog({
+                                        infoText: "order processing completed",
+                                        autoClose: 2000
+                                    });
+                                    clearInterval(timer);
+                                    var linkTime = setTimeout(function () {
+                                        location.reload()
+                                    },
+                                        1800);
+                                } else {
+                                    $(document).dialog({
+                                        type: 'alert',
+                                        titleText: res.info,
+                                        buttonTextConfirm: "OK",
+                                        autoClose: 0,
+                                        onClosed: function () {
+                                            if (res.url) window.location.href = res.url;
+                                        }
+                                    });
+                                }
+                            },
+                        });
+                    },3000)
                 }
             })
         }

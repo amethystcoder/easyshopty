@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0044)https://www.easyshopmid12.xyz/index/my/caiwu -->
 <html lang="en" class="deeppurple-theme">
 
 <head>
@@ -14,6 +13,7 @@
   <link href="./account details_files/swiper-bundle.min.css" rel="stylesheet"><!-- Custom styles for this template -->
   <link href="./account details_files/style.css" rel="stylesheet">
   <link rel="stylesheet" href="./account details_files/public.css">
+  <link rel="shortcut icon" href="./login_files/logo.png">
 </head>
 
 <body><a href="javascript:void(0)" class="closesidemenu"><i class="material-icons icons-raised bg-dark ">close</i></a>
@@ -64,19 +64,19 @@
           let recharge_view = ""
           let totalRecharge = 0
           if(typeof data == "object"){
-            if(data.length > 0){
-              for(let i = 0;i<data.length;i++){
-                let m = data.status == "pending" ? "<font color='red'>receiving order rebate</font>" : "<font color='#2a28c3'>user takes orders</font>"
+            if(data.data.length > 0 && data.code == 0){
+              for(let i = 0;i<data.data.length;i++){
+                let m = data.data.status == "pending" ? "<font color='red'>receiving order rebate</font>" : "<font color='#2a28c3'>user takes orders</font>"
                 recharge_view += `
                 <li class="list-group-item">
                   <div class="row align-items-center">
                     <div class="col align-self-center pr-0">
-                      <h6 class="font-weight-normal mb-1">${data[i].addtime}</h6>
-                      <p class="text-mute small text-secondary">${m}<span class="badge badge-primary">
-                        </span></p>
+                      <h6 class="font-weight-normal mb-1">${data.data[i].addtime}</h6>
+                      <p class="text-mute small text-secondary"><span class="badge badge-primary">
+                        ${m}</span></p>
                     </div>
                     <div class="col-auto">
-                      <h6 class="text-success">TRX${data.total_order + data.commission}</h6>
+                      <h6 class="text-success">TRX${parseInt(data.data[i].goods.goods_price + data.data[i].goods.commission)}</h6>
                     </div>
                   </div>
                 </li>

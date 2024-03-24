@@ -31,7 +31,7 @@ error_reporting(E_ALL ^ E_WARNING);
                         }
                     }
                     for ($l=0; $l < count($orders); $l++) { 
-                        if ($users[$i]["user_id"] == $orders[$i]["user_id"] && $users[$i]["group"] == $orders[$i]["group"]) {
+                        if ($users[$i]["user_id"] == $orders[$l]["user_id"] && $users[$i]["group"] == $orders[$l]["group"]) {
                             $users[$i]["cummulative_order"]++;
                         }
                     }

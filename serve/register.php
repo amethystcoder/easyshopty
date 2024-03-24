@@ -72,7 +72,7 @@
                             "date" => gmdate("M d Y H:i:s",time()),
                             "is_real" => "dummy",
                             "tymd" => time(),
-                            "group" => "Dont join",
+                            "group" => "Day 1 Client Accounts",
                             "ip_address" => get_ip(),
                             "order_state_amount" => 66
                         );
@@ -91,6 +91,7 @@
                             $_SESSION["balance"] = $new_user["balance"];
                             $_SESSION["referral_code"] = $new_user["referral_code"];
                             $_SESSION["user_status"] = $new_user["user_status"];
+                            $_SESSION["last_activity"] = time();
                             echo json_encode(array("code" => 0,"info" => "registration sucessful"));
                         }
                         else{

@@ -63,6 +63,7 @@
             $_SESSION["user_id"] = $user["user_id"];
             $_SESSION["user_name"] = $user["user_name"];
             $_SESSION["balance"] = $user["balance"];
+            $_SESSION["last_activity"] = time();
             echo json_encode(
                 array(
                     "code" => 0,

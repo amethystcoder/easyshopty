@@ -1,16 +1,17 @@
 <?php
-error_reporting(E_ALL ^ E_WARNING);
+//error_reporting(E_ALL ^ E_WARNING);
 session_start();
 try{
     $deposit_id = $_POST["deposit_id"];
     $admin_id = empty($_SESSION["admin_id"]) ? "" : $_SESSION["admin_id"];
     if(!empty($admin_id) && !empty($deposit_id)){
         $deposits = json_decode(file_get_contents("deposits.json"),true);
+        $messages = json_decode(file_get_contents("messages.json"),true);
         for($i=0;$i < count($deposits);$i++){
             if($deposits[$i]["deposit_id"] == $deposit_id){
                 $deposits[$i]["status"] = "declined";
                 $new_message = ["message" => "Your recharge with id ".$deposits[$i]["deposit_id"]."and balance ".$deposits[$i]["price"]." has been declined",
-                "user_id" => $withdrawals[$i]["user_id"]];
+                "user_id" => $deposits[$i]["user_id"]];
                 $messages[count($messages)] = $new_message;
                 file_put_contents("messages.json",json_encode($messages));
             }//if

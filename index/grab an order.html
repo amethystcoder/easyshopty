@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0056)https://www.easyshopmid12.xyz/index/rot_order/index.html -->
 <html lang="en" class="deeppurple-theme">
 
 <head>
@@ -15,6 +14,7 @@
     <link href="./grab an order_files/style.css" rel="stylesheet">
     <link rel="stylesheet" href="./grab an order_files/public.css">
     <link href="./grab an order_files/layer.css" type="text/css" rel="styleSheet" id="layermcss">
+    <link rel="shortcut icon" href="./login_files/logo.png">
     <style>
         .vip_bg_0 {
             background: linear-gradient(240deg, rgb(12, 36, 66), rgb(79, 116, 146)) !important;
@@ -390,7 +390,24 @@
         }
     </style>
     <script>
+        function isLoggedIn(){
+            $.ajax({
+                url: "../serve/is_user_logged_in.php",
+                type: 'GET',
+                success: function (data) {
+                    data = JSON.parse(data)
+                    if(!data.result){
+                        window.location.replace('./login.html')
+                    }
+                },
+            });
+        }
+    
         $(function () {
+            isLoggedIn()
+            setInterval(()=>{
+                isLoggedIn()
+            },10000)
             $.ajax({
                 url: "../serve/get_main_order_data.php",
                 type: 'GET',
@@ -540,7 +557,7 @@
                                 '<div class="row mt-3">\n' +
                                 '    <div class="col text-left">commission</div>\n' +
                                 '    <div class="col-auto text-right txt1"><span id="yongjin">' +
-                                data[i].commission + '%' +'</span></div>\n' +
+                                    data[i].goods_price * data[i].commission +'</span></div>\n' +
                                 '</div>\n' +
                                 '</div>'
                         }

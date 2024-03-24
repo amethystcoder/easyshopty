@@ -19,14 +19,13 @@ error_reporting(E_ALL ^ E_WARNING);
             }
             for($i =0;$i<count($orders);$i++){
                 if($orders[$i]["user_id"] == $user_id && $orders[$i]["status"] != "failed"){
-                    $amnt = $orders[$i]["goods"]["goods_price"] * $orders[$i]["goods"]["goods_count"] + 5;
+                    $amnt = $orders[$i]["goods"]["goods_price"] * $orders[$i]["goods"]["goods_count"];
                         if ($user["balance"] < $amnt) {
                             $gap = $amnt - $user["balance"];
                             $incomplete_balance = true;
                             break;
                         }
                         else{
-                            $user["balance"] -= ($amnt - 5);
                             $orders[$i]["status"] = "completed";
                             $earning = ($orders[$i]["goods"]["num"] * $orders[$i]["goods"]["commission"]);
                             $new_earning_data = ["tymd"=>time(),"amount" => $earning, "date" => gmdate("M d Y H:i:s",time()),"user_id" => $user["user_id"]];
