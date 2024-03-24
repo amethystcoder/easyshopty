@@ -21,7 +21,7 @@ error_reporting(E_ALL ^ E_WARNING);
             if (isset($user)) {
                 for($i =0;$i<count($orders);$i++){
                     if($orders[$i]["oid"] == $order_id){
-                        $amnt = $orders[$i]["goods"]["goods_price"] * $orders[$i]["goods"]["goods_count"];
+                        $amnt = $orders[$i]["goods"]["goods_price"];
                         if ($user["balance"] < $amnt) {
                             $gap = $amnt - $user["balance"];
                             echo json_encode(array("code" => 2, "info" => "balance not enough. there is a gap of ".$gap));
