@@ -557,7 +557,7 @@
                                 '<div class="row mt-3">\n' +
                                 '    <div class="col text-left">commission</div>\n' +
                                 '    <div class="col-auto text-right txt1"><span id="yongjin">' +
-                                    data[i].goods_price * (data[i].commission * 0.01) +'</span></div>\n' +
+                                    Math.round(data[i].goods_price * (data[i].commission * 0.01)) +'</span></div>\n' +
                                 '</div>\n' +
                                 '</div>'
                         }
