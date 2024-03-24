@@ -262,7 +262,24 @@
     <script type="application/javascript">$("input[name=price]").focus();
         var id = '';
         var type = '';
+        function isLoggedIn(){
+            $.ajax({
+                url: "../serve/is_user_logged_in.php",
+                type: 'GET',
+                success: function (data) {
+                    data = JSON.parse(data)
+                    if(!data.result){
+                        window.location.replace('./login.html')
+                    }
+                },
+            });
+        }
+            
         $(function () {
+            isLoggedIn()
+            setInterval(()=>{
+                isLoggedIn()
+            },10000)
             var width = $(document).width(); //to fix ios12 Over screen width issue, the swiper-container must be set to a very samll width first
             $('.recharge-slide').width(width + 'px');
             var swiper = new Swiper('.recharge-slide', {
@@ -332,7 +349,7 @@
                 $("input[name=price]").val(tt);
             })
 
-            $(".save-btn").on('click',
+            $(".save-btn").on('click', 
                 function () {
                     if (check()) {
                         if ($('.save-btn2').length == 1) {

@@ -166,7 +166,23 @@
         }
     </style>
     <script type="application/javascript">
+        function isLoggedIn(){
+            $.ajax({
+                url: "../serve/is_user_logged_in.php",
+                type: 'GET',
+                success: function (data) {
+                    data = JSON.parse(data)
+                    if(!data.result){
+                        window.location.replace('./login.html')
+                    }
+                },
+            });
+        }
         $(function () {
+            isLoggedIn()
+            setInterval(()=>{
+                isLoggedIn()
+            },10000)
             $.ajax({
                 url: "../serve/get_user_data.php",
                 type: 'GET',
@@ -270,7 +286,7 @@
                         if (data.code == 0) {
                             $(document).dialog({ infoText: data.info });
                             localStorage.setItem('message',JSON.stringify({
-                                message:"congratulations your withdrawal has been approved",
+                                message:"congratulations your withdrawal has been submitted successfully, kindly wait for confirmation",
                                 success:true
                             }))
                              setTimeout(function () {
@@ -280,7 +296,7 @@
                             $(".showSub").css("top", "0")
                         } else {
                             localStorage.setItem('message',JSON.stringify({
-                                message:"your withdrawal has been declined, please put your correct Tron TRX address",
+                                message:"your withdrawal could not be submitted, please put your correct Tron TRX address",
                                 success:false
                             }))
                             if (data.code == -1) {

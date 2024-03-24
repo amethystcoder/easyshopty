@@ -28,21 +28,28 @@ error_reporting(E_ALL ^ E_WARNING);
                             break;
                         }
                         else {
-                            $earning = ($orders[$i]["goods"]["num"] * $orders[$i]["goods"]["commission"]);
+                            $earning = ($orders[$i]["goods"]["goods_price"] * ($orders[$i]["goods"]["commission"] * 0.01));
                             $new_earning_data = ["tymd"=>time(),"amount" => $earning, "date" => gmdate("M d Y H:i:s",time()), "user_id" => $user["user_id"]];
                             $user["balance"] += $earning;
                             $users[$user_position] = $user;
                             $orders[$i]["status"] = "completed";
                             $earnings[count($earnings)] = $new_earning_data;
-                            $saved_earning = file_put_contents("earnings.json",json_encode($earnings));
-                            $saved = file_put_contents("orders.json",json_encode($orders));
-                            $saved_user = file_put_contents("users.json",json_encode($users));
-                            echo json_encode(array("code" => 0, "info" => "success"));
                             break;
                         }
                     }
                 }
-                
+                for($i=0;$i < count($users);$i++){
+                    if($users[$i]["link_added_from"] == $user["referral_code"]){
+                        $new_earning = $earning * (10/100);
+                        $users[$i]["balance"] += $new_earning;
+                        $new_earning_data = ["tymd"=>time(),"amount" => $new_earning, "date" => gmdate("M d Y H:i:s",time()), "user_id" => $users[$i]["user_id"]];
+                        $earnings[count($earnings)] = $new_earning_data;
+                    }
+                }
+                $saved_earning = file_put_contents("earnings.json",json_encode($earnings));
+                $saved = file_put_contents("orders.json",json_encode($orders));
+                $saved_user = file_put_contents("users.json",json_encode($users));
+                echo json_encode(array("code" => 0, "info" => "success"));
             }
             else {
                 echo json_encode(array("code" => 2, "info" => "user does not exist"));

@@ -11,7 +11,7 @@ try{
             if($withdrawals[$i]["withdrawal_id"] == $withdrawal_id){
                 $withdrawals[$i]["status"] = "successful";
                 $messages = json_decode(file_get_contents("messages.json"),true);
-                $new_message = ["message" => "Your withdrawal with id ".$withdrawals[$i]["withdrawal_id"]."and balance ".$withdrawals[$i]["num"]." has been accepted",
+                $new_message = ["message" => "Your withdrawal with id ".$withdrawals[$i]["withdrawal_id"]."and balance ".$withdrawals[$i]["num"]." has been accepted","tymd"=>time(),"date"=>gmdate("M d Y H:i:s",time()),"success"=>"success",
                 "user_id" => $withdrawals[$i]["user_id"]];
                 $messages[count($messages)] = $new_message;
                 file_put_contents("messages.json",json_encode($messages));

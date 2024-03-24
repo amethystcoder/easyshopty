@@ -10,7 +10,7 @@ try{
         for($i=0;$i < count($deposits);$i++){
             if($deposits[$i]["deposit_id"] == $deposit_id){
                 $deposits[$i]["status"] = "declined";
-                $new_message = ["message" => "Your recharge with id ".$deposits[$i]["deposit_id"]."and balance ".$deposits[$i]["price"]." has been declined",
+                $new_message = ["message" => "Your recharge with id ".$deposits[$i]["deposit_id"]." and balance ".$deposits[$i]["price"]." has been declined","tymd"=>time(),"date"=>gmdate("M d Y H:i:s",time()),"success"=>"failure",
                 "user_id" => $deposits[$i]["user_id"]];
                 $messages[count($messages)] = $new_message;
                 file_put_contents("messages.json",json_encode($messages));

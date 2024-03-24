@@ -214,7 +214,7 @@
                         $(document).dialog({ infoText: res.info });
                         if(res.code == 0){
                             localStorage.setItem('message',JSON.stringify({
-                                message:"congratulations your recharge has been approved,start completing your orders",
+                                message:"congratulations your recharge has been submitted successfully, kindly wait for confirmation",
                                 success:true
                             }))
                             setTimeout(function () {
@@ -223,7 +223,7 @@
                         }
                         else {
                             localStorage.setItem('message',JSON.stringify({
-                                message:"your recharge has been declined, please put your correct Tron TRX address",
+                                message:"your recharge could not be placed successfully, please put your correct Tron TRX address",
                                 success:false
                             }))
                             setTimeout(function () {

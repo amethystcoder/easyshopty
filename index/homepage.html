@@ -396,6 +396,30 @@
     <script charset="utf-8" src="./homepage_files/common.js.download"></script><!-- template custom js -->
     <script src="./homepage_files/main.js.download"></script><!-- page level script -->
     <script>
+        function getWithdrawRechargeNews(){
+            $.ajax({
+                url: "../serve/get_sys_messages.php",
+                type: 'GET',
+                success: function (data) {
+                    data = JSON.parse(data)
+                    if(data.code == 0 && data.data.length > 0){
+                        let message = data.data[data.data.length - 1];
+                        let txtToAdd = `
+                        ${message.message} on ${message.date}
+                        <br>
+                        <a href='./system message.html'>View all confirmed or declined withdrawals and recharges</a>
+                        `
+                        $(".notif").html(txtToAdd)
+                        $(".notif").removeClass("blocked")
+                        $(".notif").addClass("slide-into")
+                        $(".notif").addClass(message.success ? "success" : "failure")
+                        setTimeout(()=>{
+                            $(".notif").addClass("slide-out")
+                        },7000)
+                    }
+                },
+            });
+        }
         function isLoggedIn(){
             $.ajax({
                 url: "../serve/is_user_logged_in.php",
@@ -409,6 +433,10 @@
             });
         }
         $(function () {
+            getWithdrawRechargeNews()
+            /* setInterval(()=>{
+                getWithdrawRechargeNews()
+            },5000) */
             isLoggedIn()
             setInterval(()=>{
                 isLoggedIn()
