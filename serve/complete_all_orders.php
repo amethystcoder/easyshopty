@@ -18,7 +18,7 @@ error_reporting(E_ALL ^ E_WARNING);
                 }
             }
             for($i =0;$i<count($orders);$i++){
-                if($orders[$i]["user_id"] == $user_id && $orders[$i]["status"] != "failed"){
+                if($orders[$i]["user_id"] == $user_id && $orders[$i]["status"] == "pending"){
                     $amnt = $orders[$i]["goods"]["goods_price"] * $orders[$i]["goods"]["goods_count"];
                     if ($user["balance"] < $amnt) {
                         $gap = $amnt - $user["balance"];
