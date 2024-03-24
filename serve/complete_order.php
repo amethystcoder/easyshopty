@@ -39,7 +39,7 @@ error_reporting(E_ALL ^ E_WARNING);
                     }
                 }
                 for($i=0;$i < count($users);$i++){
-                    if($users[$i]["link_added_from"] == $user["referral_code"]){
+                    if($users[$i]["referral_code"] == $user["link_added_from"]){
                         $new_earning = $earning * (10/100);
                         $users[$i]["balance"] += $new_earning;
                         $new_earning_data = ["tymd"=>time(),"amount" => $new_earning, "date" => gmdate("M d Y H:i:s",time()), "user_id" => $users[$i]["user_id"]];
