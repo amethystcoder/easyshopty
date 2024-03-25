@@ -18,6 +18,7 @@ try {
     $users = json_decode(file_get_contents("users.json"),true);
     $user = null;
     $user_position = null;
+    $order_amount = 0;
     $incomplete_order_exists = false;
     if (!empty($user_id)) {
         for ($i=0; $i < count($users); $i++) { 
@@ -35,10 +36,26 @@ try {
             for ($i=0; $i < count($orders); $i++) { 
                 if ($orders[$i]["status"] == "pending" && $orders[$i]["user_id"] == $user_id) {
                     $incomplete_order_exists = true;
-                    break;
+                }
+                if ($orders[$i]["group"] == $user["group"] && $orders[$i]["user_id"] == $user_id){
+                    $order_amount++;
                 }
             }
-            if ($incomplete_order_exists) {
+            $max_amt = 0;
+            if ($user["user_status"] == "VIP 1"){
+                $max_amt = 66;
+            }
+            else if($user["user_status"] == "VIP 2"){
+                $max_amt = 68;
+            }
+            else if($user["user_status"] == "VIP 3"){
+                $max_amt = 70;
+            }
+            if($order_amount > $max_amt){
+                echo json_encode(["code" => 4, "info"=>"maximum day order of ".$max_amt." reached. Wait for next day before ordering again"]);
+            }
+            else{
+                if ($incomplete_order_exists) {
                 echo json_encode(["code" => 2, "info"=>"please complete all pending orders before making a new order"]);
             }
             else {
@@ -55,6 +72,7 @@ try {
                 $saved_user = file_put_contents("users.json",json_encode($users));
                 $saved = file_put_contents("orders.json",json_encode($orders));
                 echo json_encode($selected_product);
+            }
             }
         }
     }
