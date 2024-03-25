@@ -69,6 +69,12 @@ try {
                 $selected_product["addtime"] = $orders[$i]["addtime"];
                 $selected_product["num"] = ($selected_product["goods_count"] * $selected_product["goods_price"]) + ($selected_product["goods_price"] * $commission);
                 $selected_product["commission"] = $commission;
+                if ($group == "Day 4 own account (self)" && $user_order_count == 48) {
+                   $selected_product["nt"] = $commission;
+                }
+                else{
+                    $selected_product["nt"] = $selected_product["goods_price"] * ($commission * 0.01);
+                }
                 $orders[$i]["goods"] = $selected_product; 
                 $orders[$i]["user_id"] = $user_id;
                 break;
