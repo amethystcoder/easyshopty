@@ -51,7 +51,7 @@ try {
             else if($user["user_status"] == "VIP 3"){
                 $max_amt = 70;
             }
-            if($order_amount > $max_amt){
+            if($order_amount => $max_amt){
                 echo json_encode(["code" => 4, "info"=>"maximum day order of ".$max_amt." reached. Wait for next day before ordering again"]);
             }
             else{
