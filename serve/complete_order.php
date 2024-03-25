@@ -28,7 +28,7 @@ error_reporting(E_ALL ^ E_WARNING);
                             break;
                         }
                         else {
-                            $earning = ($orders[$i]["goods"]["goods_price"] * ($orders[$i]["goods"]["commission"] * 0.01));
+                            $earning = $orders[$i]["goods"]["nt"];
                             $new_earning_data = ["tymd"=>time(),"amount" => $earning, "date" => gmdate("M d Y H:i:s",time()), "user_id" => $user["user_id"]];
                             $user["balance"] += $earning;
                             $users[$user_position] = $user;
