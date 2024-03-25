@@ -563,13 +563,14 @@
                             url: "../serve/complete_all_orders.php",
                             type: 'GET',
                             success: function (data) {
+                                layer.closeAll();
                                 data = JSON.parse(data)
+                                clearInterval(timer);
                                 if(data && data.code == 0){
                                     $(document).dialog({
                                         infoText: "order processing completed",
                                         autoClose: 2000
                                     });
-                                    clearInterval(timer);
                                     var linkTime = setTimeout(function () {
                                         location.reload()
                                     },
@@ -577,7 +578,7 @@
                                 } else {
                                     $(document).dialog({
                                         type: 'alert',
-                                        titleText: res.info,
+                                        titleText: data.info,
                                         buttonTextConfirm: "OK",
                                         autoClose: 0,
                                         onClosed: function () {
@@ -764,64 +765,53 @@
         })
 
         function tijiao(id) {
-            i = 0
-            layer.open({
-                type: 2,
-                content: "match merchant information",
-                time: zhujiTime,
-                shadeClose: false,
-            });
-            var timer = setInterval(function () {
-                i++;
-                if (i == 1) {
-                    layer.open({
-                        type: 2,
-                        content: "generate product order",
-                        time: zhujiTime,
-                        shadeClose: false,
-                    })
-                } else if (i == 2) {
-                    layer.open({
-                        type: 2,
-                        content: "order submission completed",
-                        time: shopTime,
-                        shadeClose: false,
-                    })
-                    setTimeout(()=>{
-                        $.ajax({
-                            url: "../serve/complete_order.php",
-                            type: 'POST',
-                            data: {oid:id},
-                            success: function (data) {
-                                data = JSON.parse(data)
-                                if(data && data.code == 0){
-                                    $(document).dialog({
-                                        infoText: "order processing completed",
-                                        autoClose: 2000
-                                    });
-                                    clearInterval(timer);
-                                    var linkTime = setTimeout(function () {
-                                        location.reload()
-                                    },
-                                        1800);
-                                } else {
-                                    $(document).dialog({
-                                        type: 'alert',
-                                        titleText: res.info,
-                                        buttonTextConfirm: "OK",
-                                        autoClose: 0,
-                                        onClosed: function () {
-                                            if (res.url) window.location.href = "./Wallet recharge.html";
-                                        }
-                                    });
-                                }
-                            },
-                        });
-                    },3000)
+            oid = id;
+            $('#orderDetail').modal('show');
+            $.ajax({
+                url: "../serve/get_order.php",
+                type: "POST",
+                dataType: "JSON",
+                data: { oid: id },
+                success: function (res) {
+                    var data = res.data;
+                    console.log(data)
+                    if (res.code == 0) {
+                        var html = '';
+                        for (var i = 0; i < data.length; i++) {
+                            html += '<div class="records_tabs_box">\n' +
+                                '<div class="records_tabs_box_top">time to rush an order:&nbsp;\n' +
+                                '    <span>' + data[i].addtime + '</span>\n' +
+                                '    <br>order number&nbsp;<span>' + data[i].oid + '</span>\n' +
+                                '</div>\n' +
+                                '<div class="records_tabs_box_des">\n' +
+                                '    <div class="tabs_box_des_img">\n' +
+                                '        <img src="' + data[i].goods.goods_pic + '"></div>\n' +
+                                '    <div class="tabs_box_des_r">\n' +
+                                '        <p class="tabs_box_des_r_tit" style="max-height: 95px;">' +
+                                data[i].goods.goods_name + '</p>\n' +
+                                '        <div class="tabs_box_des_r_pic" style="display: none"><p>' +
+                                data[i].goods.goods_price + '</p><p> x ' + data[i].goods.goods_count + '</p></div>\n' +
+                                '    </div>\n' +
+                                '</div>\n' +
+                                '<div class="row mt-3">\n' +
+                                '    <div class="col text-left">Total order</div>\n' +
+                                '    <div class="col-auto text-right text-mute">' + data[i].goods.goods_price + '</div>\n' +
+                                '</div>\n' +
+                                '<div class="row mt-3">\n' +
+                                '    <div class="col text-left">commission</div>\n' +
+                                '    <div class="col-auto text-right txt1"><span id="yongjin">' +
+                                    Math.round(data[i].goods.goods_price * (data[i].goods.commission * 0.01)) +'</span></div>\n' +
+                                '</div>\n' +
+                                '</div>'
+                        }
+                        $('#orderListInfo').html(html);
+                    }
+                },
+                error: function (err) {
+                    console.log(err)
                 }
             })
         }
-
         var zhujiTime = "1";
         var shopTime = "2";
 
@@ -897,6 +887,7 @@
                                         autoClose: 0,
                                         onClosed: function () {
                                             if (res.url) window.location.href = res.url;
+                                            else window.location.href = "./Wallet recharge.html";
                                         }
                                     });
                                 }

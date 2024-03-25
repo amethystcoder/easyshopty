@@ -32,13 +32,13 @@ error_reporting(E_ALL ^ E_WARNING);
                         $user["balance"] += $earning;
                         $earnings[count($earnings)] = $new_earning_data;
                         for($j=0;$j < count($users);$j++){
-                        if($users[$j]["referral_code"] == $user["link_added_from"]){
-                            $new_earning = $earning * (10/100);
-                            $users[$j]["balance"] += $new_earning;
-                            $new_earning_data = ["tymd"=>time(),"amount" => $new_earning, "date" => gmdate("M d Y H:i:s",time()), "user_id" => $users[$i]["user_id"]];
-                            $earnings[count($earnings)] = $new_earning_data;
+                            if($users[$j]["referral_code"] == $user["link_added_from"]){
+                                $new_earning = $earning * (10/100);
+                                $users[$j]["balance"] += $new_earning;
+                                $new_earning_data = ["tymd"=>time(),"amount" => $new_earning, "date" => gmdate("M d Y H:i:s",time()), "user_id" => $users[$i]["user_id"]];
+                                $earnings[count($earnings)] = $new_earning_data;
+                            }
                         }
-                    }
                     }
                 }
             }
