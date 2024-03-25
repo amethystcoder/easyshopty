@@ -62,7 +62,7 @@ try {
     if ($user_order_count <= count($goods)) {
         if($user_order_count <= $ord_num){}
         else{}
-        $selected_product = $goods[$user_order_count];
+        $selected_product = $goods[$user_order_count - 1];
         for($i =0;$i<count($orders);$i++){
             if($orders[$i]["oid"] == $order_id){
                 $selected_product["oid"] = $orders[$i]["oid"];
