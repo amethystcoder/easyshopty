@@ -73,9 +73,8 @@ try {
                 $saved = file_put_contents("orders.json",json_encode($orders));
                 echo json_encode($selected_product);
             }
-            }
         }
-    }
+    }}
     else {
         echo json_encode(["code" => 4, "info"=>"you are not logged in, log in to grab orders"]);
     }
