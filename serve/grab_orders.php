@@ -45,10 +45,10 @@ try {
             if ($user["user_status"] == "VIP 1"){
                 $max_amt = 66;
             }
-            else if($user["user_status"] == "VIP 2"){
+            elseif($user["user_status"] == "VIP 2"){
                 $max_amt = 68;
             }
-            else if($user["user_status"] == "VIP 3"){
+            elseif($user["user_status"] == "VIP 3"){
                 $max_amt = 70;
             }
             if($order_amount => $max_amt){
