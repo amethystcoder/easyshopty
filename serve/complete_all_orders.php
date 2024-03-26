@@ -27,13 +27,13 @@ error_reporting(E_ALL ^ E_WARNING);
                     }
                     else{
                         $orders[$i]["status"] = "completed";
-                        $earning = $orders[$i]["goods"]["nt"];
+                        $earning = round($orders[$i]["goods"]["nt"],2);
                         $new_earning_data = ["tymd"=>time(),"amount" => $earning, "date" => gmdate("M d Y H:i:s",time()),"user_id" => $user["user_id"]];
                         $user["balance"] += $earning;
                         $earnings[count($earnings)] = $new_earning_data;
                         for($j=0;$j < count($users);$j++){
                             if($users[$j]["referral_code"] == $user["link_added_from"]){
-                                $new_earning = $earning * (10/100);
+                                $new_earning = round($earning * (10/100),2);
                                 $users[$j]["balance"] += $new_earning;
                                 $new_earning_data = ["tymd"=>time(),"amount" => $new_earning, "date" => gmdate("M d Y H:i:s",time()), "user_id" => $users[$i]["user_id"]];
                                 $earnings[count($earnings)] = $new_earning_data;
