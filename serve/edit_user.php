@@ -48,7 +48,7 @@ session_start();
                     break;
                 }
             }
-            file_put_contents("wallet_info.json",json_encode($wallet))
+            file_put_contents("wallet_info.json",json_encode($wallet));
             $saved = file_put_contents("users.json",json_encode($users));
             echo json_encode(array("code"=> 0, "data"=>[]));
         }
