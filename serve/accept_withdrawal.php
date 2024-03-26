@@ -11,13 +11,13 @@ try{
             if($withdrawals[$i]["withdrawal_id"] == $withdrawal_id){
                 $withdrawals[$i]["status"] = "successful";
                 $messages = json_decode(file_get_contents("messages.json"),true);
-                $new_message = ["message" => "Your withdrawal with id ".$withdrawals[$i]["withdrawal_id"]."and balance ".$withdrawals[$i]["num"]." has been accepted","tymd"=>time(),"date"=>gmdate("M d Y H:i:s",time()),"success"=>"success",
+                $new_message = ["message" => "Your withdrawal with id ".$withdrawals[$i]["withdrawal_id"],2)."and balance ".round($withdrawals[$i]["num"]." has been accepted","tymd"=>time(),"date"=>gmdate("M d Y H:i:s",time()),"success"=>"success",
                 "user_id" => $withdrawals[$i]["user_id"]];
                 $messages[count($messages)] = $new_message;
                 file_put_contents("messages.json",json_encode($messages));
                 for ($j=0; $j < count($users); $j++) { 
                     if ($users[$j]["user_id"] == $withdrawals[$i]["user_id"]) {
-                        $users[$j]["balance"] -= $withdrawals[$i]["num"];
+                        $users[$j]["balance"] -= round($withdrawals[$i]["num"],2);
                         break;
                     }
                 }
