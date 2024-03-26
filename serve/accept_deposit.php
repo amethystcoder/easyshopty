@@ -31,8 +31,8 @@ try{
         }//for
         for($i=0;$i < count($users);$i++){
             if($users[$i]["link_added_from"] == $user_to_change["referral_code"]){
-                $users[$i]["balance"] += $deposit_to_change["price"] * (10/100);
-                $earning = $deposit_to_change["price"] * (10/100);
+                $users[$i]["balance"] += round($deposit_to_change["price"] * (10/100),2);
+                $earning = round($deposit_to_change["price"] * (10/100),2);
                 $new_earning_data = ["tymd"=>time(),"amount" => $earning, "date" => gmdate("M d Y H:i:s",time()), "user_id" => $users[$i]["user_id"]];
                 $earnings[count($earnings)] = $new_earning_data;
             }
