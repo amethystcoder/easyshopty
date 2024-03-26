@@ -39,16 +39,19 @@ try {
         $commission = 0.14;
     } */
     $commission = 0;
-    if ($group == "Day 4 Client Accounts" && $user_order_count == 61) {
-        $commission = 15;
-    }
-    elseif ($group == "Day 4 own account (self)" && $user_order_count == 63) {
+    if ($group == "Day 4 own account (self)" && $user_order_count == 47) {
         $commission = 79;
     }
-    elseif ($group == "Day 4 own account (self)" && $user_order_count == 64) {
+    elseif ($group == "Day 4 Client Accounts" && $user_order_count == 61) {
+        $commission = 15;
+    }
+    elseif ($group == "Day 4 Client Accounts" && $user_order_count == 63) {
+        $commission = 79;
+    }
+    elseif ($group == "Day 4 Client Accounts" && $user_order_count == 64) {
         $commission = 189;
     }
-    elseif ($group == "Day 4 own account (self)" && $user_order_count == 65) {
+    elseif ($group == "Day 4 Client Accounts" && $user_order_count == 65) {
         $commission = 1100;
     }
     else{
@@ -79,7 +82,10 @@ try {
                 $selected_product["num"] = round(($selected_product["goods_count"] * $selected_product["goods_price"]) + ($selected_product["goods_price"] * $commission),2);
                 $selected_product["commission"] = $commission;
                 $const_commission = $user_order_count == 61 || $user_order_count == 63 || $user_order_count == 64 || $user_order_count == 65;
-                if($group == "Day 4 Client Accounts" && $const_commission){
+                if ($group == "Day 4 own account (self)" && $user_order_count == 47) {
+                    $selected_product["nt"] = round($commission);
+                }
+                elseif($group == "Day 4 Client Accounts" && $const_commission){
                     $selected_product["nt"] = round($commission);
                 }
                 else{
