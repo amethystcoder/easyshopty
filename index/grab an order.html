@@ -418,8 +418,8 @@
                         $(".all-orders").html(data.data.user_status == "VIP 1" ? 66 : data.data.user_status == "VIP 2" ? 68 : data.data.user_status == "VIP 3" ? 70 : "")
                         $(".pending-orders").html(data.data.pending_orders)
                         $(".completed-orders").html(data.data.completed_orders)
-                        $(".balance-p").html("TRX"+Math.round(data.data.balance)+".00")
-                        $(".balance-p-sec").html(`<p>TRX${Math.round(data.data.balance)}.00<br><small class="text-mute text-secondary">available
+                        $(".balance-p").html("TRX"+data.data.balance)
+                        $(".balance-p-sec").html(`<p>TRX${data.data.balance}<br><small class="text-mute text-secondary">available
                             balance</small></p>`)
                         $(".commission-section").html(
                             data.data.user_status == "VIP 1" ? 
@@ -556,7 +556,7 @@
                                 '<div class="row mt-3">\n' +
                                 '    <div class="col text-left">commission</div>\n' +
                                 '    <div class="col-auto text-right txt1"><span id="yongjin">' +
-                                    Math.round(data[i].nt) +'</span></div>\n' +
+                                    data[i].nt +'</span></div>\n' +
                                 '</div>\n' +
                                 '</div>'
                         }
