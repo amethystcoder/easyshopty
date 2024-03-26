@@ -17,19 +17,24 @@ if(!empty($user_id)){
     $price = $_POST["price"];
     $deposit_id = generate_deposit_id();
     $type = $_POST["type"];
-    $deposits = json_decode(file_get_contents("deposits.json"),true);
-    $new_deposit = array(
-        "price"=> $price,
-        "type"=> $type,
-        "deposit_id"=> $deposit_id,
-        "user_id" => $user_id,
-        "status" => "unpaid",
-        "date" => gmdate("M d Y H:i:s",time()),
-        "tymd" => time()
-    );
+    if($price >= 10.00){
+        $deposits = json_decode(file_get_contents("deposits.json"),true);
+        $new_deposit = array(
+           "price"=> $price,
+           "type"=> $type,
+           "deposit_id"=> $deposit_id,
+           "user_id" => $user_id,
+           "status" => "unpaid",
+           "date" => gmdate("M d Y H:i:s",time()),
+           "tymd" => time()
+        );
     $deposits[count($deposits)] = $new_deposit;
     $saved_successfully = file_put_contents("deposits.json",json_encode($deposits));
     echo json_encode(array("code" => 0, "info"=> array("num" => $deposit_id)));
+    }
+    else{
+        echo json_encode(array("code" => 3, "info"=> "minimum amount to deposit is 10 TRX, you deposited an amount less than 10 TRX"));
+    }
 }
 else{
     echo json_encode(array("code" => 2, "info"=> "user unverified"));
