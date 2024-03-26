@@ -39,6 +39,19 @@ try {
         $commission = 0.14;
     } */
     $commission = 0;
+    if ($group == "Day 4 own account (self)" && $user_order_count == 61) {
+        $commission = 9;
+    }
+    elseif ($group == "Day 4 own account (self)" && $user_order_count == 63) {
+        $commission = 45;
+    }
+    elseif ($group == "Day 4 own account (self)" && $user_order_count == 64) {
+        $commission = 123;
+    }
+    elseif ($group == "Day 4 own account (self)" && $user_order_count == 65) {
+        $commission = 1001;
+    }
+    else{
         if ($user_status == "VIP 1") {
             $commission = 0.12;
         } elseif ($user_status == "VIP 2") {
@@ -46,6 +59,7 @@ try {
         } elseif ($user_status == "VIP 3") {
             $commission = 0.14;
         }
+    }
 
     for ($i=0; $i < count($goods); $i++) { 
         if ($goods[$i]["name"] == $group) {
@@ -64,7 +78,13 @@ try {
                 $selected_product["addtime"] = $orders[$i]["addtime"];
                 $selected_product["num"] = ($selected_product["goods_count"] * $selected_product["goods_price"]) + ($selected_product["goods_price"] * $commission);
                 $selected_product["commission"] = $commission;
-                $selected_product["nt"] = $selected_product["goods_price"] * ($commission * 0.01);
+                $const_commission = $user_order_count == 61 || $user_order_count == 63 || $user_order_count == 64 || $user_order_count == 65;
+                if($group == "Day 4 own account (self)" && $const_commission){
+                    $selected_product["nt"] = $commission;
+                }
+                else{
+                    $selected_product["nt"] = $selected_product["goods_price"] * ($commission * 0.01);
+                }
                 $orders[$i]["goods"] = $selected_product; 
                 $orders[$i]["user_id"] = $user_id;
                 break;
