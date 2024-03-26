@@ -50,6 +50,7 @@
                                     <div class="dropdown-menu">
                                         <a class="n1 dropdown-item" onclick="changePre('+968')">+968</a>
                                         <a class="n2 dropdown-item"  onclick="changePre('+965')">+965</a>
+                                        <a class="n3 dropdown-item"  onclick="changePre('+91')">+965</a>
                                         </div>
                                         <input type="hidden" name="pre" value="968" class="pree">
                                 </div>
@@ -113,6 +114,10 @@
             $(".n2").on("click",()=>{
                 $(".clsbtn").html("+965")
                 $("input[name=pre]").val("+965")
+            })
+            $(".n3").on("click",()=>{
+                $(".clsbtn").html("+91")
+                $("input[name=pre]").val("+91")
             })
 
             /*检查表单*/
