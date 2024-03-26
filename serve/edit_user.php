@@ -5,6 +5,7 @@ session_start();
         $admin_id = empty($_SESSION["admin_id"]) ? "" : $_SESSION["admin_id"];
         if(!empty($admin_id)){
             $users = json_decode(file_get_contents("users.json"),true);
+            $wallet = json_decode(file_get_contents("wallet_info.json"),true);
             $user_id = $_POST["user_id"];
             $trading_status = $_POST["trading_status"];
             $user_status = $_POST["user_status"];
@@ -36,9 +37,18 @@ session_start();
                         $users[$i]["group"] = $overlay;
                         $users[$i]["order_state_amount"] = 66;
                     }
+                    if (!empty($transfer_password)) {
+                        for($j = 0;$j < count($wallet);$j++){
+                            if($wallet[$j]["user_id"] == $user_id){
+                                 $wallet[$j]["paypassword"] = $transfer_password;
+                                break;
+                            }
+                        }
+                    }
                     break;
                 }
             }
+            file_put_contents("wallet_info.json",json_encode($wallet))
             $saved = file_put_contents("users.json",json_encode($users));
             echo json_encode(array("code"=> 0, "data"=>[]));
         }
