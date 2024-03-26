@@ -14,7 +14,7 @@ session_start();
 try {
     $user_id = empty($_SESSION["user_id"]) ? "" : $_SESSION["user_id"] ;
 if(!empty($user_id)){
-    $price = $_POST["price"];
+    $price = round($_POST["price"],2);
     $deposit_id = generate_deposit_id();
     $type = $_POST["type"];
     if($price >= 10.00){
