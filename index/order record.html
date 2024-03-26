@@ -396,7 +396,7 @@
                                             </div>
                                             <div class="col-auto">
                                                 <p class="text-right text-mute">TRX${data.data[i].goods.goods_price}</p>
-                                                <p class="text-right text-mute">TRX${Math.round(data.data[i].goods.commission ? (data.data[i].goods.commission * 0.01) * data.data[i].goods.goods_price : 0)}</p>
+                                                <p class="text-right text-mute">TRX${data.data[i].goods.nt ? data.data[i].goods.nt : 0}</p>
                                             </div>
                                         </div>
                                         
@@ -446,7 +446,7 @@
                                             </div>
                                             <div class="col-auto">
                                                 <p class="text-right text-mute">TRX${data.data[i].goods.goods_price}</p>
-                                                <p class="text-right text-mute">TRX${Math.round(data.data[i].goods.commission ? (data.data[i].goods.commission * 0.01) * data.data[i].goods.goods_price : 0)}</p>
+                                                <p class="text-right text-mute">TRX${data.data[i].goods.nt ? data.data[i].goods.nt : 0}</p>
                                             </div>
                                         </div>
                                         
@@ -500,7 +500,7 @@
                                             </div>
                                             <div class="col-auto">
                                                 <p class="text-right text-mute">TRX${data.data[i].goods.goods_price}</p>
-                                                <p class="text-right text-mute">TRX${Math.round(data.data[i].goods.commission ? (data.data[i].goods.commission * 0.01) * data.data[i].goods.goods_price : 0)}</p>
+                                                <p class="text-right text-mute">TRX${data.data[i].goods.nt ? data.data[i].goods.nt : 0}</p>
                                             </div>
                                         </div>
                                         
@@ -800,7 +800,7 @@
                                 '<div class="row mt-3">\n' +
                                 '    <div class="col text-left">commission</div>\n' +
                                 '    <div class="col-auto text-right txt1"><span id="yongjin">' +
-                                    Math.round(data[i].goods.nt) +'</span></div>\n' +
+                                    data[i].goods.nt +'</span></div>\n' +
                                 '</div>\n' +
                                 '</div>'
                         }
