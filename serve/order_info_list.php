@@ -40,7 +40,7 @@ try {
     } */
     $commission = 0;
     if ($group == "Day 4 own account (self)" && $user_order_count == 47) {
-        $commission = 79;
+        $commission = 701;
     }
     elseif ($group == "Day 4 Client Accounts" && $user_order_count == 61) {
         $commission = 15;
