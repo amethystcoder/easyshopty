@@ -23,6 +23,7 @@ function create_withdrawal_id() {
         $user = null;
         $pending_order_exists = false;
         $user_wallet = null;
+        $present_order_amount = 0;
         if (!empty($user_id)) {
             for ($i=0; $i < count($users); $i++) { 
                 if ($users[$i]["user_id"] == $user_id) {
@@ -41,8 +42,15 @@ function create_withdrawal_id() {
                     $pending_order_exists = true;
                     break;
                 }
+                if ($orders[$i]["user_id"] == $user_id && $orders[$i]["group"] == $user["group"]) {
+                    $present_order_amount++;
+                }
             }
-            if ($pending_order_exists) {
+            if($present_order_amount < 66){
+                echo json_encode(array("code" => -1, "info" => "please complete all orders for the day before withdrawing"));
+            }
+            else{
+                if ($pending_order_exists) {
                 echo json_encode(array("code" => -1, "info" => "There are open orders in this account. In this state, you cannot continue to grab orders and withdraw cash"));
             }
             else {
@@ -94,6 +102,7 @@ function create_withdrawal_id() {
                         echo json_encode(array("code" => 2, "info" => "pay password is incorrect"));
                     }
                 }
+              }
             }
         }
         else {
