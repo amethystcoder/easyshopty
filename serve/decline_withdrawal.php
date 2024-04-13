@@ -6,6 +6,7 @@ try{
     $admin_id = empty($_SESSION["admin_id"]) ? "" : $_SESSION["admin_id"];
     if(!empty($admin_id) && !empty($withdrawal_id)){
         $withdrawals = json_decode(file_get_contents("withdrawals.json"),true);
+        $users = json_decode(file_get_contents("users.json"),true);
         for($i=0;$i < count($withdrawals);$i++){
             if($withdrawals[$i]["withdrawal_id"] == $withdrawal_id){
                 $withdrawals[$i]["status"] = "declined";
@@ -14,6 +15,12 @@ try{
                 "user_id" => $withdrawals[$i]["user_id"]];
                 $messages[count($messages)] = $new_message;
                 file_put_contents("messages.json",json_encode($messages));
+                for ($j=0; $j < count($users); $j++) { 
+                    if ($users[$j]["user_id"] == $withdrawals[$i]["user_id"]) {
+                        $users[$j]["balance"] += round($withdrawals[$i]["num"],2);
+                        break;
+                    }
+                }
                 break;
             }//if
         }//for
