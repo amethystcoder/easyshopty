@@ -69,7 +69,7 @@ function create_withdrawal_id() {
                                 "tymd" => time()
                             );
                             $withdrawals[count($withdrawals)] = $new_withdrawal;
-                            $user["balance"] = $user["balance"] - $num;
+                            $user["balance"] = round(($user["balance"] - $num),2);
                             $users[$user_position] = $user;
                             $saved_user_successfully = file_put_contents("users.json",json_encode($users));
                             $saved_successfully = file_put_contents("withdrawals.json",json_encode($withdrawals));
@@ -96,7 +96,7 @@ function create_withdrawal_id() {
                                 "tymd" => time()
                             );
                             $withdrawals[count($withdrawals)] = $new_withdrawal;
-                            $user["balance"] = $user["balance"] - $num;
+                            $user["balance"] = round(($user["balance"] - $num),2);
                             $users[$user_position] = $user;
                             $saved_user_successfully = file_put_contents("users.json",json_encode($users));
                             $saved_successfully = file_put_contents("withdrawals.json",json_encode($withdrawals));
