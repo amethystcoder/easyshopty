@@ -21,6 +21,7 @@ function create_withdrawal_id() {
         $orders = json_decode(file_get_contents("orders.json"),true);
         $wallet = json_decode(file_get_contents("wallet_info.json"),true);
         $user = null;
+        $user_position = null;
         $pending_order_exists = false;
         $user_wallet = null;
         $present_order_amount = 0;
@@ -28,6 +29,7 @@ function create_withdrawal_id() {
             for ($i=0; $i < count($users); $i++) { 
                 if ($users[$i]["user_id"] == $user_id) {
                     $user = $users[$i];
+                    $user_position = $i;
                     break;
                 }
             }
@@ -68,6 +70,8 @@ function create_withdrawal_id() {
                             );
                             $withdrawals[count($withdrawals)] = $new_withdrawal;
                             $user["balance"] = $user["balance"] - $num;
+                            $users[$user_position] = $user;
+                            $saved_user_successfully = file_put_contents("users.json",json_encode($users));
                             $saved_successfully = file_put_contents("withdrawals.json",json_encode($withdrawals));
                             echo json_encode(array("code" => 0, "data" => $new_withdrawal, "message" => "created successfully"));
                         }
@@ -93,6 +97,8 @@ function create_withdrawal_id() {
                             );
                             $withdrawals[count($withdrawals)] = $new_withdrawal;
                             $user["balance"] = $user["balance"] - $num;
+                            $users[$user_position] = $user;
+                            $saved_user_successfully = file_put_contents("users.json",json_encode($users));
                             $saved_successfully = file_put_contents("withdrawals.json",json_encode($withdrawals));
                             echo json_encode(array("code" => 0, "data" => $new_withdrawal, "info" => "created successfully"));
                         }
