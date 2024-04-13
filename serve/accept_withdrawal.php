@@ -15,12 +15,6 @@ try{
                 "user_id" => $withdrawals[$i]["user_id"]];
                 $messages[count($messages)] = $new_message;
                 file_put_contents("messages.json",json_encode($messages));
-                for ($j=0; $j < count($users); $j++) { 
-                    if ($users[$j]["user_id"] == $withdrawals[$i]["user_id"]) {
-                        $users[$j]["balance"] -= round($withdrawals[$i]["num"],2);
-                        break;
-                    }
-                }
                 break;
             }//if
         }//for
